@@ -15,6 +15,6 @@ import ValueCallback from "./value-callback";
  * combined all result from {@link Validator} list into {@link Message} value
  */
 export default function ValueAll(validators, validation, message) {
-    return new ValueCallback(validators, ValidateValue, validation, message);
+    return ValueCallback(validators, ValidateValue, validation, message);
 }
 //# sourceMappingURL=value-all.js.map

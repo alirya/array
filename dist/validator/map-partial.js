@@ -19,6 +19,6 @@ import MapCallback from "./map-callback";
  * stop validation operation condition
  */
 export default function MapPartial(validators, validation, message, stop = false) {
-    return new MapCallback(validators, (value, validators) => ValidateMap(value, validators, stop), validation, message);
+    return MapCallback(validators, (value, validators) => ValidateMap(value, validators, stop), validation, message);
 }
 //# sourceMappingURL=map-partial.js.map

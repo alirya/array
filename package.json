@@ -10,13 +10,13 @@
     "@dikac/t-object": "^0.36.10",
     "@dikac/t-string": "^0.15.3",
     "@dikac/t-validatable": "^0.19.2",
-    "@dikac/t-validator": "^0.17.4",
+    "@dikac/t-validator": "^0.18.0-beta.1",
     "@dikac/t-value": "^0.14.5",
     "ts-toolbelt": "^9.6.0"
   },
   "devDependencies": {
-    "@dikac/t-class": "^0.2.2",
-    "@dikac/t-type": "^0.4.3",
+    "@dikac/t-class": "^0.3.0-beta.1",
+    "@dikac/t-type": "^0.5.0-beta.1",
     "@types/jasmine": "^3.6.9",
     "@types/node": "^12.20.10",
     "cpy-cli": "^3.1.1",

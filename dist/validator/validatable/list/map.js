@@ -2,7 +2,7 @@ export default function Map(values, validators) {
     const result = [];
     for (let [property, validator] of validators.entries()) {
         const value = values[property];
-        const validatable = validator.validate(value);
+        const validatable = validator(value);
         result[property] = validatable;
     }
     return result;

@@ -16,4 +16,4 @@ import MapCallbackInterface from "./map";
  * @param message
  * process all result from {@link Validator} list into {@link Message} value
  */
-export default function MapAll<Validators extends Validator[] = Validator[], ValidatableType extends Validatable = Validatable, MessageType = unknown>(validators: Validators, validation: (result: ListReturn<Validators>) => ValidatableType, message: (result: ListReturn<Validators>) => MessageType): Omit<MapCallbackInterface<Validators, ListReturn<Validators>, MessageType, ValidatableType>, 'map'>;
+export default function MapAll<Validators extends Validator[] = Validator[], ValidatableType extends Validatable = Validatable, MessageType = unknown>(validators: Validators, validation: (result: ListReturn<Validators>) => ValidatableType, message: (result: ListReturn<Validators>) => MessageType): MapCallbackInterface<Validators, ListReturn<Validators>, MessageType, ValidatableType>;

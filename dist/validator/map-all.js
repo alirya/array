@@ -15,6 +15,6 @@ import MapCallback from "./map-callback";
  * process all result from {@link Validator} list into {@link Message} value
  */
 export default function MapAll(validators, validation, message) {
-    return new MapCallback(validators, ValidateMap, validation, message);
+    return MapCallback(validators, ValidateMap, validation, message);
 }
 //# sourceMappingURL=map-all.js.map

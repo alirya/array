@@ -15,6 +15,6 @@ import ValidateMap from "./validatable/list/list";
  * process all result from {@link Validator} list into {@link Message} value
  */
 export default function ListAll(validator, validation, message) {
-    return new ListCallback(validator, ValidateMap, validation, message);
+    return ListCallback(validator, ValidateMap, validation, message);
 }
 //# sourceMappingURL=list-all.js.map

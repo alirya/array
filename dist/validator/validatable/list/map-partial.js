@@ -2,7 +2,7 @@ export default function Map(values, validators, stop = false) {
     const result = [];
     for (let [property, validator] of validators.entries()) {
         const value = values[property];
-        const validatable = validator.validate(value);
+        const validatable = validator(value);
         result[property] = validatable;
         if (validatable.valid === stop) {
             return result;

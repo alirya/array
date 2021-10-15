@@ -18,7 +18,7 @@ export default function Map<
     for(let [property, validator] of validators.entries()) {
 
         const value = values[property];
-        const validatable = validator.validate(value);
+        const validatable = validator(value);
 
         result[property] = <List.UnionOf<ListStrict<Validators>>> validatable;
 

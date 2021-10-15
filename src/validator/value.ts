@@ -28,20 +28,18 @@ import Validation from "@dikac/t-validatable/validation/validation";
  * @template ValidatableT
  * final result after processing {@template Result}
  */
-export default interface Value<
+type Value<
     Base,
     ValueType extends Base,
     MessageType,
     ValidatorsType extends Validator<Base, ValueType>[],
     Validatables extends Instance[],
     ValidatableType extends Validatable
-> extends
+> =
     SimpleValidator<
         Base,
         ValueType,
         ValidatableValueInterface<Base, ValidatorsType, Validatables, MessageType, ValidatableType>
-    >,
-    Message<(result:Validatables)=>MessageType>,
-    Validators<ValidatorsType>,
-    Validation<(result:Validatables)=>ValidatableType> {
-}
+    >
+
+export default Value;

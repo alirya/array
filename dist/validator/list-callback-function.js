@@ -5,6 +5,6 @@ import ListCallback from "./list-callback";
  * type return has better handling by typescript
  */
 export default function ListCallbackFunction(validator, map, validation, message) {
-    return new ListCallback(validator, map, validation, message);
+    return ListCallback(validator, map, validation, message);
 }
 //# sourceMappingURL=list-callback-function.js.map

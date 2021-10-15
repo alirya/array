@@ -8,18 +8,29 @@ import Return from "@dikac/t-validator/validatable/simple";
 /**
  *  validate if array is empty
  */
-export default class Empty<
-    MessageType
-> implements Validator<Array<any>, [], boolean, boolean, EmptyValidatable<MessageType, Array<any>>>,
-    Message<(result:Readonly<Value<Array<any>>> & Readonly<Validatable>)=>MessageType> {
+// export default class Empty<
+//     MessageType
+// > implements Validator<Array<any>, [], boolean, boolean, EmptyValidatable<MessageType, Array<any>>>,
+//     Message<(result:Readonly<Value<Array<any>>> & Readonly<Validatable>)=>MessageType> {
+//
+//     constructor(
+//         public message : (result:Value<Array<any>> & Readonly<Validatable>)=>MessageType
+//     ) {
+//     }
+//
+//     validate<Argument extends any[]>(value: Argument): Return<Array<any>, Argument, [], EmptyValidatable<MessageType, Argument>> {
+//
+//         return <Return<Array<any>, Argument, [], EmptyValidatable<MessageType, Argument>>> new EmptyValidatable<MessageType, Argument>(value, this.message);
+//     }
+// }
 
-    constructor(
-        public message : (result:Value<Array<any>> & Readonly<Validatable>)=>MessageType
-    ) {
-    }
+export default function Empty<MessageType>(
+    message : (result:Value<Array<any>> & Readonly<Validatable>)=>MessageType
+) : Validator<Array<any>, [], boolean, boolean, EmptyValidatable<MessageType, Array<any>>> {
 
-    validate<Argument extends any[]>(value: Argument): Return<Array<any>, Argument, [], EmptyValidatable<MessageType, Argument>> {
+    return function <Argument extends any[]>(value: Argument) {
 
-        return <Return<Array<any>, Argument, [], EmptyValidatable<MessageType, Argument>>> new EmptyValidatable<MessageType, Argument>(value, this.message);
-    }
+        return <Return<Array<any>, Argument, [], EmptyValidatable<MessageType, Argument>>> new EmptyValidatable<MessageType, Argument>(value, message);
+
+    } as Validator<Array<any>, [], boolean, boolean, EmptyValidatable<MessageType, Array<any>>>
 }

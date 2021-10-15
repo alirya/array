@@ -51,14 +51,14 @@ describe('value callback', ()=>{
         ValidatorType('string'),
         ValidatorType('string'),
         ValidatorType('string'),
-        new ValueCallback([
+        ValueCallback([
                 ValidatorType('string'),
                 ValidatorType('string'),
             ],
             ValidateValue, And, MessageMapInvalid)
     ];
 
-    let validator = new ValueCallback(validators, ValidateValue, And, MessageMapInvalid);
+    let validator = ValueCallback(validators, ValidateValue, And, MessageMapInvalid);
 
 });
 

@@ -19,6 +19,6 @@ import ValidateMapPartial from "./validatable/list/list-partial";
  * stop validation operation condition
  */
 export default function ListPartial(validator, validation, message, stop = false) {
-    return new ListCallback(validator, (value, validators) => ValidateMapPartial(value, validators, stop), validation, message);
+    return ListCallback(validator, (value, validators) => ValidateMapPartial(value, validators, stop), validation, message);
 }
 //# sourceMappingURL=list-partial.js.map

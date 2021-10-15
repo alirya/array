@@ -1,6 +1,6 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import InferReturn from "@dikac/t-validator/validatable/infer";
+import InferReturn from "@dikac/t-validator/validatable/infer-unambiguous";
 import ListCallback from "./list-callback";
 import ValidateMapPartial from "./validatable/list/list-partial";
 import Union from "../union";
@@ -36,7 +36,12 @@ export default function ListPartial<
 
 ) : List<MessageType, ValidatorType, Union<InferReturn<ValidatorType>[]>, ValidatableType> {
 
-    return new ListCallback(validator, (value, validators)=>ValidateMapPartial(value, validators, stop), validation, message);
+    return ListCallback(
+        validator,
+        (value, validators)=>ValidateMapPartial(value, validators, stop),
+        validation,
+        message
+    );
 }
 
 

@@ -27,8 +27,8 @@ export default function  MapAll<
     validators : Validators,
     validation : (result:ListReturn<Validators>)=>ValidatableType,
     message : (result:ListReturn<Validators>)=>MessageType
-) : Omit<MapCallbackInterface<Validators, ListReturn<Validators>, MessageType, ValidatableType>, 'map'>  {
+) : MapCallbackInterface<Validators, ListReturn<Validators>, MessageType, ValidatableType>  {
 
-    return new MapCallback(validators, ValidateMap, validation, message);
+    return MapCallback(validators, ValidateMap, validation, message);
 }
 

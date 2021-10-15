@@ -26,19 +26,21 @@ import ValidatableListInterface from "../validatable/list";
  * @template ValidatableT
  * final result after processing {@template Result}
  */
-export default interface List<
+type List<
     MessageType,
     ValidatorType extends Validator,
     Validatables extends Instance[],
     ValidatableType extends Validatable
-> extends
+> =
     SimpleValidator<
         BaseInfer<ValidatorType>[],
         TypeInfer<ValidatorType>[],
         ValidatableListInterface<TypeInfer<ValidatorType>[], ValidatorType, Validatables, MessageType, ValidatableType>
-    >,
+    >/*,
     ValidatorContainer<ValidatorType>,
     Message<(result:Validatables)=>MessageType>,
     Validation<(result:Validatables)=>ValidatableType> {
 
-};
+};*/
+export default List;
+

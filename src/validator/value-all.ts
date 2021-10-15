@@ -32,10 +32,5 @@ export default function ValueAll<
 
 ) : Value<BaseType, ValueType, MessageType, Validators, ListReturn<Validators>, ReturnType> {
 
-    return new ValueCallback(
-        validators,
-        ValidateValue,
-        validation,
-        message
-    );
+    return ValueCallback(validators, ValidateValue, validation, message);
 }

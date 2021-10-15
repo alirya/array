@@ -4,6 +4,6 @@ import ArrayMessage from "../validatable/string/array";
  * create {@see Array} with default message
  */
 export default function ArrayStandard() {
-    return new Array_(ArrayMessage);
+    return Array_(ArrayMessage);
 }
 //# sourceMappingURL=array-standard.js.map

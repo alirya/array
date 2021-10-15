@@ -27,7 +27,7 @@ describe("compiler compatibility", function() {
 
         let property = MapAll(validator, (v)=>And(<Validatable[]>v), MessageMap);
 
-        let validatable = property.validate(value);
+        let validatable = property(value);
 
         let key : Validatable;
 
@@ -85,7 +85,7 @@ describe("compiler compatibility", function() {
 
             let property = MapAll(validator, (v)=>And(<Validatable[]>v), MessageMap);
 
-            let validatable = property.validate(value);
+            let validatable = property(value);
 
             let key : Validatable;
 
@@ -112,7 +112,7 @@ describe("compiler compatibility", function() {
 
             let property = MapAll<TypeValidator>(validator, (v)=>And(<Validatable[]>v), MessageMap);
 
-            let validatable = property.validate(value);
+            let validatable = property(value);
 
 
             let key : Validatable;
@@ -156,7 +156,7 @@ describe("all valid", function() {
     it(`check validate return`, () => {
 
         let property = MapAll(validator,(v)=>And(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(true);
@@ -183,7 +183,7 @@ describe("all valid", function() {
     it(`check handler and`, () => {
 
         let property = MapAll(validator,(v)=>And(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toEqual(value);
@@ -192,7 +192,7 @@ describe("all valid", function() {
     it(`check handler or`, () => {
 
         let property = MapAll(validator,(v)=>Or(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toEqual(value);
@@ -217,7 +217,7 @@ describe("mixed", function() {
     it(`check validate return`, () => {
 
         let property = MapAll(validator,(v)=>And(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(true);
@@ -245,7 +245,7 @@ describe("mixed", function() {
     it(`check handler and`, () => {
 
         let property = MapAll(validator,(v)=>And(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let validatable = property(value);
 
         expect<boolean>(validatable.valid).toBe(false);
         expect(validatable.value).toEqual(value);
@@ -254,7 +254,7 @@ describe("mixed", function() {
     it(`check handler or`, () => {
 
         let property = MapAll(validator,(v)=>Or(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toEqual(value);
@@ -279,7 +279,7 @@ describe("all invalid", function() {
     it(`check validate return`, () => {
 
         let property = MapAll(validator,(v)=>And(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(false);
@@ -306,7 +306,7 @@ describe("all invalid", function() {
     it(`check handler and`, () => {
 
         let property = MapAll(validator,(v)=>And(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let validatable = property(value);
 
         expect(validatable.valid).toBe(false);
         expect(validatable.value).toEqual(value);
@@ -315,7 +315,7 @@ describe("all invalid", function() {
     it(`check handler or`, () => {
 
         let property = MapAll(validator,(v)=>Or(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let validatable = property(value);
 
         expect(validatable.valid).toBe(false);
         expect(validatable.value).toEqual(value);
@@ -352,7 +352,7 @@ describe("recursive", function() {
         it(`check validate return`, () => {
 
             let property = MapAll(validator,(v)=>And(v), MessageMap);
-            let validatable = property.validate(value);
+            let validatable = property(value);
 
             if(validatable.validatables[0]) {
                 expect(validatable.validatables[0].valid).toBe(false);

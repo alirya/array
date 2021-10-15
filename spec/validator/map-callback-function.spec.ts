@@ -44,7 +44,7 @@ describe("compiler compatibility", function() {
                 And, (v)=>MessageMap(v)
             );
 
-            let validatable = validator.validate(value);
+            let validatable = validator(value);
 
             let unknown : unknown = validatable.value;
 
@@ -86,7 +86,7 @@ describe("compiler compatibility", function() {
                 And, (v)=>MessageMap(v)
             );
 
-            let validatable = validator.validate(value);
+            let validatable = validator(value);
 
             let unknown : unknown = validatable.value;
             let string : Type = validatable.value;
@@ -126,7 +126,7 @@ describe("compiler compatibility", function() {
                 And, (v)=>MessageMap(v)
             );
 
-            let validatable = validator.validate(value);
+            let validatable = validator(value);
 
             let unknown : unknown = validatable.value;
 
@@ -154,7 +154,7 @@ describe("compiler compatibility", function() {
                 (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
                 And, (v)=>MessageMap(v)
             );
-            let validatable = validator.validate(value);
+            let validatable = validator(value);
 
             let unknown : unknown = validatable.value;
 
@@ -215,7 +215,7 @@ describe("explicit", function() {
                     (value, validators) => Standard(value, validators),
                     And, (v)=>MessageMap(v)
                 );
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toEqual(value);
@@ -245,7 +245,7 @@ describe("explicit", function() {
                     Or, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toEqual(value);
@@ -279,7 +279,7 @@ describe("explicit", function() {
                     And, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toEqual(value);
@@ -309,7 +309,7 @@ describe("explicit", function() {
                     Or, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toEqual(value);
@@ -372,7 +372,7 @@ describe("explicit", function() {
                     (v)=>MessageMap(v)
                 );
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect(and.valid).toBe(false);
                 expect(and.value).toEqual(value);
@@ -404,7 +404,7 @@ describe("explicit", function() {
                     (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect(or.valid).toBe(true);
                 expect(or.value).toEqual(value);
@@ -440,7 +440,7 @@ describe("explicit", function() {
                     (v)=>MessageMap(v)
                 );
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect(and.valid).toBe(false);
                 expect(and.value).toEqual(value);
@@ -469,7 +469,7 @@ describe("explicit", function() {
                     (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect(or.valid).toBe(true);
                 expect(or.value).toEqual(value);
@@ -522,7 +522,7 @@ describe("explicit", function() {
                     (v)=>MessageMap(v)
                 );
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect(and.valid).toBe(false);
                 expect(and.value).toEqual(value);
@@ -553,7 +553,7 @@ describe("explicit", function() {
                     (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect(or.valid).toBe(false);
                 expect(or.value).toEqual(value);
@@ -586,7 +586,7 @@ describe("explicit", function() {
                     (v)=>And(v),
                     (v)=>MessageMap(v)
                 );
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect(and.valid).toBe(false);
                 expect(and.value).toEqual(value);
@@ -611,7 +611,7 @@ describe("explicit", function() {
                     (v)=>Or(v),
                     (v)=>MessageMap(v)
                 );
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect(or.valid).toBe(false);
                 expect(or.value).toEqual(value);
@@ -667,7 +667,7 @@ describe("recursive", function() {
                     (value, validators) => Standard(value, validators),
                     And, (v)=>MessageMap(v)
                 );
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toEqual(value);
@@ -706,7 +706,7 @@ describe("recursive", function() {
                     Or, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toEqual(value);
@@ -749,7 +749,7 @@ describe("recursive", function() {
                     And, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toEqual(value);
@@ -788,7 +788,7 @@ describe("recursive", function() {
                     Or, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toEqual(value);
@@ -851,7 +851,7 @@ describe("recursive", function() {
 
                 let validator = MapCallbackFunction(validators, Standard, And, MessageMap);
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect<boolean>(and.valid).toBe(false);
                 expect(and.value).toEqual(value);
@@ -892,7 +892,7 @@ describe("recursive", function() {
                     (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect(or.valid).toBe(true);
                 expect(or.value).toEqual(value);
@@ -937,7 +937,7 @@ describe("recursive", function() {
                     (v)=>MessageMap(v)
                 );
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect<boolean>(and.valid).toBe(false);
                 expect(and.value).toEqual(value);
@@ -963,7 +963,7 @@ describe("recursive", function() {
                     (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect(or.valid).toBe(true);
                 expect(or.value).toEqual(value);
@@ -1009,7 +1009,7 @@ describe("recursive", function() {
                     (v)=>MessageMap(v)
                 );
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect(and.valid).toBe(false);
                 expect(and.value).toEqual(value);
@@ -1049,7 +1049,7 @@ describe("recursive", function() {
                     (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect(or.valid).toBe(false);
                 expect(or.value).toEqual(value);
@@ -1091,7 +1091,7 @@ describe("recursive", function() {
                     (v)=>And(v),
                     (v)=>MessageMap(v)
                 );
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect(and.valid).toBe(false);
                 expect(and.value).toEqual(value);
@@ -1116,7 +1116,7 @@ describe("recursive", function() {
                     (v)=>Or(v),
                     (v)=>MessageMap(v)
                 );
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect(or.valid).toBe(false);
                 expect(or.value).toEqual(value);

@@ -2,7 +2,7 @@ import Validator from "@dikac/t-validator/validator";
 import Union from "../../../union";
 import Map from "../../../map";
 import {List as ListHelper} from "ts-toolbelt";
-import InferReturn from "@dikac/t-validator/validatable/infer";
+import InferReturn from "@dikac/t-validator/validatable/infer-unambiguous";
 
 export default function List<
     ValueType extends unknown[],
@@ -16,7 +16,7 @@ export default function List<
 
     for(const [property, value] of values.entries()) {
 
-        const validatable = validator.validate(value);
+        const validatable = validator(value);
 
         result[property] = <InferReturn<ValidatorType>> validatable;
     }

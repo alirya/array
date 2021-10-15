@@ -1,6 +1,6 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import InferReturn from "@dikac/t-validator/validatable/infer";
+import InferReturn from "@dikac/t-validator/validatable/infer-unambiguous";
 import Union from "../union";
 import List from "./list";
 /**

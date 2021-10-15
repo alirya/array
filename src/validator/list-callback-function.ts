@@ -22,7 +22,7 @@ export default function  ListCallbackFunction<
      message : (results:Result)=>MessageType
 ) : List<MessageType, ValidatorType, Result, ValidatableType> {
 
-    return new ListCallback(validator, map, validation, message);
+    return ListCallback(validator, map, validation, message);
 }
 
 

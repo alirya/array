@@ -33,7 +33,7 @@ export default function MapPartial<
     validation : (result:Union<ListStrict<Validators>>)=>ValidatableType,
     message : (result:Union<ListStrict<Validators>>)=>MessageType,
     stop : boolean = false,
-) : Omit<MapCallbackInterface<Validators, Union<ListStrict<Validators>>, MessageType, ValidatableType>, 'map'>  {
+) : MapCallbackInterface<Validators, Union<ListStrict<Validators>>, MessageType, ValidatableType>  {
 
-    return new MapCallback(validators, (value, validators)=>ValidateMap(value, validators, stop), validation, message);
+    return MapCallback(validators, (value, validators)=>ValidateMap(value, validators, stop), validation, message);
 }

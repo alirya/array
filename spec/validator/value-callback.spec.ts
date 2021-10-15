@@ -33,9 +33,9 @@ describe("compiler compatibility", function() {
 
         describe("auto", function() {
 
-            let validator = new ValueCallback(validators, ValidateValue, And, MessageMap);
+            let validator = ValueCallback(validators, ValidateValue, And, MessageMap);
 
-            let validatable = validator.validate(value);
+            let validatable = validator(value);
 
             let unknown : unknown = validatable.value;
 
@@ -52,9 +52,9 @@ describe("compiler compatibility", function() {
             describe("recursive", function() {
 
                 let validator = ValidatorType('string');
-                let list1 = new ValueCallback([validator], ValidateValue, And, MessageMap);
-                let list2 = new ValueCallback([list1], ValidateValue, And, MessageMap);
-                let list3 = new ValueCallback([list2], ValidateValue, And, MessageMap);
+                let list1 = ValueCallback([validator], ValidateValue, And, MessageMap);
+                let list2 = ValueCallback([list1], ValidateValue, And, MessageMap);
+                let list3 = ValueCallback([list2], ValidateValue, And, MessageMap);
 
             });
         });
@@ -63,12 +63,12 @@ describe("compiler compatibility", function() {
 
             type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-            let validator = new ValueCallback(validators,
+            let validator = ValueCallback(validators,
                 (value, validators) => <[ValidatableBundle, ValidatableBundle]>ValidateValuePartial(value, validators),
                 And, (v)=>MessageMap(v)
             );
 
-            let validatable = validator.validate(value);
+            let validatable = validator(value);
 
             let unknown : unknown = validatable.value;
 
@@ -97,12 +97,12 @@ describe("compiler compatibility", function() {
 
         describe("auto", function() {
 
-            let validator = new ValueCallback(validators,
+            let validator = ValueCallback(validators,
                 (value, validators) => ValidateValue(value, validators),
                 And, (v)=>MessageMap(v)
             );
 
-            let validatable = validator.validate(value);
+            let validatable = validator(value);
 
             let unknown : unknown = validatable.value;
 
@@ -120,11 +120,11 @@ describe("compiler compatibility", function() {
 
         describe("auto partial", function() {
 
-            let validator = new ValueCallback(validators,
+            let validator = ValueCallback(validators,
                 (value, validators) => <[ValidatableType, ValidatableType]>ValidateValuePartial(value, validators),
                 And, (v)=>MessageMap(v)
             );
-            let validatable = validator.validate(value);
+            let validatable = validator(value);
 
             let unknown : unknown = validatable.value;
 
@@ -170,11 +170,11 @@ describe("explicit", function() {
 
             it(`and validation`, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     And, (v)=>MessageMap(v)
                 );
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toBe(value);
@@ -194,12 +194,12 @@ describe("explicit", function() {
 
             it(`or validation`, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     Or, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toBe(value);
@@ -225,12 +225,12 @@ describe("explicit", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) =>  <[ValidatableBundle, ValidatableBundle, ValidatableBundle]>ValidateValuePartial(value, validators),
                     And, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toBe(value);
@@ -252,12 +252,12 @@ describe("explicit", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) =>  <[ValidatableBundle, ValidatableBundle, ValidatableBundle]>ValidateValuePartial(value, validators),
                     Or, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 expect(validatable.valid).toBe(true);
                 expect(validatable.value).toBe(value);
@@ -299,12 +299,12 @@ describe("explicit", function() {
 
             it(`and validation`, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     (v)=>And(v), (v)=>MessageMap(v)
                 );
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect<boolean>(and.valid).toBe(false);
                 expect(and.value).toBe(value);
@@ -325,12 +325,12 @@ describe("explicit", function() {
 
             it(`or validation `, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     (v)=>Or(v), (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect(or.valid).toBe(true);
                 expect(or.value).toBe(value);
@@ -357,12 +357,12 @@ describe("explicit", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) =>  <[ValidatableBundle, ValidatableBundle, ValidatableBundle]>ValidateValuePartial(value, validators),
                     (v)=>And(v), (v)=>MessageMap(v)
                 );
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect<boolean>(and.valid).toBe(false);
                 expect(and.value).toBe(value);
@@ -384,12 +384,12 @@ describe("explicit", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) =>  <[ValidatableBundle, ValidatableBundle, ValidatableBundle]>ValidateValuePartial(value, validators),
                     (v)=>Or(v), (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect(or.valid).toBe(true);
                 expect(or.value).toBe(value);
@@ -428,12 +428,12 @@ describe("explicit", function() {
         describe("complete", function() {
             it(`and validation`, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     (v)=>And(v), (v)=>MessageMap(v)
                 );
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect<boolean>(and.valid).toBe(false);
                 expect(and.value).toEqual(value);
@@ -453,12 +453,12 @@ describe("explicit", function() {
 
             it(`or validation `, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     (v)=>Or(v), (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect<boolean>(or.valid).toBe(false);
                 expect(or.value).toEqual(value);
@@ -484,11 +484,11 @@ describe("explicit", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => <[ValidatableBundle, ValidatableBundle, ValidatableBundle]>ValidateValuePartial(value, validators),
                     (v)=>And(v), (v)=>MessageMap(v)
                 );
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 expect<boolean>(and.valid).toBe(false);
                 expect(and.value).toEqual(value);
@@ -506,11 +506,11 @@ describe("explicit", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => <[ValidatableBundle, ValidatableBundle, ValidatableBundle]>ValidateValuePartial(value, validators),
                     (v)=>Or(v), MessageMap
                 );
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 expect<boolean>(or.valid).toBe(false);
                 expect(or.value).toEqual(value);
@@ -539,7 +539,7 @@ describe("recursive", function() {
             ValidatorType('string'),
             ValidatorType('string'),
             ValidatorType('string'),
-            new ValueCallback([
+            ValueCallback([
                     ValidatorType('string'),
                     ValidatorType('string'),
                 ],
@@ -553,11 +553,11 @@ describe("recursive", function() {
 
             describe(`and validation`, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     And, (v)=>MessageMap(v)
                 );
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 it('top level', ()=> {
                     expect(validatable.valid).toBe(true);
@@ -617,12 +617,12 @@ describe("recursive", function() {
 
             describe(`or validation`, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     Or, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 it('top level', ()=> {
                     expect(validatable.valid).toBe(true);
@@ -688,12 +688,12 @@ describe("recursive", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) =>  ValidateValuePartial(value, validators),
                     And, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 it('top level', ()=> {
                     expect(validatable.valid).toBe(true);
@@ -755,12 +755,12 @@ describe("recursive", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValuePartial(value, validators),
                     Or, (v)=>MessageMap(v)
                 );
 
-                let validatable = validator.validate(value);
+                let validatable = validator(value);
 
                 it('top level', ()=> {
                     expect(validatable.valid).toBe(true);
@@ -827,7 +827,7 @@ describe("recursive", function() {
             ValidatorType('string'),
             ValidatorType('number'),
             ValidatorType('string'),
-            new ValueCallback([
+            ValueCallback([
                     ValidatorType('number'),
                     ValidatorType('string'),
             ], (value, validators) => ValidateValue(value, validators), And, (v)=>MessageMap(v))
@@ -839,12 +839,12 @@ describe("recursive", function() {
 
             describe(`and validation`, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     (v)=>And(v), (v)=>MessageMap(v)
                 );
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 it(`top level`, () => {
                     expect<boolean>(and.valid).toBe(false);
@@ -905,12 +905,12 @@ describe("recursive", function() {
 
             describe(`or validation `, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     (v)=>Or(v), (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 it('top level', ()=> {
                     expect(or.valid).toBe(true);
@@ -977,12 +977,12 @@ describe("recursive", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) =>  ValidateValuePartial(value, validators),
                     (v)=>And(v), (v)=>MessageMap(v)
                 );
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 it('top level', ()=> {
                     expect<boolean>(and.valid).toBe(false);
@@ -1004,12 +1004,12 @@ describe("recursive", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValuePartial(value, validators),
                     (v)=>Or(v), (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 it('top level', ()=> {
                     expect(or.valid).toBe(true);
@@ -1034,7 +1034,7 @@ describe("recursive", function() {
             ValidatorType('string'),
             ValidatorType('number'),
             ValidatorType('string'),
-            new ValueCallback([
+            ValueCallback([
                 ValidatorType('number'),
                 ValidatorType('string'),
             ], (value, validators) => ValidateValue(value, validators), And, (v)=>MessageMap(v))
@@ -1046,12 +1046,12 @@ describe("recursive", function() {
 
             describe(`and validation`, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     (v)=>And(v), (v)=>MessageMap(v)
                 );
 
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 it('top level', ()=> {
 
@@ -1112,12 +1112,12 @@ describe("recursive", function() {
 
             describe(`or validation `, () => {
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValue(value, validators),
                     (v)=>Or(v), (v)=>MessageMap(v)
                 );
 
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 it('top level', ()=> {
                     expect<boolean>(or.valid).toBe(false);
@@ -1183,11 +1183,11 @@ describe("recursive", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValuePartial(value, validators),
                     (v)=>And(v), (v)=>MessageMap(v)
                 );
-                let and = validator.validate(value);
+                let and = validator(value);
 
                 it(`top level`, () => {
                     expect<boolean>(and.valid).toBe(false);
@@ -1206,11 +1206,11 @@ describe("recursive", function() {
 
                 type ValidatableBundle = ValueInterface & Validatable & Message<string>;
 
-                let validator = new ValueCallback(validators,
+                let validator = ValueCallback(validators,
                     (value, validators) => ValidateValuePartial(value, validators),
                     (v)=>Or(v), MessageMap
                 );
-                let or = validator.validate(value);
+                let or = validator(value);
 
                 it('top level', ()=> {
                     expect<boolean>(or.valid).toBe(false);

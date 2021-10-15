@@ -1,6 +1,6 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import InferReturn from "@dikac/t-validator/validatable/infer";
+import InferReturn from "@dikac/t-validator/validatable/infer-unambiguous";
 import ListCallback from "./list-callback";
 import ValidateMap from "./validatable/list/list";
 import List from "./list";
@@ -30,6 +30,16 @@ export default function ListAll<
 
 ) : List<MessageType, ValidatorType, InferReturn<ValidatorType>[], ValidatableType> {
 
-    return new ListCallback<MessageType, ValidatorType, InferReturn<ValidatorType>[], ValidatableType>(validator, ValidateMap , validation, message);
+    return ListCallback<
+        MessageType,
+        ValidatorType,
+        InferReturn<ValidatorType>[],
+        ValidatableType
+    >(
+        validator,
+        ValidateMap,
+        validation,
+        message
+    );
 }
 

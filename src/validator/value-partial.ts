@@ -37,5 +37,5 @@ export default function ValuePartial<
     stop : boolean = false,
 ) : Value<BaseType, ValueType, MessageType, Validators, Union<ListReturn<Validators>>, ReturnType> {
 
-    return new ValueCallback(validators, (value, validators)=>ValidateValuePartial(value, validators, stop), validation, message);
+    return ValueCallback(validators, (value, validators)=>ValidateValuePartial(value, validators, stop), validation, message);
 }

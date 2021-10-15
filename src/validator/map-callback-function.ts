@@ -21,7 +21,7 @@ export default function MapCallbackFunction<
     message : (result:Validatables)=>MessageType
 ) : MapCallbackInterface<Validators, Validatables, MessageType, ValidatableType> {
 
-    return new MapCallback(validators, map, validation, message) as
+    return MapCallback(validators, map, validation, message) as
         MapCallbackInterface<Validators, Validatables, MessageType, ValidatableType>;
 }
 

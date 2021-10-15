@@ -16,7 +16,7 @@ export default function Value<
 
     for(const [property, validator] of validators.entries()) {
 
-        const validatable = validator.validate(value);
+        const validatable = validator(value);
 
         result[property] = <List.UnionOf<ListStrict<Validators>>> validatable;
 

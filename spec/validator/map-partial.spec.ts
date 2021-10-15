@@ -1,4 +1,4 @@
-import Map from "../../dist/validator/map-partial";
+import MapPartial from "../../dist/validator/map-partial";
 import And from "../../dist/validatable/and";
 import Or from "../../dist/validatable/or";
 import Validatable from "@dikac/t-validatable/validatable";
@@ -26,9 +26,9 @@ describe("compiler compatibility", function() {
             'address',
         ];
 
-        let property = Map(validator, (v)=>And(v), MessageMap);
+        let property = MapPartial(validator, (v)=>And(v), MessageMap);
 
-        let validatable = property.validate(value);
+        let validatable = property(value);
 
         let key : Validatable;
 
@@ -50,9 +50,9 @@ describe("compiler compatibility", function() {
         describe("recursive", function() {
 
             let validator = ValidatorType('string');
-            let list1 = Map([validator], And, MessageMap);
-            let list2 = Map([list1], And, MessageMap);
-            let list3 = Map([list2], And, MessageMap);
+            let list1 = MapPartial([validator], And, MessageMap);
+            let list2 = MapPartial([list1], And, MessageMap);
+            let list3 = MapPartial([list2], And, MessageMap);
 
         });
     });
@@ -82,9 +82,9 @@ describe("compiler compatibility", function() {
 
         describe("auto", function() {
 
-            let property = Map(validator, And, MessageMap);
+            let property = MapPartial(validator, And, MessageMap);
 
-            let validatable = property.validate(value);
+            let validatable = property(value);
 
             let key : Validatable;
 
@@ -106,9 +106,9 @@ describe("compiler compatibility", function() {
 
         describe("direct", function() {
 
-            let property = Map<TypeValidator>(validator, (v)=>And(v), MessageMap);
+            let property = MapPartial<TypeValidator>(validator, (v)=>And(v), MessageMap);
 
-            let validatable = property.validate(<any>value);
+            let validatable = property(<any>value);
 
 
             let key : Validatable;
@@ -148,8 +148,8 @@ describe("all valid", function() {
 
     it(`check validate return`, () => {
 
-        let property = Map(validator,(v)=>And(v), MessageMap);
-        let validatable = property.validate(value);
+        let property = MapPartial(validator,(v)=>And(v), MessageMap);
+        let validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(true);
@@ -175,8 +175,8 @@ describe("all valid", function() {
 
     it(`check handler and`, () => {
 
-        let property = Map(validator,(v)=>And(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+        let validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toEqual(value);
@@ -184,8 +184,8 @@ describe("all valid", function() {
 
     it(`check handler or`, () => {
 
-        let property = Map(validator,(v)=>Or(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let property = MapPartial(validator,(v)=>Or(<Validatable[]>v), MessageMap);
+        let validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toEqual(value);
@@ -209,8 +209,8 @@ describe("mixed", function() {
 
     it(`check validate return`, () => {
 
-        let property = Map(validator,(v)=>And(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+        let validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(true);
@@ -233,8 +233,8 @@ describe("mixed", function() {
 
     it(`check handler and`, () => {
 
-        let property = Map(validator,(v)=>And(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+        let validatable = property(value);
 
         expect<boolean>(validatable.valid).toBe(false);
         expect(validatable.value).toEqual(value);
@@ -242,8 +242,8 @@ describe("mixed", function() {
 
     it(`check handler or`, () => {
 
-        let property = Map(validator,(v)=>Or(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let property = MapPartial(validator,(v)=>Or(<Validatable[]>v), MessageMap);
+        let validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toEqual(value);
@@ -267,8 +267,8 @@ describe("all invalid", function() {
 
     it(`check validate return`, () => {
 
-        let property = Map(validator,(v)=>And(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+        let validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(false);
@@ -288,8 +288,8 @@ describe("all invalid", function() {
 
     it(`check handler and`, () => {
 
-        let property = Map(validator,(v)=>And(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+        let validatable = property(value);
 
         expect(validatable.valid).toBe(false);
         expect(validatable.value).toEqual(value);
@@ -297,8 +297,8 @@ describe("all invalid", function() {
 
     it(`check handler or`, () => {
 
-        let property = Map(validator,(v)=>Or(<Validatable[]>v), MessageMap);
-        let validatable = property.validate(value);
+        let property = MapPartial(validator,(v)=>Or(<Validatable[]>v), MessageMap);
+        let validatable = property(value);
 
         expect(validatable.valid).toBe(false);
         expect(validatable.value).toEqual(value);
@@ -315,7 +315,7 @@ describe("recursive", function() {
             ValidatorType('number'),
             ValidatorType('number'),
             ValidatorType('number'),
-            Map([
+            MapPartial([
                 ValidatorType('number'),
                 ValidatorType('number')
             ],(v)=>And(<Validatable[]>v), MessageMap)
@@ -333,8 +333,8 @@ describe("recursive", function() {
 
         it(`check validate return`, () => {
 
-            let property = Map(validator,(v)=>And(<Validatable[]>v), MessageMap);
-            let validatable = property.validate(value);
+            let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+            let validatable = property(value);
 
             if(validatable.validatables[0]) {
                 expect(validatable.validatables[0].valid).toBe(false);
@@ -354,8 +354,8 @@ describe("recursive", function() {
 
         it(`check handler and`, () => {
 
-            let property = Map(validator,(v)=>And(<Validatable[]>v), MessageMap);
-            let validatable = property.validate(value);
+            let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+            let validatable = property(value);
 
             expect(validatable.valid).toBe(false);
             expect(validatable.value).toEqual(value);
@@ -363,8 +363,8 @@ describe("recursive", function() {
 
         it(`check handler or`, () => {
 
-            let property = Map(validator,(v)=>Or(<Validatable[]>v), MessageMap);
-            let validatable = property.validate(value);
+            let property = MapPartial(validator,(v)=>Or(<Validatable[]>v), MessageMap);
+            let validatable = property(value);
 
             expect(validatable.valid).toBe(false);
             expect(validatable.value).toEqual(value);

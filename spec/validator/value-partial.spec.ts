@@ -28,7 +28,7 @@ describe("compiler compatibility", function() {
 
             let property = Value<any, string, TypeValidator>(validator, (v)=>And(<Validatable[]>v), (v)=>MessageMap(v));
 
-            let validatable = property.validate('data');
+            let validatable = property('data');
 
             let key : Validatable = validatable[0];
 
@@ -57,7 +57,7 @@ describe("compiler compatibility", function() {
 
             let property = Value(validator, (v)=>And(v), (v)=>MessageMap(v));
 
-            let validatable = property.validate('data');
+            let validatable = property('data');
 
             let key : Validatable = validatable[0];
 
@@ -85,7 +85,7 @@ describe("compiler compatibility", function() {
 
             let property = Value(validator, (v)=>And(v), (v)=>MessageMap(v));
 
-            let validatable = property.validate('data');
+            let validatable = property('data');
             validatable.value
 
             let key : Validatable = validatable.validatables[0];
@@ -106,7 +106,7 @@ describe("compiler compatibility", function() {
 
             let property = Value(validator, (v)=>And(v), (v)=>MessageMap(v));
 
-            let validatable = property.validate('data');
+            let validatable = property('data');
 
             let key : Validatable = validatable[0];
 
@@ -139,7 +139,7 @@ describe("all valid", function() {
 
         let property = Value(validator, (v)=>And(<Validatable[]>v), (v)=>MessageMap(v));
 
-        let validatable = property.validate('data');
+        let validatable = property('data');
 
         it('value', ()=>{
             expect(validatable.value).toBe('data');
@@ -206,7 +206,7 @@ describe("mixed", function() {
             (v)=>MessageMap(v)
         );
 
-        let validatable = property.validate('data');
+        let validatable = property('data');
 
         it('value', ()=>{
             expect(validatable.value).toBe('data');
@@ -261,7 +261,7 @@ describe("all invalid", function() {
 
     let property = Value(validator, And, MessageMap);
 
-    let validatable = property.validate('data');
+    let validatable = property('data');
 
     it('value', ()=>{
         expect(validatable.value).toBe('data');
@@ -315,7 +315,7 @@ describe('recursive', ()=>{
 
             let property = Value(validator, And, MessageMap);
 
-            let validatable = property.validate('data');
+            let validatable = property('data');
 
             it('value', ()=>{
                 expect(validatable.value).toBe('data');
@@ -423,7 +423,7 @@ describe('recursive', ()=>{
 
             let property = Value(validator, And, MessageMap);
 
-            let validatable = property.validate('data');
+            let validatable = property('data');
 
             it('value', ()=>{
                 expect(validatable.value).toBe('data');
@@ -508,7 +508,7 @@ describe('recursive', ()=>{
 
         let property = Value/*<unknown, number>*/(validator, And, MessageMap);
 
-        let validatable = property.validate('data');
+        let validatable = property('data');
 
         it('value', ()=>{
             expect(validatable.value).toBe('data');
