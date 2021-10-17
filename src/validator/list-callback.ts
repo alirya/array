@@ -6,7 +6,7 @@ import Construct from "@dikac/t-validator/validatable/simple";
 import Instance from "@dikac/t-validator/validatable/validatable";
 import Replace from "@dikac/t-validatable/boolean/replace";
 import BaseInfer from "@dikac/t-validator/base/infer";
-import TypeInfer from "@dikac/t-validator/type/infer";
+import TypeInfer from "@dikac/t-validator/expectation/infer";
 import List from "./list";
 
 /**

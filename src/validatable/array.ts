@@ -1,4 +1,4 @@
-import Callback from "@dikac/t-validator/validatable/callback-function";
+import Callback from "@dikac/t-validator/validatable/callback";
 import ObjectGuard from "../boolean/array";
 import Validatable from "@dikac/t-validatable/validatable";
 import Value from "@dikac/t-value/value";

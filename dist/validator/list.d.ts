@@ -3,7 +3,7 @@ import SimpleValidator from "@dikac/t-validator/simple";
 import Validatable from "@dikac/t-validatable/validatable";
 import Instance from "@dikac/t-validator/validatable/validatable";
 import BaseInfer from "@dikac/t-validator/base/infer";
-import TypeInfer from "@dikac/t-validator/type/infer";
+import TypeInfer from "@dikac/t-validator/expectation/infer";
 import ValidatableListInterface from "../validatable/list";
 /**
  * Base {@link Validator} for validating list of value with {@link Validator}
