@@ -8,7 +8,7 @@ import MapAll from "../../../../dist/validator/map-all";
 import Map from "../../../../dist/validator/map-partial";
 import Validatable from "@dikac/t-validatable/validatable";
 import ValueCallback from "../../../../dist/validator/value-callback";
-import MapCallbackFunction from "../../../../dist/validator/map-callback-function";
+import MapCallbackFunction from "../../../../dist/validator/map-callback";
 import Standard from "../../../../dist/validator/validatable/list/map";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});

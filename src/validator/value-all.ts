@@ -4,6 +4,9 @@ import ValidateValue from "./validatable/list/value";
 import ListReturn from "./validatable/list/infer";
 import ValueCallback from "./value-callback";
 import Value from "./value";
+import InferMessage from "../message/message/list/infer";
+import InferReturn from "@dikac/t-validator/validatable/infer-unambiguous";
+import Map from "../message/message/list/map";
 
 /**
  * more specific implementation of {@link ValueCallback}
@@ -24,13 +27,38 @@ export default function ValueAll<
     ValueType extends BaseType = BaseType,
     Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
     ReturnType extends Validatable = Validatable,
+>(
+    validators : Validators,
+    validation : (result:ListReturn<Validators>)=>ReturnType,
+
+) : Value<BaseType, ValueType, InferMessage<ListReturn<Validators>>, Validators, ListReturn<Validators>, ReturnType>;
+
+export default function ValueAll<
+    BaseType = unknown,
+    ValueType extends BaseType = BaseType,
+    Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
+    ReturnType extends Validatable = Validatable,
     MessageType = unknown,
 >(
     validators : Validators,
     validation : (result:ListReturn<Validators>)=>ReturnType,
     message : (result:ListReturn<Validators>)=>MessageType
 
+) : Value<BaseType, ValueType, MessageType, Validators, ListReturn<Validators>, ReturnType>;
+
+export default function ValueAll<
+    BaseType = unknown,
+    ValueType extends BaseType = BaseType,
+    Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
+    ReturnType extends Validatable = Validatable,
+    MessageType = unknown,
+>(
+    validators : Validators,
+    validation : (result:ListReturn<Validators>)=>ReturnType,
+    message : (result:ListReturn<Validators>)=>MessageType|InferMessage<ListReturn<Validators>> = Map
+
 ) : Value<BaseType, ValueType, MessageType, Validators, ListReturn<Validators>, ReturnType> {
 
-    return ValueCallback(validators, ValidateValue, validation, message);
+    return ValueCallback(validators, ValidateValue, validation, message) as
+        Value<BaseType, ValueType, MessageType, Validators, ListReturn<Validators>, ReturnType>;
 }

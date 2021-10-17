@@ -5,6 +5,9 @@ import ListReturn from "./validatable/list/infer";
 import ValueCallback from "./value-callback";
 import Union from "../union";
 import Value from "./value";
+import InferMessage from "../message/message/list/infer";
+import Map from "../message/message/list/map";
+import Boolean from "@dikac/t-boolean/boolean";
 
 /**
  * more specific implementation of {@link ValueCallback}
@@ -29,13 +32,49 @@ export default function ValuePartial<
     ValueType extends BaseType = BaseType,
     Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
     ReturnType extends Validatable = Validatable,
+>(
+    validators : Validators,
+    validation : (result:Union<ListReturn<Validators>>)=>ReturnType,
+    stop ?: boolean,
+) : Value<BaseType, ValueType, Union<InferMessage<ListReturn<Validators>>>, Validators, Union<ListReturn<Validators>>, ReturnType>;
+
+export default function ValuePartial<
+    BaseType = unknown,
+    ValueType extends BaseType = BaseType,
+    Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
+    ReturnType extends Validatable = Validatable,
     MessageType = unknown,
 >(
     validators : Validators,
     validation : (result:Union<ListReturn<Validators>>)=>ReturnType,
     message : (result:Union<ListReturn<Validators>>)=>MessageType,
-    stop : boolean = false,
-) : Value<BaseType, ValueType, MessageType, Validators, Union<ListReturn<Validators>>, ReturnType> {
+    stop ?: boolean,
+) : Value<BaseType, ValueType, MessageType, Validators, Union<ListReturn<Validators>>, ReturnType>;
 
-    return ValueCallback(validators, (value, validators)=>ValidateValuePartial(value, validators, stop), validation, message);
+
+export default function ValuePartial<
+    BaseType = unknown,
+    ValueType extends BaseType = BaseType,
+    Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
+    ReturnType extends Validatable = Validatable,
+    MessageType = unknown,
+>(
+    validators : Validators,
+    validation : (result:Union<ListReturn<Validators>>)=>ReturnType,
+    message : ((result:Union<ListReturn<Validators>>)=>MessageType|Union<InferMessage<ListReturn<Validators>>>)|boolean = Map,
+    stop : boolean = false,
+) : Value<BaseType, ValueType, MessageType|Union<InferMessage<ListReturn<Validators>>>, Validators, Union<ListReturn<Validators>>, ReturnType> {
+
+    if(Boolean(message)) {
+
+        return ValuePartial(validators, validation, Map, message) as
+            Value<BaseType, ValueType, Union<InferMessage<ListReturn<Validators>>>, Validators, Union<ListReturn<Validators>>, ReturnType>;
+    }
+
+    return ValueCallback(
+        validators,
+        (value, validators)=>ValidateValuePartial(value, validators, stop),
+        validation,
+        message
+    ) as Value<BaseType, ValueType, MessageType, Validators, Union<ListReturn<Validators>>, ReturnType>;
 }

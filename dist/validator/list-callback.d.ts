@@ -21,4 +21,4 @@ import List from "./list";
  * @template ValidatableT
  * final result after processing {@template Result}
  */
-export default function ValueCallback<MessageType = unknown, ValidatorType extends Validator = Validator, Validatables extends Instance[] = Instance[], ValidatableType extends Validatable = Validatable>(validator: ValidatorType, map: (value: BaseInfer<ValidatorType>[], validator: ValidatorType) => Validatables, validation: (result: Validatables) => ValidatableType, message: (result: Validatables) => MessageType): List<MessageType, ValidatorType, Validatables, ValidatableType>;
+export default function ListCallback<MessageType = unknown, ValidatorType extends Validator = Validator, Validatables extends Instance[] = Instance[], ValidatableType extends Validatable = Validatable>(validator: ValidatorType, map: (value: BaseInfer<ValidatorType>[], validator: ValidatorType) => Validatables, validation: (result: Validatables) => ValidatableType, message: (result: Validatables) => MessageType): List<MessageType, ValidatorType, Validatables, ValidatableType>;

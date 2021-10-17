@@ -11,7 +11,7 @@ import ValidatorType from "@dikac/t-type/validator/type-standard";
 import ValidatorInstance from "@dikac/t-class/validator/instance-standard";
 import Value from "@dikac/t-value/value";
 import Instance from "@dikac/t-validator/validatable/validatable";
-import ListCallbackFunction from "../../dist/validator/list-callback-function";
+import ListCallbackFunction from "../../dist/validator/list-callback";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

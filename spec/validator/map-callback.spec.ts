@@ -1,4 +1,4 @@
-import MapCallbackFunction from "../../dist/validator/map-callback-function";
+import MapCallbackFunction from "../../dist/validator/map-callback";
 import Standard from "../../dist/validator/validatable/list/map";
 import MapPartial from "../../dist/validator/validatable/list/map-partial";
 import And from "../../dist/validatable/and";

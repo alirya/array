@@ -4,6 +4,10 @@ import ValidateMap from "./validatable/list/map";
 import ListReturn from "./validatable/list/infer";
 import MapCallbackInterface from "./map";
 import MapCallback from "./map-callback";
+import InferMessage from "../message/message/list/infer";
+import InferReturn from "@dikac/t-validator/validatable/infer-unambiguous";
+import InferList from "./validatable/list/infer";
+import Map from "../message/message/list/map";
 
 /**
  * more specific implementation of {@link MapCallback}
@@ -22,13 +26,32 @@ import MapCallback from "./map-callback";
 export default function  MapAll<
     Validators extends Validator[] = Validator[],
     ValidatableType extends Validatable = Validatable,
+    >(
+    validators : Validators,
+    validation : (result:ListReturn<Validators>)=>ValidatableType,
+) : MapCallbackInterface<Validators, ListReturn<Validators>, InferMessage<InferList<Validators>>, ValidatableType>;
+
+export default function  MapAll<
+    Validators extends Validator[] = Validator[],
+    ValidatableType extends Validatable = Validatable,
+    MessageType = unknown,
+    >(
+    validators : Validators,
+    validation : (result:ListReturn<Validators>)=>ValidatableType,
+    message : (result:ListReturn<Validators>)=>MessageType
+) : MapCallbackInterface<Validators, ListReturn<Validators>, MessageType, ValidatableType>;
+
+export default function  MapAll<
+    Validators extends Validator[] = Validator[],
+    ValidatableType extends Validatable = Validatable,
     MessageType = unknown,
 >(
     validators : Validators,
     validation : (result:ListReturn<Validators>)=>ValidatableType,
-    message : (result:ListReturn<Validators>)=>MessageType
+    message : (result:ListReturn<Validators>)=>MessageType|InferMessage<InferList<Validators>> = Map
 ) : MapCallbackInterface<Validators, ListReturn<Validators>, MessageType, ValidatableType>  {
 
-    return MapCallback(validators, ValidateMap, validation, message);
+    return MapCallback(validators, ValidateMap, validation, message) as
+        MapCallbackInterface<Validators, ListReturn<Validators>, MessageType, ValidatableType>;
 }
 

@@ -3,7 +3,7 @@ import SimpleValidator from "@dikac/t-validator/simple";
 import ValidatorContainer from "@dikac/t-validator/validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import ValidatorValidatable from "@dikac/t-validator/validatable/validatable";
 import Validation from "@dikac/t-validatable/validation/validation";
 import BaseInfer from "@dikac/t-validator/base/infer";
 import TypeInfer from "@dikac/t-validator/expectation/infer";
@@ -29,18 +29,13 @@ import ValidatableListInterface from "../validatable/list";
 type List<
     MessageType,
     ValidatorType extends Validator,
-    Validatables extends Instance[],
+    Validatables extends ValidatorValidatable[],
     ValidatableType extends Validatable
 > =
     SimpleValidator<
         BaseInfer<ValidatorType>[],
         TypeInfer<ValidatorType>[],
         ValidatableListInterface<TypeInfer<ValidatorType>[], ValidatorType, Validatables, MessageType, ValidatableType>
-    >/*,
-    ValidatorContainer<ValidatorType>,
-    Message<(result:Validatables)=>MessageType>,
-    Validation<(result:Validatables)=>ValidatableType> {
-
-};*/
+    >
 export default List;
 

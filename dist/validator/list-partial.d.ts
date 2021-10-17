@@ -3,6 +3,7 @@ import Validatable from "@dikac/t-validatable/validatable";
 import InferReturn from "@dikac/t-validator/validatable/infer-unambiguous";
 import Union from "../union";
 import List from "./list";
+import InferMessage from "../message/message/list/infer";
 /**
  * more specific implementation of {@link ListCallback}
  *
@@ -21,4 +22,5 @@ import List from "./list";
  * @param stop
  * stop validation operation condition
  */
+export default function ListPartial<ValidatorType extends Validator = Validator, ValidatableType extends Validatable = Validatable>(validator: ValidatorType, validation: (result: Union<InferReturn<ValidatorType>[]>) => ValidatableType, stop?: boolean): List<Union<InferMessage<InferReturn<ValidatorType>[]>>, ValidatorType, Union<InferReturn<ValidatorType>[]>, ValidatableType>;
 export default function ListPartial<MessageType = unknown, ValidatorType extends Validator = Validator, ValidatableType extends Validatable = Validatable>(validator: ValidatorType, validation: (result: Union<InferReturn<ValidatorType>[]>) => ValidatableType, message: (result: Union<InferReturn<ValidatorType>[]>) => MessageType, stop?: boolean): List<MessageType, ValidatorType, Union<InferReturn<ValidatorType>[]>, ValidatableType>;

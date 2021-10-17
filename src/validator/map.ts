@@ -38,11 +38,6 @@ type Map<
         BaseList<ValidatorsType>,
         TypeList<ValidatorsType>,
         ValidatableMapInterface<ValidatorsType, Validatables, MessageType, ValidatableType, BaseList<ValidatorsType>>
-    >;/*,
-    Validators<ValidatorsType>,
-    Message<(results:Validatables)=>MessageType>,
-    Validation<(results:Validatables)=>ValidatableType> {
-
-}*/
+    >;
 
 export default Map;
