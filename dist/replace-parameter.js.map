@@ -1,0 +1,1 @@
+{"version":3,"file":"replace-parameter.js","sourceRoot":"","sources":["../src/replace-parameter.ts"],"names":[],"mappings":"AAEA,OAAO,iBAAiB,MAAM,sBAAsB,CAAC;AA8BrD,MAAM,CAAC,OAAO,UAAU,gBAAgB,CACpC,EACI,IAAI,EACJ,KAAK,EACL,KAAK,EACL,OAAO,GAC+D;IAG1E,OAAO,iBAAiB,CAAC,IAAI,IAAI,KAAK,EAAE,KAAK,EAAE,OAAO,CAAC,CAAA;AAC3D,CAAC"}

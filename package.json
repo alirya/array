@@ -3,14 +3,14 @@
   "version": "0.26.0-alpha.0",
   "description": "Typescript array",
   "dependencies": {
-    "@dikac/t-boolean": "^0.11.0-beta.0",
-    "@dikac/t-function": "^0.15.0-beta.4",
+    "@dikac/t-boolean": "^0.11.0-beta.1",
+    "@dikac/t-function": "^0.15.0-beta.5",
     "@dikac/t-iterable": "^0.4.4",
     "@dikac/t-message": "^0.11.3",
     "@dikac/t-object": "^0.37.0-alpha.1",
     "@dikac/t-string": "^0.16.0-alpha.0",
     "@dikac/t-validatable": "^0.20.0-beta.4",
-    "@dikac/t-validator": "^0.19.0-beta.11",
+    "@dikac/t-validator": "^0.19.0-beta.12",
     "@dikac/t-value": "^0.14.6",
     "ts-toolbelt": "^9.6.0",
     "utility-types": "^3.10.0"
@@ -18,8 +18,8 @@
   "devDependencies": {
     "@dikac/t-class": "^0.3.0-beta.2",
     "@dikac/t-type": "^0.7.0-beta.1",
-    "@types/jasmine": "^3.10.1",
-    "@types/node": "^12.20.34",
+    "@types/jasmine": "^3.10.2",
+    "@types/node": "^12.20.37",
     "cpy-cli": "^3.1.1",
     "esm": "^3.2.25",
     "jasmine": "^3.10.0",
@@ -29,7 +29,7 @@
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "ts-cleaner": "^1.0.5",
-    "typescript": "^4.4.4"
+    "typescript": "^4.5.2"
   },
   "scripts": {
     "spec-run-js": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
