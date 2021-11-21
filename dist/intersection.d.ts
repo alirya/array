@@ -1,8 +1,9 @@
-/**
- * return data which exists in all array
- *
- * @param compare
- * @param arrays
- * @constructor
- */
-export default function Intersection<Value>(compare?: (target: Value, comparison: Value) => boolean, ...arrays: ReadonlyArray<Value>[]): Value[];
+import IntersectionParameter, { IntersectionParameterList, IntersectionParameterValue } from "./intersection-parameter";
+import IntersectionParameters from "./intersection-parameters";
+declare namespace Intersection {
+    const Parameters: typeof IntersectionParameters;
+    const Parameter: typeof IntersectionParameter;
+    type ArgumentValue<Type> = IntersectionParameterValue<Type>;
+    type ArgumentList<Type> = IntersectionParameterList<Type>;
+}
+export default Intersection;

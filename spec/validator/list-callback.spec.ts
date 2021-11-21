@@ -1,17 +1,17 @@
-import ValueAll from "../../dist/validator/value-all";
-import ListReturn from "../../dist/validator/validatable/list/list";
-import ListReturnPartial from "../../dist/validator/validatable/list/list-partial";
-import And from "../../dist/validatable/and";
-import Or from "../../dist/validatable/or";
+import ValueAll from "../../dist/validator/value-all-parameters";
+import ListReturn from "../../dist/validator/validatable/list/list-parameters";
+import ListReturnPartial from "../../dist/validator/validatable/list/list-partial-parameters";
+import And from "../../dist/validatable/and-parameters";
+import Or from "../../dist/validatable/or-parameters";
 import Validatable from "@dikac/t-validatable/validatable";
 import ValidatorInterface from "@dikac/t-validator/simple";
 import Message from "@dikac/t-message/message";
 import MessageMap from "../../dist/message/message/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-standard";
-import ValidatorInstance from "@dikac/t-class/validator/instance-standard";
+import ValidatorType from "@dikac/t-type/validator/type-parameters";
+import ValidatorInstance from "@dikac/t-class/validator/instance-parameters";
 import Value from "@dikac/t-value/value";
-import Instance from "@dikac/t-validator/validatable/validatable";
-import ListCallbackFunction from "../../dist/validator/list-callback";
+import Instance from "@dikac/t-validator/validatable/dynamic";
+import ListCallbackFunction from "../../dist/validator/list-callback-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -934,6 +934,7 @@ describe("recursive", function() {
                 );
 
                 let or = validator(value);
+
 
                 expect(or.valid).toBe(true);
                 expect(or.value).toBe(value);

@@ -1,5 +1,5 @@
 import Message from "@dikac/t-message/message";
-import Join from "./join";
+import Join from "./join-parameters";
 import Messages from "./messages/messages";
 
 export default function Or<MessageType extends Message<string>[]>(

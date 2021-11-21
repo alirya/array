@@ -1,12 +1,9 @@
-export default function And(booleans, defaults = true) {
-    if (!booleans.length) {
-        return defaults;
-    }
-    for (let boolean of booleans) {
-        if (!boolean) {
-            return false;
-        }
-    }
-    return true;
-}
+import AndParameters from "./and-parameters";
+import AndParameter from "./and-parameter";
+var And;
+(function (And) {
+    And.Parameter = AndParameter;
+    And.Parameters = AndParameters;
+})(And || (And = {}));
+export default And;
 //# sourceMappingURL=and.js.map

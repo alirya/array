@@ -1,12 +1,9 @@
-export default function Map(values, validations) {
-    if (values.length === validations.length) {
-        for (let [index, value] of values.entries()) {
-            if (!validations[index](...value)) {
-                return false;
-            }
-        }
-        return true;
-    }
-    return false;
-}
+import MapParameters from "./map-parameters";
+import MapParameter from "./map-parameter";
+var Map;
+(function (Map) {
+    Map.Parameter = MapParameter;
+    Map.Parameters = MapParameters;
+})(Map || (Map = {}));
+export default Map;
 //# sourceMappingURL=map.js.map

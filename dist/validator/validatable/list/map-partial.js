@@ -1,13 +1,9 @@
-export default function Map(values, validators, stop = false) {
-    const result = [];
-    for (let [property, validator] of validators.entries()) {
-        const value = values[property];
-        const validatable = validator(value);
-        result[property] = validatable;
-        if (validatable.valid === stop) {
-            return result;
-        }
-    }
-    return result;
-}
+import MapPartialParameter from "./map-partial-parameter";
+import MapPartialParameters from "./map-partial-parameters";
+var MapPartial;
+(function (MapPartial) {
+    MapPartial.Parameter = MapPartialParameter;
+    MapPartial.Parameters = MapPartialParameters;
+})(MapPartial || (MapPartial = {}));
+export default MapPartial;
 //# sourceMappingURL=map-partial.js.map

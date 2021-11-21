@@ -1,15 +1,9 @@
-import NotEmptyArgument from "../boolean/not-empty";
-export default class NotEmpty {
-    constructor(value, _message) {
-        this.value = value;
-        this._message = _message;
-        this.valid = NotEmptyArgument(value);
-    }
-    *[Symbol.iterator]() {
-        yield* this.value;
-    }
-    get message() {
-        return this._message(this);
-    }
-}
+import NotEmptyParameter from "./not-empty-parameter";
+import NotEmptyParameters from "./not-empty-parameters";
+var NotEmpty;
+(function (NotEmpty) {
+    NotEmpty.Parameter = NotEmptyParameter;
+    NotEmpty.Parameters = NotEmptyParameters;
+})(NotEmpty || (NotEmpty = {}));
+export default NotEmpty;
 //# sourceMappingURL=not-empty.js.map

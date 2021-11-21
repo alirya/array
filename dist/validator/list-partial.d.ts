@@ -1,26 +1,10 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import InferReturn from "@dikac/t-validator/validatable/infer-unambiguous";
-import Union from "../union";
-import List from "./list";
-import InferMessage from "../message/message/list/infer";
-/**
- * more specific implementation of {@link ListCallback}
- *
- * Validate list of value with {@link Validator}
- * stop on encounter invalid result from {@link Validator}
- *
- * @param validator
- * to be used against list of value
- *
- * @param validation
- * process all result from {@link Validator} list into {@link Validatable}
- *
- * @param message
- * process all result from {@link Validator} list into {@link Message} value
- *
- * @param stop
- * stop validation operation condition
- */
-export default function ListPartial<ValidatorType extends Validator = Validator, ValidatableType extends Validatable = Validatable>(validator: ValidatorType, validation: (result: Union<InferReturn<ValidatorType>[]>) => ValidatableType, stop?: boolean): List<Union<InferMessage<InferReturn<ValidatorType>[]>>, ValidatorType, Union<InferReturn<ValidatorType>[]>, ValidatableType>;
-export default function ListPartial<MessageType = unknown, ValidatorType extends Validator = Validator, ValidatableType extends Validatable = Validatable>(validator: ValidatorType, validation: (result: Union<InferReturn<ValidatorType>[]>) => ValidatableType, message: (result: Union<InferReturn<ValidatorType>[]>) => MessageType, stop?: boolean): List<MessageType, ValidatorType, Union<InferReturn<ValidatorType>[]>, ValidatableType>;
+import ListPartialParameter, { ListPartialArgument } from "./list-partial-parameter";
+import ListPartialParameters from "./list-partial-parameters";
+declare namespace ListPartial {
+    const Parameter: typeof ListPartialParameter;
+    const Parameters: typeof ListPartialParameters;
+    type Argument<MessageType = unknown, ValidatorType extends Validator = Validator, ValidatableType extends Validatable = Validatable> = ListPartialArgument<MessageType, ValidatorType, ValidatableType>;
+}
+export default ListPartial;

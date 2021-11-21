@@ -1,12 +1,9 @@
-import Validatable from "@dikac/t-validatable/validatable";
-import IterableOr from "@dikac/t-iterable/validatable/boolean/or";
+import OrParameter from "./or-parameter";
+import OrParameters from "./or-parameters";
 
-export default function Or<
-    Validatables extends Validatable[]
->(
-    validatables : Validatables,
-    defaults : boolean = true
-) : boolean {
+namespace Or {
 
-    return IterableOr(validatables, defaults);
+    export const Parameters  = OrParameters;
+    export const Parameter = OrParameter;
 }
+export default Or;

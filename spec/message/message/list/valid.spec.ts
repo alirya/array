@@ -1,15 +1,15 @@
-import ValidatorType from "@dikac/t-type/validator/type-standard";
-import ValueAll from "../../../../dist/validator/value-all";
-import And from "../../../../dist/validatable/and";
+import ValidatorType from "@dikac/t-type/validator/type-parameters";
+import ValueAll from "../../../../dist/validator/value-all-parameters";
+import And from "../../../../dist/validatable/and-parameters";
 import MessageMapValid from "../../../../dist/message/message/list/valid";
-import Value from "../../../../dist/validator/value-partial";
-import ValidateValue from "../../../../dist/validator/validatable/list/value";
-import MapAll from "../../../../dist/validator/map-all";
-import Map from "../../../../dist/validator/map-partial";
+import Value from "../../../../dist/validator/value-partial-parameters";
+import ValidateValue from "../../../../dist/validator/validatable/list/value-parameters";
+import MapAll from "../../../../dist/validator/map-all-parameters";
+import Map from "../../../../dist/validator/map-partial-parameters";
 import Validatable from "@dikac/t-validatable/validatable";
-import ValueCallback from "../../../../dist/validator/value-callback";
-import MapCallbackFunction from "../../../../dist/validator/map-callback";
-import Standard from "../../../../dist/validator/validatable/list/map";
+import ValueCallback from "../../../../dist/validator/value-callback-parameters";
+import MapCallbackFunction from "../../../../dist/validator/map-callback-parameters";
+import Standard from "../../../../dist/validator/validatable/list/map-parameters";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

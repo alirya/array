@@ -1,23 +1,9 @@
-import Equal from "@dikac/t-boolean/equal";
+import IndexesParameter from "./indexes-parameter";
+import IndexesParameters from "./indexes-parameters";
 
-export default function  Indexes<Value, Compare> (
-    array : ReadonlyArray<Value>,
-    value : Compare,
-    validator : (value : Value, argument : Compare) => boolean = <(value : Value, argument : Compare) => boolean>Equal,
-    start : number = 0,
-    end : number = Infinity,
-) : number[] {
+namespace Indexes {
 
-    let indexes : number[] = [];
-
-    for(let i = start; array[i] !== undefined && i <= end; i++) {
-
-        if(validator(array[i], value)) {
-
-            indexes.push(i);
-        }
-    }
-
-    return indexes;
-
+    export const Parameters = IndexesParameters;
+    export const Parameter = IndexesParameter;
 }
+export default Indexes;

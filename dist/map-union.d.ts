@@ -1,4 +1,4 @@
-import MapUnion from "./union";
+import MapUnion from "./unions";
 /**
  * @deprecated use original instead
  */

@@ -1,10 +1,17 @@
-import ArrayType from "../string/array";
+import ArrayParameters from "./array-parameters";
+import ArrayParameter from "./array-parameter";
 
-export default function Array(
-    string : unknown,
-    subject : string = 'type',
-    conversion : (value: unknown)=>string = value=>typeof value
-) : Error {
+/**
+ * assert if {@param array} is array of {@template Value}
+ *
+ * {@param validation} is use to validate for {@template array}
+ *
+ * @param error
+ */
 
-    return new Error(ArrayType(false, string, subject, conversion))
+namespace Array {
+
+    export const Parameter : typeof ArrayParameter = ArrayParameter;
+    export const Parameters : typeof ArrayParameters = ArrayParameters;
 }
+export default Array;

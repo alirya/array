@@ -1,24 +1,12 @@
-import RemovesValue from "./removes-value";
-import Equal from "@dikac/t-boolean/equal";
+import RemovesValuesParameter, {RemovesValuesArgument} from "./removes-values-parameter";
+import RemovesValuesParameters from "./removes-values-parameters";
 
-export default function RemovesValues<Value>(
-    array : Value[],
-    values : Iterable<Value>,
-    validator : (arrayValue : Value, valueArgument : Value) => boolean = Equal,
-    start : number = 0,
-    end : number = Infinity,
-    limit : number = Infinity
-) : Value[] {
+namespace RemovesValues {
 
-    let removed : Value[]  = [];
-
-    for (let value of values) {
-
-        let _removed = RemovesValue(array, value, validator, start, end, limit);
-        limit = limit - _removed.length;
-
-        removed.push(..._removed);
-    }
-
-    return removed;
+    export const Parameters = RemovesValuesParameters;
+    export const Parameter = RemovesValuesParameter;
+    export type Argument<Value> = RemovesValuesArgument<Value>;
 }
+
+
+export default RemovesValues;

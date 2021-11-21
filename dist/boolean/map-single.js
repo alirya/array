@@ -1,12 +1,9 @@
-export default function MapSingle(values, validations) {
-    if (values.length === validations.length) {
-        for (let [index, value] of values.entries()) {
-            if (!validations[index](value)) {
-                return false;
-            }
-        }
-        return true;
-    }
-    return false;
-}
+import MapSingleParameters from "./map-single-parameters";
+import MapSingleParameter from "./map-single-parameter";
+var MapSingle;
+(function (MapSingle) {
+    MapSingle.Parameter = MapSingleParameters;
+    MapSingle.Parameters = MapSingleParameter;
+})(MapSingle || (MapSingle = {}));
+export default MapSingle;
 //# sourceMappingURL=map-single.js.map

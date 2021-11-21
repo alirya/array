@@ -1,5 +1,5 @@
-import Map from "../../../../dist/validator/validatable/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-standard";
+import Map from "../../../../dist/validator/validatable/list/map-parameters";
+import ValidatorType from "@dikac/t-type/validator/type-parameters";
 
 
 it("force console log", () => spyOn(console, 'log').and.callThrough());

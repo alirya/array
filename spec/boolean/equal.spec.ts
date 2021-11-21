@@ -1,5 +1,5 @@
-import Equal from "../../dist/boolean/equal";
-import Shuffle from "../../dist/shuffle";
+import Equal from "../../dist/boolean/equal-parameters";
+import Shuffle from "../../dist/shuffle-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

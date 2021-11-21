@@ -1,5 +1,5 @@
-import Join from "./join";
+import JoinParameters from "./join-parameters";
 export default function And(messages) {
-    return new Join(messages, ' and ');
+    return new JoinParameters(messages, ' and ');
 }
 //# sourceMappingURL=and.js.map

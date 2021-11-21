@@ -1,8 +1,12 @@
-import ArrayValidatable from "../validatable/array";
-import ArrayMessage from "../validatable/string/array";
-export default function Array_(message = ArrayMessage) {
-    return function (value) {
-        return ArrayValidatable(value, message);
-    };
-}
+import ArrayParameter from "./value-callback-parameter";
+import ArrayParameters from "./value-callback-parameters";
+/**
+ *  validate if value is array
+ */
+var Array;
+(function (Array) {
+    Array.Parameter = ArrayParameter;
+    Array.Parameters = ArrayParameters;
+})(Array || (Array = {}));
+export default Array;
 //# sourceMappingURL=array.js.map

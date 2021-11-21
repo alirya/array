@@ -1,12 +1,12 @@
-import Value from "../../dist/validator/value-partial";
-import And from "../../dist/validatable/and";
+import Value from "../../dist/validator/value-partial-parameters";
+import And from "../../dist/validatable/and-parameters";
 import ValidatablesInterface from "../../dist/validatable/validatables/validatables";
 import Validatables from "../../dist/validatable/validatables/validatables";
 import Validatable from "@dikac/t-validatable/validatable";
 import SimpleValidator from "@dikac/t-validator/simple";
 import MessageMap from "../../dist/message/message/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-standard";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import ValidatorType from "@dikac/t-type/validator/type-parameters";
+import Instance from "@dikac/t-validator/validatable/dynamic";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

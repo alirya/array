@@ -1,9 +1,9 @@
-import Value from "../../dist/validatable/value-callback";
-import ValidateValue from "../../dist/validator/validatable/list/value";
-import ValidateValuePartial from "../../dist/validator/validatable/list/value-partial";
-import And from "../../dist/validatable/and";
-import Or from "../../dist/validatable/or";
-import Validatables from "../../dist/validatable/callback";
+import Value from "../../dist/validatable/value-callback-parameters";
+import ValidateValue from "../../dist/validator/validatable/list/value-parameters";
+import ValidateValuePartial from "../../dist/validator/validatable/list/value-partial-parameters";
+import And from "../../dist/validatable/and-parameters";
+import Or from "../../dist/validatable/or-parameters";
+import Validatables from "../../dist/validatable/callback-parameters";
 import Validatable from "@dikac/t-validatable/validatable";
 import ValidatableInterface from "@dikac/t-validatable/validatable";
 import SimpleValidator from "@dikac/t-validator/simple";
@@ -11,8 +11,8 @@ import ValueInterface from "@dikac/t-value/value";
 import Message from "@dikac/t-message/message";
 import MessageMap from "../../dist/message/message/list/map";
 import MessageInterface from "@dikac/t-message/message";
-import ValidatorType from "@dikac/t-type/validator/type-standard";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import ValidatorType from "@dikac/t-type/validator/type-parameters";
+import Instance from "@dikac/t-validator/validatable/dynamic";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -25,7 +25,7 @@ describe("compiler compatibility", function() {
 
     describe("implicit complete", function() {
 
-        let validatable = new Value('data', validator, (value, validators) => ValidateValue(value, validators), And, (v)=>MessageMap(v));
+        let validatable = new Value('data', validator, ValidateValue, And, MessageMap);
 
         let key : Validatable = validatable[0];
 

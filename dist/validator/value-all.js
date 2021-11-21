@@ -1,7 +1,9 @@
-import ValidateValue from "./validatable/list/value";
-import ValueCallback from "./value-callback";
-import Map from "../message/message/list/map";
-export default function ValueAll(validators, validation, message = Map) {
-    return ValueCallback(validators, ValidateValue, validation, message);
-}
+import ValueAllParameter from "./value-all-parameter";
+import ValueAllParameters from "./value-all-parameters";
+var ValueAll;
+(function (ValueAll) {
+    ValueAll.Parameter = ValueAllParameter;
+    ValueAll.Parameters = ValueAllParameters;
+})(ValueAll || (ValueAll = {}));
+export default ValueAll;
 //# sourceMappingURL=value-all.js.map

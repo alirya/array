@@ -1,0 +1,1 @@
+{"version":3,"file":"or-parameter.js","sourceRoot":"","sources":["../../../src/validatable/boolean/or-parameter.ts"],"names":[],"mappings":"AAEA,OAAO,YAAY,MAAM,iBAAiB,CAAC;AAG3C,MAAM,CAAC,OAAO,UAAU,WAAW,CAC/B,EACI,YAAY,EACZ,QAAQ,GACkC;IAE9C,OAAO,YAAY,CAAC,YAAY,EAAE,QAAQ,CAAC,CAAC;AAChD,CAAC"}

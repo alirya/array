@@ -1,4 +1,9 @@
-export default function RemoveIndex(array : any[], index : number) : boolean {
+import RemoveIndexParameter from "./remove-index-parameter";
+import RemoveIndexParameters from "./remove-index-parameters";
 
-    return array.splice(index, 1).length !== 0;
+namespace RemoveIndex {
+
+    export const Parameter = RemoveIndexParameter;
+    export const Parameters = RemoveIndexParameters;
 }
+export default RemoveIndex;

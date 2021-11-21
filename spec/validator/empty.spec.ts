@@ -1,5 +1,5 @@
-import Empty from "../../dist/validator/empty";
-import EmptyMessage from "../../dist/validatable/string/empty";
+import Empty from "../../dist/validator/empty-parameters";
+import EmptyMessage from "../../dist/validatable/string/empty-parameters";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough()});
 

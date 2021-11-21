@@ -1,0 +1,1 @@
+{"version":3,"file":"difference-both-parameter.js","sourceRoot":"","sources":["../src/difference-both-parameter.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,wBAAwB,CAAC;AAG3C,OAAO,wBAAwB,MAAM,8BAA8B,CAAC;AAEpE,MAAM,CAAC,OAAO,UAAU,uBAAuB,CAC3C,UAAwD,KAAK,EAC7D,EACI,IAAI,EACJ,UAAU,EACsE;IAGpF,OAAO,wBAAwB,CAAC,GAAG,IAAI,EAAE,UAAU,CAAC,CAAA;AACxD,CAAC"}

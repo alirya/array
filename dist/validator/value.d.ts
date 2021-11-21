@@ -2,7 +2,7 @@ import Validator from "@dikac/t-validator/validator";
 import SimpleValidator from "@dikac/t-validator/simple";
 import Validatable from "@dikac/t-validatable/validatable";
 import ValidatableValueInterface from "../validatable/value";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Instance from "@dikac/t-validator/validatable/dynamic";
 /**
  * Base {@link Validator} for validating value with list of {@link Validator}
  *

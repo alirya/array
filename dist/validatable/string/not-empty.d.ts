@@ -1,3 +1,7 @@
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
-export default function NotEmpty(object: Readonly<Value<unknown[]> & Validatable>): string;
+import NotEmptyParameter from "./not-empty-parameter";
+import NotEmptyParameters from "./not-empty-parameters";
+declare namespace NotEmpty {
+    const Parameter: typeof NotEmptyParameter;
+    const Parameters: typeof NotEmptyParameters;
+}
+export default NotEmpty;

@@ -1,15 +1,15 @@
-import MapCallbackFunction from "../../dist/validator/map-callback";
-import Standard from "../../dist/validator/validatable/list/map";
-import MapPartial from "../../dist/validator/validatable/list/map-partial";
-import And from "../../dist/validatable/and";
-import Or from "../../dist/validatable/or";
+import MapCallbackFunction from "../../dist/validator/map-callback-parameters";
+import Standard from "../../dist/validator/validatable/list/map-parameters";
+import MapPartial from "../../dist/validator/validatable/list/map-partial-parameters";
+import And from "../../dist/validatable/and-parameters";
+import Or from "../../dist/validatable/or-parameters";
 import Validatable from "@dikac/t-validatable/validatable";
 import SimpleValidator from "@dikac/t-validator/simple";
 import Message from "@dikac/t-message/message";
 import MessageMap from "../../dist/message/message/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-standard";
+import ValidatorType from "@dikac/t-type/validator/type-parameters";
 import Value from "@dikac/t-value/value";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Instance from "@dikac/t-validator/validatable/dynamic";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

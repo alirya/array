@@ -1,10 +1,11 @@
-import Message from "@dikac/t-message/message";
-import JoinObject from "../join";
+import JoinParameters from "./join-parameters";
+import JoinParameter from "./join-parameter";
 
-export default function Join<MessageT extends Message<string>[]>(
-    messages : MessageT,
-    delimiter : string
-) : string {
 
-    return new JoinObject(messages, delimiter).message
+namespace Join {
+
+    export const Parameter  = JoinParameter;
+    export const Parameters = JoinParameters;
 }
+
+export default Join;

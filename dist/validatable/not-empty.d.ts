@@ -1,12 +1,9 @@
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
-import Message from "@dikac/t-message/message";
-import { List } from "ts-toolbelt";
-export default class NotEmpty<MessageType, Values extends unknown[]> implements Readonly<Value<Values> & Message<MessageType> & Validatable>, Iterable<List.UnionOf<Values>> {
-    readonly value: Values;
-    private _message;
-    readonly valid: boolean;
-    constructor(value: Values, _message: (result: Readonly<Value<Values> & Validatable>) => MessageType);
-    [Symbol.iterator](): Iterator<List.UnionOf<Values>>;
-    get message(): MessageType;
+import NotEmptyParameter, { NotEmptyArgument } from "./not-empty-parameter";
+import NotEmptyParameters, { NotEmptyType } from "./not-empty-parameters";
+declare namespace NotEmpty {
+    const Parameter: typeof NotEmptyParameter;
+    const Parameters: typeof NotEmptyParameters;
+    type Type<Values extends unknown[], MessageType> = NotEmptyType<Values, MessageType>;
+    type Argument<Values extends unknown[], MessageType> = NotEmptyArgument<Values, MessageType>;
 }
+export default NotEmpty;

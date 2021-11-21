@@ -1,2 +1,7 @@
-import Map from "../function/parameter/list/map";
-export default function Map<List extends unknown[][]>(values: Readonly<List>, validations: Readonly<Map<List>>): boolean;
+import MapParameters from "./map-parameters";
+import MapParameter from "./map-parameter";
+declare namespace Map {
+    const Parameter: typeof MapParameter;
+    const Parameters: typeof MapParameters;
+}
+export default Map;

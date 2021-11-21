@@ -1,14 +1,9 @@
-export default function Or(booleans, defaults = true) {
-    if (!booleans.length) {
-        return defaults;
-    }
-    let result = false;
-    for (let boolean of booleans) {
-        result = result || boolean;
-        if (boolean) {
-            return true;
-        }
-    }
-    return false;
-}
+import OrParameters from "./or-parameters";
+import OrParameter from "./or-parameter";
+var Or;
+(function (Or) {
+    Or.Parameter = OrParameter;
+    Or.Parameters = OrParameters;
+})(Or || (Or = {}));
+export default Or;
 //# sourceMappingURL=or.js.map

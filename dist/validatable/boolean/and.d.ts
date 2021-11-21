@@ -1,2 +1,7 @@
-import Validatable from "@dikac/t-validatable/validatable";
-export default function And<Validatables extends Validatable[]>(validatables: Validatables, defaults?: boolean): boolean;
+import AndParameters from "./and-parameters";
+import AndParameter from "./and-parameter";
+declare namespace And {
+    const Parameter: typeof AndParameter;
+    const Parameters: typeof AndParameters;
+}
+export default And;

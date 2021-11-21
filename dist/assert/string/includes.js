@@ -1,10 +1,9 @@
-import Sentence from "@dikac/t-string/message/sentence";
-export default function Includes(valid, subject = '') {
-    const sentence = new Sentence(valid);
-    sentence.subject = subject;
-    sentence.accept = 'is exists in';
-    sentence.reject = 'is not exists in';
-    sentence.expect = 'array';
-    return sentence.message;
-}
+import IncludesParameter from "./includes-parameter";
+import IncludesParameters from "./includes-parameters";
+var Includes;
+(function (Includes) {
+    Includes.Parameter = IncludesParameter;
+    Includes.Parameters = IncludesParameters;
+})(Includes || (Includes = {}));
+export default Includes;
 //# sourceMappingURL=includes.js.map

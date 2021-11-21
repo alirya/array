@@ -1,5 +1,5 @@
-import Callback from "@dikac/t-function/assert/callback";
-import Guard from "../boolean/list";
+import ListParameters from "./list-parameters";
+import ListParameter from "./list-parameter";
 
 /**
  * assert if {@param list} is list of {@template Value}
@@ -9,14 +9,9 @@ import Guard from "../boolean/list";
  * @param error
  */
 
-export default function List<
-    Value extends Argument,
-    Argument extends unknown,
->(
-    list : ReadonlyArray<Argument>,
-    validation : (value:Argument)=>value is Value,
-    error : (value:unknown)=>Error
-) : asserts list is Value[] {
+namespace List {
 
-    Callback(list, (value : ReadonlyArray<Argument>)=>Guard(value, validation), error);
+    export const Parameter : typeof ListParameter = ListParameter;
+    export const Parameters : typeof ListParameters = ListParameters;
 }
+export default List;

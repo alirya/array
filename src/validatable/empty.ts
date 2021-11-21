@@ -1,42 +1,72 @@
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
-import Message from "@dikac/t-message/message";
-import EmptyArgument from "../boolean/empty";
-import {List} from "ts-toolbelt";
+import EmptyParameter from "./empty-parameter";
+import EmptyParameters from "./empty-parameters";
 
+namespace Empty {
+    export const Parameter = EmptyParameter;
+    export const Parameters = EmptyParameters;
+    //export type Type<Values extends unknown[], MessageType> = EmptyParameterType<Values, MessageType>;
 
-export default class Empty<MessageType, Values extends unknown[]>
-    implements
-        Readonly<Value<Values>>,
-        Readonly<Message<MessageType>>,
-        Readonly<Validatable>,
-        Iterable<List.UnionOf<Values>>
-{
-    readonly valid : boolean;
-
-    constructor(
-        readonly value : Values,
-        private _message : (result:Readonly<Value<Values> & Validatable>)=>MessageType,
-    ) {
-
-        this.valid = EmptyArgument(value);
-    }
-
-    * [Symbol.iterator](): Iterator<List.UnionOf<Values>> {
-
-        yield * this.value;
-    }
-
-    get message() : MessageType {
-
-        try {
-
-            return this._message(this);
-
-        } catch (e) {
-
-            throw new Error(`error on generating message, ${e}`)
-        }
-
-    }
 }
+export default Empty;
+// export type EmptyParameterType<Values extends unknown[], MessageType> = Readonly<Validatable<Values, MessageType>>;
+
+// export function EmptyParameter<Values extends unknown[], MessageType>(
+//     value : Values,
+//     message : (result:Readonly<Value<Values> & Validatable>)=>MessageType,
+// ) : Readonly<Validatable<Values, MessageType>> {
+//
+//     return new Callback.Parameter(value, EmptyArgument, message)
+// }
+//
+// export function EmptyObject<MessageType, Values extends unknown[]>(
+//     // value : Values,
+//     // message : (result:Readonly<Value<Values> & Validatable>)=>MessageType,
+//     {
+//         value,
+//         message,
+//     } : Value<Values> & Message<(result:Readonly<Value<Values> & Validatable>)=>MessageType>
+// ) : Readonly<Validatable<Values, MessageType>> {
+//
+//     return new Callback.Parameter(value, EmptyArgument, message)
+// }
+
+
+//
+//
+// export default class Empty<MessageType, Values extends unknown[]>
+//     implements
+//         Readonly<Value<Values>>,
+//         Readonly<Message<MessageType>>,
+//         Readonly<Validatable>,
+//         Iterable<List.UnionOf<Values>>
+// {
+//     readonly valid : boolean;
+//     #message : (result:Readonly<Value<Values> & Validatable>)=>MessageType;
+//
+//     constructor(
+//         readonly value : Values,
+//         message : (result:Readonly<Value<Values> & Validatable>)=>MessageType,
+//     ) {
+//
+//         this.#message = message;
+//         this.valid = EmptyArgument(value);
+//     }
+//
+//     * [Symbol.iterator](): Iterator<List.UnionOf<Values>> {
+//
+//         yield * this.value;
+//     }
+//
+//     get message() : MessageType {
+//
+//         try {
+//
+//             return this.#message(this);
+//
+//         } catch (e) {
+//
+//             throw new Error(`error on generating message, ${e}`)
+//         }
+//
+//     }
+// }

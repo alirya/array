@@ -1,5 +1,9 @@
-import JoinObject from "../join";
-export default function Join(messages, delimiter) {
-    return new JoinObject(messages, delimiter).message;
-}
+import JoinParameters from "./join-parameters";
+import JoinParameter from "./join-parameter";
+var Join;
+(function (Join) {
+    Join.Parameter = JoinParameter;
+    Join.Parameters = JoinParameters;
+})(Join || (Join = {}));
+export default Join;
 //# sourceMappingURL=join.js.map

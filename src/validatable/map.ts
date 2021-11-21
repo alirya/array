@@ -7,7 +7,7 @@ import Validators from "../validator/validators/validators";
 import Message from "@dikac/t-message/message";
 import Messages from "../message/messages/messages";
 import Validatables from "./validatables/validatables";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Instance from "@dikac/t-validator/validatable/dynamic";
 import BaseList from "../validator/base/list/infer";
 
 export default interface Map<
@@ -23,9 +23,7 @@ export default interface Map<
     Readonly<Validatables<Result>>,
     Readonly<Message<MessageType>>,
     Readonly<ValidatableContainer<ValidatableType>>,
-    Readonly<Messages<Result>> {
-
-}
+    Readonly<Messages<Result>> {}
 
 
 

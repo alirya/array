@@ -1,18 +1,9 @@
-import Name from "@dikac/t-object/string/name";
-import Sentences from "@dikac/t-string/message/sentences";
-/**
- * string intended for not empty array message
- *
- * @param valid
- * @param value
- * @param subject
- */
-export default function NotEmpty(valid, value, subject = '') {
-    const sentence = new Sentences(valid);
-    sentence.accept = ['is not'];
-    sentence.reject = ['is'];
-    sentence.subject = [subject, Name(value)];
-    sentence.expect = ['empty array'];
-    return sentence.message;
-}
+import NotEmptyParameter from "./not-empty-parameter";
+import NotEmptyParameters from "./not-empty-parameters";
+var Empty;
+(function (Empty) {
+    Empty.Parameter = NotEmptyParameter;
+    Empty.Parameters = NotEmptyParameters;
+})(Empty || (Empty = {}));
+export default Empty;
 //# sourceMappingURL=not-empty.js.map

@@ -1,7 +1,9 @@
-import ValidateMap from "./validatable/list/map";
-import MapCallback from "./map-callback";
-import Map from "../message/message/list/map";
-export default function MapAll(validators, validation, message = Map) {
-    return MapCallback(validators, ValidateMap, validation, message);
-}
+import MapAllParameters from "./map-all-parameters";
+import MapAllParameter from "./map-all-parameter";
+var MapAll;
+(function (MapAll) {
+    MapAll.Parameter = MapAllParameter;
+    MapAll.Parameters = MapAllParameters;
+})(MapAll || (MapAll = {}));
+export default MapAll;
 //# sourceMappingURL=map-all.js.map

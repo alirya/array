@@ -1,4 +1,4 @@
-import And from "../../../../dist/validatable/list/boolean/and";
+import And from "../../../../dist/validatable/list/boolean/and-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

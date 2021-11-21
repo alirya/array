@@ -1,1 +1,7 @@
-export default function Indexes<Value, Compare>(array: ReadonlyArray<Value>, value: Compare, validator?: (value: Value, argument: Compare) => boolean, start?: number, end?: number): number[];
+import IndexesParameter from "./indexes-parameter";
+import IndexesParameters from "./indexes-parameters";
+declare namespace Indexes {
+    const Parameters: typeof IndexesParameters;
+    const Parameter: typeof IndexesParameter;
+}
+export default Indexes;

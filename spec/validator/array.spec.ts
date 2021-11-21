@@ -1,5 +1,5 @@
-import Validator from "../../dist/validator/array";
-import ObjectMessage from "../../dist/validatable/string/array";
+import Validator from "../../dist/validator/array-parameters";
+import ObjectMessage from "../../dist/validatable/string/array-parameters";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough()});
 

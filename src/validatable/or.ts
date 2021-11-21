@@ -1,12 +1,10 @@
-import Validatable from "@dikac/t-validatable/validatable";
-import IterableOr from "@dikac/t-iterable/validatable/boolean/or";
-import Callback from "./callback";
+import OrCallbackParameter from "./or-parameter";
+import OrCallbackParameters from "./or-parameters";
 
-export default function Or<Validatables extends Validatable[]>(
-    validatables : Validatables,
-    defaults : boolean = true
-) : Callback<Validatables> {
+namespace Or {
 
-    return new Callback(validatables, (v)=>IterableOr(v, defaults));
+    export const Parameter = OrCallbackParameter;
+    export const Parameters = OrCallbackParameters;
 }
 
+export default Or;

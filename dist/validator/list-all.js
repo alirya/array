@@ -1,7 +1,9 @@
-import ListCallback from "./list-callback";
-import ValidateMap from "./validatable/list/list";
-import Map from "../message/message/list/map";
-export default function ListAll(validator, validation, message = Map) {
-    return ListCallback(validator, ValidateMap, validation, message);
-}
+import ListAllParameter from "./list-all-parameter";
+import ListAllParameters from "./list-all-parameters";
+var ListAll;
+(function (ListAll) {
+    ListAll.Parameter = ListAllParameter;
+    ListAll.Parameters = ListAllParameters;
+})(ListAll || (ListAll = {}));
+export default ListAll;
 //# sourceMappingURL=list-all.js.map

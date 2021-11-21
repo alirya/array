@@ -1,17 +1,9 @@
-import RandomBoolean from "@dikac/t-boolean/random";
-/**
- * pick a random values
- *
- * @param array
- * @param random
- */
-export default function Random(array, random = RandomBoolean) {
-    let gets = [];
-    for (let data of array) {
-        if (random()) {
-            gets.push(data);
-        }
-    }
-    return gets;
-}
+import RandomParameter from "./random-parameter";
+import RandomParameters from "./random-parameters";
+var Random;
+(function (Random) {
+    Random.Parameter = RandomParameter;
+    Random.Parameters = RandomParameters;
+})(Random || (Random = {}));
+export default Random;
 //# sourceMappingURL=random.js.map

@@ -1,4 +1,4 @@
-import Or from "../../../../dist/validatable/list/boolean/or";
+import Or from "../../../../dist/validatable/list/boolean/or-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

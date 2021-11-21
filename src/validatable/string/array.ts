@@ -1,8 +1,10 @@
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
-import ArrayMessage from "../../boolean/string/array";
+import ArrayParameter from "./array-parameter";
+import ArrayParameters from "./array-parameters";
 
-export default function Array(object : Readonly<Validatable & Value>) : string {
 
-    return ArrayMessage(object.valid, object.value)
+namespace Array {
+    export const Parameter = ArrayParameter;
+    export const Parameters = ArrayParameters;
 }
+
+export default Array;

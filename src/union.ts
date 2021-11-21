@@ -1,7 +1,11 @@
-import {List} from "ts-toolbelt";
+import {List, Union} from "ts-toolbelt";
 
-type Union<Schema extends unknown[]> =
-    Schema |
-    List.UnionOf<Schema>[];
+/**
+ * intersect all {@template Types} tp one type
+ */
+type Merge<Types extends unknown[]> = Union.IntersectOf<List.UnionOf<Types>>
 
-export default Union;
+export default Merge;
+
+
+

@@ -1,11 +1,8 @@
-import {List, Union} from "ts-toolbelt";
+import MergeParameter from "./merge-parameter";
+import MergeParameters from "./merge-parameters";
 
-/**
- * intersect all {@template Types} tp one type
- */
-type Merge<Types extends unknown[]> = Union.IntersectOf<List.UnionOf<Types>>
-
+namespace Merge {
+    export const Parameter = MergeParameter;
+    export const Parameters = MergeParameters;
+}
 export default Merge;
-
-
-

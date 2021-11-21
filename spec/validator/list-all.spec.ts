@@ -1,13 +1,13 @@
-import ValidatorType from "@dikac/t-type/validator/type-standard";
-import ListAll from "../../dist/validator/list-all";
-import And from "../../dist/validatable/and";
+import ValidatorType from "@dikac/t-type/validator/type-parameters";
+import ListAll from "../../dist/validator/list-all-parameters";
+import And from "../../dist/validatable/and-parameters";
 import Validatable from "@dikac/t-validatable/validatable";
 import MessageMap from "../../dist/message/message/list/map";
 import ValidatablesInterface from "../../dist/validatable/validatables/validatables";
 import Validatables from "../../dist/validatable/validatables/validatables";
 import SimpleValidator from "@dikac/t-validator/simple";
-import Or from "../../dist/validatable/or";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Or from "../../dist/validatable/or-parameters";
+import Instance from "@dikac/t-validator/validatable/dynamic";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

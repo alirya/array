@@ -1,4 +1,4 @@
-import Join from "./join";
+import Join from "./join-parameters";
 export default function Or(messages) {
     return new Join(messages, ' or ');
 }

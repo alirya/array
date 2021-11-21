@@ -1,2 +1,7 @@
-import Validatable from "@dikac/t-validatable/validatable";
-export default function Or<Validatables extends Validatable[]>(validatables: Validatables, defaults?: boolean): boolean;
+import OrParameter from "./or-parameter";
+import OrParameters from "./or-parameters";
+declare namespace Or {
+    const Parameters: typeof OrParameters;
+    const Parameter: typeof OrParameter;
+}
+export default Or;

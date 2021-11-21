@@ -1,26 +1,17 @@
-import ListArgument from "../../base/list/infer";
-import ListReturn from "./infer";
 import Validator from "@dikac/t-validator/validator";
-import {List} from "ts-toolbelt";
-import ListStrict from "./infer";
-import Union from "../../../union";
+import MapParameter, {MapArgument} from "./map-parameter";
+import MapParameters from "./map-parameters";
 
-export default function Map<
-    Validators extends Validator[]
->(
-    values : ListArgument<Validators>,
-    validators : Validators
-) : ListReturn<Validators>  {
 
-    const result : ListReturn<Validators>|Union<ListStrict<Validators>> = <Union<ListStrict<Validators>>>[];
+namespace Map {
 
-    for(let [property, validator] of validators.entries()) {
-
-        const value = values[property];
-        const validatable = validator(value);
-
-        result[property] = <List.UnionOf<ListStrict<Validators>>> validatable;
-    }
-
-    return <ListReturn<Validators>> result;
+    export const Parameter = MapParameter;
+    export const Parameters = MapParameters;
+    export type Argument<
+        Validators extends Validator[]
+    > = MapArgument<
+        Validators
+    >;
 }
+
+export default Map;

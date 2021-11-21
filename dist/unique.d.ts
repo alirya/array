@@ -1,10 +1,7 @@
-/**
- * pick a unique value from {@param values}
- *
- * @param values
- *
- * @param compare
- * to compare value equality
- *
- */
-export default function Unique<Value>(values: ReadonlyArray<Value>, compare?: (value1: Value, value2: Value) => boolean): Value[];
+import UniqueParameter from "./unique-parameter";
+import UniqueParameters from "./unique-parameters";
+declare namespace Unique {
+    const Parameter: typeof UniqueParameter;
+    const Parameters: typeof UniqueParameters;
+}
+export default Unique;

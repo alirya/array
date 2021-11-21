@@ -1,7 +1,9 @@
-import Guard from "../boolean/not-empty";
-import Callback from "@dikac/t-function/assert/callback";
-import EmptyError from "./throwable/not-empty";
-export default function NotEmpty(value, error = EmptyError) {
-    Callback(value, Guard, error);
-}
+import NotEmptyParameter from "./not-empty-parameter";
+import NotEmptyParameters from "./not-empty-parameters";
+var NotEmpty;
+(function (NotEmpty) {
+    NotEmpty.Parameter = NotEmptyParameter;
+    NotEmpty.Parameters = NotEmptyParameters;
+})(NotEmpty || (NotEmpty = {}));
+export default NotEmpty;
 //# sourceMappingURL=not-empty.js.map

@@ -1,8 +1,10 @@
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
-import EmptyParameter from "../../boolean/string/empty";
+import EmptyParameter from "./empty-parameter";
+import EmptyParameters from "./empty-parameters";
 
-export default function Empty(object : Readonly<Value<unknown[]> & Validatable>) : string {
 
-    return EmptyParameter(object.valid, object.value)
+namespace Empty {
+    export const Parameter = EmptyParameter;
+    export const Parameters = EmptyParameters;
 }
+
+export default Empty;

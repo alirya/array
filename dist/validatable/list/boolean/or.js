@@ -1,5 +1,9 @@
-import IterableOr from "@dikac/t-iterable/validatable/boolean/or";
-export default function Or(object, defaults = true) {
-    return IterableOr(object, defaults);
-}
+import OrParameter from "./or-parameter";
+import OrParameters from "./or-parameters";
+var Or;
+(function (Or) {
+    Or.Parameters = OrParameters;
+    Or.Parameter = OrParameter;
+})(Or || (Or = {}));
+export default Or;
 //# sourceMappingURL=or.js.map

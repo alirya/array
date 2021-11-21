@@ -1,8 +1,9 @@
-import NotEmptyValidatable from "../validatable/not-empty";
-import NotEmptyMessage from "../validatable/string/not-empty";
-export default function NotEmpty(message = NotEmptyMessage) {
-    return function (value) {
-        return new NotEmptyValidatable(value, message);
-    };
-}
+import NotEmptyParameter from "./not-empty-parameter";
+import NotEmptyParameters from "./not-empty-parameters";
+var MapPartial;
+(function (MapPartial) {
+    MapPartial.Parameter = NotEmptyParameter;
+    MapPartial.Parameters = NotEmptyParameters;
+})(MapPartial || (MapPartial = {}));
+export default MapPartial;
 //# sourceMappingURL=not-empty.js.map

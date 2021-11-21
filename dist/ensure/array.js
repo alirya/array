@@ -1,7 +1,9 @@
-import AssertArray from "../assert/array";
-import ArrayError from "../assert/throwable/array";
-export default function Array(value, error = ArrayError) {
-    AssertArray(value, error);
-    return value;
-}
+import ArrayParameter from "./array-parameter";
+import ArrayParameters from "./array-parameters";
+var Array;
+(function (Array) {
+    Array.Parameter = ArrayParameter;
+    Array.Parameters = ArrayParameters;
+})(Array || (Array = {}));
+export default Array;
 //# sourceMappingURL=array.js.map

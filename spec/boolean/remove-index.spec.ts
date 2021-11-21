@@ -1,4 +1,4 @@
-import RemoveIndex from "../../dist/boolean/remove-index";
+import RemoveIndex from "../../dist/boolean/remove-index-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

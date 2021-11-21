@@ -1,12 +1,9 @@
-export default function ListPartial(values, validator, stop = false) {
-    const result = [];
-    for (const [property, value] of values.entries()) {
-        const validatable = validator(value);
-        result[property] = validatable;
-        if (validatable.valid === stop) {
-            return result;
-        }
-    }
-    return result;
-}
+import ListPartialParameter from "./list-partial-parameter";
+import ListPartialParameters from "./list-partial-parameters";
+var ListPartial;
+(function (ListPartial) {
+    ListPartial.Parameter = ListPartialParameter;
+    ListPartial.Parameters = ListPartialParameters;
+})(ListPartial || (ListPartial = {}));
+export default ListPartial;
 //# sourceMappingURL=list-partial.js.map

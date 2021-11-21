@@ -1,7 +1,7 @@
-import Or from "../../dist/validatable/or";
+import Or from "../../dist/validatable/or-parameters";
 import Guard from "@dikac/t-validatable/boolean/validatable";
 import Validatable from "@dikac/t-validatable/validatable";
-import Equal from "../../dist/boolean/equal";
+import Equal from "../../dist/boolean/equal-parameters";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

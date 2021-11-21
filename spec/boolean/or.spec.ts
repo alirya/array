@@ -1,4 +1,4 @@
-import Or from "../../dist/boolean/or";
+import Or from "../../dist/boolean/or-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

@@ -1,4 +1,4 @@
-import Join from "../../../dist/message/string/join";
+import Join from "../../../dist/message/string/join-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

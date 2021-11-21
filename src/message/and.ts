@@ -1,10 +1,10 @@
 import Message from "@dikac/t-message/message";
-import Join from "./join";
 import Messages from "./messages/messages";
+import JoinParameters from "./join-parameters";
 
 export default function And<MessageType extends Message<string>[]>(
     messages : MessageType,
 ) : Messages<MessageType> & Message <string>{
 
-    return new Join(messages, ' and ')
+    return new JoinParameters(messages, ' and ')
 }

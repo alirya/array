@@ -1,11 +1,11 @@
-import Guard from "../boolean/not-empty";
-import Callback from "@dikac/t-function/assert/callback";
-import EmptyError from "./throwable/not-empty";
+import NotEmptyParameter from "./not-empty-parameter";
+import NotEmptyParameters from "./not-empty-parameters";
 
-export default function NotEmpty(
-    value : unknown[],
-    error : (value:unknown[])=>Error = EmptyError
-) : asserts value is Array<unknown> {
+namespace NotEmpty {
 
-    Callback(value, Guard, error);
+    export const Parameter = NotEmptyParameter;
+    export const Parameters = NotEmptyParameters;
 }
+
+export default NotEmpty;
+

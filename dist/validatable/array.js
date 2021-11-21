@@ -1,6 +1,9 @@
-import Callback from "@dikac/t-validator/validatable/callback";
-import ObjectGuard from "../boolean/array";
-export default function Array(value, message) {
-    return Callback(value, ObjectGuard, message);
-}
+import ArrayParameter from "./array-parameter";
+import ArrayParameters from "./array-parameters";
+var Array;
+(function (Array) {
+    Array.Parameter = ArrayParameter;
+    Array.Parameters = ArrayParameters;
+})(Array || (Array = {}));
+export default Array;
 //# sourceMappingURL=array.js.map

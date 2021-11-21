@@ -1,4 +1,9 @@
-import ListArgument from "../../base/list/infer";
-import ListReturn from "./infer";
 import Validator from "@dikac/t-validator/validator";
-export default function Map<Validators extends Validator[]>(values: ListArgument<Validators>, validators: Validators): ListReturn<Validators>;
+import MapParameter, { MapArgument } from "./map-parameter";
+import MapParameters from "./map-parameters";
+declare namespace Map {
+    const Parameter: typeof MapParameter;
+    const Parameters: typeof MapParameters;
+    type Argument<Validators extends Validator[]> = MapArgument<Validators>;
+}
+export default Map;

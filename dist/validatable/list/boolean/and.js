@@ -1,5 +1,9 @@
-import IterableAnd from "@dikac/t-iterable/validatable/boolean/and";
-export default function And(object, defaults = true) {
-    return IterableAnd(object, defaults);
-}
+import { AndParameter } from "./and-parameter";
+import AndParameters from "./and-parameters";
+var And;
+(function (And) {
+    And.Parameters = AndParameters;
+    And.Parameter = AndParameter;
+})(And || (And = {}));
+export default And;
 //# sourceMappingURL=and.js.map

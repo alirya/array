@@ -1,5 +1,5 @@
-import Callback from "@dikac/t-function/assert/callback";
-import Guard from "../boolean/list";
+import ListParameters from "./list-parameters";
+import ListParameter from "./list-parameter";
 /**
  * assert if {@param list} is list of {@template Value}
  *
@@ -7,7 +7,10 @@ import Guard from "../boolean/list";
  *
  * @param error
  */
-export default function List(list, validation, error) {
-    Callback(list, (value) => Guard(value, validation), error);
-}
+var List;
+(function (List) {
+    List.Parameter = ListParameter;
+    List.Parameters = ListParameters;
+})(List || (List = {}));
+export default List;
 //# sourceMappingURL=list.js.map

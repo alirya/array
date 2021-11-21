@@ -1,6 +1,7 @@
-import Message from "@dikac/t-message/message";
-import ListInfer from "./infer";
-import { List } from "ts-toolbelt";
-import MapUnion from "../../../map-union";
-import Messages from "../../../message/messages/messages";
-export default function MessagesFilter<MessagesType extends Message[]>(list: Messages<MessagesType>, filter?: (messages: List.UnionOf<MessagesType>) => boolean): MapUnion<ListInfer<MessagesType>>;
+import MessagesFilterParameters from "./messages-filter-parameters";
+import MessagesFilterParameter from "./messages-filter-parameter";
+declare namespace Join {
+    const Parameters: typeof MessagesFilterParameters;
+    const Parameter: typeof MessagesFilterParameter;
+}
+export default Join;

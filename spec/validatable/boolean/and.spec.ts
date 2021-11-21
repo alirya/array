@@ -1,4 +1,4 @@
-import And from "../../../dist/validatable/boolean/and";
+import And from "../../../dist/validatable/boolean/and-parameters";
 import Validatable from "@dikac/t-validatable/validatable";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});

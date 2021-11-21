@@ -1,5 +1,5 @@
-import EmptyType from "../../boolean/string/empty";
+import EmptyType from "../../assert/string/empty-parameters";
 export default function Empty(string) {
-    return new Error(EmptyType(false, string));
+    return new Error(EmptyType(string, false));
 }
 //# sourceMappingURL=empty.js.map

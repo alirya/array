@@ -1,9 +1,9 @@
-export default function List(values, validator) {
-    const result = [];
-    for (const [property, value] of values.entries()) {
-        const validatable = validator(value);
-        result[property] = validatable;
-    }
-    return result;
-}
+import ListParameter from "./list-parameter";
+import ListParameters from "./list-parameters";
+var List;
+(function (List) {
+    List.Parameter = ListParameter;
+    List.Parameters = ListParameters;
+})(List || (List = {}));
+export default List;
 //# sourceMappingURL=list.js.map

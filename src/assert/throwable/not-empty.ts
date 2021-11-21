@@ -1,6 +1,6 @@
-import NotEmptyType from "../../boolean/string/not-empty";
+import NotEmptyType from "../../assert/string/not-empty-parameters";
 
 export default function NotEmpty(string : unknown[]) : Error {
 
-    return new Error(NotEmptyType(false, string))
+    return new Error(NotEmptyType(string, false))
 }

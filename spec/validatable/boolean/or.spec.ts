@@ -1,4 +1,4 @@
-import Or from "../../../dist/validatable/boolean/or";
+import Or from "../../../dist/validatable/boolean/or-parameters";
 import Validatable from "@dikac/t-validatable/validatable";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});

@@ -1,1 +1,7 @@
-export default function List(valid: boolean, expect: string, value: unknown, subject?: string, conversion?: (value: unknown) => string): string;
+import ListParameter from "./list-parameter";
+import ListParameters from "./list-parameters";
+declare namespace List {
+    const Parameter: typeof ListParameter;
+    const Parameters: typeof ListParameters;
+}
+export default List;

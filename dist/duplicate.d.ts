@@ -1,10 +1,7 @@
-/**
- * pick a duplicate value from {@param values}
- *
- * @param values
- *
- * @param compare
- * to compare value equality
- *
- */
-export default function Duplicate<Value>(values: ReadonlyArray<Value>, compare?: (value1: Value, value2: Value) => boolean): Value[];
+import DuplicateParameter from "./duplicate-parameter";
+import DuplicateParameters from "./duplicate-parameters";
+declare namespace Duplicate {
+    const Parameters: typeof DuplicateParameters;
+    const Parameter: typeof DuplicateParameter;
+}
+export default Duplicate;

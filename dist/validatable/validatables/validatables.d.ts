@@ -1,4 +1,4 @@
 import Validatable from "@dikac/t-validatable/validatable";
-export default interface Validatables<ValidatablesT extends ReadonlyArray<Validatable> = ReadonlyArray<Validatable>> {
-    validatables: ValidatablesT;
+export default interface Validatables<ValidatableList extends ReadonlyArray<Validatable> = ReadonlyArray<Validatable>> {
+    validatables: ValidatableList;
 }

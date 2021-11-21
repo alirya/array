@@ -1,5 +1,9 @@
-import ArrayMessage from "../../boolean/string/array";
-export default function Array(object) {
-    return ArrayMessage(object.valid, object.value);
-}
+import ArrayParameter from "./array-parameter";
+import ArrayParameters from "./array-parameters";
+var Array;
+(function (Array) {
+    Array.Parameter = ArrayParameter;
+    Array.Parameters = ArrayParameters;
+})(Array || (Array = {}));
+export default Array;
 //# sourceMappingURL=array.js.map

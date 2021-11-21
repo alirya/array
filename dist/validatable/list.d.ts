@@ -5,7 +5,7 @@ import ValidatableContainer from "@dikac/t-validatable/validatable/validatable";
 import ValidatorContainer from "@dikac/t-validator/validator/validator";
 import Message from "@dikac/t-message/message";
 import Messages from "../message/messages/messages";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Instance from "@dikac/t-validator/validatable/dynamic";
 import Validatables from "./validatables/validatables";
 export default interface List<ValueType extends unknown[], ValidatorType extends Validator = Validator, Results extends Instance[] = Instance[], MessageType = unknown, ValidatableType extends Validatable = Validatable> extends Readonly<Value<ValueType>>, Readonly<Validatable>, Readonly<ValidatorContainer<ValidatorType>>, Readonly<Message<MessageType>>, Readonly<Messages<Results>>, Readonly<Validatables<Results>>, Readonly<ValidatableContainer<ValidatableType>> {
 }

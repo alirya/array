@@ -1,5 +1,16 @@
-import ListType from "../string/list";
-export default function Array(string, expect, subject = 'type', conversion = value => typeof value) {
-    return new Error(ListType(false, expect, string, subject, conversion));
-}
+import ListParameters from "./list-parameters";
+import ListParameter from "./list-parameter";
+/**
+ * assert if {@param list} is list of {@template Value}
+ *
+ * {@param validation} is use to validate for {@template list}
+ *
+ * @param error
+ */
+var List;
+(function (List) {
+    List.Parameter = ListParameter;
+    List.Parameters = ListParameters;
+})(List || (List = {}));
+export default List;
 //# sourceMappingURL=list.js.map

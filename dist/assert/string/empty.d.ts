@@ -1,8 +1,7 @@
-/**
- * string intended for empty array
- *
- * @param valid
- * @param value
- * @param subject
- */
-export default function Empty(valid: boolean, value: unknown[], subject?: string): string;
+import EmptyParameter from "./empty-parameter";
+import EmptyParameters from "./empty-parameters";
+declare namespace Empty {
+    const Parameter: typeof EmptyParameter;
+    const Parameters: typeof EmptyParameters;
+}
+export default Empty;

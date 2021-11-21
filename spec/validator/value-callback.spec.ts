@@ -1,16 +1,16 @@
-import ValueCallback from "../../dist/validator/value-callback";
-import ValidateValue from "../../dist/validator/validatable/list/value";
-import ValidateValuePartial from "../../dist/validator/validatable/list/value-partial";
-import And from "../../dist/validatable/and";
-import Or from "../../dist/validatable/or";
+import ValueCallback from "../../dist/validator/value-callback-parameters";
+import ValidateValue from "../../dist/validator/validatable/list/value-parameters";
+import ValidateValuePartial from "../../dist/validator/validatable/list/value-partial-parameters";
+import And from "../../dist/validatable/and-parameters";
+import Or from "../../dist/validatable/or-parameters";
 import Validatable from "@dikac/t-validatable/validatable";
 import SimpleValidator from "@dikac/t-validator/simple";
 import Message from "@dikac/t-message/message";
 import MessageMap from "../../dist/message/message/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-standard";
-import ValidatableType from "@dikac/t-type/validatable/type";
+import ValidatorType from "@dikac/t-type/validator/type-parameters";
+import {TypeType as ValidatableType} from "@dikac/t-type/validatable/type-parameters";
 import ValueInterface from "@dikac/t-value/value";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Instance from "@dikac/t-validator/validatable/dynamic";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

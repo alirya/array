@@ -1,1 +1,7 @@
-export default function Includes<Type>(value: Type, trues: ReadonlyArray<Type>, falses: ReadonlyArray<Type>, defaults?: (value: Type, trues: ReadonlyArray<Type>, falses: ReadonlyArray<Type>) => boolean, compare?: (value: Type, compare: Type) => boolean): boolean;
+import IncludesParameters from "./includes-parameters";
+import IncludesParameter from "./includes-parameter";
+declare namespace Includes {
+    const Parameter: typeof IncludesParameter;
+    const Parameters: typeof IncludesParameters;
+}
+export default Includes;

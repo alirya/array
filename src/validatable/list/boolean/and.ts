@@ -1,12 +1,11 @@
-import Validatable from "@dikac/t-validatable/validatable";
-import IterableAnd from "@dikac/t-iterable/validatable/boolean/and";
+import {AndParameter} from "./and-parameter";
+import AndParameters from "./and-parameters";
 
-export default function And<
-    Object extends Validatable[]
->(
-    object : Object,
-    defaults : boolean = true
-) : boolean {
 
-    return IterableAnd(object, defaults);
+namespace And {
+
+    export const Parameters  = AndParameters;
+    export const Parameter = AndParameter;
 }
+
+export default And;

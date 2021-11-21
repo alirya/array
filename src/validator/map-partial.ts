@@ -1,75 +1,21 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import ValidateMap from "./validatable/list/map-partial";
-import MapCallback from "./map-callback";
-import MapCallbackInterface from "./map";
-import ListStrict from "./validatable/list/infer";
-import Union from "../union";
-import InferMessage from "../message/message/list/infer";
-import InferReturn from "@dikac/t-validator/validatable/infer-unambiguous";
-import Map from "../message/message/list/map";
-import Boolean from "@dikac/t-boolean/boolean";
+import MapPartialParameter, {MapPartialArgument} from "./map-partial-parameter";
+import MapPartialParameters from "./map-partial-parameters";
 
-/**
- * more specific implementation of {@link MapCallback}
- *
- * Validate list of value with list of {@link Validator}, according to their indexes
- * stop on encounter invalid result from {@link Validator}
- *
- * @param validators
- * list of {@link Validator} to be used against list of value
- *
- * @param validation
- * process partial result from {@link Validator} list into {@link Validatable}
- *
- * @param message
- * process partial result from {@link Validator} list into {@link Message} value
- *
- * @param stop
- * stop validation operation condition
- */
+namespace MapPartial {
 
-export default function MapPartial<
-    Validators extends Validator[] = Validator[],
-    ValidatableType extends Validatable = Validatable,
->(
-    validators : Validators,
-    validation : (result:Union<ListStrict<Validators>>)=>ValidatableType,
-    stop ?: boolean,
-) : MapCallbackInterface<Validators, Union<ListStrict<Validators>>, Union<InferMessage<ListStrict<Validators>>>, ValidatableType>;
-
-export default function MapPartial<
-    Validators extends Validator[] = Validator[],
-    ValidatableType extends Validatable = Validatable,
-    MessageType = unknown,
->(
-    validators : Validators,
-    validation : (result:Union<ListStrict<Validators>>)=>ValidatableType,
-    message : (result:Union<ListStrict<Validators>>)=>MessageType,
-    stop ?: boolean,
-) : MapCallbackInterface<Validators, Union<ListStrict<Validators>>, MessageType, ValidatableType>;
-
-export default function MapPartial<
-    Validators extends Validator[] = Validator[],
-    ValidatableType extends Validatable = Validatable,
-    MessageType = unknown,
->(
-    validators : Validators,
-    validation : (result:Union<ListStrict<Validators>>)=>ValidatableType,
-    message : ((result:Union<ListStrict<Validators>>)=>MessageType|Union<InferMessage<ListStrict<Validators>>>)|boolean = Map,
-    stop : boolean = false,
-) : MapCallbackInterface<Validators, Union<ListStrict<Validators>>, MessageType|Union<InferMessage<ListStrict<Validators>>>, ValidatableType>  {
-
-    if(Boolean(message)) {
-
-        return MapPartial(validators, validation, Map, message) as
-            MapCallbackInterface<Validators, Union<ListStrict<Validators>>, Union<InferMessage<ListStrict<Validators>>>, ValidatableType>;
-    }
-
-    return MapCallback(
-        validators,
-        (value, validators)=>ValidateMap(value, validators, stop),
-        validation,
-        message
-    ) as MapCallbackInterface<Validators, Union<ListStrict<Validators>>, MessageType, ValidatableType>;
+    export const Parameter = MapPartialParameter;
+    export const Parameters = MapPartialParameters;
+    export type Argument<
+        Validators extends Validator[] = Validator[],
+        ValidatableType extends Validatable = Validatable,
+        MessageType = unknown,
+    > = MapPartialArgument<
+        Validators,
+        ValidatableType,
+        MessageType
+    >;
 }
+
+export default MapPartial;

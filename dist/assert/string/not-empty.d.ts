@@ -1,8 +1,7 @@
-/**
- * string intended for not empty array message
- *
- * @param valid
- * @param value
- * @param subject
- */
-export default function NotEmpty(valid: boolean, value: any[], subject?: string): string;
+import NotEmptyParameter from "./not-empty-parameter";
+import NotEmptyParameters from "./not-empty-parameters";
+declare namespace Empty {
+    const Parameter: typeof NotEmptyParameter;
+    const Parameters: typeof NotEmptyParameters;
+}
+export default Empty;

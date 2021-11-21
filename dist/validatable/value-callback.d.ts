@@ -1,15 +1,12 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Instance from "@dikac/t-validator/validatable/dynamic";
 import Value from "./value";
-export default class ValueCallback<ValueType, Container extends Validator[] = Validator[], Results extends Instance[] = Instance[], MessageType = unknown, ValidatableType extends Validatable = Validatable> implements Value<ValueType, Container, Results, MessageType, ValidatableType> {
-    readonly value: ValueType;
-    readonly validators: Container;
-    readonly validatable: ValidatableType;
-    readonly valid: any;
-    readonly validatables: Results;
-    readonly messages: Results;
-    private messageFactory;
-    constructor(value: ValueType, validators: Container, map: (value: ValueType, validators: Container) => Results, validation: (results: Results) => ValidatableType, message: (results: Results) => MessageType);
-    get message(): MessageType;
+import ValueCallbackParameter, { ValueCallbackArgument } from "./value-callback-parameter";
+import ValueCallbackParameters from "./value-callback-parameters";
+declare namespace Value {
+    const Parameter: typeof ValueCallbackParameter;
+    const Parameters: typeof ValueCallbackParameters;
+    type Argument<ValueType, ValidatorList extends Validator[] = Validator[], Results extends Instance[] = Instance[], MessageType = unknown, ValidatableType extends Validatable = Validatable> = ValueCallbackArgument<ValueType, ValidatorList, Results, MessageType, ValidatableType>;
 }
+export default Value;

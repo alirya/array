@@ -1,32 +1,9 @@
-import Equal from "@dikac/t-boolean/equal";
+import DifferenceParameter from "./difference-parameter";
+import DifferenceParameters from "./difference-parameters";
 
-/**
- * return all data from targets that does not exists in comparison
- *
- * @param targets
- * @param comparisons
- * @param compare
- * @constructor
- */
-export default function Difference<Value>(
-    targets: ReadonlyArray<Value>,
-    comparisons : ReadonlyArray<Value>,
-    compare : (target : Value, comparison : Value) => boolean = Equal
-) : Value[] {
-    let results : Value[] = [];
+namespace Difference {
 
-    TARGET : for(let target of targets) {
-
-        for(let comparison of comparisons) {
-
-            if(compare(target, comparison)) {
-
-                continue TARGET;
-            }
-        }
-
-        results.push(target);
-    }
-
-    return results;
+    export const Parameters = DifferenceParameters;
+    export const Parameter = DifferenceParameter;
 }
+export default Difference;

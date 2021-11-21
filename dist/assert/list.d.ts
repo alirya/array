@@ -1,3 +1,5 @@
+import ListParameters from "./list-parameters";
+import ListParameter from "./list-parameter";
 /**
  * assert if {@param list} is list of {@template Value}
  *
@@ -5,4 +7,8 @@
  *
  * @param error
  */
-export default function List<Value extends Argument, Argument extends unknown>(list: ReadonlyArray<Argument>, validation: (value: Argument) => value is Value, error: (value: unknown) => Error): asserts list is Value[];
+declare namespace List {
+    const Parameter: typeof ListParameter;
+    const Parameters: typeof ListParameters;
+}
+export default List;

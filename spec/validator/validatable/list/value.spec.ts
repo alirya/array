@@ -1,7 +1,7 @@
-import Value from "../../../../dist/validator/validatable/list/value";
+import Value from "../../../../dist/validator/validatable/list/value-parameters";
 import Validatable from "@dikac/t-validatable/validatable";
 import Validator from "@dikac/t-validator/validator";
-import ValidatorType from "@dikac/t-type/validator/type-standard";
+import ValidatorType from "@dikac/t-type/validator/type-parameters";
 
 it("force console log", () => spyOn(console, 'log').and.callThrough());
 

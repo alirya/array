@@ -1,22 +1,11 @@
-import SentencesMust from "@dikac/t-string/message/sentences-must";
+import ArrayParameter, {ArrayArgument} from "./array-parameter";
+import ArrayParameters from "./array-parameters";
 
-export default function Array(
-    valid : boolean,
-    value : unknown,
-    subject : string = 'type',
-    conversion : (value:unknown)=>string = value=>typeof value
-) : string {
-
-    let sentence = SentencesMust(valid);
-    sentence.expect.push('array');
-    sentence.subject.push(subject);
-
-    sentence.comma.push('expect');
-
-    if(!valid) {
-
-        sentence.actual.push('actual', conversion(value));
-    }
-
-    return sentence.message;
+namespace Array {
+    export const Parameter = ArrayParameter;
+    export const Object = ArrayParameters;
+    export type Argument = ArrayArgument;
 }
+
+
+export default Array;

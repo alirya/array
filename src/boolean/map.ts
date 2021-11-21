@@ -1,22 +1,11 @@
-import Map from "../function/parameter/list/map";
+import MapParameters from "./map-parameters";
+import MapParameter from "./map-parameter";
 
-export default function Map<List extends unknown[][]>(
-    values : Readonly<List>,
-    validations : Readonly<Map<List>>
-) : boolean {
 
-    if(values.length === validations.length) {
+namespace Map {
 
-        for(let [index, value] of values.entries()) {
-
-            if(!validations[index](...value)) {
-
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    return false;
+    export const Parameter  = MapParameter;
+    export const Parameters = MapParameters;
 }
+
+export default Map;

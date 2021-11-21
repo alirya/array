@@ -1,53 +1,29 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import Instance from "@dikac/t-validator/validatable/validatable";
-import List from "./list";
-import MemoizeAccessor from "@dikac/t-object/function/memoize-accessor";
+import Instance from "@dikac/t-validator/validatable/dynamic";
+import ListCallbackParameters from "./list-callback-parameters";
+import ListCallbackParameter, {ValueCallbackArgument} from "./list-callback-parameter";
 
-export default class ListCallback<
-    ValueType extends unknown[],
-    ValidatorType extends Validator = Validator,
-    Results extends Instance[] = Instance[],
-    MessageType = unknown,
-    ValidatableType extends Validatable = Validatable
->  implements List<ValueType, ValidatorType, Results, MessageType, ValidatableType>{
+namespace ListCallback {
 
-    readonly validatable;
-    readonly valid;
-    readonly validatables : Results;
-    readonly messages : Results;
-    private messageFactory : (results:Results)=>MessageType
-
-    constructor(
-        readonly value: ValueType,
-        readonly validator : ValidatorType,
-        map : (value:ValueType, validator:ValidatorType)=>Results,
-        validation : (results:Results)=>ValidatableType,
-        message : (results:Results)=>MessageType,
-    ) {
-
-        this.messageFactory = message;
-
-        this.validatables = map(value, this.validator);
-        this.validatable = validation(this.validatables);
-        this.valid = this.validatable.valid;
-        this.messages = this.validatables;
-    }
-
-    @MemoizeAccessor()
-    get message() : MessageType {
-
-        try {
-
-            return this.messageFactory(this.validatables);
-
-        } catch (e) {
-
-            throw new Error(`error on generating message, ${e}`)
-        }
-
-    }
+    export const Parameters = ListCallbackParameters;
+    export const Parameter = ListCallbackParameter;
+    export type Argument<
+        ValueType extends unknown[],
+        ValidatorType extends Validator = Validator,
+        Results extends Instance[] = Instance[],
+        MessageType = unknown,
+        ValidatableType extends Validatable = Validatable
+    > = ValueCallbackArgument<
+        ValueType,
+        ValidatorType,
+        Results,
+        MessageType,
+        ValidatableType
+    >;
 }
+
+export default ListCallback;
 
 
 

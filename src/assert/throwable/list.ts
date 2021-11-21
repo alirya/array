@@ -1,11 +1,17 @@
-import ListType from "../string/list";
+import ListParameters from "./list-parameters";
+import ListParameter from "./list-parameter";
 
-export default function Array(
-    string : unknown,
-    expect : string,
-    subject : string = 'type',
-    conversion : (value: unknown)=>string = value=>typeof value
-) : Error {
+/**
+ * assert if {@param list} is list of {@template Value}
+ *
+ * {@param validation} is use to validate for {@template list}
+ *
+ * @param error
+ */
 
-    return new Error(ListType(false, expect, string, subject, conversion))
+namespace List {
+
+    export const Parameter : typeof ListParameter = ListParameter;
+    export const Parameters : typeof ListParameters = ListParameters;
 }
+export default List;

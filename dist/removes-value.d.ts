@@ -1,1 +1,8 @@
-export default function RemovesValue<Value>(array: Value[], value: Value, validator?: (arrayValue: Value, valueArgument: Value) => boolean, start?: number, end?: number, limit?: number): Value[];
+import RemovesValueParameter, { RemovesValueArgument } from "./removes-value-parameter";
+import RemovesValueParameters from "./removes-value-parameters";
+declare namespace RemovesValue {
+    const Parameters: typeof RemovesValueParameters;
+    const Parameter: typeof RemovesValueParameter;
+    type Argument<Value> = RemovesValueArgument<Value>;
+}
+export default RemovesValue;

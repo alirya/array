@@ -1,4 +1,4 @@
-import DifferenceLeft from "../dist/difference";
+import DifferenceLeft from "../dist/difference-parameters";
 
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});

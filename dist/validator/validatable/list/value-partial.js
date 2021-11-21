@@ -1,12 +1,9 @@
-export default function ValuePartial(value, validators, stop = false) {
-    const result = [];
-    for (const [property, validator] of validators.entries()) {
-        const validatable = validator(value);
-        result[property] = validatable;
-        if (validatable.valid === stop) {
-            return result;
-        }
-    }
-    return result;
-}
+import ValuePartialParameter from "./value-partial-parameter";
+import ValuePartialParameters from "./value-partial-parameters";
+var ValuePartial;
+(function (ValuePartial) {
+    ValuePartial.Parameter = ValuePartialParameter;
+    ValuePartial.Parameters = ValuePartialParameters;
+})(ValuePartial || (ValuePartial = {}));
+export default ValuePartial;
 //# sourceMappingURL=value-partial.js.map

@@ -1,5 +1,9 @@
-import Filter from "./filter";
-export default function MessagesFilter(list, filter = () => true) {
-    return Filter(list.messages, filter);
-}
+import MessagesFilterParameters from "./messages-filter-parameters";
+import MessagesFilterParameter from "./messages-filter-parameter";
+var Join;
+(function (Join) {
+    Join.Parameters = MessagesFilterParameters;
+    Join.Parameter = MessagesFilterParameter;
+})(Join || (Join = {}));
+export default Join;
 //# sourceMappingURL=messages-filter.js.map

@@ -1,22 +1,9 @@
-import MapSingle from "../function/parameter/list/map-single";
+import MapSingleParameters from "./map-single-parameters";
+import MapSingleParameter from "./map-single-parameter";
 
-export default function MapSingle<List extends unknown[]>(
-    values : Readonly<List>,
-    validations : Readonly<MapSingle<List>>
-) : boolean {
+namespace MapSingle {
 
-    if(values.length === validations.length) {
-
-        for(let [index, value] of values.entries()) {
-
-            if(!validations[index](value)) {
-
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    return false;
+    export const Parameter = MapSingleParameters;
+    export const Parameters = MapSingleParameter;
 }
+export default MapSingle;

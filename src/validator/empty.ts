@@ -1,28 +1,16 @@
-import Validator from "@dikac/t-validator/validator";
-import Validatable from "@dikac/t-validatable/validatable";
-import Message from "@dikac/t-message/message";
-import Value from "@dikac/t-value/value";
-import EmptyValidatable from "../validatable/empty";
-import Return from "@dikac/t-validator/validatable/simple";
-import EmptyMessage from "../validatable/string/empty";
+import EmptyParameter from "./value-callback-parameter";
+import EmptyParameters from "./value-callback-parameters";
 
 /**
  *  validate if array is empty
  */
 
-export default function Empty() : Validator<Array<any>, [], boolean, boolean, EmptyValidatable<string, Array<any>>>
+namespace Empty {
 
-export default function Empty<MessageType>(
-    message : (result:Value<Array<any>> & Readonly<Validatable>)=>MessageType
-) : Validator<Array<any>, [], boolean, boolean, EmptyValidatable<MessageType, Array<any>>>
+    export const Parameter = EmptyParameter;
+    export const Parameters = EmptyParameters;
 
-export default function Empty<MessageType>(
-    message : (result:Value<Array<any>> & Readonly<Validatable>)=>MessageType|string = EmptyMessage
-) : Validator<Array<any>, [], boolean, boolean, EmptyValidatable<MessageType, Array<any>>> {
-
-    return function (value) {
-
-        return new EmptyValidatable(value, message);
-
-    } as Validator<Array<any>, [], boolean, boolean, EmptyValidatable<MessageType, Array<any>>>
 }
+
+
+export default Empty;

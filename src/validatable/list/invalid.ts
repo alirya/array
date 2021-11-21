@@ -12,5 +12,7 @@ export default function Invalid<
     list : Object
 ) : MapUnion<Object> {
 
-    return  list.map((v)=>EnsureValidatable(v)).filter(ValidatableInValid);
+    return  list
+        .map((value)=>EnsureValidatable.Parameter(value))
+        .filter(ValidatableInValid);
 }

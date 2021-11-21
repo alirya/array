@@ -1,30 +1,17 @@
 import Validator from "@dikac/t-validator/validator";
-import {List} from "ts-toolbelt";
-import ListStrict from "./infer";
-import Union from "../../../union";
+import ValuePartialParameter, {ValuePartialArgument} from "./value-partial-parameter";
+import ValuePartialParameters from "./value-partial-parameters";
 
-export default function ValuePartial<
-    ValueType,
-    Validators extends Validator<unknown, ValueType>[]
->(
-    value : ValueType,
-    validators : Validators,
-    stop : boolean = false
-) : Union<ListStrict<Validators>> {
+namespace ValuePartial {
 
-    const result : Union<ListStrict<Validators>> = [];
-
-    for(const [property, validator] of validators.entries()) {
-
-        const validatable = validator(value);
-
-        result[property] = <List.UnionOf<ListStrict<Validators>>> validatable;
-
-        if(validatable.valid === stop) {
-
-            return result;
-        }
-    }
-
-    return  result;
+    export const Parameter = ValuePartialParameter;
+    export const Parameters = ValuePartialParameters;
+    export type Argument<
+        ValueType,
+        Validators extends Validator<unknown, ValueType>[]
+    > = ValuePartialArgument<
+        ValueType,
+        Validators
+    >;
 }
+export default ValuePartial;

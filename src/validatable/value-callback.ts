@@ -1,44 +1,27 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Instance from "@dikac/t-validator/validatable/dynamic";
 import Value from "./value";
-import MemoizeAccessor from "@dikac/t-object/function/memoize-accessor";
+import ValueCallbackParameter, {ValueCallbackArgument} from "./value-callback-parameter";
+import ValueCallbackParameters from "./value-callback-parameters";
 
-export default class ValueCallback<
-    ValueType,
-    Container extends Validator[] = Validator[],
-    Results extends Instance[] = Instance[],
-    MessageType = unknown,
-    ValidatableType extends Validatable = Validatable
->  implements Value<ValueType, Container, Results, MessageType, ValidatableType> {
+namespace Value {
 
-    readonly validatable : ValidatableType;
-    readonly valid;
-    readonly validatables : Results;
-    readonly messages : Results;
-    private messageFactory : (results:Results)=>MessageType
-
-    constructor(
-        readonly value: ValueType,
-        readonly validators : Container,
-        map : (value:ValueType, validators:Container)=>Results,
-        validation : (results:Results)=>ValidatableType,
-        message : (results:Results)=>MessageType,
-    ) {
-        this.messageFactory = message;
-
-        this.validatables = map(value, this.validators);
-        this.validatable = validation(this.validatables);
-        this.valid = this.validatable.valid;
-        this.messages = this.validatables;
-    }
-
-    @MemoizeAccessor()
-    get message() : MessageType {
-
-        return this.messageFactory(this.validatables);
-    }
+    export const Parameter = ValueCallbackParameter;
+    export const Parameters = ValueCallbackParameters;
+    export type Argument<
+        ValueType,
+        ValidatorList extends Validator[] = Validator[],
+        Results extends Instance[] = Instance[],
+        MessageType = unknown,
+        ValidatableType extends Validatable = Validatable
+    > = ValueCallbackArgument<
+        ValueType,
+        ValidatorList,
+        Results,
+        MessageType,
+        ValidatableType
+    >;
 }
 
-
-
+export default Value;

@@ -1,1 +1,7 @@
-export default function Equal<Value>(array1: ReadonlyArray<Value>, array2: ReadonlyArray<Value>, compare?: (value1: Value, value2: Value) => boolean): boolean;
+import EqualParameters from "./equal-parameters";
+import EqualParameter from "./equal-parameter";
+declare namespace Equal {
+    const Parameter: typeof EqualParameter;
+    const Parameters: typeof EqualParameters;
+}
+export default Equal;

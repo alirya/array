@@ -1,4 +1,9 @@
 import Validator from "@dikac/t-validator/validator";
-import ListStrict from "./infer";
-import Union from "../../../union";
-export default function ValuePartial<ValueType, Validators extends Validator<unknown, ValueType>[]>(value: ValueType, validators: Validators, stop?: boolean): Union<ListStrict<Validators>>;
+import ValuePartialParameter, { ValuePartialArgument } from "./value-partial-parameter";
+import ValuePartialParameters from "./value-partial-parameters";
+declare namespace ValuePartial {
+    const Parameter: typeof ValuePartialParameter;
+    const Parameters: typeof ValuePartialParameters;
+    type Argument<ValueType, Validators extends Validator<unknown, ValueType>[]> = ValuePartialArgument<ValueType, Validators>;
+}
+export default ValuePartial;

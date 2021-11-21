@@ -1,8 +1,12 @@
-import EmptyValidatable from "../validatable/empty";
-import EmptyMessage from "../validatable/string/empty";
-export default function Empty(message = EmptyMessage) {
-    return function (value) {
-        return new EmptyValidatable(value, message);
-    };
-}
+import EmptyParameter from "./value-callback-parameter";
+import EmptyParameters from "./value-callback-parameters";
+/**
+ *  validate if array is empty
+ */
+var Empty;
+(function (Empty) {
+    Empty.Parameter = EmptyParameter;
+    Empty.Parameters = EmptyParameters;
+})(Empty || (Empty = {}));
+export default Empty;
 //# sourceMappingURL=empty.js.map

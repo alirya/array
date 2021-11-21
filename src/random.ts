@@ -1,23 +1,8 @@
-import RandomBoolean from "@dikac/t-boolean/random";
+import RandomParameter from "./random-parameter";
+import RandomParameters from "./random-parameters";
 
-/**
- * pick a random values
- *
- * @param array
- * @param random
- */
-export default function Random<Value>(array : ReadonlyArray<Value>, random : ()=> boolean = RandomBoolean) : Value[] {
-
-    let gets : Value[]= [];
-
-    for (let data of array) {
-
-        if (random()) {
-
-            gets.push(data);
-
-        }
-    }
-
-    return gets;
+namespace Random {
+    export const Parameter = RandomParameter;
+    export const Parameters = RandomParameters;
 }
+export default Random;

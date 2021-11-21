@@ -1,4 +1,4 @@
-import Duplicate from "../dist/duplicate";
+import Duplicate from "../dist/duplicate-parameters";
 
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});

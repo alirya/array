@@ -1,25 +1,11 @@
+import OrParameters from "./or-parameters";
+import OrParameter from "./or-parameter";
 
-export default function Or(
-    booleans : ReadonlyArray<boolean>,
-    defaults : boolean = true
-) : boolean {
 
-    if(!booleans.length) {
+namespace Or {
 
-        return defaults;
-    }
-
-    let result : boolean = false;
-
-    for(let boolean of booleans) {
-
-        result = result || boolean;
-
-        if(boolean) {
-
-            return true;
-        }
-    }
-
-    return false;
+    export const Parameter  = OrParameter;
+    export const Parameters = OrParameters;
 }
+
+export default Or;

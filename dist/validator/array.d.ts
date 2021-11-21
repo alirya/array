@@ -1,9 +1,10 @@
-import Validator from "@dikac/t-validator/simple";
-import Validatable from "@dikac/t-validatable/validatable";
-import Value from "@dikac/t-value/value";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import ArrayParameter from "./value-callback-parameter";
+import ArrayParameters from "./value-callback-parameters";
 /**
  *  validate if value is array
  */
-export default function Array_(): Validator<unknown, Array<any>, Readonly<Instance<unknown, string>>>;
-export default function Array_<MessageType>(message: (result: Readonly<Value> & Readonly<Validatable>) => MessageType): Validator<unknown, Array<any>, Readonly<Instance<unknown, MessageType>>>;
+declare namespace Array {
+    const Parameter: typeof ArrayParameter;
+    const Parameters: typeof ArrayParameters;
+}
+export default Array;

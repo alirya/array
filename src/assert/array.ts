@@ -1,6 +1,6 @@
 import Guard from "../boolean/array";
-import Callback from "@dikac/t-function/assert/callback";
-import ArrayError from "./throwable/array";
+import Callback from "@dikac/t-function/assert/callback-parameters";
+import ArrayError from "./throwable/array-parameters";
 
 export default function Array(
     value : unknown,

@@ -12,7 +12,9 @@ export default function Valid<
     list : Object
 ) : MapUnion<Object> {
 
-    return  list.map((v)=>EnsureValidatable(v)).filter(ValidatableValid);
+    return list
+        .map((value)=>EnsureValidatable.Parameter(value))
+        .filter(ValidatableValid);
 
 }
 

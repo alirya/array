@@ -1,10 +1,9 @@
-export default function Map(values, validators) {
-    const result = [];
-    for (let [property, validator] of validators.entries()) {
-        const value = values[property];
-        const validatable = validator(value);
-        result[property] = validatable;
-    }
-    return result;
-}
+import MapParameter from "./map-parameter";
+import MapParameters from "./map-parameters";
+var Map;
+(function (Map) {
+    Map.Parameter = MapParameter;
+    Map.Parameters = MapParameters;
+})(Map || (Map = {}));
+export default Map;
 //# sourceMappingURL=map.js.map

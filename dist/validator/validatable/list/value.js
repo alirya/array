@@ -1,9 +1,9 @@
-export default function Value(value, validators) {
-    const result = [];
-    for (const [property, validator] of validators.entries()) {
-        const validatable = validator(value);
-        result[property] = validatable;
-    }
-    return result;
-}
+import ValueParameters from "./value-parameters";
+import ValueParameter from "./value-parameter";
+var Value;
+(function (Value) {
+    Value.Parameters = ValueParameters;
+    Value.Parameter = ValueParameter;
+})(Value || (Value = {}));
+export default Value;
 //# sourceMappingURL=value.js.map

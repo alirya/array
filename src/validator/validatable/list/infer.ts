@@ -1,5 +1,5 @@
 import Validator from "@dikac/t-validator/validator";
-import InferReturn from "@dikac/t-validator/validatable/infer-unambiguous";
+import InferReturn from "@dikac/t-validator/validatable/infer-static";
 
 type Infer<Schema extends Validator[]> = {
     [Key in keyof Schema] : InferReturn<Schema[Key]>

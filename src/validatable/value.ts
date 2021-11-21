@@ -5,7 +5,7 @@ import ValidatableContainer from "@dikac/t-validatable/validatable/validatable";
 import Validators from "../validator/validators/validators";
 import Message from "@dikac/t-message/message";
 import Messages from "../message/messages/messages";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Instance from "@dikac/t-validator/validatable/dynamic";
 import Validatables from "./validatables/validatables";
 
 
@@ -16,15 +16,13 @@ export default interface Value<
     MessageType,
     ValidatableType extends Validatable
 > extends
-    BaseValue<ValueType> ,
-    Validatable ,
-    Validators<Container> ,
-    Message<MessageType> ,
-    Messages<Results> ,
-    ValidatableContainer<ValidatableType> ,
+    BaseValue<ValueType>,
+    Validatable,
+    Validators<Container>,
+    Message<MessageType>,
+    Messages<Results>,
+    ValidatableContainer<ValidatableType>,
     Validatables<Results>
-{
-
-}
+{}
 
 

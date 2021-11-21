@@ -1,4 +1,9 @@
-export default function RemoveIndex(array, index) {
-    return array.splice(index, 1).length !== 0;
-}
+import RemoveIndexParameter from "./remove-index-parameter";
+import RemoveIndexParameters from "./remove-index-parameters";
+var RemoveIndex;
+(function (RemoveIndex) {
+    RemoveIndex.Parameter = RemoveIndexParameter;
+    RemoveIndex.Parameters = RemoveIndexParameters;
+})(RemoveIndex || (RemoveIndex = {}));
+export default RemoveIndex;
 //# sourceMappingURL=remove-index.js.map

@@ -1,4 +1,4 @@
-import DifferenceBoth from "../dist/difference-both";
+import DifferenceBoth from "../dist/difference-both-parameters";
 
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});

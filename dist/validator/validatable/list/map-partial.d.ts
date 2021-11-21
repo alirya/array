@@ -1,5 +1,9 @@
-import ListArgument from "../../base/list/infer";
 import Validator from "@dikac/t-validator/validator";
-import ListStrict from "./infer";
-import Union from "../../../union";
-export default function Map<Validators extends Validator[]>(values: ListArgument<Validators>, validators: Validators, stop?: boolean): Union<ListStrict<Validators>>;
+import MapPartialParameter, { MapPartialArgument } from "./map-partial-parameter";
+import MapPartialParameters from "./map-partial-parameters";
+declare namespace MapPartial {
+    const Parameter: typeof MapPartialParameter;
+    const Parameters: typeof MapPartialParameters;
+    type Argument<Validators extends Validator[]> = MapPartialArgument<Validators>;
+}
+export default MapPartial;

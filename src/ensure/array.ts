@@ -1,12 +1,9 @@
-import AssertArray from "../assert/array";
-import ArrayError from "../assert/throwable/array";
+import ArrayParameter from "./array-parameter";
+import ArrayParameters from "./array-parameters";
 
-export default function Array(
-    value : unknown,
-    error : (value:unknown)=>Error = ArrayError
-) : unknown[] {
+namespace Array {
 
-    AssertArray(value, error);
-
-    return value;
+    export const Parameter = ArrayParameter;
+    export const Parameters = ArrayParameters;
 }
+export default Array;

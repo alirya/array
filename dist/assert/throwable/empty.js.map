@@ -1,1 +1,1 @@
-{"version":3,"file":"empty.js","sourceRoot":"","sources":["../../../src/assert/throwable/empty.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,4BAA4B,CAAC;AAEnD,MAAM,CAAC,OAAO,UAAU,KAAK,CAAC,MAAkB;IAE5C,OAAO,IAAI,KAAK,CAAC,SAAS,CAAC,KAAK,EAAE,MAAM,CAAC,CAAC,CAAA;AAC9C,CAAC"}
+{"version":3,"file":"empty.js","sourceRoot":"","sources":["../../../src/assert/throwable/empty.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,sCAAsC,CAAC;AAE7D,MAAM,CAAC,OAAO,UAAU,KAAK,CAAC,MAAkB;IAE5C,OAAO,IAAI,KAAK,CAAC,SAAS,CAAC,MAAM,EAAE,KAAK,CAAC,CAAC,CAAA;AAC9C,CAAC"}

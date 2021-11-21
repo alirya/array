@@ -1,26 +1,18 @@
-import ListReturn from "./infer";
 import Validator from "@dikac/t-validator/validator";
-import {List} from "ts-toolbelt";
-import ListStrict from "./infer";
-import Union from "../../../union";
+import Value from "@dikac/t-value/value";
+import ValueParameters from "./value-parameters";
+import ValueParameter, {ValueArgument} from "./value-parameter";
 
-export default function Value<
-    ValueType,
-    Validators extends Validator<unknown, ValueType>[]
->(
-    value : ValueType,
-    validators : Validators,
-) : ListReturn<Validators> {
+namespace Value {
 
-    const result : ListReturn<Validators> | Union<ListStrict<Validators>> = <Union<ListStrict<Validators>>>[];
-
-    for(const [property, validator] of validators.entries()) {
-
-        const validatable = validator(value);
-
-        result[property] = <List.UnionOf<ListStrict<Validators>>> validatable;
-
-    }
-
-    return <ListReturn<Validators>> result;
+    export const Parameters = ValueParameters;
+    export const Parameter = ValueParameter;
+    export type Argument<
+        ValueType,
+        Validators extends Validator<unknown, ValueType>[]
+    > = ValueArgument<
+        ValueType,
+        Validators
+    >;
 }
+export default Value;

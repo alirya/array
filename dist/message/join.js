@@ -1,12 +1,9 @@
-import Reset from "../reset";
-export default class Join {
-    constructor(messages, delimiter) {
-        this.messages = messages;
-        this.delimiter = delimiter;
-    }
-    get message() {
-        let messages = Reset(this.messages);
-        return messages.map(message => message.message).join(this.delimiter);
-    }
-}
+import JoinParameters from "./join-parameters";
+import JoinParameter from "./join-parameter";
+var Join;
+(function (Join) {
+    Join.Parameter = JoinParameter;
+    Join.Parameters = JoinParameters;
+})(Join || (Join = {}));
+export default Join;
 //# sourceMappingURL=join.js.map

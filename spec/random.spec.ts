@@ -1,4 +1,4 @@
-import Random from "../dist/random";
+import Random from "../dist/random-parameters";
 
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});

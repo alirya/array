@@ -1,11 +1,9 @@
-import Equal from "@dikac/t-boolean/equal";
-export default function Indexes(array, value, validator = Equal, start = 0, end = Infinity) {
-    let indexes = [];
-    for (let i = start; array[i] !== undefined && i <= end; i++) {
-        if (validator(array[i], value)) {
-            indexes.push(i);
-        }
-    }
-    return indexes;
-}
+import IndexesParameter from "./indexes-parameter";
+import IndexesParameters from "./indexes-parameters";
+var Indexes;
+(function (Indexes) {
+    Indexes.Parameters = IndexesParameters;
+    Indexes.Parameter = IndexesParameter;
+})(Indexes || (Indexes = {}));
+export default Indexes;
 //# sourceMappingURL=indexes.js.map

@@ -1,1 +1,1 @@
-{"version":3,"file":"merge.js","sourceRoot":"","sources":["../src/merge.ts"],"names":[],"mappings":""}
+{"version":3,"file":"merge.js","sourceRoot":"","sources":["../src/merge.ts"],"names":[],"mappings":"AAAA,OAAO,cAAc,MAAM,mBAAmB,CAAC;AAC/C,OAAO,eAAe,MAAM,oBAAoB,CAAC;AAEjD,IAAU,KAAK,CAGd;AAHD,WAAU,KAAK;IACE,eAAS,GAAG,cAAc,CAAC;IAC3B,gBAAU,GAAG,eAAe,CAAC;AAC9C,CAAC,EAHS,KAAK,KAAL,KAAK,QAGd;AACD,eAAe,KAAK,CAAC"}
