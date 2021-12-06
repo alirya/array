@@ -50,7 +50,7 @@
     "compile-watch": "npm-run-all --sequential compile-ensure-directory --parallel compile-script-watch cleanup-watch",
     "compile-ensure-directory": "mkdirp dist",
     "release": "remove-json-properties dist/package.json private scripts.postinstall",
-    "postrelease": "npm publish dist",
+    "postrelease": "npm publish ./dist",
     "prerelease": "cpy     package.json package-lock.json LICENSE Readme.md .npmignore dist",
     "postpublish": "rimraf package.json package-lock.json LICENSE Readme.md .npmignore"
   },
