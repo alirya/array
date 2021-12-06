@@ -7,7 +7,7 @@ import ValidatablesInterface from "../../dist/validatable/validatables/validatab
 import Validatables from "../../dist/validatable/validatables/validatables";
 import SimpleValidator from "@dikac/t-validator/simple";
 import Or from "../../dist/validatable/or-parameters";
-import Instance from "@dikac/t-validator/validatable/dynamic";
+import Instance from "@dikac/t-validator/validatable/validatable";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -42,10 +42,8 @@ describe("compiler compatibility", function() {
 
         let unknown : unknown = validatable.value;
 
-
         let string : string[] = validatable.value;
         let string2 : [string, string] = validatable.value;
-
 
         describe("recursive", function() {
 

@@ -1,7 +1,7 @@
 import EmptyArgument from "../boolean/empty";
 import Callback from "@dikac/t-validator/validatable/callback-class-parameters";
-import Validatable from "@dikac/t-validator/validatable/dynamic";
-import Dynamic from "@dikac/t-validator/message/function/dynamic";
+import Validatable from "@dikac/t-validator/validatable/validatable";
+import Dynamic from "@dikac/t-validator/message/function/validatable";
 
 //
 // export type EmptyParameterType<Values extends unknown[], MessageType> = Readonly<Validatable<Values, MessageType>>;
@@ -11,7 +11,7 @@ export default function EmptyParameters<Values extends unknown[], MessageType>(
     message : Dynamic.Parameters<Values, MessageType>,
 ) : Readonly<Validatable<Values, MessageType>> {
 
-    return new Callback(value, EmptyArgument, message)
+    return new Callback<Values>(value, EmptyArgument, message) as Readonly<Validatable<Values, MessageType>>
 }
 
 // export function EmptyObject<MessageType, Values extends unknown[]>(

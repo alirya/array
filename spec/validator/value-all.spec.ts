@@ -6,7 +6,7 @@ import Validatable from "@dikac/t-validatable/validatable";
 import SimpleValidator from "@dikac/t-validator/simple";
 import MessageMap from "../../dist/message/message/list/map";
 import ValidatorType from "@dikac/t-type/validator/type-parameters";
-import Instance from "@dikac/t-validator/validatable/dynamic";
+import Instance from "@dikac/t-validator/validatable/validatable";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -54,7 +54,7 @@ describe("compiler compatibility", function() {
 
         describe("auto", function() {
 
-            let property = ValueAll(validator, (v)=>And(<Validatable[]>v), MessageMap);
+            let property = ValueAll(validator, (v)=>And(<[Validatable, Validatable]>v), MessageMap);
 
             let validatable = property('data');
 
@@ -82,7 +82,7 @@ describe("compiler compatibility", function() {
 
         describe("complete", function() {
 
-            let property = ValueAll<string>(validator, (v)=>And(<Validatable[]>v), MessageMap);
+            let property = ValueAll(validator, (v)=>And(<Validatable[]>v), MessageMap);
 
             let validatable = property('data');
 

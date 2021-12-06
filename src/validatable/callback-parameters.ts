@@ -7,7 +7,8 @@ export default class CallbackParameters<
     Boolean extends boolean = boolean
 > implements
     Validatable,
-    Validatables<ValidatableList>
+    Validatables<ValidatableList>,
+    Iterable<List.UnionOf<ValidatableList>>
 {
     readonly valid : boolean;
 

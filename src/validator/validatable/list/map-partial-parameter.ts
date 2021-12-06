@@ -1,4 +1,4 @@
-import ListArgument from "../../base/list/infer";
+import ListArgument from "../../subject/list/allow";
 import Validator from "@dikac/t-validator/validator";
 import ListStrict from "./infer";
 import Unions from "../../../unions";

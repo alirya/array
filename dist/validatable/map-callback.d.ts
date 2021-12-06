@@ -1,7 +1,7 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import ListParameter from "../validator/base/list/infer";
-import Instance from "@dikac/t-validator/validatable/dynamic";
+import ListParameter from "../validator/subject/list/allow";
+import Instance from "@dikac/t-validator/validatable/validatable";
 import MapCallbackParameter, { ValueCallbackArgument } from "./map-callback-parameter";
 import MapCallbackParameters from "./map-callback-parameters";
 declare namespace MapCallback {

@@ -1,7 +1,7 @@
 import Validator from "@dikac/t-validator/validator";
 import NotEmptyValidatable, {NotEmptyType} from "../validatable/not-empty-parameters";
 import NotEmptyMessage from "../validatable/string/not-empty-parameters";
-import Dynamic from "@dikac/t-validator/message/function/dynamic";
+import Dynamic from "@dikac/t-validator/message/function/validatable";
 
 export default function NotEmptyParameters () : Validator<Array<any>, Array<any>, boolean, boolean, NotEmptyType<Array<any>, string>>;
 

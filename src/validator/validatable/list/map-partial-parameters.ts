@@ -1,4 +1,4 @@
-import ListArgument from "../../base/list/infer";
+import ListArgument from "../../subject/list/allow";
 import ListReturn from "./infer";
 import Validator from "@dikac/t-validator/validator";
 import {List} from "ts-toolbelt";

@@ -1,8 +1,8 @@
 import Validator from "@dikac/t-validator/validator";
 import EmptyMessage from "../validatable/string/empty-parameter";
-import Dynamic from "@dikac/t-validator/message/function/dynamic";
+import Dynamic from "@dikac/t-validator/message/function/validatable";
 import EmptyParameters from "./empty-parameters";
-import Validatable from "@dikac/t-validator/validatable/dynamic";
+import Validatable from "@dikac/t-validator/validatable/validatable";
 
 /**
  *  validate if array is empty

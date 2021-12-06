@@ -5,7 +5,7 @@ import ValidatableInValid from "@dikac/t-validatable/boolean/invalid";
  */
 export default function Invalid(list) {
     return list
-        .map((value) => EnsureValidatable.Parameter(value))
+        .map((value) => EnsureValidatable.Parameters(value))
         .filter(ValidatableInValid);
 }
 //# sourceMappingURL=invalid.js.map

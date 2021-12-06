@@ -1,6 +1,6 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import Instance from "@dikac/t-validator/validatable/dynamic";
+import Instance from "@dikac/t-validator/validatable/validatable";
 import ListCallbackParameters from "./list-callback-parameters";
 import ListCallbackParameter, { ValueCallbackArgument } from "./list-callback-parameter";
 declare namespace ListCallback {

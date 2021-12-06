@@ -1,9 +1,7 @@
-// noinspection ES6UnusedImports
-
 import Validator from "@dikac/t-validator/validator";
 import NotEmptyValidatable, {NotEmptyType} from "../validatable/not-empty-parameters";
 import NotEmptyMessage from "../validatable/string/not-empty-parameter";
-import Dynamic from "@dikac/t-validator/message/function/dynamic";
+import Dynamic from "@dikac/t-validator/message/function/validatable";
 import NotEmptyParameters from "./not-empty-parameters";
 
 export default function NotEmptyParameter () : Validator<Array<any>, Array<any>, boolean, boolean, NotEmptyType<Array<any>, string>>;

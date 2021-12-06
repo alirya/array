@@ -1,5 +1,5 @@
 import Validatable from "@dikac/t-validatable/validatable";
-import IterableAnd from "@dikac/t-iterable/validatable/boolean/and";
+import IterableAnd from "@dikac/t-iterable/validatable/boolean/and-parameters";
 
 
 export default function AndParameters<

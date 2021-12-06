@@ -5,7 +5,7 @@ import Or from "../../../dist/validatable/or-parameters";
 import ValidatorInterface from "@dikac/t-validator/simple";
 import MessageMap from "../../../dist/message/message/list/map";
 import ValidatorType from "@dikac/t-type/validator/type-parameters";
-import Instance from "@dikac/t-validator/validatable/dynamic";
+import Instance from "@dikac/t-validator/validatable/validatable";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

@@ -1,6 +1,6 @@
 import Message from "@dikac/t-message/message";
 import ListInfer from "./infer";
-import EnsureMessage from "@dikac/t-message/ensure/message";
+import EnsureMessage from "@dikac/t-message/ensure/message-parameters";
 import ValueMessage from "@dikac/t-message/message/value";
 
 export default function Map<

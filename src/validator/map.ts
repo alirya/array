@@ -2,9 +2,9 @@ import Validator from "@dikac/t-validator/validator";
 import SimpleValidator from "@dikac/t-validator/simple";
 import Validatable from "@dikac/t-validatable/validatable";
 import ValidatableMapInterface from "../validatable/map";
-import BaseList from "./base/list/infer";
-import TypeList from "./type/list/infer";
-import Instance from "@dikac/t-validator/validatable/dynamic";
+import BaseList from "./subject/list/allow";
+import TypeList from "./subject/list/expectation";
+import Instance from "@dikac/t-validator/validatable/validatable";
 
 /**
  * Base {@link Validator} for validating list of value with list of  {@link Validator}
@@ -34,7 +34,7 @@ type Map<
     SimpleValidator<
         BaseList<ValidatorsType>,
         TypeList<ValidatorsType>,
-        ValidatableMapInterface<ValidatorsType, Validatables, MessageType, ValidatableType, BaseList<ValidatorsType>>
+        ValidatableMapInterface<ValidatorsType, Validatables, MessageType, ValidatableType/*, BaseList<ValidatorsType>*/>
     >;
 
 export default Map;

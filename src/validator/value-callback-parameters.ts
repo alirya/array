@@ -1,7 +1,7 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
 import ValidatableValue from "../validatable/value-callback-parameters";
-import Instance from "@dikac/t-validator/validatable/dynamic";
+import Instance from "@dikac/t-validator/validatable/validatable";
 import Value from "./value";
 
 // export default ValueCallback;
@@ -35,19 +35,20 @@ import Value from "./value";
 
 export default function ValueCallbackParameters<
     BaseType = unknown,
-    ValueType extends BaseType = BaseType,
+    ValueType = unknown,
     MessageType = unknown,
+    //Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
     Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
     Validatables extends Instance[] = Instance[],
     ValidatableType extends Validatable  = Validatable
 > (
     validators : Validators,
-    map : (value:BaseType, validators:Validators)=>Validatables,
+    map : (value:BaseType|ValueType, validators:Validators)=>Validatables,
     validation : (result:Validatables)=>ValidatableType,
     message : (result:Validatables)=>MessageType
 ) : Value<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType> {
 
-    return function<Type extends ValueType, Argument extends BaseType>(value : Type|Argument) {
+    return function(value) {
 
         return new ValidatableValue(value, validators, map, validation, message);
 

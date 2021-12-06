@@ -1,6 +1,6 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import Instance from "@dikac/t-validator/validatable/dynamic";
+import Instance from "@dikac/t-validator/validatable/validatable";
 import Value from "./value";
 /**
  * Base {@link Validator} for validating value with list of {@link Validator}
@@ -23,4 +23,4 @@ import Value from "./value";
  * @template ValidatableType
  * final result after processing {@template Result}
  */
-export default function ValueCallbackParameters<BaseType = unknown, ValueType extends BaseType = BaseType, MessageType = unknown, Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[], Validatables extends Instance[] = Instance[], ValidatableType extends Validatable = Validatable>(validators: Validators, map: (value: BaseType, validators: Validators) => Validatables, validation: (result: Validatables) => ValidatableType, message: (result: Validatables) => MessageType): Value<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>;
+export default function ValueCallbackParameters<BaseType = unknown, ValueType = unknown, MessageType = unknown, Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[], Validatables extends Instance[] = Instance[], ValidatableType extends Validatable = Validatable>(validators: Validators, map: (value: BaseType | ValueType, validators: Validators) => Validatables, validation: (result: Validatables) => ValidatableType, message: (result: Validatables) => MessageType): Value<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>;

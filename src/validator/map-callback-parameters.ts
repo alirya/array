@@ -2,10 +2,10 @@ import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
 import ValidatableMap from "../validatable/map-callback-parameters";
 import ValidatableMapInterface from "../validatable/map";
-import BaseList from "./base/list/infer";
-import TypeList from "./type/list/infer";
+import BaseList from "./subject/list/allow";
+import TypeList from "./subject/list/expectation";
 import Construct from "@dikac/t-validator/validatable/simple";
-import Instance from "@dikac/t-validator/validatable/dynamic";
+import Instance from "@dikac/t-validator/validatable/validatable";
 import Map from "./map";
 import Replace from "@dikac/t-validatable/boolean/replace";
 
@@ -41,11 +41,11 @@ export default function MapCallbackParameters<
     message : (result:Validatables)=>MessageType
 ) : Map<Validators, Validatables, MessageType, ValidatableType> {
 
-    return function<Type extends TypeList<Validators>, Argument extends BaseList<Validators>> (value : Type|Argument) {
+    return function(value) {
 
         return new ValidatableMap(value, validators, map, validation, message) as
-            Replace<ValidatableMapInterface<Validators, Validatables, MessageType, ValidatableType, Argument>, true> |
-            Construct<BaseList<Validators>, Argument, TypeList<Validators>, ValidatableMapInterface<Validators, Validatables, MessageType, ValidatableType, Argument>>;
+            Replace<ValidatableMapInterface<Validators, Validatables, MessageType, ValidatableType>, true> |
+            Construct<BaseList<Validators>, TypeList<Validators>, ValidatableMapInterface<Validators, Validatables, MessageType, ValidatableType>>;
 
     } as Map<Validators, Validatables, MessageType, ValidatableType>
 }

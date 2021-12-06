@@ -2,7 +2,7 @@ import Message from "@dikac/t-message/message";
 import NotEmptyArgument from "../boolean/not-empty";
 import ValueInterface from "@dikac/t-value/value";
 import NotEmptyParameters from "./not-empty-parameters";
-import Dynamic from "@dikac/t-validator/message/function/dynamic";
+import Dynamic from "@dikac/t-validator/message/function/validatable";
 
 
 export type NotEmptyArgument<

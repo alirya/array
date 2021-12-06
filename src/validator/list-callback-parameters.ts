@@ -1,8 +1,8 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
 import ValidatableListCallback from "../validatable/list-callback-parameters";
-import Instance from "@dikac/t-validator/validatable/dynamic";
-import BaseInfer from "@dikac/t-validator/base/infer";
+import Instance from "@dikac/t-validator/validatable/validatable";
+import BaseInfer from "@dikac/t-validator/subject/allow";
 import List from "./list";
 
 /**

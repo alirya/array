@@ -1,8 +1,8 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import Instance from "@dikac/t-validator/validatable/dynamic";
+import Instance from "@dikac/t-validator/validatable/validatable";
 import Value from "./value";
-export default class ValueCallbackParameters<ValueType, ValidatorList extends Validator[] = Validator[], Results extends Instance[] = Instance[], MessageType = unknown, ValidatableType extends Validatable = Validatable> implements Value<ValueType, ValidatorList, Results, MessageType, ValidatableType> {
+export default class ValueCallbackParameters<ValueType, ValidatorList extends Validator<ValueType>[] = Validator<ValueType>[], Results extends Instance[] = Instance[], MessageType = unknown, ValidatableType extends Validatable = Validatable> implements Value<ValueType, ValidatorList, Results, MessageType, ValidatableType> {
     #private;
     readonly value: ValueType;
     readonly validators: ValidatorList;

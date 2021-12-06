@@ -6,6 +6,10 @@ import ValueCallback from "./value-callback-parameters";
 import Value from "./value";
 import InferMessage from "../message/message/list/infer";
 import Map from "../message/message/list/map";
+import Unions from "../unions";
+import {List} from "ts-toolbelt";
+import Allow from "./subject/list/allow";
+import Expectation from "./subject/list/expectation";
 
 
 /**
@@ -23,8 +27,28 @@ import Map from "../message/message/list/map";
  * combined all result from {@link Validator} list into {@link Message} value
  */
 export default function ValueAllParameters<
+    Validators extends Validator[] = Validator[],
+    ReturnType extends Validatable = Validatable,
+    MessageType = unknown,
+>(
+    validators : Validators,
+    validation : (result:ListReturn<Validators>)=>ReturnType,
+    message : (result:ListReturn<Validators>)=>MessageType
+) : Value<List.UnionOf<Allow<Validators>>, List.UnionOf<Expectation<Validators>>, MessageType, Validators, ListReturn<Validators>, ReturnType>;
+
+
+export default function ValueAllParameters<
+    Validators extends Validator[] = Validator[],
+    ReturnType extends Validatable = Validatable,
+>(
+    validators : Validators,
+    validation : (result:ListReturn<Validators>)=>ReturnType,
+) : Value<List.UnionOf<Allow<Validators>>, List.UnionOf<Expectation<Validators>>, InferMessage<ListReturn<Validators>>, Validators, ListReturn<Validators>, ReturnType>;
+
+
+export default function ValueAllParameters<
     BaseType = unknown,
-    ValueType extends BaseType = BaseType,
+    ValueType = unknown,
     Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
     ReturnType extends Validatable = Validatable,
 >(
@@ -35,7 +59,7 @@ export default function ValueAllParameters<
 
 export default function ValueAllParameters<
     BaseType = unknown,
-    ValueType extends BaseType = BaseType,
+    ValueType = unknown,
     Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
     ReturnType extends Validatable = Validatable,
     MessageType = unknown,
@@ -48,7 +72,7 @@ export default function ValueAllParameters<
 
 export default function ValueAllParameters<
     BaseType = unknown,
-    ValueType extends BaseType = BaseType,
+    ValueType = unknown,
     Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
     ReturnType extends Validatable = Validatable,
     MessageType = unknown,

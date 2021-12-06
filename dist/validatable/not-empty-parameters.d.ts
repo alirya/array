@@ -1,6 +1,6 @@
 import { List } from "ts-toolbelt";
-import Instance from "@dikac/t-validator/validatable/dynamic";
-import Dynamic from "@dikac/t-validator/message/function/dynamic";
+import Instance from "@dikac/t-validator/validatable/validatable";
+import Dynamic from "@dikac/t-validator/message/function/validatable";
 export declare type NotEmptyType<Values extends unknown[], MessageType> = Readonly<Instance<Values, MessageType>> & Iterable<List.UnionOf<Values>>;
 export default class NotEmptyParameters<Values extends unknown[], MessageType> implements NotEmptyType<Values, MessageType> {
     #private;

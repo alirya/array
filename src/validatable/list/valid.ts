@@ -13,7 +13,7 @@ export default function Valid<
 ) : MapUnion<Object> {
 
     return list
-        .map((value)=>EnsureValidatable.Parameter(value))
+        .map((value)=>EnsureValidatable.Parameters(value))
         .filter(ValidatableValid);
 
 }

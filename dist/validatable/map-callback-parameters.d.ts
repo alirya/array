@@ -1,9 +1,9 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
-import ListParameter from "../validator/base/list/infer";
-import Instance from "@dikac/t-validator/validatable/dynamic";
+import ListParameter from "../validator/subject/list/allow";
+import Instance from "@dikac/t-validator/validatable/validatable";
 import Map from "./map";
-export default class MapCallbackParameters<Validators extends Validator[] = Validator[], Result extends Instance[] = Instance[], MessageType = unknown, ValidatableType extends Validatable = Validatable, ValueType extends ListParameter<Validators> = ListParameter<Validators>> implements Map<Validators, Result, MessageType, ValidatableType, ValueType> {
+export default class MapCallbackParameters<Validators extends Validator[] = Validator[], Result extends Instance[] = Instance[], MessageType = unknown, ValidatableType extends Validatable = Validatable, ValueType extends ListParameter<Validators> = ListParameter<Validators>> implements Map<Validators, Result, MessageType, ValidatableType> {
     #private;
     readonly validators: Validators;
     private map;

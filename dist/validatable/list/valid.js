@@ -5,7 +5,7 @@ import ValidatableValid from "@dikac/t-validatable/boolean/value";
  */
 export default function Valid(list) {
     return list
-        .map((value) => EnsureValidatable.Parameter(value))
+        .map((value) => EnsureValidatable.Parameters(value))
         .filter(ValidatableValid);
 }
 //# sourceMappingURL=valid.js.map

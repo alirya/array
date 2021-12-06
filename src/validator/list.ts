@@ -1,10 +1,12 @@
 import Validator from "@dikac/t-validator/validator";
 import SimpleValidator from "@dikac/t-validator/simple";
 import Validatable from "@dikac/t-validatable/validatable";
-import ValidatorValidatable from "@dikac/t-validator/validatable/dynamic";
-import BaseInfer from "@dikac/t-validator/base/infer";
-import TypeInfer from "@dikac/t-validator/expectation/infer";
+import ValidatorValidatable from "@dikac/t-validator/validatable/validatable";
+import BaseInfer from "@dikac/t-validator/subject/allow";
+import TypeInfer from "@dikac/t-validator/subject/expectation";
+import SubjectInfer from "@dikac/t-validator/subject/subject";
 import ValidatableListInterface from "../validatable/list";
+
 /**
  * Base {@link Validator} for validating list of value with {@link Validator}
  *
@@ -32,7 +34,7 @@ type List<
     SimpleValidator<
         BaseInfer<ValidatorType>[],
         TypeInfer<ValidatorType>[],
-        ValidatableListInterface<TypeInfer<ValidatorType>[], ValidatorType, Validatables, MessageType, ValidatableType>
+        ValidatableListInterface<SubjectInfer<ValidatorType>[], ValidatorType, Validatables, MessageType, ValidatableType>
     >
 export default List;
 

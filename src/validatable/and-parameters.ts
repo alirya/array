@@ -1,11 +1,11 @@
 import Validatable from "@dikac/t-validatable/validatable";
-import IterableAnd from "@dikac/t-iterable/validatable/boolean/and";
+import IterableAnd from "@dikac/t-iterable/validatable/boolean/and-parameters";
 import Callback from "./callback-parameters";
 import Validatables from "./validatables/validatables";
 import {List as Li} from "ts-toolbelt";
 
 
-export default function AndParameters<List extends Validatable[]>(
+export default function AndParameters<List extends ReadonlyArray<Validatable>>(
     validatables : List,
     defaults : boolean = true
 ) : Callback<List> {
