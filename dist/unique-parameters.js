@@ -8,9 +8,7 @@ import Equal from "@dikac/t-boolean/equal";
  * to compare value equality
  *
  */
-export default function UniqueParameters(value, 
-//validation : (value1 : Value, value2 : Value) => boolean = Equal
-validation = Equal) {
+export default function UniqueParameters(value, validation = Equal) {
     let results = [];
     PARENT: for (let index1 in value) {
         for (let result of results) {

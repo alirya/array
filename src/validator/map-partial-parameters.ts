@@ -58,12 +58,6 @@ export default function MapPartialParameters<
     stop : boolean = false,
 ) : MapCallbackInterface<Validators, Unions<ListStrict<Validators>>, MessageType|Unions<InferMessage<ListStrict<Validators>>>, ValidatableType>  {
 
-    // if(Boolean(message)) {
-    //
-    //     return MapPartial(validators, validation, Map, message) as
-    //         MapCallbackInterface<Validators, Union<ListStrict<Validators>>, Union<InferMessage<ListStrict<Validators>>>, ValidatableType>;
-    // }
-
     return MapCallback(
         validators,
         (value, validators)=>ValidateMap(value, validators, stop),

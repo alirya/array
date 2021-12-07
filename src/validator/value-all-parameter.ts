@@ -53,8 +53,6 @@ export default function ValueAllParameter<
     Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
     ReturnType extends Validatable = Validatable,
 >(
-    // validators : Validators,
-    // validation : (result:ListReturn<Validators>)=>ReturnType,
     {
         validators,
         validation,
@@ -68,9 +66,6 @@ export default function ValueAllParameter<
     ReturnType extends Validatable = Validatable,
     MessageType = unknown,
 >(
-    // validators : Validators,
-    // validation : (result:ListReturn<Validators>)=>ReturnType,
-    // message : (result:ListReturn<Validators>)=>MessageType,
     {
         validators,
         validation,
@@ -85,9 +80,6 @@ export default function ValueAllParameter<
     ReturnType extends Validatable = Validatable,
     MessageType = unknown,
 >(
-    // validators : Validators,
-    // validation : (result:ListReturn<Validators>)=>ReturnType,
-    // message : (result:ListReturn<Validators>)=>MessageType,
     {
         validators,
         validation,

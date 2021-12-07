@@ -15,7 +15,6 @@ export default interface Map<
     Result extends Instance[],
     MessageType,
     ValidatableType extends Validatable,
-   // ValueT extends BaseList<ValidatorsType>
 > extends
     Readonly<Validators<ValidatorsType>>,
     Readonly<Value<ListParameter<ValidatorsType>>>,

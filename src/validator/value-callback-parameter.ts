@@ -40,7 +40,6 @@ export type ValueCallbackArgument<
     ValidatableType extends Validatable  = Validatable
 > =
     ValidatorsContainer<Validators> &
-    //Message<(result:Unions<ListReturn<Validators>>)=>MessageType> &
     Message<(result:Validatables)=>MessageType> &
     {
         map : (value:BaseType, validators:Validators)=>Validatables;
@@ -55,10 +54,6 @@ export default function ValueCallbackParameter<
     Validatables extends Instance<BaseType|ValueType>[] = Instance<BaseType|ValueType>[],
     ValidatableType extends Validatable  = Validatable
 > (
-    //validators : Validators,
-    //map : (value:BaseType, validators:Validators)=>Validatables,
-    //validation : (result:Validatables)=>ValidatableType,
-    //message : (result:Validatables)=>MessageType,
     {
         validators,
         map,

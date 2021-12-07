@@ -4,8 +4,6 @@ import OrParameters from "./or-parameters";
 export type OrParameterArgument = Readonly<boolean> & {defaults : boolean};
 
 export default function OrParameter(
-    // booleans : ReadonlyArray<boolean>,
-    // defaults : boolean = true,
     {
         list,
         defaults,

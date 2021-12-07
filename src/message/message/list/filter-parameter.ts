@@ -14,8 +14,6 @@ export type MessageFilterArgument<MessagesType extends Message[]> =
 export default function FilterParameter<
     MessagesType extends Message[]
 >(
-    // list : MessagesType,
-    // filter : (messages:List.UnionOf<MessagesType>)=>boolean,
     {
         messages,
         filter,

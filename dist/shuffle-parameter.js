@@ -9,10 +9,7 @@ import ShuffleParameters from "./shuffle-parameters";
  *
  * @return the same as argument {@param value}
  */
-export default function ShuffleParameter(
-// value : Type[],
-// random : ()=>boolean = Random,
-{ value, random, }) {
+export default function ShuffleParameter({ value, random, }) {
     return ShuffleParameters(value, random);
 }
 //# sourceMappingURL=shuffle-parameter.js.map

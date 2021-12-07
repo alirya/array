@@ -11,8 +11,6 @@ export type ArrayArgument<Argument, MessageType> =
     Message<Dynamic<Argument, MessageType>>
 
 export default function ArrayParameter<Argument, MessageType>(
-    // value : Values,
-    // message : (result:Readonly<Value<Values> & Validatable>)=>MessageType,
     {
         value,
         message,

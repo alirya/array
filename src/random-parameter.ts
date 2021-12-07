@@ -8,8 +8,6 @@ import RandomParameters from "./random-parameters";
  * @param random
  */
 export default function RandomParameter<Value>(
-    //array : ReadonlyArray<Value>,
-    //random : ()=> boolean = RandomBoolean,
     {
         value,
         random

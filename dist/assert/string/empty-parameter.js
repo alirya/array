@@ -6,11 +6,7 @@ import EmptyParameters from "./empty-parameters";
  * @param value
  * @param subject
  */
-export default function EmptyParameter(
-// valid : boolean,
-// value : unknown[],
-// subject : string = '',
-{ subject, valid, value }) {
+export default function EmptyParameter({ subject, valid, value }) {
     return EmptyParameters(value, valid, subject);
 }
 //# sourceMappingURL=empty-parameter.js.map

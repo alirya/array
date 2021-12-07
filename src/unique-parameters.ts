@@ -13,7 +13,6 @@ import Callable from "@dikac/t-function/callable";
  */
 export default function UniqueParameters<Value>(
     value : ReadonlyArray<Value>,
-    //validation : (value1 : Value, value2 : Value) => boolean = Equal
     validation : Callable<[Value, Value], boolean> = Equal
 ) : Value[] {
 

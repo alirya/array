@@ -20,8 +20,6 @@ export default function ListParameter<
     Argument extends unknown,
 >(
     list : ReadonlyArray<Argument>,
-    //validation : (value:Argument)=>value is Value,
-    //error : (value:unknown)=>Error,
     {validation, error} : ListArgument<Value, Argument>
 ) : ReadonlyArray<Value>
 
@@ -30,8 +28,6 @@ export default function ListParameter<
     Argument extends unknown,
 >(
     list : Argument[],
-    //validation : (value:Argument)=>value is Value,
-    //error : (value:unknown)=>Error,
     {validation, error} : ListArgument<Value, Argument>
 ) : Value[] ;
 
@@ -40,8 +36,6 @@ export default function ListParameter<
     Argument extends unknown,
 >(
     list : Argument[]|ReadonlyArray<Argument>,
-    //validation : (value:Argument)=>value is Value,
-    //error : (value:unknown)=>Error,
     {validation, error} : ListArgument<Value, Argument>
 ) : Value[]|ReadonlyArray<Argument> {
 

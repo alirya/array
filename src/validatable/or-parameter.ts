@@ -4,8 +4,6 @@ import OrParameters from "./or-parameters";
 import Callback from "./callback-parameters";
 
 export default function OrParameter<Validatables extends Validatable[]>(
-    // validatables : Validatables,
-    // defaults : boolean = true,
     {
         validatables,
         defaults,

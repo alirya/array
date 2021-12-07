@@ -12,8 +12,6 @@ import ShuffleParameters from "./shuffle-parameters";
  */
 
 export default function ShuffleParameter<Type>(
-    // value : Type[],
-    // random : ()=>boolean = Random,
     {
         value,
         random,

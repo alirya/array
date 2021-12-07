@@ -10,9 +10,6 @@ import EmptyParameters from "./empty-parameters";
  */
 
 export default function EmptyParameter(
-    // valid : boolean,
-    // value : unknown[],
-    // subject : string = '',
     {subject, valid, value} : Readonly<Value<unknown[]> & Validatable> & {subject?:string}
 ) : string {
 

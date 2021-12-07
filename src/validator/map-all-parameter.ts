@@ -45,8 +45,6 @@ export default function MapAllParameter<
     Validators extends Validator[] = Validator[],
     ValidatableType extends Validatable = Validatable,
 >(
-    //validators : Validators,
-    //validation : (result:ListReturn<Validators>)=>ValidatableType,
     {
         validators,
         validation,
@@ -58,9 +56,6 @@ export default function MapAllParameter<
     ValidatableType extends Validatable = Validatable,
     MessageType = unknown,
 >(
-    // validators : Validators,
-    // validation : (result:ListReturn<Validators>)=>ValidatableType,
-    // message : (result:ListReturn<Validators>)=>MessageType,
     {
         validators,
         validation,
@@ -73,9 +68,6 @@ export default function MapAllParameter<
     ValidatableType extends Validatable = Validatable,
     MessageType = unknown,
 >(
-    // validators : Validators,
-    // validation : (result:ListReturn<Validators>)=>ValidatableType,
-    // message : (result:ListReturn<Validators>)=>MessageType|InferMessage<InferList<Validators>> = Map,
     {
         validators,
         validation,

@@ -44,10 +44,6 @@ export function ListCallbackParameter<
     Validatables extends Instance[] = Instance[],
     ValidatableType extends Validatable  = Validatable
 > (
-    // validator : ValidatorType,
-    // map : (value:BaseInfer<ValidatorType>[], validator:ValidatorType)=>Validatables,
-    // validation : (result:Validatables)=>ValidatableType,
-    // message : (result:Validatables)=>MessageType,
     {
         validator,
         map,

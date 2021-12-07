@@ -47,10 +47,6 @@ export default function MapCallbackParameter<
     MessageType = unknown,
     ValidatableType extends Validatable = Validatable
 >(
-    // validators : Validators,
-    // map : (value:BaseList<Validators>, validators:Validators)=>Validatables,
-    // validation : (result:Validatables)=>ValidatableType,
-    // message : (result:Validatables)=>MessageType,
     {
         validators,
         map,

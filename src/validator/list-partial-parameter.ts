@@ -45,8 +45,6 @@ export default function ListPartialParameter<
     ValidatorType extends Validator = Validator,
     ValidatableType extends Validatable  = Validatable
 >(
-    // validator : ValidatorType,
-    // validation : (result:Union<InferReturn<ValidatorType>[]>)=>ValidatableType,
     {
         validator,
         validation,
@@ -60,10 +58,6 @@ export default function ListPartialParameter<
     ValidatorType extends Validator = Validator,
     ValidatableType extends Validatable  = Validatable
 >(
-    // validator : ValidatorType,
-    // validation : (result:Union<InferReturn<ValidatorType>[]>)=>ValidatableType,
-    // message : (result:Union<InferReturn<ValidatorType>[]>)=>MessageType,
-    // stop ?: boolean,
     {
         validator,
         validation,
@@ -78,10 +72,6 @@ export default function ListPartialParameter<
     ValidatorType extends Validator = Validator,
     ValidatableType extends Validatable  = Validatable
 >(
-    // validator : ValidatorType,
-    // validation : (result:Union<InferReturn<ValidatorType>[]>)=>ValidatableType,
-    // message : ((result:Union<InferReturn<ValidatorType>[]>)=>MessageType|Union<InferMessage<InferReturn<ValidatorType>[]>>) = Map,
-    // stop : boolean = false,
     {
         validator,
         validation,

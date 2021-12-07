@@ -36,8 +36,6 @@ export default function ListAllParameter<
     ValidatorType extends Validator = Validator,
     ValidatableType extends Validatable  = Validatable
 >(
-    // validator : ValidatorType,
-    // validation : (result:InferReturn<ValidatorType>[])=>ValidatableType,
     {
         validator,
         validation,
@@ -48,9 +46,6 @@ export default function ListAllParameter<
     ValidatorType extends Validator = Validator,
     ValidatableType extends Validatable  = Validatable
 >(
-   // validator : ValidatorType,
-   // validation : (result:InferReturn<ValidatorType>[])=>ValidatableType,
-   // message : (result:InferReturn<ValidatorType>[])=>MessageType,
     {
         validator,
         validation,
@@ -64,9 +59,6 @@ export default function ListAllParameter<
     ValidatorType extends Validator = Validator,
     ValidatableType extends Validatable  = Validatable
 >(
-    // validator : ValidatorType,
-    // validation : (result:InferReturn<ValidatorType>[])=>ValidatableType,
-    // message : (result:InferReturn<ValidatorType>[])=>MessageType|InferMessage<InferReturn<ValidatorType>[]> = Map,
     {
         validator,
         validation,

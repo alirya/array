@@ -5,8 +5,6 @@ import List from "./list/list";
 export default function MergeParameter<
     Array extends ReadonlyArray<unknown>
 >(
-    //array : Array,
-    //...arrays: Array[],
     {
         value,
         list

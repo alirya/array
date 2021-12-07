@@ -8,8 +8,6 @@ export type ArrayArgument<List extends Validatable[]> =
     {defaults:boolean}
 
 export default function AndParameter<List extends Validatable[]>(
-    // validatables : List,
-    // defaults : boolean = true,
     {
         validatables,
         defaults,

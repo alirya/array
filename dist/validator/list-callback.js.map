@@ -1,1 +1,0 @@
-{"version":3,"file":"list-callback.js","sourceRoot":"","sources":["../../src/validator/list-callback.ts"],"names":[],"mappings":"AAGA,OAAO,EAAuB,qBAAqB,EAAC,MAAM,2BAA2B,CAAC;AACtF,OAAO,sBAAsB,MAAM,4BAA4B,CAAC;AAEhE,IAAU,YAAY,CAerB;AAfD,WAAU,YAAY;IAEL,uBAAU,GAAG,sBAAsB,CAAC;IACpC,sBAAS,GAAG,qBAAqB,CAAC;AAYnD,CAAC,EAfS,YAAY,KAAZ,YAAY,QAerB;AACD,eAAe,YAAY,CAAC"}

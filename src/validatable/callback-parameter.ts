@@ -8,15 +8,12 @@ export default class CallbackParameter<
 > extends CallbackParameters<ValidatableList, Boolean>
 {
     constructor(
-        // public validatables : ValidatableList,
-        // public validation : (results:ValidatableList)=>Boolean,
         {
             validatables,
             validation,
         } : Validatables<ValidatableList> & {validation : (results:ValidatableList)=>Boolean}
     ) {
 
-        //this.valid = this.validation(this.validatables);
         super(validatables, validation);
     }
 

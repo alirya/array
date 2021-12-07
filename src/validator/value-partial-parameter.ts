@@ -57,10 +57,6 @@ export default function ValuePartialParameter<
     ReturnType extends Validatable = Validatable,
     MessageType = unknown,
 >(
-    //validators : Validators,
-    //validation : (result:Union<ListReturn<Validators>>)=>ReturnType,
-    //message : (result:Union<ListReturn<Validators>>)=>MessageType,
-    //stop ?: boolean,
     {
         validators,
         validation,
@@ -83,10 +79,6 @@ export default function ValuePartialParameter<
     ReturnType extends Validatable = Validatable,
     MessageType = unknown,
 >(
-    //validators : Validators,
-    //validation : (result:Union<ListReturn<Validators>>)=>ReturnType,
-    //message : (result:Union<ListReturn<Validators>>)=>MessageType,
-    //stop ?: boolean,
     {
         validators,
         validation,
@@ -102,10 +94,6 @@ export default function ValuePartialParameter<
     ReturnType extends Validatable = Validatable,
     MessageType = unknown,
 >(
-    //validators : Validators,
-    //validation : (result:Union<ListReturn<Validators>>)=>ReturnType,
-    //message : (result:Union<ListReturn<Validators>>)=>MessageType,
-    //stop ?: boolean,
     {
         validators,
         validation,
