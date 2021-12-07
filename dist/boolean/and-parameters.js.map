@@ -1,1 +1,0 @@
-{"version":3,"file":"and-parameters.js","sourceRoot":"","sources":["../../src/boolean/and-parameters.ts"],"names":[],"mappings":"AACA,MAAM,CAAC,OAAO,UAAU,aAAa,CACjC,QAAiC,EACjC,WAAqB,IAAI;IAGzB,IAAG,CAAC,QAAQ,CAAC,MAAM,EAAE;QAEjB,OAAO,QAAQ,CAAC;KACnB;IAED,KAAI,IAAI,OAAO,IAAI,QAAQ,EAAE;QAEzB,IAAG,CAAC,OAAO,EAAE;YAET,OAAO,KAAK,CAAC;SAChB;KACJ;IAED,OAAO,IAAI,CAAC;AAChB,CAAC"}

@@ -1,1 +1,0 @@
-{"version":3,"file":"empty.js","sourceRoot":"","sources":["../../src/assert/empty.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,kBAAkB,CAAC;AACrC,OAAO,QAAQ,MAAM,8CAA8C,CAAC;AACpE,OAAO,UAAU,MAAM,mBAAmB,CAAC;AAE3C,MAAM,CAAC,OAAO,UAAU,KAAK,CACzB,KAAiB,EACjB,QAAmC,UAAU;IAG7C,QAAQ,CAAC,KAAK,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC;AAClC,CAAC"}

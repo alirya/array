@@ -1,1 +1,0 @@
-{"version":3,"file":"callback-parameter.js","sourceRoot":"","sources":["../../src/validatable/callback-parameter.ts"],"names":[],"mappings":"AAEA,OAAO,kBAAkB,MAAM,uBAAuB,CAAC;AAEvD,MAAM,CAAC,OAAO,OAAO,iBAGnB,SAAQ,kBAA4C;IAElD,YACI,EACI,YAAY,EACZ,UAAU,GACuE;QAGrF,KAAK,CAAC,YAAY,EAAE,UAAU,CAAC,CAAC;IACpC,CAAC;CAGJ"}

@@ -1,1 +1,0 @@
-{"version":3,"file":"list.js","sourceRoot":"","sources":["../../src/boolean/list.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAeH,MAAM,CAAC,OAAO,UAAU,IAAI,CACxB,IAA6B,EAC7B,UAAqC;IAGrC,KAAI,IAAI,KAAK,IAAI,IAAI,EAAE;QAEnB,IAAG,UAAU,CAAC,KAAK,CAAC,EAAE;YAEnB,SAAS;SACX;QAED,OAAO,KAAK,CAAC;KAChB;IAED,OAAO,IAAI,CAAC;AAChB,CAAC"}

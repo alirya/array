@@ -1,1 +1,0 @@
-{"version":3,"file":"remove-index-parameter.js","sourceRoot":"","sources":["../../src/boolean/remove-index-parameter.ts"],"names":[],"mappings":"AACA,OAAO,qBAAqB,MAAM,2BAA2B,CAAC;AAE9D,MAAM,CAAC,OAAO,UAAU,oBAAoB,CACxC,EACI,IAAI,EACJ,KAAK,GACuB;IAGhC,OAAO,qBAAqB,CAAC,IAAI,EAAE,KAAK,CAAC,CAAA;AAC7C,CAAC"}
