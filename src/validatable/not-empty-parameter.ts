@@ -2,7 +2,7 @@ import Message from "@dikac/t-message/message";
 import NotEmptyArgument from "../boolean/not-empty";
 import ValueInterface from "@dikac/t-value/value";
 import NotEmptyParameters from "./not-empty-parameters";
-import Dynamic from "@dikac/t-validator/message/function/validatable";
+import Dynamic from "@dikac/t-validator/message/function/validatable-parameter";
 
 
 export type NotEmptyArgument<
@@ -10,7 +10,7 @@ export type NotEmptyArgument<
     MessageType,
 > =
     ValueInterface<Values> &
-    Message<Dynamic.Parameter<Values, MessageType>>
+    Message<Dynamic<Values, MessageType>>
 ;
 
 

@@ -1,5 +1,5 @@
 import Validatable from "@dikac/t-validatable/validatable";
-import EnsureValidatable from "@dikac/t-validatable/ensure/validatable";
+import EnsureValidatable from "@dikac/t-validatable/ensure/validatable-parameters";
 import ValidatableInValid from "@dikac/t-validatable/boolean/invalid";
 import MapUnion from "../../map-union";
 
@@ -13,6 +13,6 @@ export default function Invalid<
 ) : MapUnion<Object> {
 
     return  list
-        .map((value)=>EnsureValidatable.Parameters(value))
+        .map((value)=>EnsureValidatable(value))
         .filter(ValidatableInValid);
 }

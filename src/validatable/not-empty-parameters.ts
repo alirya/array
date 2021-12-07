@@ -1,7 +1,7 @@
 import NotEmptyArgument from "../boolean/not-empty";
 import {List} from "ts-toolbelt";
 import Instance from "@dikac/t-validator/validatable/validatable";
-import Dynamic from "@dikac/t-validator/message/function/validatable";
+import Dynamic from "@dikac/t-validator/message/function/validatable-parameters";
 
 export type NotEmptyType<
     Values extends unknown[],
@@ -17,11 +17,11 @@ export default class NotEmptyParameters<
     NotEmptyType<Values, MessageType>
 {
     readonly valid : boolean;
-    #message : Dynamic.Parameters<Values, MessageType>
+    #message : Dynamic<Values, MessageType>
 
     constructor(
         readonly value : Values,
-        message : Dynamic.Parameters<Values, MessageType>,
+        message : Dynamic<Values, MessageType>,
     ) {
 
         this.#message = message;
