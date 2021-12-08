@@ -5,7 +5,7 @@ import Random from "@dikac/t-boolean/random";
  *
  * @param random
  * random factory to be used to reorder {@param value}
- * non cryptographic random if not provided
+ * non-cryptographic random if not provided
  *
  * @return the same as argument {@param value}
  */

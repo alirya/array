@@ -9,7 +9,6 @@ import Callable from "@dikac/t-function/callable";
  *
  * @param validation
  * to compare value equality
- *
  */
 export default function UniqueParameters<Value>(
     value : ReadonlyArray<Value>,
