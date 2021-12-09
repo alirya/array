@@ -29,6 +29,6 @@ export default function EmptyParameters(
 
     strings.push('empty array');
 
-    return strings.join(' ') + '.';
+    return strings.filter(v=>v.length).join(' ') + '.';
 }
 

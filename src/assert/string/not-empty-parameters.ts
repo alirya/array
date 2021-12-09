@@ -19,15 +19,15 @@ export default function NotEmptyParameters(
 
     if(valid) {
 
-        strings.push('is');
+        strings.push('is not');
 
     } else {
 
-        strings.push('is not');
+        strings.push('is');
     }
 
     strings.push('empty array');
 
 
-    return strings.join(' ') + '.';
+    return strings.filter(s => s.length).join(' ') + '.';
 }

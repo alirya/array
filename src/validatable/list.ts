@@ -7,6 +7,8 @@ import Message from "@dikac/t-message/message";
 import Messages from "../message/messages/messages";
 import Instance from "@dikac/t-validator/validatable/validatable";
 import Validatables from "./validatables/validatables";
+import Simple from "@dikac/t-validator/validatable/simple";
+import ValidatorValidatable from "@dikac/t-validator/validatable/validatable";
 
 export default interface List<
     ValueType extends unknown[],
@@ -16,7 +18,7 @@ export default interface List<
     ValidatableType extends Validatable = Validatable
 > extends
     Readonly<Value<ValueType>>,
-    Readonly<Validatable> ,
+    Readonly<Validatable>,
     Readonly<ValidatorContainer<ValidatorType>>,
     Readonly<Message<MessageType>>,
     Readonly<Messages<Results>>,
@@ -24,6 +26,24 @@ export default interface List<
     Readonly<ValidatableContainer<ValidatableType>> {
 }
 
+// type List<
+//     Allow extends unknown[],
+//     Expectation extends unknown[],
+//     ValidatorType extends Validator = Validator,
+//     Results extends Instance[] = Instance[],
+//     MessageType = unknown,
+//     ValidatableType extends Validatable = Validatable
+// > =
+//     Readonly<Simple<Allow, Expectation, ValidatorValidatable<Allow|Expectation>>>;
+//     // Readonly<Value<Allow>>,
+//     // Readonly<Validatable> ,
+//     // Readonly<ValidatorContainer<ValidatorType>>,
+//     // Readonly<Message<MessageType>>,
+//     // Readonly<Messages<Results>>,
+//     // Readonly<Validatables<Results>>,
+//     // Readonly<ValidatableContainer<ValidatableType>>
+//
+// export default List;
 
 
 

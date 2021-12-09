@@ -12,12 +12,14 @@ export default function ListParameters(
 
     if(valid) {
 
-        strings.push('must');
+        strings.push('is');
 
     } else {
 
-        strings.push('is');
+        strings.push('must');
     }
+
+    strings.push('list of', expect)
 
     return strings.join(' ') + '.';
 }

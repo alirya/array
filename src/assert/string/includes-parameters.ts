@@ -1,6 +1,6 @@
 export default function IncludesParameters(
     valid : boolean,
-    subject : string = '',
+    subject : string = 'value',
 ) : string {
 
     const strings : string[] = [];
@@ -19,6 +19,6 @@ export default function IncludesParameters(
 
     strings.push('array');
 
-    return strings.join(' ') + '.';
+    return strings.filter( v => v.length ).join(' ') + '.';
 
 }

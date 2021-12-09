@@ -29,6 +29,7 @@ export default function ListAllParameters<
     validation : (result:InferReturn<ValidatorType>[])=>ValidatableType,
 
 ) : List<InferMessage<InferReturn<ValidatorType>[]>, ValidatorType, InferReturn<ValidatorType>[], ValidatableType>;
+
 export default function ListAllParameters<
     MessageType = unknown,
     ValidatorType extends Validator = Validator,

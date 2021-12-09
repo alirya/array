@@ -22,7 +22,7 @@ describe("compiler compatibility", function() {
             'address',
         ];
 
-        let property = ListAll(validator, (v)=>And(v), MessageMap);
+        let property = ListAll(validator, And, MessageMap);
 
         let validatable = property(<[string, string]>value);
 
@@ -44,6 +44,17 @@ describe("compiler compatibility", function() {
 
         let string : string[] = validatable.value;
         let string2 : [string, string] = validatable.value;
+
+        if(validatable.valid) {
+
+            let string : string[] = validatable.value;
+            let string2 : [string, string] = validatable.value;
+
+        } else {
+
+            let string : string[] = validatable.value;
+            let string2 : [string, string] = validatable.value;
+        }
 
         describe("recursive", function() {
 

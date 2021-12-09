@@ -12,16 +12,18 @@ export default function ArrayParameters(
 
     if(valid) {
 
-        strings.push('must');
+        strings.push('is');
 
     } else {
 
-        strings.push('is');
+        strings.push('must');
     }
 
     strings.push('array');
 
     if(!valid) {
+
+        strings[2] = `${strings[2]},`;
 
         strings.push('actual', conversion(value));
     }
