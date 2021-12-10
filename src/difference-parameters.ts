@@ -2,7 +2,7 @@ import Equal from "@dikac/t-boolean/equal";
 
 
 /**
- * return all data from {@param list} that does not exists in {@param value}
+ * return all data from {@param list} that does not exist in {@param value}
  *
  * @param list
  * @param value

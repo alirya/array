@@ -1,4 +1,4 @@
-import DifferenceLeft from "../dist/difference-parameters";
+import Difference from "../../dist/difference-parameters";
 
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
@@ -7,11 +7,11 @@ describe("primitive", function() {
 
     let target : number[] = [1,2,3,4,5];
     let compare : number[] = [2,3,4,6];
-    let left = DifferenceLeft(target, compare);
+    let left = Difference(target, compare);
     it("left valid", () => expect(left).toEqual([1,5]));
 
 
-    let right = DifferenceLeft(compare, target);
+    let right = Difference(compare, target);
     it("right valid", () => expect(right).toEqual([6]));
 
 });
@@ -54,14 +54,14 @@ describe("custom comparison", function() {
 
     it("left without", function() {
 
-        let removed = DifferenceLeft(target, compare);
+        let removed = Difference(target, compare);
         expect(target).toEqual(removed);
 
     });
 
     it("left with", function() {
 
-        let removed = DifferenceLeft(target, compare, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
+        let removed = Difference(target, compare, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
         expect(target).not.toEqual(removed);
         expect(2).toBe(removed.length);
 
@@ -73,14 +73,14 @@ describe("custom comparison", function() {
 
     it("right without", function() {
 
-        let removed = DifferenceLeft(compare, target);
+        let removed = Difference(compare, target);
         expect(compare).toEqual(removed);
 
     });
 
     it("right with", function() {
 
-        let removed = DifferenceLeft(compare, target, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
+        let removed = Difference(compare, target, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
         expect(target).not.toEqual(removed);
         expect(1).toBe(removed.length);
 
