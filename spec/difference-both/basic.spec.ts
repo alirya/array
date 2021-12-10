@@ -1,4 +1,4 @@
-import DifferenceBoth from "../dist/difference-both-parameters";
+import DifferenceBoth from "../../dist/difference-both-parameters";
 
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
@@ -10,7 +10,6 @@ describe("primitive", function() {
     let left = DifferenceBoth(target, compare);
 
     it("left valid", () => expect(left).toEqual([1,5,6]));
-
 
     let right = DifferenceBoth(compare, target);
 
