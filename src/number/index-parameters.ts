@@ -1,4 +1,3 @@
-import Equal from "@dikac/t-boolean/equal";
 import Validation from "@dikac/t-boolean/function/validation";
 
 /**

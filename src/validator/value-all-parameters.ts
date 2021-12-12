@@ -6,7 +6,6 @@ import ValueCallback from "./value-callback-parameters";
 import Value from "./value";
 import InferMessage from "../message/message/list/infer";
 import Map from "../message/message/list/map";
-import Unions from "../unions";
 import {List} from "ts-toolbelt";
 import Allow from "./subject/list/allow";
 import Expectation from "./subject/list/expectation";

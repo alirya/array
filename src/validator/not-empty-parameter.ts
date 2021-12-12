@@ -1,5 +1,5 @@
 import Validator from "@dikac/t-validator/validator";
-import NotEmptyValidatable, {NotEmptyType} from "../validatable/not-empty-parameters";
+import {NotEmptyType} from "../validatable/not-empty-parameters";
 import NotEmptyMessage from "../validatable/string/not-empty-parameter";
 import MessageCallback from "@dikac/t-validator/message/function/validatable-parameter";
 import NotEmptyParameters from "./not-empty-parameters";

@@ -8,7 +8,6 @@ import Message from "@dikac/t-message/message";
 import Messages from "../message/messages/messages";
 import Validatables from "./validatables/validatables";
 import Instance from "@dikac/t-validator/validatable/validatable";
-import BaseList from "../validator/subject/list/allow";
 
 export default interface Map<
     ValidatorsType extends Validator[],
