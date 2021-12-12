@@ -1,18 +1,16 @@
 import {List} from "ts-toolbelt";
+import ResetRef from "./void/reset";
 
 /**
- * reset array index
  * @param argument
  */
 export default function Reset<
-    Argument extends unknown[]
+    Argument extends ReadonlyArray<unknown>
 >(argument : Argument) : List.UnionOf<List.Required<Argument>>[] {
 
-    const buffer : List.UnionOf<List.Required<Argument>>[] = [];
+    const copy = argument.slice(0);
 
-    argument.forEach(function (v, i) {
-        buffer.push(<List.UnionOf<List.Required<Argument>>>v);
-    })
+    ResetRef(copy);
 
-    return <List.UnionOf<List.Required<Argument>>[]> buffer;
+    return copy as List.UnionOf<List.Required<Argument>>[];
 }

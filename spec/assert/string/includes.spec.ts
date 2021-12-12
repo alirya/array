@@ -15,10 +15,10 @@ describe('valid',() =>{
 describe('invalid',() =>{
 
     it(`object`, () => {
-        expect(Message(false, 'type')).toBe(`type is not exists in array, actual object.`);
+        expect(Message(false, 'type')).toBe(`type is not exists in array.`);
     });
 
     it(`not object`, () => {
-        expect(Message(false, 'type')).toBe(`type is not exists in array, actual object.`);
+        expect(Message(false, 'type')).toBe(`type is not exists in array.`);
     });
 });

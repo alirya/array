@@ -26,24 +26,6 @@ export default interface List<
     Readonly<ValidatableContainer<ValidatableType>> {
 }
 
-// type List<
-//     Allow extends unknown[],
-//     Expectation extends unknown[],
-//     ValidatorType extends Validator = Validator,
-//     Results extends Instance[] = Instance[],
-//     MessageType = unknown,
-//     ValidatableType extends Validatable = Validatable
-// > =
-//     Readonly<Simple<Allow, Expectation, ValidatorValidatable<Allow|Expectation>>>;
-//     // Readonly<Value<Allow>>,
-//     // Readonly<Validatable> ,
-//     // Readonly<ValidatorContainer<ValidatorType>>,
-//     // Readonly<Message<MessageType>>,
-//     // Readonly<Messages<Results>>,
-//     // Readonly<Validatables<Results>>,
-//     // Readonly<ValidatableContainer<ValidatableType>>
-//
-// export default List;
 
 
 
