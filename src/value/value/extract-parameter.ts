@@ -1,5 +1,5 @@
 import ValueInterface from "@dikac/t-value/value";
-import List from "../../list/list";
+import List from "../../array/list";
 import ExtractParameters from "./extract-parameters";
 
 /**
@@ -16,15 +16,15 @@ export default function ExtractParameter<Data>({
 } : ValueInterface<Data[]> & {index: number}): Data | undefined;
 
 export default function ExtractParameter<Data>({
-    list,
+    array,
     index,
 } : List<Data> & {index: number}): Data | undefined;
 
 export default function ExtractParameter<Data>({
     value,
     index,
-    list,
+    array,
 } : List<Data> & ValueInterface<Data[]> & {index: number}): Data | undefined {
 
-    return ExtractParameters(value || list, index);
+    return ExtractParameters(value || array, index);
 }

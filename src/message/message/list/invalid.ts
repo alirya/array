@@ -1,6 +1,6 @@
 import Message from "@dikac/t-message/message";
 import ListInfer from "./infer";
-import MapUnion from "../../../map-union";
+import MapUnion from "../../../unions";
 import Validatable from "@dikac/t-validatable/validatable";
 import FilterInvalid from "../../../validatable/list/invalid";
 import Map from "./map";

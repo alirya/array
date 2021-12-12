@@ -25,7 +25,7 @@ describe("check equality result", function() {
     it("with equal", () => {
 
         expect(DifferenceParameters(target, compare, EqualParameters)).toEqual(DifferenceParameter({
-            list: target,
+            array: target,
             compare: compare,
             validation:EqualParameter
         }))

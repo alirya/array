@@ -9,7 +9,7 @@ it("default", () => {
     let parameters : number[] = [1,2,3,1,5];
     let parameter : number[] = [1,2,3,1,5];
     RemoveParameters(parameters, v=>v===1)
-    RemoveParameter({list:parameter, validation: v=>v === 1})
+    RemoveParameter({array:parameter, validation: v=>v === 1})
 
     expect(parameters).toEqual(parameter)
 });
@@ -21,7 +21,7 @@ it("with start", () => {
     let parameter : number[] = [1,2,3,1,5];
     RemoveParameters(parameters, v=>v===1, 1)
     RemoveParameter({
-        list : parameter,
+        array : parameter,
         validation: v=>v === 1,
         start: 1
     });
@@ -35,7 +35,7 @@ it("with start, end", () => {
     let parameter : number[] = [1,2,3,1,5,1,1];
     RemoveParameters(parameters, v=>v===1, 1, 2)
     RemoveParameter({
-        list : parameter,
+        array : parameter,
         validation: v=>v === 1,
         start: 1,
         end: 2
@@ -50,7 +50,7 @@ it("with start, end, limit", () => {
     let parameter : number[] = [1,2,3,1,5,1,1];
     RemoveParameters(parameters, v=>v===1, 1, 5, 2)
     RemoveParameter({
-        list : parameter,
+        array : parameter,
         validation: v=>v === 1,
         start: 1,
         end: 5,

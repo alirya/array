@@ -12,7 +12,7 @@ describe("check equality result", function() {
 
         let argument = [0,1,2,3,4,5,1];
         let parameters = DuplicateParameters(argument);
-        let parameter = DuplicateParameter({list:argument});
+        let parameter = DuplicateParameter({array:argument});
 
         expect(parameters).withContext('length').toEqual(parameter);
     });
@@ -21,7 +21,7 @@ describe("check equality result", function() {
 
         let argument = [0,1,2,3,4,5,1];
         let parameters = DuplicateParameters(argument, EqualParameters);
-        let parameter = DuplicateParameter({list:argument, validation:EqualParameter});
+        let parameter = DuplicateParameter({array:argument, validation:EqualParameter});
 
         expect(parameters).withContext('length').toEqual(parameter);
     });

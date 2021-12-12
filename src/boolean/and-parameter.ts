@@ -6,9 +6,9 @@ export type AndParametersArgument = OrParameterArgument;
 export default function AndParameter(
     {
         defaults,
-        list
+        array
     } : AndParametersArgument
 ) : boolean {
 
-    return AndParameters(list, defaults);
+    return AndParameters(array, defaults);
 }

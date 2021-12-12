@@ -11,7 +11,7 @@ it("default", () => {
     expect(
         RemoveParameters(parameters, v=>v===1)
     ).toEqual(
-        RemoveParameter({list:parameter, validation: v=>v === 1})
+        RemoveParameter({array:parameter, validation: v=>v === 1})
     );
 
     expect(parameters).toEqual(parameter);
@@ -27,7 +27,7 @@ it("with start", () => {
         RemoveParameters(parameters, v=>v===1, 1)
     ).toEqual(
         RemoveParameter({
-            list : parameter,
+            array : parameter,
             validation: v=>v === 1,
             start: 1
         })
@@ -45,7 +45,7 @@ it("with start, end", () => {
         RemoveParameters(parameters, v=>v===1, 1, 2)
     ).toEqual(
         RemoveParameter({
-            list : parameter,
+            array : parameter,
             validation: v=>v === 1,
             start: 1,
             end: 2
@@ -64,7 +64,7 @@ it("with start, end, limit", () => {
         RemoveParameters(parameters, v=>v===1, 1, 5, 2)
     ).toEqual(
         RemoveParameter({
-            list : parameter,
+            array : parameter,
             validation: v=>v === 1,
             start: 1,
             end: 5,

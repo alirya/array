@@ -1,5 +1,5 @@
 import Validation from "@dikac/t-boolean/validation/validation";
-import Readonly from "../list/readonly";
+import Readonly from "../array/readonly";
 import IndexParameters from "./index-parameters";
 
 /**
@@ -7,7 +7,7 @@ import IndexParameters from "./index-parameters";
  */
 export default function IndexParameter<Value = unknown>(
     {
-        list,
+        array,
         validation,
         start = 0,
         end  = Infinity,
@@ -17,5 +17,5 @@ export default function IndexParameter<Value = unknown>(
     }>
 ) : number|null {
 
-    return IndexParameters(list, validation, start, end);
+    return IndexParameters(array, validation, start, end);
 }

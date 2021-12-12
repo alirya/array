@@ -19,7 +19,7 @@ describe("check equality result", function() {
     it("list", () => {
 
         let parameters = IntersectionParameters(argument);
-        let parameter = IntersectionParameter({list :argument});
+        let parameter = IntersectionParameter({array :argument});
         expect(parameters).toEqual(parameter);
     });
 
@@ -32,7 +32,7 @@ describe("check equality result", function() {
     it("list, validation", () => {
 
         let parameters = IntersectionParameters(argument, EqualParameters);
-        let parameter = IntersectionParameter({list :argument, validation:EqualParameter});
+        let parameter = IntersectionParameter({array :argument, validation:EqualParameter});
         expect(parameters).toEqual(parameter);
     });
 });

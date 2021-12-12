@@ -1,6 +1,6 @@
 import Equal from "@dikac/t-boolean/equal";
 import Validation from "@dikac/t-boolean/validation/validation";
-import Tuple from "./list/tuple";
+import Tuple from "./array/tuple";
 import DifferenceBothParameters from "./difference-both-parameters";
 
 /**
@@ -10,10 +10,10 @@ import DifferenceBothParameters from "./difference-both-parameters";
  */
 export default function DifferenceBothParameter<Value>(
     {
-        list,
+        array,
         validation = Equal
     } : Partial<Validation<[Value, Value]>> & Tuple<[ReadonlyArray<Value>, ReadonlyArray<Value>]>
 ) : Value[] {
 
-    return DifferenceBothParameters(...list, validation)
+    return DifferenceBothParameters(...array, validation)
 }

@@ -3,7 +3,7 @@ import ListInfer from "./infer";
 import EnsureMessage from "@dikac/t-message/ensure/message-parameters";
 import ValueMessage from "@dikac/t-message/message/value";
 import {List} from "ts-toolbelt";
-import MapUnion from "../../../map-union";
+import MapUnion from "../../../unions";
 import Messages from "../../messages/messages";
 
 export type MessageFilterArgument<MessagesType extends Message[]> =

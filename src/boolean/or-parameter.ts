@@ -1,14 +1,14 @@
-import Readonly from "../list/readonly";
+import Readonly from "../array/readonly";
 import OrParameters from "./or-parameters";
 
 export type OrParameterArgument = Readonly<boolean> & {defaults : boolean};
 
 export default function OrParameter(
     {
-        list,
+        array,
         defaults,
     } : OrParameterArgument
 ) : boolean {
 
-    return OrParameters(list, defaults);
+    return OrParameters(array, defaults);
 }

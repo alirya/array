@@ -1,5 +1,5 @@
 import Validation from "@dikac/t-boolean/validation/validation";
-import Readonly from "./list/readonly";
+import Readonly from "./array/readonly";
 import IntersectionParameters from "./intersection-parameters";
 import Value from "@dikac/t-value/value";
 import Equal from "@dikac/t-boolean/equal-parameter";
@@ -14,11 +14,11 @@ import Compare from "@dikac/t-boolean/compare/compare";
  */
 export default function IntersectionParameter<Type>({
     validation = Equal,
-    list,
+    array,
 } : Partial<Validation<[Value<Type> & Compare<Type>]>> & Readonly<ReadonlyArray<Type>>) : Type[] {
 
     return IntersectionParameters(
-        list,
+        array,
         (value, compare) => validation({value, compare})
     );
 }

@@ -15,14 +15,14 @@ describe("check equality result", function() {
     it("default", () => {
 
         expect(DifferenceBothParameters(target, compare)).toEqual(DifferenceBothParameter({
-            list:[target, compare]
+            array:[target, compare]
         }))
     });
 
     it("with equal", () => {
 
         expect(DifferenceBothParameters(target, compare, equal)).toEqual(DifferenceBothParameter({
-            list:[target, compare],
+            array:[target, compare],
             validation:equal
         }))
     });

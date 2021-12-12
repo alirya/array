@@ -1,7 +1,7 @@
 import Validatable from "@dikac/t-validatable/validatable";
 import EnsureValidatable from "@dikac/t-validatable/ensure/validatable-parameters";
 import ValidatableInValid from "@dikac/t-validatable/boolean/invalid";
-import MapUnion from "../../map-union";
+import MapUnion from "../../unions";
 
 /**
  * filter all invalid {@link Validatable} while retain its original structure

@@ -1,5 +1,5 @@
 import Validation from "@dikac/t-boolean/validation/validation";
-import List from "./list/list";
+import List from "./array/list";
 import ExtractParameters from "./extract-parameters";
 
 
@@ -13,14 +13,14 @@ export type ExtractParameterArgument<Value> =
     };
 
 export default function ExtractParameter<Value>({
-    list,
+    array,
     validation,
     start,
     end,
     limit
 } : ExtractParameterArgument<Value>) : Value[] {
 
-    return ExtractParameters(list, validation, start, end, limit);
+    return ExtractParameters(array, validation, start, end, limit);
 }
 
 

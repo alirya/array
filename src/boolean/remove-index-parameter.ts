@@ -1,12 +1,12 @@
-import List from "../list/list";
+import List from "../array/list";
 import RemoveIndexParameters from "./remove-index-parameters";
 
 export default function RemoveIndexParameter(
     {
-        list,
+        array,
         index,
     } : List<any> & {index : number}
 ) : boolean {
 
-    return RemoveIndexParameters(list, index)
+    return RemoveIndexParameters(array, index)
 }

@@ -1,5 +1,5 @@
 import Value from "@dikac/t-value/value";
-import Tuple from "./list/tuple";
+import Tuple from "./array/tuple";
 import ReplaceParameters from "./replace-parameters";
 
 export type ReplaceArgumentValue<Array extends any[], Index extends keyof Array> =
@@ -24,7 +24,7 @@ export default function ReplaceParameter<Array extends any[], Index extends keyo
 
 export default function ReplaceParameter<Array extends any[], Index extends keyof Array>(
     {
-        list,
+        array,
         index,
         replace,
     } : ReplaceArgumentList<Array, Index>
@@ -32,12 +32,12 @@ export default function ReplaceParameter<Array extends any[], Index extends keyo
 
 export default function ReplaceParameter<Array extends any[], Index extends keyof Array>(
     {
-        list,
+        array,
         value,
         index,
         replace,
     } : ReplaceArgumentList<Array, Index> & ReplaceArgumentValue<Array, Index>
 ) : Array {
 
-    return ReplaceParameters(list || value, index, replace)
+    return ReplaceParameters(array || value, index, replace)
 }

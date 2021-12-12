@@ -1,5 +1,5 @@
 import ValueInterface from "@dikac/t-value/value";
-import List from "./list/list";
+import List from "./array/list";
 import MergeParameters from "./merge-parameters";
 
 
@@ -8,10 +8,10 @@ export default function MergeParameter<
 >(
     {
         value,
-        list,
+        array,
     } : ValueInterface<Array> & List<Array>
 ) : Array {
 
-    return MergeParameters(value, ...list);
+    return MergeParameters(value, ...array);
 
 }
