@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-array",
-  "version": "0.26.0-alpha.3",
+  "version": "0.26.0-alpha.4",
   "description": "Typescript array",
   "dependencies": {
     "@dikac/t-boolean": "^0.11.0-beta.6",
