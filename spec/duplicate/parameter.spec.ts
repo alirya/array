@@ -1,6 +1,7 @@
 import DuplicateParameters from "../../dist/duplicate-parameters";
 import DuplicateParameter from "../../dist/duplicate-parameter";
-import Equal from "@dikac/t-boolean/equal";
+import EqualParameter from "@dikac/t-boolean/equal-parameter";
+import EqualParameters from "@dikac/t-boolean/equal-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -19,8 +20,8 @@ describe("check equality result", function() {
     it(`with validation`, () => {
 
         let argument = [0,1,2,3,4,5,1];
-        let parameters = DuplicateParameters(argument, Equal);
-        let parameter = DuplicateParameter({list:argument, validation:Equal});
+        let parameters = DuplicateParameters(argument, EqualParameters);
+        let parameter = DuplicateParameter({list:argument, validation:EqualParameter});
 
         expect(parameters).withContext('length').toEqual(parameter);
     });

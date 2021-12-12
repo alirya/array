@@ -5,16 +5,15 @@ import Equal from "@dikac/t-boolean/equal";
  * return data which exists in all array
  *
  * @param validation
- * @param value
- * @constructor
+ * @param list
  */
 
 export default function IntersectionParameters<Value>(
-    value : ReadonlyArray<ReadonlyArray<Value>>,
+    list : ReadonlyArray<ReadonlyArray<Value>>,
     validation : (target : Value, comparison : Value) => boolean = Equal,
 ) : Value[] {
 
-    const val = value.slice(0)
+    const val = list.slice(0)
 
     switch(val.length) {
         case 0 : return [];

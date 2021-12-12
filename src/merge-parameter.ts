@@ -6,8 +6,8 @@ export default function MergeParameter<
     Array extends ReadonlyArray<unknown>
 >(
     {
+        list,
         value,
-        list
     } : ValueInterface<Array> & List<Array[]>
 ) : Array {
 

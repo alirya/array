@@ -3,11 +3,11 @@
 export default function MergeParameters<
     Array extends ReadonlyArray<unknown>
 >(
-    array : Array,
+    list : Array,
     ...arrays: Array[]
 ) : Array {
 
-    const result : any[] = array.slice(0);
+    const result : any[] = list.slice(0);
 
     for (const array of arrays) {
 
