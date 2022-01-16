@@ -1,4 +1,4 @@
-import Map from "../function/parameter/list/map";
+import Map from '../function/parameter/list/map';
 
 export default function MapParameters<List extends unknown[][]>(
     values : Readonly<List>,

@@ -1,5 +1,5 @@
-import MapSingle from "../function/parameter/list/map-single";
-import MapSingleParameters from "./map-single-parameters";
+import MapSingle from '../function/parameter/list/map-single';
+import MapSingleParameters from './map-single-parameters';
 
 export default function MapSingleParameter<ListType extends unknown[]>(
     {

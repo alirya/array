@@ -1,6 +1,6 @@
-import NotEmptyParameters from "./not-empty-parameters";
-import Value from "@alirya/value/value";
-import Validatable from "@alirya/validatable/validatable";
+import NotEmptyParameters from './not-empty-parameters';
+import Value from '@alirya/value/value';
+import Validatable from '@alirya/validatable/validatable';
 
 /**
  * string intended for not empty array message
@@ -19,5 +19,5 @@ export default function NotEmptyParameter(
     }
 ) : string {
 
-    return NotEmptyParameters(value, valid, subject)
+    return NotEmptyParameters(value, valid, subject);
 }

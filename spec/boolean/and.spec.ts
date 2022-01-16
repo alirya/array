@@ -1,57 +1,57 @@
-import And from "../../dist/boolean/and-parameters";
+import And from '../../dist/boolean/and-parameters';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("empty", function() {
+describe('empty', function() {
 
-    it("default true", () => {
+    it('default true', () => {
 
         expect(And([], false)).toBeFalse();
     });
 
-    it("default false", () => {
+    it('default false', () => {
 
         expect(And([], true)).toBeTrue();
     });
 
 });
 
-describe("true", function() {
+describe('true', function() {
 
-    it("default true", () => {
+    it('default true', () => {
 
         expect(And([true, true, true], false)).toBeTrue();
     });
 
-    it("default false", () => {
+    it('default false', () => {
 
         expect(And([true, true, true], true)).toBeTrue();
     });
 
 });
 
-describe("false", function() {
+describe('false', function() {
 
-    it("default true", () => {
+    it('default true', () => {
 
         expect(And([false, false, false], false)).toBeFalse();
     });
 
-    it("default false", () => {
+    it('default false', () => {
 
         expect(And([false, false, false], true)).toBeFalse();
     });
 
 });
 
-describe("mixed", function() {
+describe('mixed', function() {
 
-    it("default true", () => {
+    it('default true', () => {
 
         expect(And([false, true, false], false)).toBeFalse();
     });
 
-    it("default false", () => {
+    it('default false', () => {
 
         expect(And([false, true, false], true)).toBeFalse();
     });

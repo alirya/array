@@ -1,6 +1,6 @@
-import Validation from "@alirya/boolean/validation/validation";
-import Readonly from "../array/readonly";
-import IndexParameters from "./index-parameters";
+import Validation from '@alirya/boolean/validation/validation';
+import Readonly from '../array/readonly';
+import IndexParameters from './index-parameters';
 
 /**
  * option version of {@see IndexParameters}

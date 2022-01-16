@@ -1,9 +1,9 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import ValidatableListCallback from "../validatable/liscallback-parameters";
-import Instance from "@alirya/validator/validatable/validatable";
-import BaseInfer from "@alirya/validator/subject/allow";
-import List from "./list";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import ValidatableListCallback from '../validatable/liscallback-parameters';
+import Instance from '@alirya/validator/validatable/validatable';
+import BaseInfer from '@alirya/validator/subject/allow';
+import List from './list';
 
 /**
  * Base {@link Validator} for validating list of value with {@link Validator}
@@ -40,6 +40,6 @@ export default function ListCallbackParameters<
 
         return new ValidatableListCallback(value, validator, map, validation, message);
 
-    } as List<MessageType, ValidatorType, Validatables, ValidatableType>
+    } as List<MessageType, ValidatorType, Validatables, ValidatableType>;
 }
 

@@ -1,6 +1,6 @@
-import ValueInterface from "@alirya/value/value";
-import List from "../../array/list";
-import ExtractParameters from "./extracparameters";
+import ValueInterface from '@alirya/value/value';
+import List from '../../array/list';
+import ExtractParameters from './extracparameters';
 
 /**
  * get and remove selected value

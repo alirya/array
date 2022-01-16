@@ -1,5 +1,5 @@
-import Validation from "@alirya/boolean/function/validation";
-import ExtractParameters from "../extracparameters";
+import Validation from '@alirya/boolean/function/validation';
+import ExtractParameters from '../extracparameters';
 
 
 export default function RemoveParameters<Value>(

@@ -1,3 +1,3 @@
 export default interface List<Type> {
-    array : Type[]
+    array : Type[];
 }

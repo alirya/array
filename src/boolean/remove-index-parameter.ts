@@ -1,5 +1,5 @@
-import List from "../array/list";
-import RemoveIndexParameters from "./remove-index-parameters";
+import List from '../array/list';
+import RemoveIndexParameters from './remove-index-parameters';
 
 export default function RemoveIndexParameter(
     {
@@ -8,5 +8,5 @@ export default function RemoveIndexParameter(
     } : List<any> & {index : number}
 ) : boolean {
 
-    return RemoveIndexParameters(array, index)
+    return RemoveIndexParameters(array, index);
 }

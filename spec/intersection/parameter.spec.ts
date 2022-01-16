@@ -1,11 +1,11 @@
-import IntersectionParameters from "../../dist/intersection-parameters";
-import IntersectionParameter from "../../dist/intersection-parameter";
-import EqualParameter from "@alirya/boolean/equal-parameter";
-import EqualParameters from "@alirya/boolean/equal-parameters";
+import IntersectionParameters from '../../dist/intersection-parameters';
+import IntersectionParameter from '../../dist/intersection-parameter';
+import EqualParameter from '@alirya/boolean/equal-parameter';
+import EqualParameters from '@alirya/boolean/equal-parameters';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("check equality result", function() {
+describe('check equality result', function() {
 
     const argument = [[1,2],[3,1],[2,3,1]];
 
@@ -16,7 +16,7 @@ describe("check equality result", function() {
     //     expect(parameters).toEqual(parameter);
     // });
 
-    it("list", () => {
+    it('list', () => {
 
         let parameters = IntersectionParameters(argument);
         let parameter = IntersectionParameter({array :argument});
@@ -29,7 +29,7 @@ describe("check equality result", function() {
     //     let parameter = IntersectionParameter({list :argument, validation:Equal});
     //     expect(parameters).toEqual(parameter);
     // });
-    it("list, validation", () => {
+    it('list, validation', () => {
 
         let parameters = IntersectionParameters(argument, EqualParameters);
         let parameter = IntersectionParameter({array :argument, validation:EqualParameter});

@@ -1,28 +1,28 @@
-import And from "../../../../dist/function/list/boolean/and";
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+import And from '../../../../dist/function/list/boolean/and';
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 interface A {
-    a : number
+    a : number;
 }
 
 interface B {
-    b : string
+    b : string;
 }
 
 function TypeA(val : unknown) : val is A {
     // @ts-ignore
-    return typeof val.a === "number";
+    return typeof val.a === 'number';
 }
 
 function TypeB(val : unknown) : val is B {
     // @ts-ignore
-    return typeof val.b === "string";
+    return typeof val.b === 'string';
 }
 
-describe("compiler compatible", function() {
+describe('compiler compatible', function() {
 
-    let ab : A & B = {a:1, b:"b"};
+    let ab : A & B = {a:1, b:'b'};
 
     let value : unknown = ab;
 
@@ -69,9 +69,9 @@ describe("compiler compatible", function() {
 
 });
 
-describe("all valid", function() {
+describe('all valid', function() {
 
-    let ab : A & B = {a:1, b:"b"};
+    let ab : A & B = {a:1, b:'b'};
 
     it(`one`, () => {
 
@@ -85,7 +85,7 @@ describe("all valid", function() {
 
 });
 
-describe("mixed invalid", function() {
+describe('mixed invalid', function() {
 
     let ab : A  = {a:1};
 

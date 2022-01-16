@@ -1,6 +1,6 @@
-import Reset from "../../../dist/void/reset";
+import Reset from '../../../dist/void/reset';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 it('explicit set', () =>{

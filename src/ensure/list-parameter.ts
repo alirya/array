@@ -1,5 +1,5 @@
-import Guard from "@alirya/boolean/validation/guard";
-import ListParameters from "./lisparameters";
+import Guard from '@alirya/boolean/validation/guard';
+import ListParameters from './lisparameters';
 
 /**
  * Check if {@param list} is list of {@template Value}
@@ -13,7 +13,7 @@ export type ListArgument<
     Value extends Argument,
     Argument extends unknown,
 > = Guard<Argument, Value> &
-    {error : (value:unknown)=>Error}
+    {error : (value:unknown)=>Error};
 
 export default function ListParameter<
     Value extends Argument,
@@ -21,7 +21,7 @@ export default function ListParameter<
 >(
     list : ReadonlyArray<Argument>,
     {validation, error} : ListArgument<Value, Argument>
-) : ReadonlyArray<Value>
+) : ReadonlyArray<Value>;
 
 export default function ListParameter<
     Value extends Argument,

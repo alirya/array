@@ -1,13 +1,13 @@
-import Map from "../../../dist/validatable/map-callback-parameters";
-import Standard from "../../../dist/validator/validatable/list/map-parameters";
-import And from "../../../dist/validatable/and-parameters";
-import Or from "../../../dist/validatable/or-parameters";
-import ValidatorInterface from "@alirya/validator/simple";
-import MessageMap from "../../../dist/message/message/list/map";
-import ValidatorType from "@alirya/type/validator/type-parameters";
-import Instance from "@alirya/validator/validatable/validatable";
+import Map from '../../../dist/validatable/map-callback-parameters';
+import Standard from '../../../dist/validator/validatable/list/map-parameters';
+import And from '../../../dist/validatable/and-parameters';
+import Or from '../../../dist/validatable/or-parameters';
+import ValidatorInterface from '@alirya/validator/simple';
+import MessageMap from '../../../dist/message/message/list/map';
+import ValidatorType from '@alirya/type/validator/type-parameters';
+import Instance from '@alirya/validator/validatable/validatable';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 type TypeValidator = [
     ValidatorInterface<any, string, Instance<any, string>>,
@@ -21,17 +21,17 @@ let validator : TypeValidator = [
     ValidatorType('string'),
 ];
 
-describe("valid", function() {
+describe('valid', function() {
 
     type Type = [
         string,
         string,
         string,
-    ]
+    ];
 
     let value : Type = ['a', 'b', 'c'];
 
-    describe("equal", function() {
+    describe('equal', function() {
 
         it(`and validation`, () => {
 
@@ -48,7 +48,7 @@ describe("valid", function() {
         });
     });
 
-    describe("more", function() {
+    describe('more', function() {
 
         let more = [...value, []];
 
@@ -69,7 +69,7 @@ describe("valid", function() {
         });
     });
 
-    describe("less", function() {
+    describe('less', function() {
 
         let less = value.slice(0, value.length - 1);
 
@@ -94,17 +94,17 @@ describe("valid", function() {
 });
 
 
-describe("mixed", function() {
+describe('mixed', function() {
 
     type Type = [
         object,
         string,
         string,
-    ]
+    ];
 
     let value : Type = [{}, 'a', 'b'];
 
-    describe("equal", function() {
+    describe('equal', function() {
 
         it(`and validation`, () => {
 
@@ -121,7 +121,7 @@ describe("mixed", function() {
         });
     });
 
-    describe("more", function() {
+    describe('more', function() {
 
         let more = [...value, []];
 
@@ -144,17 +144,17 @@ describe("mixed", function() {
 });
 
 
-describe("invalid", function() {
+describe('invalid', function() {
 
     type Type = [
         object,
         object,
         object,
-    ]
+    ];
 
     let value : Type = [{}, {}, {}];
 
-    describe("equal", function() {
+    describe('equal', function() {
 
         it(`and validation`, () => {
 
@@ -171,7 +171,7 @@ describe("invalid", function() {
         });
     });
 
-    describe("more", function() {
+    describe('more', function() {
 
         let more = [...value, []];
 

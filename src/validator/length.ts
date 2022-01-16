@@ -1,7 +1,7 @@
-import Validator from "@alirya/validator/validator";
-import Instance from "@alirya/validator/validatable/validatable";
-import Validatable from "@alirya/validatable/validatable/validatable";
-import InstanceInfer from "@alirya/validator/validatable/infer-static";
+import Validator from '@alirya/validator/validator';
+import Instance from '@alirya/validator/validatable/validatable';
+import Validatable from '@alirya/validatable/validatable/validatable';
+import InstanceInfer from '@alirya/validator/validatable/infer-static';
 
 /**
  *  validate array length
@@ -36,12 +36,12 @@ export default function Length<
             get valid() {
                 return validatable.valid;
             }
-        }
+        };
     } as Validator<
         any[],
         any[],
         boolean,
         boolean,
         Readonly<Instance<any[], MessageType> & Validatable<InstanceInfer<ValidatorType>>>
-        >
+        >;
 }

@@ -1,8 +1,8 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import Instance from "@alirya/validator/validatable/validatable";
-import Value from "./value";
-import MemoizeAccessor from "@alirya/object/function/memoize-accessor";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import Instance from '@alirya/validator/validatable/validatable';
+import Value from './value';
+import MemoizeAccessor from '@alirya/object/function/memoize-accessor';
 
 export default class ValueCallbackParameters<
     ValueType,
@@ -16,7 +16,7 @@ export default class ValueCallbackParameters<
     readonly valid;
     readonly validatables : Results;
     readonly messages : Results;
-    #message : (results:Results)=>MessageType
+    #message : (results:Results)=>MessageType;
 
     constructor(
         readonly value: ValueType,

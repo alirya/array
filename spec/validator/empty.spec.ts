@@ -1,7 +1,7 @@
-import Empty from "../../dist/validator/empty-parameters";
-import EmptyMessage from "../../dist/validatable/string/empty-parameters";
+import Empty from '../../dist/validator/empty-parameters';
+import EmptyMessage from '../../dist/validatable/string/empty-parameters';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough()});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 let map = new Map<unknown[], [boolean, string]>();
 map.set([], [true, 'empty array']);

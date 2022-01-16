@@ -1,11 +1,11 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import Instance from "@alirya/validator/validatable/validatable";
-import BaseInfer from "@alirya/validator/subject/allow";
-import List from "./list";
-import Message from "@alirya/message/message";
-import ValidatorContainer from "@alirya/validator/validator/validator";
-import ListCallbackParameters from "./liscallback-parameters";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import Instance from '@alirya/validator/validatable/validatable';
+import BaseInfer from '@alirya/validator/subject/allow';
+import List from './list';
+import Message from '@alirya/message/message';
+import ValidatorContainer from '@alirya/validator/validator/validator';
+import ListCallbackParameters from './liscallback-parameters';
 
 /**
  * Base {@link Validator} for validating list of value with {@link Validator}
@@ -36,7 +36,7 @@ export type ListCallbackArgument<
     {
         map : (value:BaseInfer<ValidatorType>[], validator:ValidatorType)=>Validatables;
         validation : (result:Validatables)=>ValidatableType;
-    }
+    };
 
 export function ListCallbackParameter<
     MessageType = unknown,

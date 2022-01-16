@@ -1,10 +1,10 @@
-import Validator from "@alirya/validator/validator";
-import Map from "../../../map";
-import {List as ListHelper} from "ts-toolbelt";
-import InferReturn from "@alirya/validator/validatable/infer-static";
-import Value from "@alirya/value/value";
-import ValidatorContainer from "@alirya/validator/validator/validator";
-import ListParameters from "./lisparameters";
+import Validator from '@alirya/validator/validator';
+import Map from '../../../map';
+import {List as ListHelper} from 'ts-toolbelt';
+import InferReturn from '@alirya/validator/validatable/infer-static';
+import Value from '@alirya/value/value';
+import ValidatorContainer from '@alirya/validator/validator/validator';
+import ListParameters from './lisparameters';
 
 
 export type ListArgument<
@@ -12,7 +12,7 @@ export type ListArgument<
     ValidatorType extends Validator<ListHelper.UnionOf<ValueType>>
 > =
     Value<ValueType> &
-    ValidatorContainer<ValidatorType>
+    ValidatorContainer<ValidatorType>;
 
 export default function ListParameter<
     ValueType extends unknown[],

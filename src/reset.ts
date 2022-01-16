@@ -1,5 +1,5 @@
-import {List} from "ts-toolbelt";
-import ResetRef from "./void/reset";
+import {List} from 'ts-toolbelt';
+import ResetRef from './void/reset';
 
 /**
  * @param argument

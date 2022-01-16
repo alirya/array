@@ -1,6 +1,6 @@
-import Validatable from "@alirya/validatable/validatable";
-import Validatables from "../validatables/validatables";
-import AndParameters from "./and-parameters";
+import Validatable from '@alirya/validatable/validatable';
+import Validatables from '../validatables/validatables';
+import AndParameters from './and-parameters';
 
 export default function AndParameter<List extends ReadonlyArray<Validatable>>(
     {

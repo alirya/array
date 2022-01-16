@@ -1,8 +1,8 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import ValidatableValue from "../validatable/value-callback-parameters";
-import Instance from "@alirya/validator/validatable/validatable";
-import Value from "./value";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import ValidatableValue from '../validatable/value-callback-parameters';
+import Instance from '@alirya/validator/validatable/validatable';
+import Value from './value';
 
 /**
  * Base {@link Validator} for validating value with list of {@link Validator}
@@ -44,5 +44,5 @@ export default function ValueCallbackParameters<
 
         return new ValidatableValue(value, validators, map, validation, message);
 
-    } as Value<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>
+    } as Value<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>;
 }

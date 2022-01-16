@@ -1,4 +1,4 @@
-import AssertList from "../assert/lisparameters";
+import AssertList from '../assert/lisparameters';
 
 /**
  * Check if {@param list} is list of {@template Value}
@@ -15,7 +15,7 @@ export default function ListParameters<
     list : ReadonlyArray<Argument>,
     validation : (value:Argument)=>value is Value,
     error : (value:unknown)=>Error
-) : ReadonlyArray<Value>
+) : ReadonlyArray<Value>;
 
 export default function ListParameters<
     Value extends Argument,

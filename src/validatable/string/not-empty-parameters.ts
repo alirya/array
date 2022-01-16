@@ -1,4 +1,4 @@
-import StringNotEmpty from "../../assert/string/not-empty-parameters";
+import StringNotEmpty from '../../assert/string/not-empty-parameters';
 
 
 export default function NotEmptyParameters(
@@ -6,5 +6,5 @@ export default function NotEmptyParameters(
     valid : boolean,
 ) : string {
 
-    return StringNotEmpty(value, valid)
+    return StringNotEmpty(value, valid);
 }

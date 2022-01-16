@@ -1,11 +1,11 @@
-import Duplicate from "../../dist/duplicate-parameters";
+import Duplicate from '../../dist/duplicate-parameters';
 
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("duplicate", function() {
+describe('duplicate', function() {
 
-    describe("default compare", function() {
+    describe('default compare', function() {
 
         it(`found`, () => {
 
@@ -28,12 +28,12 @@ describe("duplicate", function() {
             let result = Duplicate([0,1,2,3,4,5]);
 
             expect(result.length).withContext('length').toEqual(0);
-            expect(result).withContext('data').toEqual([])
+            expect(result).withContext('data').toEqual([]);
         });
     });
 
 
-    describe("custom compare", function() {
+    describe('custom compare', function() {
 
         it(`found`, () => {
 
@@ -41,7 +41,7 @@ describe("duplicate", function() {
             let result = Duplicate(found, (v1, v2)=>v1.number === v2.number);
 
             expect(result.length).withContext('length').toEqual(2, );
-            expect(result).toEqual([found[2],found[3]])
+            expect(result).toEqual([found[2],found[3]]);
         });
 
         it(`found multi`, () => {
@@ -50,7 +50,7 @@ describe("duplicate", function() {
             let result = Duplicate(found, (v1, v2)=>v1.number === v2.number);
 
             expect(result.length).withContext('length').toEqual(4);
-            expect(result).toEqual(found)
+            expect(result).toEqual(found);
         });
 
         it(`not found`, () => {

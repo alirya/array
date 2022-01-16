@@ -1,10 +1,10 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import Instance from "@alirya/validator/validatable/validatable";
-import Value from "./value";
-import ValidatorsContainer from "./validators/validators";
-import Message from "@alirya/message/message";
-import ValueCallbackParameters from "./value-callback-parameters";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import Instance from '@alirya/validator/validatable/validatable';
+import Value from './value';
+import ValidatorsContainer from './validators/validators';
+import Message from '@alirya/message/message';
+import ValueCallbackParameters from './value-callback-parameters';
 
 
 /**
@@ -42,7 +42,7 @@ export type ValueCallbackArgument<
     {
         map : (value:BaseType, validators:Validators)=>Validatables;
         validation : (result:Validatables)=>ValidatableType;
-    }
+    };
 
 export default function ValueCallbackParameter<
     BaseType = unknown,

@@ -5,5 +5,5 @@
 
 type Map<Arguments extends unknown[][]> = {
     [Key in keyof Arguments] : Arguments[Key] extends any[] ?  (...args:Arguments[Key])=>any : never
-}
+};
 export default Map;

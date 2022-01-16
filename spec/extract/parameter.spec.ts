@@ -1,9 +1,9 @@
-import RemoveParameter from "../../dist/extracparameter";
-import RemoveParameters from "../../dist/extracparameters";
+import RemoveParameter from '../../dist/extracparameter';
+import RemoveParameters from '../../dist/extracparameters';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-it("default", () => {
+it('default', () => {
 
     let parameters : number[] = [1,2,3,1,5];
     let parameter : number[] = [1,2,3,1,5];
@@ -18,7 +18,7 @@ it("default", () => {
 });
 
 
-it("with start", () => {
+it('with start', () => {
 
     let parameters : number[] = [1,2,3,1,5];
     let parameter : number[] = [1,2,3,1,5];
@@ -36,7 +36,7 @@ it("with start", () => {
     expect(parameters).toEqual(parameter);
 });
 
-it("with start, end", () => {
+it('with start, end', () => {
 
     let parameters : number[] = [1,2,3,1,5,1,1];
     let parameter : number[] = [1,2,3,1,5,1,1];
@@ -55,7 +55,7 @@ it("with start, end", () => {
     expect(parameters).toEqual(parameter);
 });
 
-it("with start, end, limit", () => {
+it('with start, end, limit', () => {
 
     let parameters : number[] = [1,2,3,1,5,1,1];
     let parameter : number[] = [1,2,3,1,5,1,1];

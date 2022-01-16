@@ -1,62 +1,62 @@
-import And from "../../../dist/validatable/boolean/and-parameters";
-import Validatable from "@alirya/validatable/validatable";
+import And from '../../../dist/validatable/boolean/and-parameters';
+import Validatable from '@alirya/validatable/validatable';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('empty', function () {
 
-        it("true", () => {
+        it('true', () => {
             let and = And<Validatable[]>([], true);
-            expect(and).toBe(true)
+            expect(and).toBe(true);
         });
 
-        it("false", () => {
+        it('false', () => {
             let and = And<Validatable[]>([], false);
-            expect(and).toBe(false)
+            expect(and).toBe(false);
         });
 });
 
-describe("single", function() {
+describe('single', function() {
 
 
-        it("true", () => {
+        it('true', () => {
             let and = And<Validatable[]>([{valid:true}], false);
-            expect(and).toBe(true)
+            expect(and).toBe(true);
         });
 
-        it("false", () => {
+        it('false', () => {
             let and = And<Validatable[]>([{valid:false}], true);
-            expect(and).toBe(false)
+            expect(and).toBe(false);
         });
 
 });
 
-describe("multi same", function() {
+describe('multi same', function() {
 
-    it("valids", () => {
+    it('valids', () => {
 
         let and = And<Validatable[]>([{valid:true}, {valid:true}], false);
-        expect(and).toBe(true)
+        expect(and).toBe(true);
     });
 
-    it("invalids", () => {
+    it('invalids', () => {
 
         let and = And<Validatable[]>([{valid:false}, {valid:false}], true);
-        expect(and).toBe(false)
+        expect(and).toBe(false);
     });
-})
+});
 
 
-describe("multi mixed", function() {
+describe('multi mixed', function() {
 
-    it("valids", () => {
+    it('valids', () => {
         let and = And<Validatable[]>([{valid:true}, {valid:false}], true);
         expect(and).toBe(false);
     });
 
-    it("invalids", () => {
+    it('invalids', () => {
 
         let and = And<Validatable[]>([{valid:true}, {valid:false}], false);
         expect(and).toBe(false);
     });
-})
+});

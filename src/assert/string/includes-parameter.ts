@@ -1,4 +1,4 @@
-import IncludesParameters from "./includes-parameters";
+import IncludesParameters from './includes-parameters';
 
 export default function IncludesParameter(
     valid : boolean,

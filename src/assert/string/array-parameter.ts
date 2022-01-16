@@ -1,6 +1,6 @@
-import Validatable from "@alirya/validatable/validatable";
-import Value from "@alirya/value/value";
-import ArrayParameters from "./array-parameters";
+import Validatable from '@alirya/validatable/validatable';
+import Value from '@alirya/value/value';
+import ArrayParameters from './array-parameters';
 
 export type ArrayArgument =
     Validatable &

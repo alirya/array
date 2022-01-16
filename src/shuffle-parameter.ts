@@ -1,5 +1,5 @@
-import Value from "@alirya/value/value";
-import ShuffleParameters from "./shuffle-parameters";
+import Value from '@alirya/value/value';
+import ShuffleParameters from './shuffle-parameters';
 
 /**
  *

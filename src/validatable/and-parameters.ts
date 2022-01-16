@@ -1,6 +1,6 @@
-import Validatable from "@alirya/validatable/validatable";
-import IterableAnd from "@alirya/iterable/validatable/boolean/and-parameters";
-import Callback from "./callback-parameters";
+import Validatable from '@alirya/validatable/validatable';
+import IterableAnd from '@alirya/iterable/validatable/boolean/and-parameters';
+import Callback from './callback-parameters';
 
 
 export default function AndParameters<List extends ReadonlyArray<Validatable>>(

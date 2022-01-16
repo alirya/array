@@ -1,9 +1,9 @@
-import Map from "../../../dist/boolean/map-parameters";
-import Type from "@alirya/type/boolean/type-parameters";
+import Map from '../../../dist/boolean/map-parameters';
+import Type from '@alirya/type/boolean/type-parameters';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-it("valid", function() {
+it('valid', function() {
 
     let values = [
         [1],
@@ -15,13 +15,13 @@ it("valid", function() {
         (v)=>Type(v, 'number'),
         (v)=>Type(v, 'string'),
         (v)=>Type(v, 'boolean'),
-    ]
+    ];
 
     expect(Map(values, validations)).toBe(true);
 });
 
 
-it("invalid", function() {
+it('invalid', function() {
 
     let values = [
         [1],
@@ -33,7 +33,7 @@ it("invalid", function() {
         (v)=>Type(v, 'number'),
         (v)=>Type(v, 'string'),
         (v)=>Type(v, 'boolean'),
-    ]
+    ];
 
     expect(Map(values, validations)).toBe(false);
 

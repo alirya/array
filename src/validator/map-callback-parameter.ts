@@ -1,11 +1,11 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import BaseList from "./subject/list/allow";
-import Instance from "@alirya/validator/validatable/validatable";
-import Map from "./map";
-import ValidatorsContainer from "./validators/validators";
-import Message from "@alirya/message/message";
-import MapCallbackParameters from "./map-callback-parameters";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import BaseList from './subject/list/allow';
+import Instance from '@alirya/validator/validatable/validatable';
+import Map from './map';
+import ValidatorsContainer from './validators/validators';
+import Message from '@alirya/message/message';
+import MapCallbackParameters from './map-callback-parameters';
 
 
 /**
@@ -39,7 +39,7 @@ export type ValueCallbackArgument<
     {
         map : (value:BaseList<Validators>, validators:Validators)=>Validatables;
         validation : (result:Validatables)=>ValidatableType;
-    }
+    };
 
 export default function MapCallbackParameter<
     Validators extends Validator[] = Validator[],

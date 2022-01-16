@@ -1,18 +1,18 @@
-import Value from "@alirya/value/value";
-import Tuple from "./array/tuple";
-import ReplaceParameters from "./replace-parameters";
+import Value from '@alirya/value/value';
+import Tuple from './array/tuple';
+import ReplaceParameters from './replace-parameters';
 
 export type ReplaceArgumentValue<Array extends any[], Index extends keyof Array> =
     Value<Array> & {
     index : Index,
     replace : (value : Array[Index], index : Index) => Array[Index]
-}
+};
 
 export type ReplaceArgumentList<Array extends any[], Index extends keyof Array> =
     Tuple<Array> & {
     index : Index,
     replace : (value : Array[Index], index : Index) => Array[Index]
-}
+};
 
 export default function ReplaceParameter<Array extends any[], Index extends keyof Array>(
     {
@@ -20,7 +20,7 @@ export default function ReplaceParameter<Array extends any[], Index extends keyo
         index,
         replace,
     } : ReplaceArgumentValue<Array, Index>
-) : Array
+) : Array;
 
 export default function ReplaceParameter<Array extends any[], Index extends keyof Array>(
     {
@@ -28,7 +28,7 @@ export default function ReplaceParameter<Array extends any[], Index extends keyo
         index,
         replace,
     } : ReplaceArgumentList<Array, Index>
-) : Array
+) : Array;
 
 export default function ReplaceParameter<Array extends any[], Index extends keyof Array>(
     {
@@ -39,5 +39,5 @@ export default function ReplaceParameter<Array extends any[], Index extends keyo
     } : ReplaceArgumentList<Array, Index> & ReplaceArgumentValue<Array, Index>
 ) : Array {
 
-    return ReplaceParameters(array || value, index, replace)
+    return ReplaceParameters(array || value, index, replace);
 }

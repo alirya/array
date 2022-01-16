@@ -15,7 +15,7 @@ export default function Last <Value>(value : ReadonlyArray<Value>) : Value|undef
 
             last = clone.pop();
 
-        } while (last === undefined && clone.length)
+        } while (last === undefined && clone.length);
 
     }
 

@@ -1,10 +1,10 @@
-import Reset from "../dist/reset";
+import Reset from '../dist/reset';
 
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
-describe("skip", function() {
+describe('skip', function() {
 
     let array : number[] = [];
     array[0] = 1;
@@ -15,7 +15,7 @@ describe("skip", function() {
 
     let reset = Reset(array);
 
-    it("removed", () => expect(array).not.toEqual(reset));
+    it('removed', () => expect(array).not.toEqual(reset));
 
     for (let i = 0; i < 4; i++) {
 
@@ -25,7 +25,7 @@ describe("skip", function() {
 });
 
 
-describe("unordered set", function() {
+describe('unordered set', function() {
 
     let array : number[] = [];
 
@@ -37,7 +37,7 @@ describe("unordered set", function() {
 
     let reset = Reset(array);
 
-    it("removed", () => expect(array).not.toEqual(reset));
+    it('removed', () => expect(array).not.toEqual(reset));
 
     for (let i = 0; i < 4; i++) {
 

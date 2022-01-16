@@ -1,8 +1,8 @@
-import Validator from "@alirya/validator/validator";
-import SimpleValidator from "@alirya/validator/simple";
-import Validatable from "@alirya/validatable/validatable";
-import ValidatableValueInterface from "../validatable/value";
-import Instance from "@alirya/validator/validatable/validatable";
+import Validator from '@alirya/validator/validator';
+import SimpleValidator from '@alirya/validator/simple';
+import Validatable from '@alirya/validatable/validatable';
+import ValidatableValueInterface from '../validatable/value';
+import Instance from '@alirya/validator/validatable/validatable';
 
 /**
  * Base {@link Validator} for validating value with list of {@link Validator}
@@ -37,6 +37,6 @@ type Value<
         Base,
         ValueType,
         ValidatableValueInterface<Base, ValidatorsType, Validatables, MessageType, ValidatableType>
-    >
+    >;
 
 export default Value;

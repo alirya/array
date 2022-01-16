@@ -1,5 +1,5 @@
-import Value from "@alirya/value/value";
-import ListParameters from "./lisparameters";
+import Value from '@alirya/value/value';
+import ListParameters from './lisparameters';
 
 export default function ListParameter(
     {

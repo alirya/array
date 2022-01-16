@@ -1,7 +1,7 @@
-import Message from "@alirya/message/message";
-import ListInfer from "./infer";
-import EnsureMessage from "@alirya/message/ensure/message-parameters";
-import ValueMessage from "@alirya/message/message/value";
+import Message from '@alirya/message/message';
+import ListInfer from './infer';
+import EnsureMessage from '@alirya/message/ensure/message-parameters';
+import ValueMessage from '@alirya/message/message/value';
 
 export default function Map<
     Messages extends Message[]

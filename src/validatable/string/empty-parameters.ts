@@ -1,6 +1,6 @@
-import AssertEmpty from "../../assert/string/empty-parameters";
+import AssertEmpty from '../../assert/string/empty-parameters';
 
 export default function EmptyParameters(value : unknown[], valid : boolean) : string {
 
-    return AssertEmpty(value, valid)
+    return AssertEmpty(value, valid);
 }

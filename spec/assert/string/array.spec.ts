@@ -1,6 +1,6 @@
-import Message from "../../../dist/assert/string/array-parameters";
+import Message from '../../../dist/assert/string/array-parameters';
 
-it("enable console log", () => {spyOn(console, 'log').and.callThrough()});
+it('enable console log', () => {spyOn(console, 'log').and.callThrough();});
 
 describe('valid',() =>{
 

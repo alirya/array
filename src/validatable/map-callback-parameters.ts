@@ -1,9 +1,9 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import ListParameter from "../validator/subject/list/allow";
-import Instance from "@alirya/validator/validatable/validatable";
-import Map from "./map";
-import MemoizeAccessor from "@alirya/object/function/memoize-accessor";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import ListParameter from '../validator/subject/list/allow';
+import Instance from '@alirya/validator/validatable/validatable';
+import Map from './map';
+import MemoizeAccessor from '@alirya/object/function/memoize-accessor';
 
 
 export default class MapCallbackParameters<
@@ -17,7 +17,7 @@ export default class MapCallbackParameters<
     #message : (result:Result)=>MessageType;
     #value : ValueType;
     readonly validatable : ValidatableType;
-    readonly validatables : Result
+    readonly validatables : Result;
 
     constructor(
         value : ValueType,
@@ -59,7 +59,7 @@ export default class MapCallbackParameters<
 
         } catch (e) {
 
-            throw new Error(`error on generating message, ${e}`)
+            throw new Error(`error on generating message, ${e}`);
         }
     }
 }

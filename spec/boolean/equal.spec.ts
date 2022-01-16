@@ -1,42 +1,42 @@
-import Equal from "../../dist/boolean/equal-parameters";
-import Shuffle from "../../dist/shuffle-parameters";
+import Equal from '../../dist/boolean/equal-parameters';
+import Shuffle from '../../dist/shuffle-parameters';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("equal", function() {
+describe('equal', function() {
 
-    it("ordered", () => {
+    it('ordered', () => {
 
         let data = [1,2,3,4,5,6,7,8,9,10];
 
-        expect(Equal(data, data)).toBeTrue()
+        expect(Equal(data, data)).toBeTrue();
     });
 
-    it("unordered", () => {
+    it('unordered', () => {
 
         let data = [1,2,3,4,5,6,7,8,9,10];
 
-        expect(Equal(Shuffle(data), Shuffle(data))).toBeTrue()
+        expect(Equal(Shuffle(data), Shuffle(data))).toBeTrue();
 
     });
 });
 
-describe("not equal", function() {
+describe('not equal', function() {
 
-    it("duplicate", () => expect(Equal(
+    it('duplicate', () => expect(Equal(
         [1,2,3,4,5,6,7,8,9,10],
         [1,2,3,4,5,6,7,8,9,1]
     )).toBeFalse());
 
 
-    it("ordered missing", () => expect(Equal(
+    it('ordered missing', () => expect(Equal(
         [1,2,3,4,5,6,7,8,9,10],
         [1,2,3,4,5,6,7,8,9]
     )).toBeFalse());
 });
 
 
-describe("equal object", function() {
+describe('equal object', function() {
 
     let data1 = [
         {number:1},
@@ -54,19 +54,19 @@ describe("equal object", function() {
         {number:5},
     ];
 
-    it("ordered", () => {
+    it('ordered', () => {
 
-        expect(Equal(data1, data2, (data1, data2)=>data1.number === data2.number)).toBeTrue()
+        expect(Equal(data1, data2, (data1, data2)=>data1.number === data2.number)).toBeTrue();
     });
 
-    it("unordered", () => {
+    it('unordered', () => {
 
-        expect(Equal(Shuffle(data1), Shuffle(data2), (data1, data2)=>data1.number === data2.number)).toBeTrue()
+        expect(Equal(Shuffle(data1), Shuffle(data2), (data1, data2)=>data1.number === data2.number)).toBeTrue();
 
     });
 });
 
-describe("not equal object", function() {
+describe('not equal object', function() {
 
     let data1 = [
         {number:1},
@@ -83,14 +83,14 @@ describe("not equal object", function() {
         {number:4},
     ];
 
-    it("ordered", () => {
+    it('ordered', () => {
 
-        expect(Equal(data1, data2, (data1, data2)=>data1.number === data2.number)).toBeFalse()
+        expect(Equal(data1, data2, (data1, data2)=>data1.number === data2.number)).toBeFalse();
     });
 
-    it("unordered", () => {
+    it('unordered', () => {
 
-        expect(Equal(Shuffle(data1), Shuffle(data2), (data1, data2)=>data1.number === data2.number)).toBeFalse()
+        expect(Equal(Shuffle(data1), Shuffle(data2), (data1, data2)=>data1.number === data2.number)).toBeFalse();
 
     });
 });

@@ -1,4 +1,4 @@
-import Equal from "@alirya/boolean/equal";
+import Equal from '@alirya/boolean/equal';
 
 
 /**

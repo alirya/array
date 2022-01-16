@@ -1,7 +1,7 @@
-import Standard from "../../../../dist/message/message/list/map";
-import Message from "@alirya/message/message";
+import Standard from '../../../../dist/message/message/list/map';
+import Message from '@alirya/message/message';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 describe('flat & type explicit', ()=>{

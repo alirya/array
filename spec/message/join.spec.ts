@@ -1,6 +1,6 @@
-import Join from "../../dist/message/join-parameters";
+import Join from '../../dist/message/join-parameters';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 let messages = [
@@ -14,7 +14,7 @@ let messages = [
 let join = new Join(messages, ',');
 it('check data', ()=>{
 
-   expect(join.separator).toBe(',')
+   expect(join.separator).toBe(',');
 
    expect(join.messages[0].message).toBe('a');
    expect(join.messages[1].message).toBe('b');
@@ -28,7 +28,7 @@ it('check data', ()=>{
 
 it('check message', ()=>{
 
-   expect(join.message).toBe('a,b,c,d,e')
+   expect(join.message).toBe('a,b,c,d,e');
 
 });
 
@@ -36,7 +36,7 @@ it('check message', ()=>{
 it('change delimiter', ()=>{
 
     join.separator = '|';
-   expect(join.message).toBe('a|b|c|d|e')
+   expect(join.message).toBe('a|b|c|d|e');
 
 });
 
@@ -44,7 +44,7 @@ it('change delimiter', ()=>{
 it('add value', ()=>{
 
     join.messages.push({message:'f'});
-   expect(join.message).toBe('a|b|c|d|e|f')
+   expect(join.message).toBe('a|b|c|d|e|f');
 
 });
 

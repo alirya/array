@@ -1,28 +1,28 @@
-import Difference from "../../dist/difference-parameters";
+import Difference from '../../dist/difference-parameters';
 
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("primitive", function() {
+describe('primitive', function() {
 
     let target : number[] = [1,2,3,4,5];
     let compare : number[] = [2,3,4,6];
     let left = Difference(target, compare);
-    it("left valid", () => expect(left).toEqual([1,5]));
+    it('left valid', () => expect(left).toEqual([1,5]));
 
 
     let right = Difference(compare, target);
-    it("right valid", () => expect(right).toEqual([6]));
+    it('right valid', () => expect(right).toEqual([6]));
 
 });
 
-describe("custom comparison", function() {
+describe('custom comparison', function() {
 
     type Data = {
         string : String,
         number : Number,
         boolean : Boolean,
-    }
+    };
 
     let target : Data[] = [
         {
@@ -52,14 +52,14 @@ describe("custom comparison", function() {
         }
     ];
 
-    it("left without", function() {
+    it('left without', function() {
 
         let removed = Difference(target, compare);
         expect(target).toEqual(removed);
 
     });
 
-    it("left with", function() {
+    it('left with', function() {
 
         let removed = Difference(target, compare, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
         expect(target).not.toEqual(removed);
@@ -71,14 +71,14 @@ describe("custom comparison", function() {
     });
 
 
-    it("right without", function() {
+    it('right without', function() {
 
         let removed = Difference(compare, target);
         expect(compare).toEqual(removed);
 
     });
 
-    it("right with", function() {
+    it('right with', function() {
 
         let removed = Difference(compare, target, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
         expect(target).not.toEqual(removed);

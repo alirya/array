@@ -1,37 +1,37 @@
-import RemovesValue from "../../../dist/void/remove-parameters";
+import RemovesValue from '../../../dist/void/remove-parameters';
 
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("exists", function() {
+describe('exists', function() {
 
     let array : any[] = [1,'a','b',2,'c'];
     RemovesValue(array, v => typeof v === 'string');
 
-    it("original", () => expect([1,2]).toEqual(array));
+    it('original', () => expect([1,2]).toEqual(array));
 });
 
 
-describe("start", function() {
+describe('start', function() {
 
     let array : any[] = [1,'a','b',2,'c',3,'d'];
     RemovesValue(array, v => typeof v === 'string', 2);
 
-    it("original", () => expect([1, 'a', 2, 3]).toEqual(array));
+    it('original', () => expect([1, 'a', 2, 3]).toEqual(array));
 });
 
-describe("end", function() {
+describe('end', function() {
 
     let array : any[] = [1,'a','b',2,'c',3,'d'];
     RemovesValue(array, v => typeof v === 'string', undefined, 4);
 
-    it("original", () => expect([1, 2, 3, 'd']).toEqual(array));
+    it('original', () => expect([1, 2, 3, 'd']).toEqual(array));
 });
 
-describe("limit", function() {
+describe('limit', function() {
 
     let array : any[] = [1,'a','b',2,'c',3,'d'];
     RemovesValue(array, v => typeof v === 'string', undefined, undefined, 1);
 
-    it("original", () => expect([1,'b',2,'c',3,'d']).toEqual(array));
+    it('original', () => expect([1,'b',2,'c',3,'d']).toEqual(array));
 });

@@ -1,15 +1,15 @@
-import ListReturn from "./infer";
-import Validator from "@alirya/validator/validator";
-import Value from "@alirya/value/value";
-import ValidatorsContainer from "../../validators/validators";
-import ValueParameters from "./value-parameters";
+import ListReturn from './infer';
+import Validator from '@alirya/validator/validator';
+import Value from '@alirya/value/value';
+import ValidatorsContainer from '../../validators/validators';
+import ValueParameters from './value-parameters';
 
 export type ValueArgument<
     ValueType,
     Validators extends Validator<unknown, ValueType>[]
 > =
     Value<ValueType> &
-    ValidatorsContainer<Validators>
+    ValidatorsContainer<Validators>;
 
 export default function ValueParameter<
     ValueType,

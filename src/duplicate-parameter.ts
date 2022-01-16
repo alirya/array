@@ -1,9 +1,9 @@
-import Readonly from "./array/readonly";
-import Validation from "@alirya/boolean/validation/validation";
-import DuplicateParameters from "./duplicate-parameters";
-import Value from "@alirya/value/value";
-import Compare from "@alirya/boolean/compare/compare";
-import Equal from "@alirya/boolean/equal-parameter";
+import Readonly from './array/readonly';
+import Validation from '@alirya/boolean/validation/validation';
+import DuplicateParameters from './duplicate-parameters';
+import Value from '@alirya/value/value';
+import Compare from '@alirya/boolean/compare/compare';
+import Equal from '@alirya/boolean/equal-parameter';
 
 /**
  * option version of {@see DuplicateParameters}

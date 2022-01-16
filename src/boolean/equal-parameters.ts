@@ -1,4 +1,4 @@
-import EqualBoolean from "@alirya/boolean/equal";
+import EqualBoolean from '@alirya/boolean/equal';
 
 export default function EqualParameters<Value>(
     array1 : ReadonlyArray<Value>,

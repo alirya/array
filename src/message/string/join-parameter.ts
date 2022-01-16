@@ -1,6 +1,6 @@
-import Message from "@alirya/message/message";
-import {JoinParameterArgument} from "../join-parameter";
-import JoinParameters from "./join-parameters";
+import Message from '@alirya/message/message';
+import {JoinParameterArgument} from '../join-parameter';
+import JoinParameters from './join-parameters';
 
 export {JoinParameterArgument};
 
@@ -11,5 +11,5 @@ export default function JoinParameter<MessageT extends Message<string>[]>(
     } : JoinParameterArgument<MessageT>
 ) : string {
 
-    return JoinParameters(messages, separator)
+    return JoinParameters(messages, separator);
 }

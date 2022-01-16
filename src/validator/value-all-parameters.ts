@@ -1,14 +1,14 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import ValidateValue from "./validatable/list/value-parameters";
-import ListReturn from "./validatable/list/infer";
-import ValueCallback from "./value-callback-parameters";
-import Value from "./value";
-import InferMessage from "../message/message/list/infer";
-import Map from "../message/message/list/map";
-import {List} from "ts-toolbelt";
-import Allow from "./subject/list/allow";
-import Expectation from "./subject/list/expectation";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import ValidateValue from './validatable/list/value-parameters';
+import ListReturn from './validatable/list/infer';
+import ValueCallback from './value-callback-parameters';
+import Value from './value';
+import InferMessage from '../message/message/list/infer';
+import Map from '../message/message/list/map';
+import {List} from 'ts-toolbelt';
+import Allow from './subject/list/allow';
+import Expectation from './subject/list/expectation';
 
 
 /**

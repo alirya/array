@@ -1,6 +1,6 @@
-import ValueInterface from "@alirya/value/value";
-import List from "./array/list";
-import MergeParameters from "./merge-parameters";
+import ValueInterface from '@alirya/value/value';
+import List from './array/list';
+import MergeParameters from './merge-parameters';
 
 
 export default function MergeParameter<

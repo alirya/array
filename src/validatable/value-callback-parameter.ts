@@ -1,10 +1,10 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import Instance from "@alirya/validator/validatable/validatable";
-import ValueInterface from "@alirya/value/value";
-import Validators from "../validator/validators/validators";
-import Message from "@alirya/message/message";
-import ValueCallbackParameters from "./value-callback-parameters";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import Instance from '@alirya/validator/validatable/validatable';
+import ValueInterface from '@alirya/value/value';
+import Validators from '../validator/validators/validators';
+import Message from '@alirya/message/message';
+import ValueCallbackParameters from './value-callback-parameters';
 
 export type ValueCallbackArgument<
     ValueType,

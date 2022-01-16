@@ -1,17 +1,17 @@
-import Map from "../../../dist/validatable/map-callback-parameters";
-import Standard from "../../../dist/validator/validatable/list/map-parameters";
-import PartialStandard from "../../../dist/validator/validatable/list/map-partial-parameters";
-import And from "../../../dist/validatable/and-parameters";
-import Or from "../../../dist/validatable/or-parameters";
-import Validatable from "@alirya/validatable/validatable";
-import ValidatorInterface from "@alirya/validator/simple";
-import ValueInterface from "@alirya/value/value";
-import Message from "@alirya/message/message";
-import MessageMap from "../../../dist/message/message/list/map";
-import ValidatorType from "@alirya/type/validator/type-parameters";
-import Instance from "@alirya/validator/validatable/validatable";
+import Map from '../../../dist/validatable/map-callback-parameters';
+import Standard from '../../../dist/validator/validatable/list/map-parameters';
+import PartialStandard from '../../../dist/validator/validatable/list/map-partial-parameters';
+import And from '../../../dist/validatable/and-parameters';
+import Or from '../../../dist/validatable/or-parameters';
+import Validatable from '@alirya/validatable/validatable';
+import ValidatorInterface from '@alirya/validator/simple';
+import ValueInterface from '@alirya/value/value';
+import Message from '@alirya/message/message';
+import MessageMap from '../../../dist/message/message/list/map';
+import ValidatorType from '@alirya/type/validator/type-parameters';
+import Instance from '@alirya/validator/validatable/validatable';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 type TypeValidator = [
     ValidatorInterface<any, string, Instance<any, string>>,
@@ -23,7 +23,7 @@ type Type = [
     object,
     object,
     object,
-]
+];
 
 let validator : TypeValidator = [
     ValidatorType('string'),
@@ -33,7 +33,7 @@ let validator : TypeValidator = [
 
 let value : Type = [{}, {}, {}];
 
-describe("complete", function() {
+describe('complete', function() {
 
     it(`and validation`, () => {
 
@@ -85,7 +85,7 @@ describe("complete", function() {
 });
 
 
-describe("partial", function() {
+describe('partial', function() {
     it(`and validation`, () => {
 
         let and = new Map(value, validator,

@@ -1,25 +1,25 @@
-import RemoveParameter from "../../../dist/void/remove-parameter";
-import RemoveParameters from "../../../dist/void/remove-parameters";
+import RemoveParameter from '../../../dist/void/remove-parameter';
+import RemoveParameters from '../../../dist/void/remove-parameters';
 
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-it("default", () => {
+it('default', () => {
 
     let parameters : number[] = [1,2,3,1,5];
     let parameter : number[] = [1,2,3,1,5];
-    RemoveParameters(parameters, v=>v===1)
-    RemoveParameter({array:parameter, validation: v=>v === 1})
+    RemoveParameters(parameters, v=>v===1);
+    RemoveParameter({array:parameter, validation: v=>v === 1});
 
-    expect(parameters).toEqual(parameter)
+    expect(parameters).toEqual(parameter);
 });
 
 
-it("with start", () => {
+it('with start', () => {
 
     let parameters : number[] = [1,2,3,1,5];
     let parameter : number[] = [1,2,3,1,5];
-    RemoveParameters(parameters, v=>v===1, 1)
+    RemoveParameters(parameters, v=>v===1, 1);
     RemoveParameter({
         array : parameter,
         validation: v=>v === 1,
@@ -29,11 +29,11 @@ it("with start", () => {
     expect(parameters).toEqual(parameter);
 });
 
-it("with start, end", () => {
+it('with start, end', () => {
 
     let parameters : number[] = [1,2,3,1,5,1,1];
     let parameter : number[] = [1,2,3,1,5,1,1];
-    RemoveParameters(parameters, v=>v===1, 1, 2)
+    RemoveParameters(parameters, v=>v===1, 1, 2);
     RemoveParameter({
         array : parameter,
         validation: v=>v === 1,
@@ -41,14 +41,14 @@ it("with start, end", () => {
         end: 2
     });
 
-    expect(parameters).toEqual(parameter)
+    expect(parameters).toEqual(parameter);
 });
 
-it("with start, end, limit", () => {
+it('with start, end, limit', () => {
 
     let parameters : number[] = [1,2,3,1,5,1,1];
     let parameter : number[] = [1,2,3,1,5,1,1];
-    RemoveParameters(parameters, v=>v===1, 1, 5, 2)
+    RemoveParameters(parameters, v=>v===1, 1, 5, 2);
     RemoveParameter({
         array : parameter,
         validation: v=>v === 1,
@@ -57,6 +57,6 @@ it("with start, end, limit", () => {
         limit: 2
     });
 
-    expect(parameters).toEqual(parameter)
+    expect(parameters).toEqual(parameter);
 });
 

@@ -1,9 +1,9 @@
-import Message from "@alirya/message/message";
-import ListInfer from "./infer";
-import {List} from "ts-toolbelt";
-import MapUnion from "../../../unions";
-import Messages from "../../../message/messages/messages";
-import FilterParameters from "./filter-parameters";
+import Message from '@alirya/message/message';
+import ListInfer from './infer';
+import {List} from 'ts-toolbelt';
+import MapUnion from '../../../unions';
+import Messages from '../../../message/messages/messages';
+import FilterParameters from './filter-parameters';
 
 export default function MessagesFilterParameters<
     MessagesType extends Message[]

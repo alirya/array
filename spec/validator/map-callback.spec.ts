@@ -1,21 +1,21 @@
-import MapCallbackFunction from "../../dist/validator/map-callback-parameters";
-import Standard from "../../dist/validator/validatable/list/map-parameters";
-import MapPartial from "../../dist/validator/validatable/list/map-partial-parameters";
-import And from "../../dist/validatable/and-parameters";
-import Or from "../../dist/validatable/or-parameters";
-import Validatable from "@alirya/validatable/validatable";
-import SimpleValidator from "@alirya/validator/simple";
-import Message from "@alirya/message/message";
-import MessageMap from "../../dist/message/message/list/map";
-import ValidatorType from "@alirya/type/validator/type-parameters";
-import Value from "@alirya/value/value";
-import Instance from "@alirya/validator/validatable/validatable";
+import MapCallbackFunction from '../../dist/validator/map-callback-parameters';
+import Standard from '../../dist/validator/validatable/list/map-parameters';
+import MapPartial from '../../dist/validator/validatable/list/map-partial-parameters';
+import And from '../../dist/validatable/and-parameters';
+import Or from '../../dist/validatable/or-parameters';
+import Validatable from '@alirya/validatable/validatable';
+import SimpleValidator from '@alirya/validator/simple';
+import Message from '@alirya/message/message';
+import MessageMap from '../../dist/message/message/list/map';
+import ValidatorType from '@alirya/type/validator/type-parameters';
+import Value from '@alirya/value/value';
+import Instance from '@alirya/validator/validatable/validatable';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("compiler compatibility", function() {
+describe('compiler compatibility', function() {
 
-    describe("explicit typed", function() {
+    describe('explicit typed', function() {
 
         type TypeValidator = [
             SimpleValidator<any, string, Instance<any, string>>,
@@ -37,7 +37,7 @@ describe("compiler compatibility", function() {
             'address',
         ];
 
-        describe("auto", function() {
+        describe('auto', function() {
 
             let validator = MapCallbackFunction(validators,
                 (value, validators) => Standard(value, validators),
@@ -69,7 +69,7 @@ describe("compiler compatibility", function() {
             // @ts-expecerror
             message = validatable.messages[4];
 
-            describe("recursive", function() {
+            describe('recursive', function() {
 
                 let validator = ValidatorType('string');
                 let list1 = MapCallbackFunction([validator], (value, validators) => Standard(value, validators), And, MessageMap);
@@ -79,7 +79,7 @@ describe("compiler compatibility", function() {
             });
         });
 
-        describe("auto partial", function() {
+        describe('auto partial', function() {
 
             let validator = MapCallbackFunction(validators,
                 (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
@@ -106,7 +106,7 @@ describe("compiler compatibility", function() {
     });
 
 
-    describe("explicit typed", function() {
+    describe('explicit typed', function() {
 
         let validators  = [
             ValidatorType('string'),
@@ -119,7 +119,7 @@ describe("compiler compatibility", function() {
         ];
 
 
-        describe("auto", function() {
+        describe('auto', function() {
 
             let validator = MapCallbackFunction(validators,
                 (value, validators) => Standard(value, validators),
@@ -148,7 +148,7 @@ describe("compiler compatibility", function() {
             message = validatable.messages[4];
         });
 
-        describe("auto partial", function() {
+        describe('auto partial', function() {
 
             let validator = MapCallbackFunction(validators,
                 (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
@@ -179,9 +179,9 @@ describe("compiler compatibility", function() {
 });
 
 
-describe("explicit", function() {
+describe('explicit', function() {
 
-    describe("all valid", function() {
+    describe('all valid', function() {
 
         type TypeValidator = [
             SimpleValidator<any, string, Instance<any, string>>,
@@ -193,7 +193,7 @@ describe("explicit", function() {
             string,
             string,
             string,
-        ]
+        ];
 
         let validators : TypeValidator = [
             ValidatorType('string'),
@@ -207,7 +207,7 @@ describe("explicit", function() {
             'address',
         ];
 
-        describe("complete", function() {
+        describe('complete', function() {
 
             it(`and validation`, () => {
 
@@ -270,7 +270,7 @@ describe("explicit", function() {
 
         });
 
-        describe("partial", function() {
+        describe('partial', function() {
 
             it(`and validation`, () => {
 
@@ -335,7 +335,7 @@ describe("explicit", function() {
 
     });
 
-    describe("mixed", function() {
+    describe('mixed', function() {
 
 
         type TypeValidator = [
@@ -348,7 +348,7 @@ describe("explicit", function() {
             string,
             string,
             string,
-        ]
+        ];
 
         let validators : TypeValidator= [
             ValidatorType('string'),
@@ -357,12 +357,12 @@ describe("explicit", function() {
         ];
 
         let value : Type = [
-            "11",
+            '11',
             'name',
             'address',
         ];
 
-        describe("complete", function() {
+        describe('complete', function() {
 
             it(`and validation`, () => {
 
@@ -430,7 +430,7 @@ describe("explicit", function() {
         });
 
 
-        describe("partial", function() {
+        describe('partial', function() {
 
             it(`and validation`, () => {
 
@@ -491,7 +491,7 @@ describe("explicit", function() {
         });
     });
 
-    describe("all invalid", function() {
+    describe('all invalid', function() {
 
         type TypeValidator = [
             SimpleValidator<any, string, Instance<any, string>>,
@@ -503,7 +503,7 @@ describe("explicit", function() {
             object,
             object,
             object,
-        ]
+        ];
 
         let validators : TypeValidator = [
             ValidatorType('string'),
@@ -513,7 +513,7 @@ describe("explicit", function() {
 
         let value : Type = [{}, {}, {}];
 
-        describe("complete", function() {
+        describe('complete', function() {
             it(`and validation`, () => {
 
                 let validator = MapCallbackFunction(validators,
@@ -578,7 +578,7 @@ describe("explicit", function() {
         });
 
 
-        describe("partial", function() {
+        describe('partial', function() {
             it(`and validation`, () => {
 
                 let validator = MapCallbackFunction(validators,
@@ -633,9 +633,9 @@ describe("explicit", function() {
 });
 
 
-describe("recursive", function() {
+describe('recursive', function() {
 
-    describe("all valid", function() {
+    describe('all valid', function() {
 
         let validators = [
             ValidatorType('string'),
@@ -659,7 +659,7 @@ describe("recursive", function() {
             ]
         ];
 
-        describe("complete", function() {
+        describe('complete', function() {
 
             it(`and validation`, () => {
 
@@ -689,7 +689,7 @@ describe("recursive", function() {
                 // @ts-expecerror
                 expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
                 // @ts-expecerror
-                expect(validatable.validatables[3].validatables[0].value).toBe("name");
+                expect(validatable.validatables[3].validatables[0].value).toBe('name');
 
                 // @ts-expecerror
                 expect(validatable.validatables[3].validatables[1].valid).toBe(true);
@@ -740,7 +740,7 @@ describe("recursive", function() {
 
         });
 
-        describe("partial", function() {
+        describe('partial', function() {
 
             it(`and validation`, () => {
 
@@ -823,7 +823,7 @@ describe("recursive", function() {
 
     });
 
-    describe("mixed", function() {
+    describe('mixed', function() {
 
         let validators = [
             ValidatorType('string'),
@@ -836,7 +836,7 @@ describe("recursive", function() {
         ];
 
         let value = [
-            "11",
+            '11',
             'name',
             'address',
             [
@@ -845,7 +845,7 @@ describe("recursive", function() {
             ]
         ];
 
-        describe("complete", function() {
+        describe('complete', function() {
 
             it(`and validation`, () => {
 
@@ -927,7 +927,7 @@ describe("recursive", function() {
         });
 
 
-        describe("partial", function() {
+        describe('partial', function() {
 
             it(`and validation`, () => {
 
@@ -968,11 +968,11 @@ describe("recursive", function() {
                 expect(or.valid).toBe(true);
                 expect(or.value).toEqual(value);
 
-                expect(typeof or.validatables[0].message).toBe("string");
+                expect(typeof or.validatables[0].message).toBe('string');
                 expect(or.message[0]).toBe(or.validatables[0].message);
                 expect(or.validatables[0].valid).toBe(true);
 
-                expect(typeof or.validatables[1].message).toBe("string");
+                expect(typeof or.validatables[1].message).toBe('string');
                 expect(or.message[1]).toBe(or.validatables[1].message);
                 expect(or.validatables[1].valid).toBe(false);
 
@@ -985,7 +985,7 @@ describe("recursive", function() {
         });
     });
 
-    describe("all invalid", function() {
+    describe('all invalid', function() {
 
         let validators  = [
             ValidatorType('string'),
@@ -1000,7 +1000,7 @@ describe("recursive", function() {
 
         let value = [{}, {}, {}, [{}, {}]];
 
-        describe("complete", function() {
+        describe('complete', function() {
             it(`and validation`, () => {
 
                 let validator = MapCallbackFunction(validators,
@@ -1083,7 +1083,7 @@ describe("recursive", function() {
         });
 
 
-        describe("partial", function() {
+        describe('partial', function() {
             it(`and validation`, () => {
 
                 let validator = MapCallbackFunction(validators,

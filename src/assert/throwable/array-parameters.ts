@@ -1,4 +1,4 @@
-import ArrayType from "../string/array-parameters";
+import ArrayType from '../string/array-parameters';
 
 export default function ArrayParameters(
     value : unknown,
@@ -6,5 +6,5 @@ export default function ArrayParameters(
     conversion : (value: unknown)=>string = value=>typeof value
 ) : Error {
 
-    return new Error(ArrayType(value, false, subject, conversion))
+    return new Error(ArrayType(value, false, subject, conversion));
 }

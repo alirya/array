@@ -1,7 +1,7 @@
-import Validatable from "@alirya/validatable/validatable";
-import ValidatableContainer from "./validatables/validatables";
-import OrParameters from "./or-parameters";
-import Callback from "./callback-parameters";
+import Validatable from '@alirya/validatable/validatable';
+import ValidatableContainer from './validatables/validatables';
+import OrParameters from './or-parameters';
+import Callback from './callback-parameters';
 
 export default function OrParameter<Validatables extends Validatable[]>(
     {

@@ -1,6 +1,6 @@
-import Guard from "../boolean/not-empty";
-import EmptyError from "./throwable/not-empty";
-import CallbackParameters from "@alirya/function/assert/callback-parameters";
+import Guard from '../boolean/not-empty';
+import EmptyError from './throwable/not-empty';
+import CallbackParameters from '@alirya/function/assert/callback-parameters';
 
 export default function NotEmptyParameters(
     value : unknown[],

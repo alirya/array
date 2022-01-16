@@ -1,5 +1,5 @@
-import Callback from "@alirya/function/assert/callback-parameters";
-import Guard from "../boolean/list";
+import Callback from '@alirya/function/assert/callback-parameters';
+import Guard from '../boolean/list';
 
 /**
  * assert if {@param list} is list of {@template Value}

@@ -1,11 +1,11 @@
-import StringIncludes from "../assert/string/includes-parameters";
-import Equal from "@alirya/boolean/equal";
+import StringIncludes from '../assert/string/includes-parameters';
+import Equal from '@alirya/boolean/equal';
 
 export default function IncludesParameters<Type>(
     value : Type,
     trues : ReadonlyArray<Type>,
     falses : ReadonlyArray<Type>,
-    defaults : (value:Type, trues:ReadonlyArray<Type>, falses:ReadonlyArray<Type>)=>boolean = (value, trues, falses) => {throw new Error(StringIncludes(false))},
+    defaults : (value:Type, trues:ReadonlyArray<Type>, falses:ReadonlyArray<Type>)=>boolean = (value, trues, falses) => {throw new Error(StringIncludes(false));},
     compare : (value:Type, compare:Type)=>boolean = Equal,
 ) : boolean {
 

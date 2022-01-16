@@ -1,12 +1,12 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import ValidateMap from "./validatable/list/map-parameters";
-import ListReturn from "./validatable/list/infer";
-import MapCallbackInterface from "./map";
-import MapCallback from "./map-callback-parameters";
-import InferMessage from "../message/message/list/infer";
-import InferList from "./validatable/list/infer";
-import Map from "../message/message/list/map";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import ValidateMap from './validatable/list/map-parameters';
+import ListReturn from './validatable/list/infer';
+import MapCallbackInterface from './map';
+import MapCallback from './map-callback-parameters';
+import InferMessage from '../message/message/list/infer';
+import InferList from './validatable/list/infer';
+import Map from '../message/message/list/map';
 
 
 /**

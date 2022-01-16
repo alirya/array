@@ -1,5 +1,5 @@
-import ArrayType from "../string/array-parameters";
-import Value from "@alirya/value/value";
+import ArrayType from '../string/array-parameters';
+import Value from '@alirya/value/value';
 
 export default function ArrayParameter(
     {
@@ -12,5 +12,5 @@ export default function ArrayParameter(
     }
 ) : Error {
 
-    return new Error(ArrayType(value, false, subject, conversion))
+    return new Error(ArrayType(value, false, subject, conversion));
 }

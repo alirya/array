@@ -1,5 +1,5 @@
-import GuardValidation from "@alirya/boolean/validation/guard";
-import ListParameters from "./lisparameters";
+import GuardValidation from '@alirya/boolean/validation/guard';
+import ListParameters from './lisparameters';
 
 /**
  * assert if {@param list} is list of {@template Value}

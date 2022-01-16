@@ -1,6 +1,6 @@
-import Or from "../../dist/message/or";
+import Or from '../../dist/message/or';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 let messages = [
@@ -26,7 +26,7 @@ it('check data', ()=>{
 
 it('check message', ()=>{
 
-   expect(join.message).toBe('a or b or c or d or e')
+   expect(join.message).toBe('a or b or c or d or e');
 
 });
 
@@ -34,7 +34,7 @@ it('check message', ()=>{
 it('add value', ()=>{
 
    join.messages.push({message:'f'});
-   expect(join.message).toBe('a or b or c or d or e or f')
+   expect(join.message).toBe('a or b or c or d or e or f');
 
 });
 

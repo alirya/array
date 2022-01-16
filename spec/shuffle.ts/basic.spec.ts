@@ -1,8 +1,8 @@
-import Shuffle from "../../dist/shuffle-parameters";
+import Shuffle from '../../dist/shuffle-parameters';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-it("test", function() {
+it('test', function() {
 
     const target : number[] = [];
 

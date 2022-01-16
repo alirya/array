@@ -1,7 +1,7 @@
-import Validatable from "@alirya/validatable/validatable";
-import EnsureValidatable from "@alirya/validatable/ensure/validatable-parameters";
-import ValidatableInValid from "@alirya/validatable/boolean/invalid";
-import MapUnion from "../../unions";
+import Validatable from '@alirya/validatable/validatable';
+import EnsureValidatable from '@alirya/validatable/ensure/validatable-parameters';
+import ValidatableInValid from '@alirya/validatable/boolean/invalid';
+import MapUnion from '../../unions';
 
 /**
  * filter all invalid {@link Validatable} while retain its original structure

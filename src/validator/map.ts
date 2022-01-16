@@ -1,10 +1,10 @@
-import Validator from "@alirya/validator/validator";
-import SimpleValidator from "@alirya/validator/simple";
-import Validatable from "@alirya/validatable/validatable";
-import ValidatableMapInterface from "../validatable/map";
-import BaseList from "./subject/list/allow";
-import TypeList from "./subject/list/expectation";
-import Instance from "@alirya/validator/validatable/validatable";
+import Validator from '@alirya/validator/validator';
+import SimpleValidator from '@alirya/validator/simple';
+import Validatable from '@alirya/validatable/validatable';
+import ValidatableMapInterface from '../validatable/map';
+import BaseList from './subject/list/allow';
+import TypeList from './subject/list/expectation';
+import Instance from '@alirya/validator/validatable/validatable';
 
 /**
  * Base {@link Validator} for validating list of value with list of  {@link Validator}

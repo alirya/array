@@ -1,6 +1,6 @@
-import Value from "@alirya/value/value";
-import Validatable from "@alirya/validatable/validatable";
-import EmptyParameters from "./empty-parameters";
+import Value from '@alirya/value/value';
+import Validatable from '@alirya/validatable/validatable';
+import EmptyParameters from './empty-parameters';
 /**
  * string intended for empty array
  *

@@ -1,5 +1,5 @@
-import Validatable from "@alirya/validatable/validatable";
-import IterableOr from "@alirya/iterable/validatable/boolean/or-parameters";
+import Validatable from '@alirya/validatable/validatable';
+import IterableOr from '@alirya/iterable/validatable/boolean/or-parameters';
 
 
 export default function OrParameters<

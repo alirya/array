@@ -1,15 +1,15 @@
-import DifferenceBothParameters from "../../dist/difference-both-parameters";
-import DifferenceBothParameter from "../../dist/difference-both-parameter";
-import EqualParameter from "@alirya/boolean/equal-parameter";
-import EqualParameters from "@alirya/boolean/equal-parameters";
-import DifferenceParameters from "../../dist/difference-parameters";
-import DifferenceParameter from "../../dist/difference-parameter";
+import DifferenceBothParameters from '../../dist/difference-both-parameters';
+import DifferenceBothParameter from '../../dist/difference-both-parameter';
+import EqualParameter from '@alirya/boolean/equal-parameter';
+import EqualParameters from '@alirya/boolean/equal-parameters';
+import DifferenceParameters from '../../dist/difference-parameters';
+import DifferenceParameter from '../../dist/difference-parameter';
 
 
-it("enable console.log", () => { spyOn(console, 'log').and.callThrough();});
+it('enable console.log', () => { spyOn(console, 'log').and.callThrough();});
 
 
-describe("check equality result", function() {
+describe('check equality result', function() {
 
     let target : number[] = [1,2,3,4,5];
     let compare : number[] = [2,3,4,6];
@@ -22,13 +22,13 @@ describe("check equality result", function() {
     //     }))
     // });
 
-    it("with equal", () => {
+    it('with equal', () => {
 
         expect(DifferenceParameters(target, compare, EqualParameters)).toEqual(DifferenceParameter({
             array: target,
             compare: compare,
             validation:EqualParameter
-        }))
+        }));
     });
 
 });

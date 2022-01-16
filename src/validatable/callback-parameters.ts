@@ -1,6 +1,6 @@
-import Validatable from "@alirya/validatable/validatable";
-import Validatables from "./validatables/validatables";
-import {List} from "ts-toolbelt";
+import Validatable from '@alirya/validatable/validatable';
+import Validatables from './validatables/validatables';
+import {List} from 'ts-toolbelt';
 
 export default class CallbackParameters<
     ValidatableList extends ReadonlyArray<Validatable> = ReadonlyArray<Validatable>,

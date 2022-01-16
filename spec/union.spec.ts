@@ -1,10 +1,10 @@
-import Union from "../dist/union";
+import Union from '../dist/union';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("compiler compatibility", function() {
+describe('compiler compatibility', function() {
 
-    describe("native", function() {
+    describe('native', function() {
 
         let merged : Union<[Array<any>, Map<any, any>]> = Object.assign([], new Map());
 
@@ -13,7 +13,7 @@ describe("compiler compatibility", function() {
 
     });
 
-    describe("native", function() {
+    describe('native', function() {
 
         class A {
             public a : string = '';

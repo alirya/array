@@ -1,12 +1,12 @@
-import Validator from "@alirya/validator/validator";
-import Value from "@alirya/value/value";
-import Validatable from "@alirya/validatable/validatable";
-import ValidatableContainer from "@alirya/validatable/validatable/validatable";
-import ValidatorContainer from "@alirya/validator/validator/validator";
-import Message from "@alirya/message/message";
-import Messages from "../message/messages/messages";
-import Instance from "@alirya/validator/validatable/validatable";
-import Validatables from "./validatables/validatables";
+import Validator from '@alirya/validator/validator';
+import Value from '@alirya/value/value';
+import Validatable from '@alirya/validatable/validatable';
+import ValidatableContainer from '@alirya/validatable/validatable/validatable';
+import ValidatorContainer from '@alirya/validator/validator/validator';
+import Message from '@alirya/message/message';
+import Messages from '../message/messages/messages';
+import Instance from '@alirya/validator/validatable/validatable';
+import Validatables from './validatables/validatables';
 
 export default interface List<
     ValueType extends unknown[],

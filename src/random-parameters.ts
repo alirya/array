@@ -1,4 +1,4 @@
-import RandomBoolean from "@alirya/boolean/random";
+import RandomBoolean from '@alirya/boolean/random';
 
 /**
  * pick a random values

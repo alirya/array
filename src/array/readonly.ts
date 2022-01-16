@@ -1,3 +1,3 @@
 export default interface Readonly<Type> {
-    array : ReadonlyArray<Type>
+    array : ReadonlyArray<Type>;
 }

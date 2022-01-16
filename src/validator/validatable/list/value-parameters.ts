@@ -1,8 +1,8 @@
-import ListReturn from "./infer";
-import Validator from "@alirya/validator/validator";
-import {List} from "ts-toolbelt";
-import ListStrict from "./infer";
-import Unions from "../../../unions";
+import ListReturn from './infer';
+import Validator from '@alirya/validator/validator';
+import {List} from 'ts-toolbelt';
+import ListStrict from './infer';
+import Unions from '../../../unions';
 
 
 export default function ValueParameters<

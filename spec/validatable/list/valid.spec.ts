@@ -1,11 +1,11 @@
-import Valid from "../../../dist/validatable/list/valid";
-import Validatable from "@alirya/validatable/validatable";
+import Valid from '../../../dist/validatable/list/valid';
+import Validatable from '@alirya/validatable/validatable';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("compiler compatibility property", function() {
+describe('compiler compatibility property', function() {
 
-    describe("explicit", function() {
+    describe('explicit', function() {
 
         let record  = [
             {valid:true},
@@ -33,7 +33,7 @@ describe("compiler compatibility property", function() {
     });
 
 
-    describe("implicit", function() {
+    describe('implicit', function() {
 
         let record : [
             Validatable,
@@ -60,7 +60,7 @@ describe("compiler compatibility property", function() {
 
 
 
-describe("check property", function() {
+describe('check property', function() {
 
     let record  = [
         {valid:true},
@@ -71,7 +71,7 @@ describe("check property", function() {
 
     let result = Valid(record);
 
-    it("valid", () => {
+    it('valid', () => {
 
         if(result[0]) {
 
@@ -79,11 +79,11 @@ describe("check property", function() {
 
         } else {
 
-            fail('property is not exits')
+            fail('property is not exits');
         }
     });
 
-    it("valid", () => {
+    it('valid', () => {
 
         if(result[1]) {
 
@@ -91,22 +91,22 @@ describe("check property", function() {
 
         } else {
 
-            fail('property is not exits')
+            fail('property is not exits');
         }
     });
-    it("invalid", () => {
+    it('invalid', () => {
 
         expect(result[2]).toBeUndefined();
     });
 
 
-    it("invalid", () => {
+    it('invalid', () => {
 
         expect(result[3]).toBeUndefined();
     });
 });
 
-describe("all false", function() {
+describe('all false', function() {
 
     let record  = [
         {valid:false},
@@ -122,7 +122,7 @@ describe("all false", function() {
 
     let result = Valid(record);
 
-    it("empty", () => {
+    it('empty', () => {
 
         expect(result).toEqual([]);
     });

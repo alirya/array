@@ -1,5 +1,5 @@
-import ValueInterface from "@alirya/value/value";
-import RandomParameters from "./random-parameters";
+import ValueInterface from '@alirya/value/value';
+import RandomParameters from './random-parameters';
 
 /**
  * pick a random values

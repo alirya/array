@@ -1,4 +1,4 @@
-import EqualParameters from "./equal-parameters";
+import EqualParameters from './equal-parameters';
 
 export default function EqualParameter<Value>(
     {
@@ -10,6 +10,6 @@ export default function EqualParameter<Value>(
     }
 ) : boolean {
 
-    return EqualParameters(array1, array2, compare)
+    return EqualParameters(array1, array2, compare);
 
 }

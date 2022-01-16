@@ -1,11 +1,11 @@
-import Validator from "@alirya/validator/validator";
-import Unions from "../../../unions";
-import Map from "../../../map";
-import {List as ListHelper} from "ts-toolbelt";
-import InferReturn from "@alirya/validator/validatable/infer-static";
-import Value from "@alirya/value/value";
-import ValidatorContainer from "@alirya/validator/validator/validator";
-import ListPartialParameters from "./lispartial-parameters";
+import Validator from '@alirya/validator/validator';
+import Unions from '../../../unions';
+import Map from '../../../map';
+import {List as ListHelper} from 'ts-toolbelt';
+import InferReturn from '@alirya/validator/validatable/infer-static';
+import Value from '@alirya/value/value';
+import ValidatorContainer from '@alirya/validator/validator/validator';
+import ListPartialParameters from './lispartial-parameters';
 
 
 

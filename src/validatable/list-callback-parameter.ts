@@ -1,10 +1,10 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import Instance from "@alirya/validator/validatable/validatable";
-import ValueInterface from "@alirya/value/value";
-import Message from "@alirya/message/message";
-import ValidatorContainer from "@alirya/validator/validator/validator";
-import ListCallbackParameters from "./liscallback-parameters";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import Instance from '@alirya/validator/validatable/validatable';
+import ValueInterface from '@alirya/value/value';
+import Message from '@alirya/message/message';
+import ValidatorContainer from '@alirya/validator/validator/validator';
+import ListCallbackParameters from './liscallback-parameters';
 
 export type ValueCallbackArgument<
     ValueType extends unknown[],

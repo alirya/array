@@ -1,7 +1,7 @@
-import Equal from "@alirya/boolean/equal";
-import Validation from "@alirya/boolean/validation/validation";
-import Tuple from "./array/tuple";
-import DifferenceBothParameters from "./difference-both-parameters";
+import Equal from '@alirya/boolean/equal';
+import Validation from '@alirya/boolean/validation/validation';
+import Tuple from './array/tuple';
+import DifferenceBothParameters from './difference-both-parameters';
 
 /**
  * option version of {@see DifferenceBothParameters}
@@ -15,5 +15,5 @@ export default function DifferenceBothParameter<Value>(
     } : Partial<Validation<[Value, Value]>> & Tuple<[ReadonlyArray<Value>, ReadonlyArray<Value>]>
 ) : Value[] {
 
-    return DifferenceBothParameters(...array, validation)
+    return DifferenceBothParameters(...array, validation);
 }

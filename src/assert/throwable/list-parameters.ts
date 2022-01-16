@@ -1,4 +1,4 @@
-import ListType from "../string/lisparameters";
+import ListType from '../string/lisparameters';
 
 export default function ListParameters(
     value : unknown,
@@ -7,5 +7,5 @@ export default function ListParameters(
     conversion : (value: unknown)=>string = value=>typeof value,
 ) : Error {
 
-    return new Error(ListType(value, false, expect, subject, conversion))
+    return new Error(ListType(value, false, expect, subject, conversion));
 }

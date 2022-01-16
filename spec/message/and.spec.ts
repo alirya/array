@@ -1,7 +1,7 @@
-import And from "../../dist/message/and";
-import {List} from "ts-toolbelt";
+import And from '../../dist/message/and';
+import {List} from 'ts-toolbelt';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 let messages = [
@@ -29,7 +29,7 @@ it('check data', ()=>{
 it('check message', ()=>{
 
     let join = And(messages);
-   expect(join.message).toBe('a and b and c and d and e')
+   expect(join.message).toBe('a and b and c and d and e');
 
 });
 
@@ -38,7 +38,7 @@ it('add value', ()=>{
 
     let join = And(messages);
     join.messages.push({message:'f'});
-   expect(join.message).toBe('a and b and c and d and e and f')
+   expect(join.message).toBe('a and b and c and d and e and f');
 
 });
 
@@ -54,7 +54,7 @@ it('paprtial', ()=>{
     // @ts-expecerror
     let join = And(partial);
 
-   expect(join.message).toBe('a and c and d')
+   expect(join.message).toBe('a and c and d');
 
 });
 

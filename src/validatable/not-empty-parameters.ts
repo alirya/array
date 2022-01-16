@@ -1,7 +1,7 @@
-import NotEmptyArgument from "../boolean/not-empty";
-import {List} from "ts-toolbelt";
-import Instance from "@alirya/validator/validatable/validatable";
-import Dynamic from "@alirya/validator/message/function/validatable-parameters";
+import NotEmptyArgument from '../boolean/not-empty';
+import {List} from 'ts-toolbelt';
+import Instance from '@alirya/validator/validatable/validatable';
+import Dynamic from '@alirya/validator/message/function/validatable-parameters';
 
 export type NotEmptyType<
     Values extends unknown[],
@@ -17,7 +17,7 @@ export default class NotEmptyParameters<
     NotEmptyType<Values, MessageType>
 {
     readonly valid : boolean;
-    #message : Dynamic<Values, MessageType>
+    #message : Dynamic<Values, MessageType>;
 
     constructor(
         readonly value : Values,

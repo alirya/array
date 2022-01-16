@@ -1,9 +1,9 @@
-import And from "../../dist/validatable/and-parameters";
-import Guard from "@alirya/validatable/boolean/validatable";
-import Validatable from "@alirya/validatable/validatable";
-import Equal from "../../dist/boolean/equal-parameters";
+import And from '../../dist/validatable/and-parameters';
+import Guard from '@alirya/validatable/boolean/validatable';
+import Validatable from '@alirya/validatable/validatable';
+import Equal from '../../dist/boolean/equal-parameters';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 describe('structure', function () {
@@ -13,21 +13,21 @@ describe('structure', function () {
         let subjects = [];
         let and = And<Validatable[]>(subjects, true);
 
-        it("constructor", () => {
+        it('constructor', () => {
             expect(Equal(subjects, and.validatables)).toBeTrue();
         });
 
-        it("value", () => {
+        it('value', () => {
             expect([...and.validatables]).toEqual([...subjects]);
         });
 
-        it("set", () => {
+        it('set', () => {
             and.validatables.push({valid:false});
             expect(Equal(subjects, and.validatables)).toBeTrue();
             expect(and.validatables[0].valid).toBeFalse();
         });
 
-        it("value", () => {
+        it('value', () => {
             expect(<Validatable[]>subjects).toEqual(and.validatables);
         });
 
@@ -38,14 +38,14 @@ describe('empty', function () {
 
     describe('initial', function () {
 
-        it("true", () => {
+        it('true', () => {
             let and = And<Validatable[]>([], true);
-            expect(and.valid).toBe(true)
+            expect(and.valid).toBe(true);
         });
 
-        it("false", () => {
+        it('false', () => {
             let and = And<Validatable[]>([], false);
-            expect(and.valid).toBe(false)
+            expect(and.valid).toBe(false);
         });
 
     });
@@ -54,54 +54,54 @@ describe('empty', function () {
 
         let and = And<Validatable[]>([], true);
 
-        it("true", () => {
-            expect(and.valid).toBe(true)
+        it('true', () => {
+            expect(and.valid).toBe(true);
         });
 
     });
 
 });
 
-describe("single", function() {
+describe('single', function() {
 
     describe('constructor', function () {
 
-        it("true", () => {
+        it('true', () => {
             let and = And<Validatable[]>([{valid:true}], false);
-            expect(and.valid).toBe(true)
+            expect(and.valid).toBe(true);
         });
 
-        it("false", () => {
+        it('false', () => {
             let and = And<Validatable[]>([{valid:false}], true);
-            expect(and.valid).toBe(false)
+            expect(and.valid).toBe(false);
         });
     });
 
     describe('set', function () {
 
 
-        it("true", () => {
+        it('true', () => {
             let and = And<Validatable[]>([{valid:true}], true);
-            expect(and.valid).toBe(true)
+            expect(and.valid).toBe(true);
         });
 
-        it("false", () => {
+        it('false', () => {
             let and = And<Validatable[]>([{valid:false}], true);
 
-            expect(and.valid).toBe(false)
+            expect(and.valid).toBe(false);
         });
 
     });
 
 });
 
-describe("multi same", function() {
+describe('multi same', function() {
 
 
 
-    it("valids", () => {
+    it('valids', () => {
         let and = And<Validatable[]>([{valid:true}, {valid:true}], false);
-        expect(and.valid).toBe(true)
+        expect(and.valid).toBe(true);
     });
 
     it('iterator', ()=>{
@@ -116,11 +116,11 @@ describe("multi same", function() {
 
         expect(number).toBe(2);
 
-    })
+    });
 
-    it("invalids", () => {
+    it('invalids', () => {
         let and = And<Validatable[]>([{valid:false}, {valid:false}], false);
-        expect(and.valid).toBe(false)
+        expect(and.valid).toBe(false);
     });
 
     it('iterator', ()=>{
@@ -135,17 +135,17 @@ describe("multi same", function() {
 
         expect(number).toBe(2);
 
-    })
-})
+    });
+});
 
 
-describe("multi mixed", function() {
+describe('multi mixed', function() {
 
     let and = And<Validatable[]>([], false);
 
-    it("valids", () => {
+    it('valids', () => {
         and.validatables.push({valid:true}, {valid:false});
-        expect(and.valid).toBe(false)
+        expect(and.valid).toBe(false);
     });
 
     it('iterator', ()=>{
@@ -160,11 +160,11 @@ describe("multi mixed", function() {
 
         expect(number).toBe(2);
 
-    })
+    });
 
-    it("invalids", () => {
+    it('invalids', () => {
         and.validatables.push({valid:true}, {valid:false});
-        expect(and.valid).toBe(false)
+        expect(and.valid).toBe(false);
     });
 
     it('iterator', ()=>{
@@ -179,5 +179,5 @@ describe("multi mixed", function() {
 
         expect(number).toBe(4);
 
-    })
-})
+    });
+});

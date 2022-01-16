@@ -1,5 +1,5 @@
-import AssertArray from "../assert/array";
-import ArrayError from "../assert/throwable/array-parameters";
+import AssertArray from '../assert/array';
+import ArrayError from '../assert/throwable/array-parameters';
 
 export default function ArrayParameters(
     value : unknown,

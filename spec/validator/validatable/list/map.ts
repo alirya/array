@@ -1,20 +1,20 @@
-import Map from "../../../../dist/validator/validatable/list/map-parameters";
-import ValidatorType from "@alirya/type/validator/type-parameters";
+import Map from '../../../../dist/validator/validatable/list/map-parameters';
+import ValidatorType from '@alirya/type/validator/type-parameters';
 
 
-it("force console log", () => spyOn(console, 'log').and.callThrough());
+it('force console log', () => spyOn(console, 'log').and.callThrough());
 
-describe("simple validatable", function() {
+describe('simple validatable', function() {
 
     let validator = [
-        ValidatorType("number"), //new Num(),
-        ValidatorType("number"), //new NumAny(),
-        ValidatorType("string"), //new Str(),
-        ValidatorType("string"), //new StrAny(),
-        ValidatorType("number"), //new Num(),
-        ValidatorType("number"), //new NumAny(),
-        ValidatorType("string"), //new Str(),
-        ValidatorType("string"), //new StrAny(),
+        ValidatorType('number'), //new Num(),
+        ValidatorType('number'), //new NumAny(),
+        ValidatorType('string'), //new Str(),
+        ValidatorType('string'), //new StrAny(),
+        ValidatorType('number'), //new Num(),
+        ValidatorType('number'), //new NumAny(),
+        ValidatorType('string'), //new Str(),
+        ValidatorType('string'), //new StrAny(),
     ];
 
     let value = [
@@ -41,17 +41,17 @@ describe("simple validatable", function() {
 });
 
 
-describe("simple validatable", function() {
+describe('simple validatable', function() {
 
     let validator = [
-        ValidatorType("number"), //new Num(),
-        ValidatorType("number"), //new NumAny(),
-        ValidatorType("string"), //new Str(),
-        ValidatorType("string"), //new StrAny(),
-        ValidatorType("number"), //new Num(),
-        ValidatorType("number"), //new NumAny(),
-        ValidatorType("string"), //new Str(),
-        ValidatorType("string"), //new StrAny()
+        ValidatorType('number'), //new Num(),
+        ValidatorType('number'), //new NumAny(),
+        ValidatorType('string'), //new Str(),
+        ValidatorType('string'), //new StrAny(),
+        ValidatorType('number'), //new Num(),
+        ValidatorType('number'), //new NumAny(),
+        ValidatorType('string'), //new Str(),
+        ValidatorType('string'), //new StrAny()
     ];
 
     let value = [
@@ -78,17 +78,17 @@ describe("simple validatable", function() {
 });
 
 
-describe("extended validatable", function() {
+describe('extended validatable', function() {
 
     let validator = [
-        ValidatorType("number"), //new ExtendedNum(),
-        ValidatorType("number"), //new ExtendedNumAny(),
-        ValidatorType("string"), //new ExtendedStr(),
-        ValidatorType("string"), //new ExtendedStrAny(),
-        ValidatorType("number"), //new ExtendedNum(),
-        ValidatorType("number"), //new ExtendedNumAny(),
-        ValidatorType("string"), //new ExtendedStr(),
-        ValidatorType("string"), //new ExtendedStrAny(),
+        ValidatorType('number'), //new ExtendedNum(),
+        ValidatorType('number'), //new ExtendedNumAny(),
+        ValidatorType('string'), //new ExtendedStr(),
+        ValidatorType('string'), //new ExtendedStrAny(),
+        ValidatorType('number'), //new ExtendedNum(),
+        ValidatorType('number'), //new ExtendedNumAny(),
+        ValidatorType('string'), //new ExtendedStr(),
+        ValidatorType('string'), //new ExtendedStrAny(),
     ];
 
     let value = [

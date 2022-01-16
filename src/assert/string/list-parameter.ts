@@ -1,6 +1,6 @@
-import ListParameters from "./lisparameters";
-import Value from "@alirya/value/value";
-import Validatable from "@alirya/validatable/validatable";
+import ListParameters from './lisparameters';
+import Value from '@alirya/value/value';
+import Validatable from '@alirya/validatable/validatable';
 
 export default function ListParameter(
     {

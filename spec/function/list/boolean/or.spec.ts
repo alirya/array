@@ -1,19 +1,19 @@
-import Or from "../../../../dist/function/list/boolean/or";
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+import Or from '../../../../dist/function/list/boolean/or';
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 function Num(val : unknown) : val is number {
 
-    return typeof val === "number";
+    return typeof val === 'number';
 }
 
 function Str(val : unknown) : val is string {
 
-    return typeof val === "string";
+    return typeof val === 'string';
 }
 
 
-describe("compiler compatible", function() {
+describe('compiler compatible', function() {
 
     let value : unknown = 1;
 
@@ -51,7 +51,7 @@ describe("compiler compatible", function() {
     }
 });
 
-describe("single", function() {
+describe('single', function() {
 
     let ab = 1;
 
@@ -63,7 +63,7 @@ describe("single", function() {
 
 });
 
-describe("multi", function() {
+describe('multi', function() {
 
     let num = 1;
 

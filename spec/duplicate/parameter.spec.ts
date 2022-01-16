@@ -1,12 +1,12 @@
-import DuplicateParameters from "../../dist/duplicate-parameters";
-import DuplicateParameter from "../../dist/duplicate-parameter";
-import EqualParameter from "@alirya/boolean/equal-parameter";
-import EqualParameters from "@alirya/boolean/equal-parameters";
+import DuplicateParameters from '../../dist/duplicate-parameters';
+import DuplicateParameter from '../../dist/duplicate-parameter';
+import EqualParameter from '@alirya/boolean/equal-parameter';
+import EqualParameters from '@alirya/boolean/equal-parameters';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
-describe("check equality result", function() {
+describe('check equality result', function() {
 
     it(`default`, () => {
 

@@ -1,5 +1,5 @@
-import DifferenceLeft from "./difference-parameters";
-import Equal from "@alirya/boolean/equal";
+import DifferenceLeft from './difference-parameters';
+import Equal from '@alirya/boolean/equal';
 
 /**
  * return values which does not exist in both list
@@ -21,5 +21,5 @@ export default function DifferenceBothParameters<Value>(
     let left = DifferenceLeft(list1, list2, validation);
     let right = DifferenceLeft(list2, list1, validation);
 
-    return [... new Set<Value>([...left, ...right])]
+    return [... new Set<Value>([...left, ...right])];
 }

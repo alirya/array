@@ -1,8 +1,8 @@
-import Last from "../../../dist/value/value/last";
+import Last from '../../../dist/value/value/last';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-it("sequence", () => {
+it('sequence', () => {
 
     let array : number[] = [1,2,3,4,5];
 
@@ -10,7 +10,7 @@ it("sequence", () => {
 });
 
 
-it("skipped", () => {
+it('skipped', () => {
 
     let array : number[] = [];
     array[5] = 1;
@@ -24,7 +24,7 @@ it("skipped", () => {
     expect(Last(array)).toBe(5);
 });
 
-it("empty", () => {
+it('empty', () => {
 
     let array : number[] = [];
 

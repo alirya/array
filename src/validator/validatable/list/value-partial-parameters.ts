@@ -1,7 +1,7 @@
-import Validator from "@alirya/validator/validator";
-import {List} from "ts-toolbelt";
-import ListStrict from "./infer";
-import Unions from "../../../unions";
+import Validator from '@alirya/validator/validator';
+import {List} from 'ts-toolbelt';
+import ListStrict from './infer';
+import Unions from '../../../unions';
 
 export default function ValuePartialParameters<
     ValueType,

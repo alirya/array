@@ -1,13 +1,13 @@
-import Map from "../../../dist/validatable/map-callback-parameters";
-import Standard from "../../../dist/validator/validatable/list/map-parameters";
-import And from "../../../dist/validatable/and-parameters";
-import Or from "../../../dist/validatable/or-parameters";
-import ValidatorInterface from "@alirya/validator/simple";
-import MessageMap from "../../../dist/message/message/list/map";
-import ValidatorType from "@alirya/type/validator/type-parameters";
-import Instance from "@alirya/validator/validatable/validatable";
+import Map from '../../../dist/validatable/map-callback-parameters';
+import Standard from '../../../dist/validator/validatable/list/map-parameters';
+import And from '../../../dist/validatable/and-parameters';
+import Or from '../../../dist/validatable/or-parameters';
+import ValidatorInterface from '@alirya/validator/simple';
+import MessageMap from '../../../dist/message/message/list/map';
+import ValidatorType from '@alirya/type/validator/type-parameters';
+import Instance from '@alirya/validator/validatable/validatable';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 type TypeValidator = [
     ValidatorInterface<any, string, Instance<any, string>>,
@@ -19,7 +19,7 @@ type Type = [
     string,
     string,
     string,
-]
+];
 
 let validator : TypeValidator = [
     ValidatorType('string'),

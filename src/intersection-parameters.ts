@@ -1,4 +1,4 @@
-import Equal from "@alirya/boolean/equal";
+import Equal from '@alirya/boolean/equal';
 
 
 /**
@@ -13,7 +13,7 @@ export default function IntersectionParameters<Value>(
     validation : (target : Value, comparison : Value) => boolean = Equal,
 ) : Value[] {
 
-    const val = list.slice(0)
+    const val = list.slice(0);
 
     switch(val.length) {
         case 0 : return [];
@@ -35,7 +35,7 @@ export default function IntersectionParameters<Value>(
             }
 
             return false;
-        })
+        });
     }
 
     return intersection;

@@ -1,6 +1,6 @@
-import IndexParameters from "./number/index-parameters";
-import Validation from "@alirya/boolean/function/validation";
-import Reset from "./void/reset";
+import IndexParameters from './number/index-parameters';
+import Validation from '@alirya/boolean/function/validation';
+import Reset from './void/reset';
 
 export default function ExtractParameters<Value>(
     list : Value[],

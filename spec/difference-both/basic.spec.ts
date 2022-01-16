@@ -1,29 +1,29 @@
-import DifferenceBoth from "../../dist/difference-both-parameters";
+import DifferenceBoth from '../../dist/difference-both-parameters';
 
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("primitive", function() {
+describe('primitive', function() {
 
     let target : number[] = [1,2,3,4,5];
     let compare : number[] = [2,3,4,6];
     let left = DifferenceBoth(target, compare);
 
-    it("left valid", () => expect(left).toEqual([1,5,6]));
+    it('left valid', () => expect(left).toEqual([1,5,6]));
 
     let right = DifferenceBoth(compare, target);
 
-    it("right valid", () => expect(right).toEqual([6,1,5]));
+    it('right valid', () => expect(right).toEqual([6,1,5]));
 
 });
 
-describe("custom comparison", function() {
+describe('custom comparison', function() {
 
     type Data = {
         string : String,
         number : Number,
         boolean : Boolean,
-    }
+    };
 
     let target : Data[] = [
         {
@@ -53,14 +53,14 @@ describe("custom comparison", function() {
         }
     ];
 
-    it("left without", function() {
+    it('left without', function() {
 
         let removed = DifferenceBoth(target, compare);
         expect([...target, ...compare]).toEqual(removed);
 
     });
 
-    it("left with", function() {
+    it('left with', function() {
 
         let removed = DifferenceBoth(target, compare, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
 
@@ -74,14 +74,14 @@ describe("custom comparison", function() {
     });
 
 
-    it("right without", function() {
+    it('right without', function() {
 
         let removed = DifferenceBoth(compare, target);
         expect([...compare, ...target]).toEqual(removed);
 
     });
 
-    it("right with", function() {
+    it('right with', function() {
 
         let removed = DifferenceBoth(compare, target, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
         expect(target).not.toEqual(removed);

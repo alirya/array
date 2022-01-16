@@ -1,12 +1,12 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import ValidateValuePartial from "./validatable/list/value-partial-parameters";
-import ListReturn from "./validatable/list/infer";
-import ValueCallback from "./value-callback-parameters";
-import Unions from "../unions";
-import Value from "./value";
-import InferMessage from "../message/message/list/infer";
-import Map from "../message/message/list/map";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import ValidateValuePartial from './validatable/list/value-partial-parameters';
+import ListReturn from './validatable/list/infer';
+import ValueCallback from './value-callback-parameters';
+import Unions from '../unions';
+import Value from './value';
+import InferMessage from '../message/message/list/infer';
+import Map from '../message/message/list/map';
 
 
 /**

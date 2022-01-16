@@ -1,5 +1,5 @@
-import Readonly from "../array/readonly";
-import OrParameters from "./or-parameters";
+import Readonly from '../array/readonly';
+import OrParameters from './or-parameters';
 
 export type OrParameterArgument = Readonly<boolean> & {defaults : boolean};
 

@@ -1,7 +1,7 @@
-import List from "../../dist/boolean/list";
-import GuardBoolean from "@alirya/boolean/boolean";
+import List from '../../dist/boolean/list';
+import GuardBoolean from '@alirya/boolean/boolean';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe(`compiler compatible`,function() {
 

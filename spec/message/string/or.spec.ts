@@ -1,6 +1,6 @@
-import Or from "../../../dist/message/string/or";
+import Or from '../../../dist/message/string/or';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 let messages = [
     {message:'a'},
@@ -12,7 +12,7 @@ let messages = [
 
 it('check message', ()=>{
 
-   expect(Or(messages)).toBe('a or b or c or d or e')
+   expect(Or(messages)).toBe('a or b or c or d or e');
 
 });
 
@@ -20,7 +20,7 @@ it('check message', ()=>{
 it('add value', ()=>{
 
     messages.push({message:'f'});
-   expect(Or(messages)).toBe('a or b or c or d or e or f')
+   expect(Or(messages)).toBe('a or b or c or d or e or f');
 
 });
 

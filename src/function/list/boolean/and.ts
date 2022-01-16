@@ -1,18 +1,18 @@
-import {Union, List} from "ts-toolbelt";
+import {Union, List} from 'ts-toolbelt';
 
 /**
  * callback boolean mapping
  */
 export type Validation<Values extends any[]> = {
     [Key in keyof Values]:  (value : any) => boolean
-}
+};
 
 /**
  * callback guard mapping
  */
 export type Guard<Values extends any[]> = {
     [Key in keyof Values]:  (value : any) => value is Values[Key]
-}
+};
 
 /**
  *

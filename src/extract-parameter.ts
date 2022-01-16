@@ -1,6 +1,6 @@
-import Validation from "@alirya/boolean/validation/validation";
-import List from "./array/list";
-import ExtractParameters from "./extracparameters";
+import Validation from '@alirya/boolean/validation/validation';
+import List from './array/list';
+import ExtractParameters from './extracparameters';
 
 
 export type ExtractParameterArgument<Value> =

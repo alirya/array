@@ -1,4 +1,4 @@
-import {List} from "ts-toolbelt";
+import {List} from 'ts-toolbelt';
 
 type Unions<Schema extends unknown[]> =
     Schema |

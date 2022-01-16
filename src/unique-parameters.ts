@@ -1,5 +1,5 @@
-import Equal from "@alirya/boolean/equal";
-import Callable from "@alirya/function/callable";
+import Equal from '@alirya/boolean/equal';
+import Callable from '@alirya/function/callable';
 
 
 /**

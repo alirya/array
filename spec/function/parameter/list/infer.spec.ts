@@ -1,8 +1,8 @@
-import ParameterInfer from "../../../../dist/function/parameter/list/infer";
-import Reset from "../../../../dist/reset";
-import Boolean from "@alirya/boolean/boolean";
+import ParameterInfer from '../../../../dist/function/parameter/list/infer';
+import Reset from '../../../../dist/reset';
+import Boolean from '@alirya/boolean/boolean';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 describe('compiler compatible', function() {

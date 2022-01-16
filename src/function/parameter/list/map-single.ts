@@ -3,5 +3,5 @@
  */
 type MapSingle<Arguments extends unknown[]> = {
     [Key in keyof Arguments] :  (arg:Arguments[Key])=>any
-}
+};
 export default MapSingle;

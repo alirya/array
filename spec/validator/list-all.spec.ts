@@ -1,19 +1,19 @@
-import ValidatorType from "@alirya/type/validator/type-parameters";
-import ListAll from "../../dist/validator/lisall-parameters";
-import And from "../../dist/validatable/and-parameters";
-import Validatable from "@alirya/validatable/validatable";
-import MessageMap from "../../dist/message/message/list/map";
-import ValidatablesInterface from "../../dist/validatable/validatables/validatables";
-import Validatables from "../../dist/validatable/validatables/validatables";
-import SimpleValidator from "@alirya/validator/simple";
-import Or from "../../dist/validatable/or-parameters";
-import Instance from "@alirya/validator/validatable/validatable";
+import ValidatorType from '@alirya/type/validator/type-parameters';
+import ListAll from '../../dist/validator/lisall-parameters';
+import And from '../../dist/validatable/and-parameters';
+import Validatable from '@alirya/validatable/validatable';
+import MessageMap from '../../dist/message/message/list/map';
+import ValidatablesInterface from '../../dist/validatable/validatables/validatables';
+import Validatables from '../../dist/validatable/validatables/validatables';
+import SimpleValidator from '@alirya/validator/simple';
+import Or from '../../dist/validatable/or-parameters';
+import Instance from '@alirya/validator/validatable/validatable';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("compiler compatibility", function() {
+describe('compiler compatibility', function() {
 
-    describe("implicit partial", function() {
+    describe('implicit partial', function() {
 
         let validator = ValidatorType('string');
 
@@ -56,7 +56,7 @@ describe("compiler compatibility", function() {
             let string2 : [string, string] = validatable.value;
         }
 
-        describe("recursive", function() {
+        describe('recursive', function() {
 
             let validator = ValidatorType('string');
 
@@ -72,7 +72,7 @@ describe("compiler compatibility", function() {
         });
     });
 
-    describe("explicit", function() {
+    describe('explicit', function() {
 
         type TypeValidator = SimpleValidator<any, string, Instance<any, string>>;
 
@@ -88,7 +88,7 @@ describe("compiler compatibility", function() {
             'address',
         ];
 
-        describe("auto", function() {
+        describe('auto', function() {
 
             let property = ListAll/*<unknown[], Type>*/(validator, And, MessageMap);
 
@@ -114,7 +114,7 @@ describe("compiler compatibility", function() {
 
         });
 
-        describe("direct", function() {
+        describe('direct', function() {
 
             let property = ListAll(validator, And, MessageMap);
 
@@ -148,7 +148,7 @@ describe("compiler compatibility", function() {
 
 
 
-describe("all valid", function() {
+describe('all valid', function() {
 
     let validator = ValidatorType('string');
 
@@ -167,21 +167,21 @@ describe("all valid", function() {
             expect(validatable.validatables[0].valid).toBe(true);
             expect(typeof validatable.validatables[0].message).toBe('string');
         } else {
-            fail('index 0 should exits')
+            fail('index 0 should exits');
         }
 
         if(validatable.validatables[1]) {
             expect(validatable.validatables[1].valid).toBe(true);
             expect(typeof validatable.validatables[1].message).toBe('string');
         } else {
-            fail('index 1 should exits')
+            fail('index 1 should exits');
         }
 
         if(validatable.validatables[2]) {
             expect(validatable.validatables[2].valid).toBe(true);
             expect(typeof validatable.validatables[2].message).toBe('string');
         } else {
-            fail('index 2 should exits')
+            fail('index 2 should exits');
         }
     });
 
@@ -205,7 +205,7 @@ describe("all valid", function() {
 
 });
 
-describe("mixed", function() {
+describe('mixed', function() {
 
     let validator = ValidatorType('string');
 
@@ -224,21 +224,21 @@ describe("mixed", function() {
             expect(validatable.validatables[0].valid).toBe(true);
             expect(typeof validatable.validatables[0].message).toBe('string');
         } else {
-            fail('index 0 should exits')
+            fail('index 0 should exits');
         }
 
         if(validatable.validatables[1]) {
             expect(validatable.validatables[1].valid).toBe(false);
             expect(typeof validatable.validatables[1].message).toBe('string');
         } else {
-            fail('index 1 should exits')
+            fail('index 1 should exits');
         }
 
         if(validatable.validatables[2]) {
             expect(validatable.validatables[2].valid).toBe(true);
             expect(typeof validatable.validatables[2].message).toBe('string');
         } else {
-            fail('index 2 should exits')
+            fail('index 2 should exits');
         }
 
     });
@@ -263,7 +263,7 @@ describe("mixed", function() {
 
 });
 
-describe("all invalid", function() {
+describe('all invalid', function() {
 
     let validator = ValidatorType('number');
 
@@ -282,21 +282,21 @@ describe("all invalid", function() {
             expect(validatable.validatables[0].valid).toBe(false);
             expect(typeof validatable.validatables[0].message).toBe('string');
         } else {
-            fail('index 1 should exits')
+            fail('index 1 should exits');
         }
 
         if(validatable.validatables[1]) {
             expect(validatable.validatables[1].valid).toBe(false);
             expect(typeof validatable.validatables[1].message).toBe('string');
         } else {
-            fail('index 2 should not exits')
+            fail('index 2 should not exits');
         }
 
         if(validatable.validatables[2]) {
             expect(validatable.validatables[2].valid).toBe(false);
             expect(typeof validatable.validatables[2].message).toBe('string');
         } else {
-            fail('index 3 should not exits')
+            fail('index 3 should not exits');
         }
     });
 

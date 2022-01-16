@@ -1,8 +1,8 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import Instance from "@alirya/validator/validatable/validatable";
-import List from "./list";
-import MemoizeAccessor from "@alirya/object/function/memoize-accessor";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import Instance from '@alirya/validator/validatable/validatable';
+import List from './list';
+import MemoizeAccessor from '@alirya/object/function/memoize-accessor';
 
 export default class ListCallbackParameters<
     ValueType extends unknown[],
@@ -16,7 +16,7 @@ export default class ListCallbackParameters<
     readonly valid;
     readonly validatables : Results;
     readonly messages : Results;
-    private messageFactory : (results:Results)=>MessageType
+    private messageFactory : (results:Results)=>MessageType;
 
     constructor(
         readonly value: ValueType,
@@ -43,7 +43,7 @@ export default class ListCallbackParameters<
 
         } catch (e) {
 
-            throw new Error(`error on generating message, ${e}`)
+            throw new Error(`error on generating message, ${e}`);
         }
 
     }

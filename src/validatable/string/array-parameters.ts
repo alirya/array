@@ -1,4 +1,4 @@
-import ArrayMessage from "../../assert/string/array-parameters";
+import ArrayMessage from '../../assert/string/array-parameters';
 
 
 export default function ArrayParameters(
@@ -6,6 +6,6 @@ export default function ArrayParameters(
     valid : boolean
 ) : string {
 
-    return ArrayMessage(value, valid)
+    return ArrayMessage(value, valid);
 }
 

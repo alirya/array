@@ -1,21 +1,21 @@
-import ListCallback from "../../dist/validatable/liscallback-parameters";
-import ListReturn from "../../dist/validator/validatable/list/lisparameters";
-import ListReturnPartial from "../../dist/validator/validatable/list/lispartial-parameters";
-import And from "../../dist/validatable/and-parameters";
-import Or from "../../dist/validatable/or-parameters";
-import Validatable from "@alirya/validatable/validatable";
-import SimpleValidator from "@alirya/validator/simple";
-import ValueInterface from "@alirya/value/value";
-import Message from "@alirya/message/message";
-import MessageMap from "../../dist/message/message/list/map";
-import ValidatorType from "@alirya/type/validator/type-parameters";
-import Instance from "@alirya/validator/validatable/validatable";
+import ListCallback from '../../dist/validatable/liscallback-parameters';
+import ListReturn from '../../dist/validator/validatable/list/lisparameters';
+import ListReturnPartial from '../../dist/validator/validatable/list/lispartial-parameters';
+import And from '../../dist/validatable/and-parameters';
+import Or from '../../dist/validatable/or-parameters';
+import Validatable from '@alirya/validatable/validatable';
+import SimpleValidator from '@alirya/validator/simple';
+import ValueInterface from '@alirya/value/value';
+import Message from '@alirya/message/message';
+import MessageMap from '../../dist/message/message/list/map';
+import ValidatorType from '@alirya/type/validator/type-parameters';
+import Instance from '@alirya/validator/validatable/validatable';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("compiler compatibility", function() {
+describe('compiler compatibility', function() {
 
-    describe("explicit typed", function() {
+    describe('explicit typed', function() {
 
         type TypeValidator = SimpleValidator<any, string, Instance<any, string>>;
 
@@ -31,7 +31,7 @@ describe("compiler compatibility", function() {
             'address',
         ];
 
-        describe("auto", function() {
+        describe('auto', function() {
 
             let validatable = new ListCallback(value, validator,
                 (value, validators) => ListReturn(value, validators),
@@ -52,7 +52,7 @@ describe("compiler compatibility", function() {
             instance = validatable.validatables[4];
         });
 
-        describe("auto partial", function() {
+        describe('auto partial', function() {
 
             let validatable = new ListCallback(value, validator,
                 (value, validators) =>
@@ -73,7 +73,7 @@ describe("compiler compatibility", function() {
     });
 
 
-    describe("explicit typed", function() {
+    describe('explicit typed', function() {
 
         let validator  = ValidatorType('string');
 
@@ -83,7 +83,7 @@ describe("compiler compatibility", function() {
         ];
 
 
-        describe("auto", function() {
+        describe('auto', function() {
 
             let validatable = new ListCallback(value, validator,
                 (value, validators) => ListReturn(value, validators),
@@ -104,7 +104,7 @@ describe("compiler compatibility", function() {
             instance = validatable.validatables[4];
         });
 
-        describe("auto partial", function() {
+        describe('auto partial', function() {
 
             let validatable = new ListCallback(value, validator,
                 (value, validators) =>
@@ -130,9 +130,9 @@ describe("compiler compatibility", function() {
 });
 
 
-describe("explicit", function() {
+describe('explicit', function() {
 
-    describe("all valid", function() {
+    describe('all valid', function() {
 
         type TypeValidator = SimpleValidator<any, string, Instance<any, string>>;
 
@@ -140,7 +140,7 @@ describe("explicit", function() {
             string,
             string,
             string,
-        ]
+        ];
 
         let validator : TypeValidator = ValidatorType('string');
 
@@ -150,7 +150,7 @@ describe("explicit", function() {
             'address',
         ];
 
-        describe("complete", function() {
+        describe('complete', function() {
 
             it(`and validation`, () => {
 
@@ -200,7 +200,7 @@ describe("explicit", function() {
 
         });
 
-        describe("partial", function() {
+        describe('partial', function() {
 
             it(`and validation`, () => {
 
@@ -253,7 +253,7 @@ describe("explicit", function() {
 
     });
 
-    describe("mixed", function() {
+    describe('mixed', function() {
 
 
         type TypeValidator = SimpleValidator<any, string, Instance<any, string>>;
@@ -262,7 +262,7 @@ describe("explicit", function() {
             string,
             number,
             string,
-        ]
+        ];
 
         let validator : TypeValidator= ValidatorType('string');
 
@@ -272,7 +272,7 @@ describe("explicit", function() {
             'address',
         ];
 
-        describe("complete", function() {
+        describe('complete', function() {
 
             it(`and validation`, () => {
 
@@ -324,7 +324,7 @@ describe("explicit", function() {
         });
 
 
-        describe("partial", function() {
+        describe('partial', function() {
 
             it(`and validation`, () => {
 
@@ -370,7 +370,7 @@ describe("explicit", function() {
         });
     });
 
-    describe("all invalid", function() {
+    describe('all invalid', function() {
 
         type TypeValidator = SimpleValidator<any, string, Instance<any, string>>;
 
@@ -378,14 +378,14 @@ describe("explicit", function() {
             any,
             any,
             any,
-        ]
+        ];
 
         let validator : TypeValidator = ValidatorType('string');
 
         let value : Type = [{}, {}, {}];
 
 
-        describe("complete", function() {
+        describe('complete', function() {
             it(`and validation`, () => {
 
                 let and = new ListCallback(value, validator,
@@ -436,7 +436,7 @@ describe("explicit", function() {
         });
 
 
-        describe("partial", function() {
+        describe('partial', function() {
             it(`and validation`, () => {
 
                 let and = new ListCallback(value, validator,

@@ -1,5 +1,5 @@
-import {OrParameterArgument} from "./or-parameter";
-import AndParameters from "./and-parameters";
+import {OrParameterArgument} from './or-parameter';
+import AndParameters from './and-parameters';
 
 export type AndParametersArgument = OrParameterArgument;
 

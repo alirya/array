@@ -1,43 +1,43 @@
-import Unique from "../dist/unique-parameters";
+import Unique from '../dist/unique-parameters';
 
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("single string", function() {
+describe('single string', function() {
 
     let array : string[] = [
         'a','b',
         'b','a',
     ];
     let removed = Unique(array);
-    it("remove duplicate", () => expect(removed).toEqual(['a','b']));
+    it('remove duplicate', () => expect(removed).toEqual(['a','b']));
 
 });
 
-describe("single string custom", function() {
+describe('single string custom', function() {
 
     let array : string[] = [
         'A','B',
         'b','a',
     ];
     let removed = Unique(array, (v1, v2)=>v1.toLowerCase() === v2.toLowerCase());
-    it("remove duplicate", () => expect(removed).toEqual(['A','B']));
+    it('remove duplicate', () => expect(removed).toEqual(['A','B']));
 
 });
 
-describe("single number", function() {
+describe('single number', function() {
 
     let array : number[] = [
         1,2,
         1,2,
     ];
     let removed = Unique(array);
-    it("remove duplicate", () => expect(removed).toEqual([1,2]));
+    it('remove duplicate', () => expect(removed).toEqual([1,2]));
 
 });
 
 
-describe("multiple number", function() {
+describe('multiple number', function() {
 
     let array : number[] = [
         1,2,3,
@@ -48,11 +48,11 @@ describe("multiple number", function() {
     ];
 
     let removed = Unique(array);
-    it("remove duplicate", () => expect(removed).toEqual([1,2,3,4]));
+    it('remove duplicate', () => expect(removed).toEqual([1,2,3,4]));
 
 });
 
-describe("multiple number with hole", function() {
+describe('multiple number with hole', function() {
 
     let array : number[] = [
         1,2,3,    6,
@@ -68,15 +68,15 @@ describe("multiple number with hole", function() {
 
     let removed = Unique(array);
 
-    it("remove duplicate", () => expect(removed).toEqual([1,3,6,2,5,4]));
+    it('remove duplicate', () => expect(removed).toEqual([1,3,6,2,5,4]));
 
 });
 
-describe("multiple object custom", function() {
+describe('multiple object custom', function() {
 
     interface Data {
-        data : number,
-        id : number,
+        data : number;
+        id : number;
     }
 
     let array : Data[] = [
@@ -101,7 +101,7 @@ describe("multiple object custom", function() {
 
     for(let [index, value] of removed.entries()) {
 
-        it("remove duplicate", () => {
+        it('remove duplicate', () => {
             expect(value.data).toEqual(result[index].data);
             expect(value.id).toEqual(result[index].id);
         });
@@ -111,11 +111,11 @@ describe("multiple object custom", function() {
 
 
 
-describe("multiple object custom with hole", function() {
+describe('multiple object custom with hole', function() {
 
     interface Data {
-        data : number,
-        id : number,
+        data : number;
+        id : number;
     }
 
     let array : Data[] = [
@@ -143,7 +143,7 @@ describe("multiple object custom with hole", function() {
 
     for(let [index, value] of removed.entries()) {
 
-        it("remove duplicate", () => {
+        it('remove duplicate', () => {
             expect(value.data).toEqual(result[index].data);
             expect(value.id).toEqual(result[index].id);
         });

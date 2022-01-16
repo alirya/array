@@ -10,7 +10,7 @@ export default function List<
 >(
     list : ReadonlyArray<Argument>,
     validation : (value:Argument)=>value is Value,
-) : list is Value[]
+) : list is Value[];
 
 export default function List(
     list : ReadonlyArray<unknown>,

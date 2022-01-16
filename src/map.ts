@@ -4,6 +4,6 @@
  */
 type Map<Container extends unknown[], Replace> = {
     [Index in keyof Container] :  Replace
-}
+};
 
 export default Map;

@@ -19,7 +19,7 @@ export default function ListParameters(
         strings.push('must');
     }
 
-    strings.push('list of', expect)
+    strings.push('list of', expect);
 
     return strings.join(' ') + '.';
 }

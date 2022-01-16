@@ -1,8 +1,8 @@
-import Invalid from "../../../dist/validatable/list/invalid";
-import Validatable from "@alirya/validatable/validatable";
+import Invalid from '../../../dist/validatable/list/invalid';
+import Validatable from '@alirya/validatable/validatable';
 
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 let record : [
     Validatable,
@@ -16,11 +16,11 @@ let record : [
     {valid:true},
 ];
 
-describe("check property", function() {
+describe('check property', function() {
 
     let result = Invalid(record);
 
-    it("invalid", () => {
+    it('invalid', () => {
 
         if(result[0]) {
 
@@ -28,11 +28,11 @@ describe("check property", function() {
 
         } else {
 
-            fail('property is not exits')
+            fail('property is not exits');
         }
     });
 
-    it("invalid", () => {
+    it('invalid', () => {
 
         if(result[1]) {
 
@@ -40,16 +40,16 @@ describe("check property", function() {
 
         } else {
 
-            fail('property is not exits')
+            fail('property is not exits');
         }
     });
-    it("valid", () => {
+    it('valid', () => {
 
         expect(result[2]).toBeUndefined();
     });
 
 
-    it("valid", () => {
+    it('valid', () => {
 
         expect(result[3]).toBeUndefined();
     });

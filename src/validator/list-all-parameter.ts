@@ -1,13 +1,13 @@
-import Validator from "@alirya/validator/validator";
-import ValidatorContainer from "@alirya/validator/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import InferReturn from "@alirya/validator/validatable/infer-static";
-import List from "./list";
-import InferMessage from "../message/message/list/infer";
-import Map from "../message/message/list/map";
-import ListAllParameters from "./lisall-parameters";
-import Message from "@alirya/message/message";
-import StrictOmit from "@alirya/object/strict-omit";
+import Validator from '@alirya/validator/validator';
+import ValidatorContainer from '@alirya/validator/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import InferReturn from '@alirya/validator/validatable/infer-static';
+import List from './list';
+import InferMessage from '../message/message/list/infer';
+import Map from '../message/message/list/map';
+import ListAllParameters from './lisall-parameters';
+import Message from '@alirya/message/message';
+import StrictOmit from '@alirya/object/strict-omit';
 
 
 export type ListAllParameterArgument<

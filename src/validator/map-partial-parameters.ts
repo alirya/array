@@ -1,12 +1,12 @@
-import Validator from "@alirya/validator/validator";
-import Validatable from "@alirya/validatable/validatable";
-import ValidateMap from "./validatable/list/map-partial-parameters";
-import MapCallback from "./map-callback-parameters";
-import MapCallbackInterface from "./map";
-import ListStrict from "./validatable/list/infer";
-import Unions from "../unions";
-import InferMessage from "../message/message/list/infer";
-import Map from "../message/message/list/map";
+import Validator from '@alirya/validator/validator';
+import Validatable from '@alirya/validatable/validatable';
+import ValidateMap from './validatable/list/map-partial-parameters';
+import MapCallback from './map-callback-parameters';
+import MapCallbackInterface from './map';
+import ListStrict from './validatable/list/infer';
+import Unions from '../unions';
+import InferMessage from '../message/message/list/infer';
+import Map from '../message/message/list/map';
 
 
 /**
