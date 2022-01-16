@@ -1,5 +1,5 @@
-import RemoveParameter from '../../dist/extracparameter';
-import RemoveParameters from '../../dist/extracparameters';
+import RemoveParameter from '../../dist/extract-parameter';
+import RemoveParameters from '../../dist/extract-parameters';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

@@ -1,4 +1,4 @@
-import ListType from '../string/lisparameters';
+import ListType from '../string/list-parameters';
 
 export default function ListParameters(
     value : unknown,

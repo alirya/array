@@ -1,4 +1,4 @@
-import ExtractParameter, {ExtractParameterArgument as RemoveParameterArgument} from '../extracparameter';
+import ExtractParameter, {ExtractParameterArgument as RemoveParameterArgument} from '../extract-parameter';
 
 export {RemoveParameterArgument};
 

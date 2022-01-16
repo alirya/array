@@ -1,6 +1,6 @@
 import Validator from '@alirya/validator/validator';
 import Validatable from '@alirya/validatable/validatable';
-import ValidatableListCallback from '../validatable/liscallback-parameters';
+import ValidatableListCallback from '../validatable/list-callback-parameters';
 import Instance from '@alirya/validator/validatable/validatable';
 import BaseInfer from '@alirya/validator/subject/allow';
 import List from './list';

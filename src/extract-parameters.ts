@@ -27,7 +27,7 @@ export default function ExtractParameters<Value>(
 
         delete list[index];
 
-        limi-;
+        limit--;
     }
 
     Reset(list);

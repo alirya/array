@@ -8,7 +8,7 @@ import Message from '@alirya/message/message';
 import ValidatorContainer from '@alirya/validator/validator/validator';
 import StrictOmit from '@alirya/object/strict-omit';
 import {Required} from 'utility-types';
-import ListPartialParameters from './lispartial-parameters';
+import ListPartialParameters from './list-partial-parameters';
 
 /**
  * more specific implementation of {@link ListCallback}

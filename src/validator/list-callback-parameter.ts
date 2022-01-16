@@ -5,7 +5,7 @@ import BaseInfer from '@alirya/validator/subject/allow';
 import List from './list';
 import Message from '@alirya/message/message';
 import ValidatorContainer from '@alirya/validator/validator/validator';
-import ListCallbackParameters from './liscallback-parameters';
+import ListCallbackParameters from './list-callback-parameters';
 
 /**
  * Base {@link Validator} for validating list of value with {@link Validator}

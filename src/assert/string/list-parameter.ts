@@ -1,4 +1,4 @@
-import ListParameters from './lisparameters';
+import ListParameters from './list-parameters';
 import Value from '@alirya/value/value';
 import Validatable from '@alirya/validatable/validatable';
 

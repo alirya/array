@@ -5,7 +5,7 @@ import InferReturn from '@alirya/validator/validatable/infer-static';
 import List from './list';
 import InferMessage from '../message/message/list/infer';
 import Map from '../message/message/list/map';
-import ListAllParameters from './lisall-parameters';
+import ListAllParameters from './list-all-parameters';
 import Message from '@alirya/message/message';
 import StrictOmit from '@alirya/object/strict-omit';
 

@@ -1,6 +1,6 @@
 import ValueAll from '../../dist/validator/value-all-parameters';
-import ListReturn from '../../dist/validator/validatable/list/lisparameters';
-import ListReturnPartial from '../../dist/validator/validatable/list/lispartial-parameters';
+import ListReturn from '../../dist/validator/validatable/list/list-parameters';
+import ListReturnPartial from '../../dist/validator/validatable/list/list-partial-parameters';
 import And from '../../dist/validatable/and-parameters';
 import Or from '../../dist/validatable/or-parameters';
 import Validatable from '@alirya/validatable/validatable';
@@ -11,7 +11,7 @@ import ValidatorType from '@alirya/type/validator/type-parameters';
 import ValidatorInstance from '@alirya/class/validator/instance-parameters';
 import Value from '@alirya/value/value';
 import Instance from '@alirya/validator/validatable/validatable';
-import ListCallbackFunction from '../../dist/validator/liscallback-parameters';
+import ListCallbackFunction from '../../dist/validator/list-callback-parameters';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

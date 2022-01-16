@@ -4,7 +4,7 @@ import {List as ListHelper} from 'ts-toolbelt';
 import InferReturn from '@alirya/validator/validatable/infer-static';
 import Value from '@alirya/value/value';
 import ValidatorContainer from '@alirya/validator/validator/validator';
-import ListParameters from './lisparameters';
+import ListParameters from './list-parameters';
 
 
 export type ListArgument<

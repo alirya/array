@@ -5,7 +5,7 @@ import {List as ListHelper} from 'ts-toolbelt';
 import InferReturn from '@alirya/validator/validatable/infer-static';
 import Value from '@alirya/value/value';
 import ValidatorContainer from '@alirya/validator/validator/validator';
-import ListPartialParameters from './lispartial-parameters';
+import ListPartialParameters from './list-partial-parameters';
 
 
 

@@ -1,5 +1,5 @@
 import ValidatorType from '@alirya/type/validator/type-parameters';
-import List from '../../dist/validator/lispartial-parameters';
+import List from '../../dist/validator/list-partial-parameters';
 import And from '../../dist/validatable/and-parameters';
 import Validatable from '@alirya/validatable/validatable';
 import MessageMap from '../../dist/message/message/list/map';
