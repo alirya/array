@@ -1,4 +1,4 @@
-import Extract from "../../../dist/value/value/extract-parameters";
+import Extract from "../../../dist/value/value/extracparameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

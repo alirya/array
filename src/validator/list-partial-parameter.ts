@@ -1,14 +1,14 @@
-import Validator from "@dikac/t-validator/validator";
-import Validatable from "@dikac/t-validatable/validatable";
-import InferReturn from "@dikac/t-validator/validatable/infer-static";
+import Validator from "@alirya/validator/validator";
+import Validatable from "@alirya/validatable/validatable";
+import InferReturn from "@alirya/validator/validatable/infer-static";
 import Unions from "../unions";
 import List from "./list";
 import InferMessage from "../message/message/list/infer";
-import Message from "@dikac/t-message/message";
-import ValidatorContainer from "@dikac/t-validator/validator/validator";
-import StrictOmit from "@dikac/t-object/strict-omit";
+import Message from "@alirya/message/message";
+import ValidatorContainer from "@alirya/validator/validator/validator";
+import StrictOmit from "@alirya/object/strict-omit";
 import {Required} from "utility-types";
-import ListPartialParameters from "./list-partial-parameters";
+import ListPartialParameters from "./lispartial-parameters";
 
 /**
  * more specific implementation of {@link ListCallback}

@@ -1,5 +1,5 @@
-import Value from "@dikac/t-value/value";
-import ListParameters from "./list-parameters";
+import Value from "@alirya/value/value";
+import ListParameters from "./lisparameters";
 
 export default function ListParameter(
     {

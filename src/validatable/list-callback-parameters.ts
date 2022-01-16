@@ -1,8 +1,8 @@
-import Validator from "@dikac/t-validator/validator";
-import Validatable from "@dikac/t-validatable/validatable";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Validator from "@alirya/validator/validator";
+import Validatable from "@alirya/validatable/validatable";
+import Instance from "@alirya/validator/validatable/validatable";
 import List from "./list";
-import MemoizeAccessor from "@dikac/t-object/function/memoize-accessor";
+import MemoizeAccessor from "@alirya/object/function/memoize-accessor";
 
 export default class ListCallbackParameters<
     ValueType extends unknown[],

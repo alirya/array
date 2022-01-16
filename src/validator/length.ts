@@ -1,7 +1,7 @@
-import Validator from "@dikac/t-validator/validator";
-import Instance from "@dikac/t-validator/validatable/validatable";
-import Validatable from "@dikac/t-validatable/validatable/validatable";
-import InstanceInfer from "@dikac/t-validator/validatable/infer-static";
+import Validator from "@alirya/validator/validator";
+import Instance from "@alirya/validator/validatable/validatable";
+import Validatable from "@alirya/validatable/validatable/validatable";
+import InstanceInfer from "@alirya/validator/validatable/infer-static";
 
 /**
  *  validate array length

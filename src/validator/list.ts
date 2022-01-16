@@ -1,10 +1,10 @@
-import Validator from "@dikac/t-validator/validator";
-import SimpleValidator from "@dikac/t-validator/simple";
-import Validatable from "@dikac/t-validatable/validatable";
-import ValidatorValidatable from "@dikac/t-validator/validatable/validatable";
-import BaseInfer from "@dikac/t-validator/subject/allow";
-import TypeInfer from "@dikac/t-validator/subject/expectation";
-import SubjectInfer from "@dikac/t-validator/subject/subject";
+import Validator from "@alirya/validator/validator";
+import SimpleValidator from "@alirya/validator/simple";
+import Validatable from "@alirya/validatable/validatable";
+import ValidatorValidatable from "@alirya/validator/validatable/validatable";
+import BaseInfer from "@alirya/validator/subject/allow";
+import TypeInfer from "@alirya/validator/subject/expectation";
+import SubjectInfer from "@alirya/validator/subject/subject";
 import ValidatableListInterface from "../validatable/list";
 
 /**

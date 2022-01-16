@@ -1,5 +1,5 @@
 import StringIncludes from "../assert/string/includes-parameters";
-import Equal from "@dikac/t-boolean/equal";
+import Equal from "@alirya/boolean/equal";
 
 // TODO CHANGE PARAMETER ORDER default last?
 export default function IncludesParameter<Type>(

@@ -1,5 +1,5 @@
-import Validation from "@dikac/t-boolean/function/validation";
-import ExtractParameters from "../extract-parameters";
+import Validation from "@alirya/boolean/function/validation";
+import ExtractParameters from "../extracparameters";
 
 
 export default function RemoveParameters<Value>(

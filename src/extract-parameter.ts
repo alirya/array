@@ -1,6 +1,6 @@
-import Validation from "@dikac/t-boolean/validation/validation";
+import Validation from "@alirya/boolean/validation/validation";
 import List from "./array/list";
-import ExtractParameters from "./extract-parameters";
+import ExtractParameters from "./extracparameters";
 
 
 export type ExtractParameterArgument<Value> =

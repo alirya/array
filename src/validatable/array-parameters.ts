@@ -1,8 +1,8 @@
-import Callback from "@dikac/t-validator/validatable/callback-class-parameters";
+import Callback from "@alirya/validator/validatable/callback-class-parameters";
 import ObjectGuard from "../boolean/array";
-import Simple from "@dikac/t-validator/validatable/simple";
-import Instance from "@dikac/t-validator/validatable/validatable";
-import MessageCallback from "@dikac/t-validator/message/function/validatable-parameters";
+import Simple from "@alirya/validator/validatable/simple";
+import Instance from "@alirya/validator/validatable/validatable";
+import MessageCallback from "@alirya/validator/message/function/validatable-parameters";
 
 export default function ArrayParameters<Argument, MessageType>(
     value : Argument,

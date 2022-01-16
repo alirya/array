@@ -1,5 +1,5 @@
 import IndexParameters from "./number/index-parameters";
-import Validation from "@dikac/t-boolean/function/validation";
+import Validation from "@alirya/boolean/function/validation";
 import Reset from "./void/reset";
 
 export default function ExtractParameters<Value>(
@@ -27,7 +27,7 @@ export default function ExtractParameters<Value>(
 
         delete list[index];
 
-        limit--;
+        limi-;
     }
 
     Reset(list);

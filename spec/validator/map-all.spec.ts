@@ -1,13 +1,13 @@
 import MapAll from "../../dist/validator/map-all-parameters";
 import And from "../../dist/validatable/and-parameters";
 import Or from "../../dist/validatable/or-parameters";
-import Validatable from "@dikac/t-validatable/validatable";
-import SimpleValidator from "@dikac/t-validator/simple";
+import Validatable from "@alirya/validatable/validatable";
+import SimpleValidator from "@alirya/validator/simple";
 import Validatables from "../../dist/validatable/validatables/validatables";
 import ValidatablesInterface from "../../dist/validatable/validatables/validatables";
 import MessageMap from "../../dist/message/message/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-parameters";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import ValidatorType from "@alirya/type/validator/type-parameters";
+import Instance from "@alirya/validator/validatable/validatable";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -45,7 +45,7 @@ describe("compiler compatibility", function() {
 
         let unknown : unknown = validatable.value;
 
-        // @ts-expect-error
+        // @ts-expecerror
         let string : Type = validatable.value;
 
         describe("recursive", function() {
@@ -93,7 +93,7 @@ describe("compiler compatibility", function() {
 
             key = validatable.validatables[1];
 
-            // @ts-expect-error
+            // @ts-expecerror
             key = validatable.validatables[2];
 
             let validatables : ValidatablesInterface = validatable;
@@ -120,7 +120,7 @@ describe("compiler compatibility", function() {
             key = validatable.validatables[0];
 
             key = validatable.validatables[1];
-            // @ts-expect-error
+            // @ts-expecerror
             key = validatable.validatables[2];
 
             let validatables : ValidatablesInterface = validatable;
@@ -377,27 +377,27 @@ describe("recursive", function() {
 
             if(validatable.validatables[3]) {
 
-                // @ts-expect-error
+                // @ts-expecerror
                 if(validatable.validatables[3].validatables[0]) {
-                     // @ts-expect-error
+                     // @ts-expecerror
                     expect(validatable.validatables[3].validatables[0].valid).toBe(false);
-                     // @ts-expect-error
+                     // @ts-expecerror
                     expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
                 } else {
                     fail('index 3.0 should exits')
                 }
 
-                // @ts-expect-error
+                // @ts-expecerror
                 if(validatable.validatables[3].validatables[1]) {
-                     // @ts-expect-error
+                     // @ts-expecerror
                     expect(validatable.validatables[3].validatables[1].valid).toBe(false);
-                     // @ts-expect-error
+                     // @ts-expecerror
                     expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
                 } else {
                     fail('index 3.1 should exits')
                 }
 
-                // @ts-expect-error
+                // @ts-expecerror
                 if(validatable.validatables[3].validatables[2]) {
                     fail('index 3.2 should no exits')
                 }

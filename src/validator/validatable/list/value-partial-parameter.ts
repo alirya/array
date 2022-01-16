@@ -1,7 +1,7 @@
-import Validator from "@dikac/t-validator/validator";
+import Validator from "@alirya/validator/validator";
 import ListStrict from "./infer";
 import Unions from "../../../unions";
-import Value from "@dikac/t-value/value";
+import Value from "@alirya/value/value";
 import ValidatorsContainer from "../../validators/validators";
 import ValuePartialParameters from "./value-partial-parameters";
 

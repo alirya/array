@@ -3,13 +3,13 @@
 // import PartialStandard from "../../../dist/validator/validatable/list/map-partial-parameters";
 // import And from "../../../dist/validatable/and-parameters";
 // import Or from "../../../dist/validatable/or-parameters";
-// import Validatable from "@dikac/t-validatable/validatable";
-// import ValidatorInterface from "@dikac/t-validator/simple";
-// import ValueInterface from "@dikac/t-value/value";
-// import Message from "@dikac/t-message/message";
+// import Validatable from "@alirya/validatable/validatable";
+// import ValidatorInterface from "@alirya/validator/simple";
+// import ValueInterface from "@alirya/value/value";
+// import Message from "@alirya/message/message";
 // import MessageMap from "../../../dist/message/message/list/map";
-// import ValidatorType from "@dikac/t-type/validator/type-parameters";
-// import Instance from "@dikac/t-validator/validatable/validatable";
+// import ValidatorType from "@alirya/type/validator/type-parameters";
+// import Instance from "@alirya/validator/validatable/validatable";
 //
 // it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 //
@@ -52,9 +52,9 @@
 //             let instance : Validatable;
 //             instance = validatable.validatables[0];
 //             instance = validatable.validatables[1];
-//             // @ts-expect-error
+//             // @ts-expecerror
 //             instance = validatable.validatables[3];
-//             // @ts-expect-error
+//             // @ts-expecerror
 //             instance = validatable.validatables[4];
 //         });
 //
@@ -103,7 +103,7 @@
 //
 //             let value1 : string[] = validatable.value;
 //
-//             // @ts-expect-error
+//             // @ts-expecerror
 //             let value2 : [string, string] = validatable.value;
 //
 //             let instance : Validatable;
@@ -125,7 +125,7 @@
 //
 //             let value1 : string[] = validatable.value;
 //
-//             // @ts-expect-error
+//             // @ts-expecerror
 //             let value2 : [string, string] = validatable.value;
 //
 //             let instance : Validatable;
@@ -189,7 +189,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //
@@ -212,7 +212,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //
@@ -240,7 +240,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //
@@ -264,7 +264,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //         });
@@ -319,7 +319,7 @@
 //                 expect(and.validatables[2].valid).toBe(true);
 //                 expect(typeof and.validatables[2].message).toBe('string');
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(and.validatables[3]).toBe(undefined);
 //             });
 //
@@ -343,7 +343,7 @@
 //                 expect(typeof or.validatables[2].message).toBe('string');
 //                 expect(or.validatables[2].valid).toBe(true);
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(or.validatables[3]).toBe(undefined);
 //
 //             });
@@ -439,7 +439,7 @@
 //                 expect(typeof and.validatables[2].message).toBe('string');
 //                 expect(and.validatables[2].valid).toBe(false);
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(and.validatables[3]).toBe(undefined);
 //             });
 //
@@ -463,7 +463,7 @@
 //                 expect(typeof or.validatables[2].message).toBe('string');
 //                 expect(or.validatables[2].valid).toBe(false);
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(or.validatables[3]).toBe(undefined);
 //             });
 //         });

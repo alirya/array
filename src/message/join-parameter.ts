@@ -1,7 +1,7 @@
-import Message from "@dikac/t-message/message";
+import Message from "@alirya/message/message";
 import Messages from "./messages/messages";
 import JoinParameters from "./join-parameters";
-import Separator from "@dikac/t-string/separator/separator";
+import Separator from "@alirya/string/separator/separator";
 
 export type JoinParameterArgument<MessageType extends Message<string>[]> = Messages<MessageType> & Separator;
 

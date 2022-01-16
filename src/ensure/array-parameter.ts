@@ -1,4 +1,4 @@
-import Value from "@dikac/t-value/value";
+import Value from "@alirya/value/value";
 import ArrayParameters from "./array-parameters";
 
 export default function ArrayParameter(

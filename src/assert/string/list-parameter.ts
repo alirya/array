@@ -1,6 +1,6 @@
-import ListParameters from "./list-parameters";
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
+import ListParameters from "./lisparameters";
+import Value from "@alirya/value/value";
+import Validatable from "@alirya/validatable/validatable";
 
 export default function ListParameter(
     {

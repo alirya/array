@@ -1,12 +1,12 @@
 import MapPartial from "../../dist/validator/map-partial-parameters";
 import And from "../../dist/validatable/and-parameters";
 import Or from "../../dist/validatable/or-parameters";
-import Validatable from "@dikac/t-validatable/validatable";
-import SimpleValidator from "@dikac/t-validator/simple";
+import Validatable from "@alirya/validatable/validatable";
+import SimpleValidator from "@alirya/validator/simple";
 import Validatables from "../../dist/validatable/validatables/validatables";
 import MessageMap from "../../dist/message/message/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-parameters";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import ValidatorType from "@alirya/type/validator/type-parameters";
+import Instance from "@alirya/validator/validatable/validatable";
 
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
@@ -44,7 +44,7 @@ describe("compiler compatibility", function() {
 
         let unknown : unknown = validatable.value;
 
-        // @ts-expect-error
+        // @ts-expecerror
         let string : Type = validatable.value;
 
         describe("recursive", function() {

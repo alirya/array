@@ -1,4 +1,4 @@
-import Equal from "@dikac/t-boolean/equal";
+import Equal from "@alirya/boolean/equal";
 
 
 /**

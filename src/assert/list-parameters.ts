@@ -1,4 +1,4 @@
-import Callback from "@dikac/t-function/assert/callback-parameters";
+import Callback from "@alirya/function/assert/callback-parameters";
 import Guard from "../boolean/list";
 
 /**

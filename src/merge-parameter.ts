@@ -1,4 +1,4 @@
-import ValueInterface from "@dikac/t-value/value";
+import ValueInterface from "@alirya/value/value";
 import List from "./array/list";
 import MergeParameters from "./merge-parameters";
 

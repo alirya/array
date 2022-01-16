@@ -1,5 +1,5 @@
-import Equal from "@dikac/t-boolean/equal";
-import Callable from "@dikac/t-function/callable";
+import Equal from "@alirya/boolean/equal";
+import Callable from "@alirya/function/callable";
 
 /**
  * pick a duplicate value from {@param list}

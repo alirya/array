@@ -51,7 +51,7 @@ it('paprtial', ()=>{
 
     let partial : List.Partial<typeof messages> = messages;
 
-    // @ts-expect-error
+    // @ts-expecerror
     let join = And(partial);
 
    expect(join.message).toBe('a and c and d')

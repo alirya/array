@@ -1,5 +1,5 @@
-import Validator from "@dikac/t-validator/validator";
-import Validatable from "@dikac/t-validatable/validatable";
+import Validator from "@alirya/validator/validator";
+import Validatable from "@alirya/validatable/validatable";
 import ValidateMap from "./validatable/list/map-partial-parameters";
 import MapCallback from "./map-callback-parameters";
 import MapCallbackInterface from "./map";

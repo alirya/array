@@ -1,5 +1,5 @@
 import MapSingle from "../../../dist/boolean/map-single-parameters";
-import Type from "@dikac/t-type/boolean/type-parameters";
+import Type from "@alirya/type/boolean/type-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

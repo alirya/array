@@ -1,9 +1,9 @@
-import Validator from "@dikac/t-validator/validator";
-import Validatable from "@dikac/t-validatable/validatable";
-import Instance from "@dikac/t-validator/validatable/validatable";
-import ValueInterface from "@dikac/t-value/value";
+import Validator from "@alirya/validator/validator";
+import Validatable from "@alirya/validatable/validatable";
+import Instance from "@alirya/validator/validatable/validatable";
+import ValueInterface from "@alirya/value/value";
 import Validators from "../validator/validators/validators";
-import Message from "@dikac/t-message/message";
+import Message from "@alirya/message/message";
 import ValueCallbackParameters from "./value-callback-parameters";
 
 export type ValueCallbackArgument<

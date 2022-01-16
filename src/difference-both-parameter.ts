@@ -1,5 +1,5 @@
-import Equal from "@dikac/t-boolean/equal";
-import Validation from "@dikac/t-boolean/validation/validation";
+import Equal from "@alirya/boolean/equal";
+import Validation from "@alirya/boolean/validation/validation";
 import Tuple from "./array/tuple";
 import DifferenceBothParameters from "./difference-both-parameters";
 

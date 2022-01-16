@@ -3,13 +3,13 @@ import Standard from "../../../dist/validator/validatable/list/map-parameters";
 import PartialStandard from "../../../dist/validator/validatable/list/map-partial-parameters";
 import And from "../../../dist/validatable/and-parameters";
 import Or from "../../../dist/validatable/or-parameters";
-import Validatable from "@dikac/t-validatable/validatable";
-import ValidatorInterface from "@dikac/t-validator/simple";
-import ValueInterface from "@dikac/t-value/value";
-import Message from "@dikac/t-message/message";
+import Validatable from "@alirya/validatable/validatable";
+import ValidatorInterface from "@alirya/validator/simple";
+import ValueInterface from "@alirya/value/value";
+import Message from "@alirya/message/message";
 import MessageMap from "../../../dist/message/message/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-parameters";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import ValidatorType from "@alirya/type/validator/type-parameters";
+import Instance from "@alirya/validator/validatable/validatable";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -58,7 +58,7 @@ describe("complete", function() {
         expect(and.validatables[2].valid).toBe(true);
         expect(typeof and.validatables[2].message).toBe('string');
 
-        // @ts-expect-error
+        // @ts-expecerror
         expect(and.validatables[3]).toBe(undefined);
     });
 
@@ -82,7 +82,7 @@ describe("complete", function() {
         expect(typeof or.validatables[2].message).toBe('string');
         expect(or.validatables[2].valid).toBe(true);
 
-        // @ts-expect-error
+        // @ts-expecerror
         expect(or.validatables[3]).toBe(undefined);
 
     });

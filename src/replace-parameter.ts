@@ -1,4 +1,4 @@
-import Value from "@dikac/t-value/value";
+import Value from "@alirya/value/value";
 import Tuple from "./array/tuple";
 import ReplaceParameters from "./replace-parameters";
 

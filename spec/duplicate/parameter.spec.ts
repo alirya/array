@@ -1,7 +1,7 @@
 import DuplicateParameters from "../../dist/duplicate-parameters";
 import DuplicateParameter from "../../dist/duplicate-parameter";
-import EqualParameter from "@dikac/t-boolean/equal-parameter";
-import EqualParameters from "@dikac/t-boolean/equal-parameters";
+import EqualParameter from "@alirya/boolean/equal-parameter";
+import EqualParameters from "@alirya/boolean/equal-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

@@ -1,4 +1,4 @@
-import Message from "@dikac/t-message/message";
+import Message from "@alirya/message/message";
 import {List} from "ts-toolbelt";
 import ListStrict from "./infer";
 

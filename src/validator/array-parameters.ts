@@ -1,9 +1,9 @@
-import Validator from "@dikac/t-validator/simple";
-import Value from "@dikac/t-value/value";
+import Validator from "@alirya/validator/simple";
+import Value from "@alirya/value/value";
 import ArrayValidatable from "../validatable/array-parameters";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Instance from "@alirya/validator/validatable/validatable";
 import ArrayMessage from "../validatable/string/array-parameters";
-import MessageCallback from "@dikac/t-validator/message/function/validatable-parameters";
+import MessageCallback from "@alirya/validator/message/function/validatable-parameters";
 
 /**
  *  validate if value is array

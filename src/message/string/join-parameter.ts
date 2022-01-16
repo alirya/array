@@ -1,4 +1,4 @@
-import Message from "@dikac/t-message/message";
+import Message from "@alirya/message/message";
 import {JoinParameterArgument} from "../join-parameter";
 import JoinParameters from "./join-parameters";
 

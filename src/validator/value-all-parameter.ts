@@ -1,12 +1,12 @@
-import Validator from "@dikac/t-validator/validator";
-import Validatable from "@dikac/t-validatable/validatable";
+import Validator from "@alirya/validator/validator";
+import Validatable from "@alirya/validatable/validatable";
 import ListReturn from "./validatable/list/infer";
 import Value from "./value";
 import InferMessage from "../message/message/list/infer";
 import ValidatorsContainer from "./validators/validators";
-import Message from "@dikac/t-message/message";
+import Message from "@alirya/message/message";
 import Unions from "../unions";
-import StrictOmit from "@dikac/t-object/strict-omit";
+import StrictOmit from "@alirya/object/strict-omit";
 import {Required} from "utility-types";
 import ValueAllParameters from "./value-all-parameters";
 

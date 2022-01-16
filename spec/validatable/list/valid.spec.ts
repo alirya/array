@@ -1,5 +1,5 @@
 import Valid from "../../../dist/validatable/list/valid";
-import Validatable from "@dikac/t-validatable/validatable";
+import Validatable from "@alirya/validatable/validatable";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

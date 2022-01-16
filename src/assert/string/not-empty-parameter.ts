@@ -1,6 +1,6 @@
 import NotEmptyParameters from "./not-empty-parameters";
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
+import Value from "@alirya/value/value";
+import Validatable from "@alirya/validatable/validatable";
 
 /**
  * string intended for not empty array message

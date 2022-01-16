@@ -1,5 +1,5 @@
 import Standard from "../../../../dist/message/message/list/map";
-import Message from "@dikac/t-message/message";
+import Message from "@alirya/message/message";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -29,7 +29,7 @@ describe('flat & type explicit', ()=>{
 
         number = result[5];
 
-        // @ts-expect-error
+        // @ts-expecerror
         let string : string = result[5];
     });
 
@@ -76,10 +76,10 @@ describe('flat & type implicit', ()=>{
         number = result[3];
         number = result[4];
 
-        // @ts-expect-error
+        // @ts-expecerror
         number = result[5];
 
-        // @ts-expect-error
+        // @ts-expecerror
         let string : string = result[5];
     });
 

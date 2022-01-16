@@ -1,9 +1,9 @@
 import Readonly from "./array/readonly";
-import Validation from "@dikac/t-boolean/validation/validation";
+import Validation from "@alirya/boolean/validation/validation";
 import DuplicateParameters from "./duplicate-parameters";
-import Value from "@dikac/t-value/value";
-import Compare from "@dikac/t-boolean/compare/compare";
-import Equal from "@dikac/t-boolean/equal-parameter";
+import Value from "@alirya/value/value";
+import Compare from "@alirya/boolean/compare/compare";
+import Equal from "@alirya/boolean/equal-parameter";
 
 /**
  * option version of {@see DuplicateParameters}

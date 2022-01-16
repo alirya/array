@@ -1,25 +1,22 @@
 {
-  "name": "@dikac/t-array",
+  "name": "@alirya/array",
   "version": "0.26.0-alpha.4",
   "description": "Typescript array",
   "dependencies": {
-    "@dikac/t-boolean": "^0.11.0-beta.6",
-    "@dikac/t-function": "^0.15.0-beta.7",
-    "@dikac/t-iterable": "^0.5.0-alpha.1",
-    "@dikac/t-message": "^0.12.0-alpha.2",
-    "@dikac/t-object": "^0.37.0-alpha.5",
-    "@dikac/t-string": "^0.16.0-alpha.4",
-    "@dikac/t-validatable": "^0.20.0-beta.7",
-    "@dikac/t-validator": "^0.19.0-beta.20",
-    "@dikac/t-value": "^0.15.0-beta.2",
+    "@alirya/boolean": "^0.11.0-beta.6",
+    "@alirya/function": "^0.15.0-beta.9",
+    "@alirya/iterable": "^0.5.0-alpha.2",
+    "@alirya/message": "^0.12.0-alpha.2",
+    "@alirya/object": "^0.37.0-alpha.5",
+    "@alirya/string": "^0.16.0-alpha.4",
+    "@alirya/validatable": "^0.20.0-beta.7",
+    "@alirya/validator": "^0.19.0-beta.20",
+    "@alirya/value": "^0.15.0-beta.2",
     "ts-toolbelt": "^9.6.0",
     "utility-types": "^3.10.0"
   },
   "devDependencies": {
-    "@dikac/t-class": "^0.3.0-beta.3",
-    "@dikac/t-type": "^0.7.0-beta.4",
     "@types/jasmine": "^3.10.2",
-    "@types/node": "^12.20.37",
     "cpy-cli": "^3.1.1",
     "esm": "^3.2.25",
     "jasmine": "^3.10.0",
@@ -29,32 +26,51 @@
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "ts-cleaner": "^1.0.5",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "tslint": "^5.13.0",
+    "typedoc": "^0.22.10"
   },
   "scripts": {
     "spec-run-js": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
     "spec-run": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json --reporter=jasmine-ts-console-reporter",
     "spec": "npm-run-all spec-compile spec-run",
-    "spec-ensure-directory": "mkdirp dist-spec",
-    "spec-compile": "npm-run-all spec-compile-script spec-cleanup",
-    "spec-compile-watch": "npm-run-all --sequential spec-ensure-directory --parallel spec-compile-watch-script spec-cleanup-watch",
-    "spec-compile-script": "tsc -p tsconfig-spec.json",
-    "spec-compile-watch-script": "tsc -w -p tsconfig-spec.json",
-    "compile-script": "tsc",
-    "compile": "npm-run-all compile-script cleanup",
+    "spec-compile": "npm-run-all _spec-compile-script spec-cleanup",
+    "spec-compile-watch": "npm-run-all --sequential _spec-ensure-directory --parallel _spec-compile-watch-script spec-cleanup-watch",
+    "compile": "npm-run-all _compile-script cleanup",
     "cleanup": "ts-cleaner --verbose --dist=dist --src=src",
     "cleanup-watch": "ts-cleaner --verbose --dist=dist --src=src --watch",
     "spec-cleanup": "ts-cleaner --verbose --dist=dist-spec --src=spec",
     "spec-cleanup-watch": "ts-cleaner --verbose --dist=dist-spec --src=spec --watch",
-    "compile-script-watch": "tsc -w",
-    "compile-watch": "npm-run-all --sequential compile-ensure-directory --parallel compile-script-watch cleanup-watch",
-    "compile-ensure-directory": "mkdirp dist",
-    "release": "remove-json-properties dist/package.json private scripts.postinstall",
+    "compile-watch": "npm-run-all --sequential _compile-ensure-directory --parallel _compile-script-watch cleanup-watch",
+    "release": "remove-json-properties dist/package.json private",
     "postrelease": "npm publish ./dist",
-    "prerelease": "cpy     package.json package-lock.json LICENSE Readme.md .npmignore dist",
-    "postpublish": "rimraf package.json package-lock.json LICENSE Readme.md .npmignore"
+    "prerelease": "npm-run-all _release-remove-compile-cache compile _release_copy-meta-files",
+    "postpublish": "rimraf package.json package-lock.json LICENSE Readme.md .npmignore",
+    "lint": "tslint --project ./tslint.json",
+    "lint-fix": "tslint --project ./tslint.json --fix",
+    "doc-generate": "npm-run-all _doc-clean _doc-generate",
+    "_compile-script": "tsc",
+    "_spec-ensure-directory": "mkdirp dist-spec",
+    "_compile-script-watch": "tsc -w",
+    "_spec-compile-script": "tsc -p tsconfig-spec.json",
+    "_spec-compile-watch-script": "tsc -w -p tsconfig-spec.json",
+    "_compile-ensure-directory": "mkdirp dist",
+    "_release_copy-meta-files": "cpy package.json package-lock.json LICENSE Readme.md .npmignore dist",
+    "_release-remove-compile-cache": "rimraf ./dist/compiler-cache",
+    "_doc-generate": "typedoc --entryPointStrategy expand ./src --out docs",
+    "_doc-clean": "rimraf docs"
   },
-  "author": "",
+  "publishConfig": {
+    "directory": "dist"
+  },
+  "author": {
+    "name": "Andika Candra"
+  },
   "private": true,
-  "license": "MIT"
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/alirya/array",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alirya/array"
+  }
 }

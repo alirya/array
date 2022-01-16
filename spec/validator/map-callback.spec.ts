@@ -3,13 +3,13 @@ import Standard from "../../dist/validator/validatable/list/map-parameters";
 import MapPartial from "../../dist/validator/validatable/list/map-partial-parameters";
 import And from "../../dist/validatable/and-parameters";
 import Or from "../../dist/validatable/or-parameters";
-import Validatable from "@dikac/t-validatable/validatable";
-import SimpleValidator from "@dikac/t-validator/simple";
-import Message from "@dikac/t-message/message";
+import Validatable from "@alirya/validatable/validatable";
+import SimpleValidator from "@alirya/validator/simple";
+import Message from "@alirya/message/message";
 import MessageMap from "../../dist/message/message/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-parameters";
-import Value from "@dikac/t-value/value";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import ValidatorType from "@alirya/type/validator/type-parameters";
+import Value from "@alirya/value/value";
+import Instance from "@alirya/validator/validatable/validatable";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -59,14 +59,14 @@ describe("compiler compatibility", function() {
             message = validatable.messages[0];
             message = validatable.messages[1];
 
-            // @ts-expect-error
+            // @ts-expecerror
             instance = validatable.validatables[3];
-            // @ts-expect-error
+            // @ts-expecerror
             message = validatable.messages[3];
 
-            // @ts-expect-error
+            // @ts-expecerror
             instance = validatable.validatables[4];
-            // @ts-expect-error
+            // @ts-expecerror
             message = validatable.messages[4];
 
             describe("recursive", function() {
@@ -132,7 +132,7 @@ describe("compiler compatibility", function() {
 
             let value1 : string[] = validatable.value;
 
-            // @ts-expect-error
+            // @ts-expecerror
             let value2 : [string, string] = validatable.value;
 
             let instance : Validatable;
@@ -160,7 +160,7 @@ describe("compiler compatibility", function() {
 
             let value1 : string[] = validatable.value;
 
-            // @ts-expect-error
+            // @ts-expecerror
             let value2 : [string, string] = validatable.value;
 
             let instance : Validatable;
@@ -232,9 +232,9 @@ describe("explicit", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.message[3]).toBe(undefined);
             });
 
@@ -262,9 +262,9 @@ describe("explicit", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.message[3]).toBe(undefined);
             });
 
@@ -296,9 +296,9 @@ describe("explicit", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.message[3]).toBe(undefined);
             });
 
@@ -326,9 +326,9 @@ describe("explicit", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.message[3]).toBe(undefined);
             });
         });
@@ -389,9 +389,9 @@ describe("explicit", function() {
                 expect(typeof and.validatables[2].message).toBe('string');
                 expect(and.message[2]).toBe(and.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.message[3]).toBe(undefined);
             });
 
@@ -421,9 +421,9 @@ describe("explicit", function() {
                 expect(or.message[2]).toBe(or.validatables[2].message);
                 expect(or.validatables[2].valid).toBe(true);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.message[3]).toBe(undefined);
 
             });
@@ -539,9 +539,9 @@ describe("explicit", function() {
                 expect(and.message[2]).toBe(and.validatables[2].message);
                 expect(and.validatables[2].valid).toBe(false);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.message[3]).toBe(undefined);
             });
 
@@ -570,9 +570,9 @@ describe("explicit", function() {
                 expect(or.message[2]).toBe(or.validatables[2].message);
                 expect(or.validatables[2].valid).toBe(false);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.message[3]).toBe(undefined);
             });
         });
@@ -684,18 +684,18 @@ describe("recursive", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[0].valid).toBe(true);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[0].value).toBe("name");
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[1].valid).toBe(true);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[1].value).toBe('address');
             });
 
@@ -723,18 +723,18 @@ describe("recursive", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[0].valid).toBe(true);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[0].value).toBe('name');
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[1].valid).toBe(true);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[1].value).toBe('address');
             });
 
@@ -766,18 +766,18 @@ describe("recursive", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[0].valid).toBe(true);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[0].value).toBe('name');
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[1].valid).toBe(true);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[1].value).toBe('address');
             });
 
@@ -805,18 +805,18 @@ describe("recursive", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[0].valid).toBe(true);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[0].value).toBe('name');
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[1].valid).toBe(true);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[1].value).toBe('address');
             });
         });
@@ -868,18 +868,18 @@ describe("recursive", function() {
                 expect(typeof and.validatables[2].message).toBe('string');
                 expect(typeof and.message[2]).toBe('string');
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.validatables[3].validatables[0].valid).toBe(true);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof and.validatables[3].validatables[0].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.validatables[3].validatables[0].value).toBe('data1');
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.validatables[3].validatables[1].valid).toBe(false);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof and.validatables[3].validatables[1].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.validatables[3].validatables[1].value).toBe('data2');
             });
 
@@ -909,18 +909,18 @@ describe("recursive", function() {
                 expect(or.message[2]).toBe(or.validatables[2].message);
                 expect(or.validatables[2].valid).toBe(true);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.validatables[3].validatables[0].valid).toBe(true);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof or.validatables[3].validatables[0].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.validatables[3].validatables[0].value).toBe('data1');
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.validatables[3].validatables[1].valid).toBe(false);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof or.validatables[3].validatables[1].message).toBe('string');
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.validatables[3].validatables[1].value).toBe('data2');
 
             });
@@ -1026,18 +1026,18 @@ describe("recursive", function() {
                 expect(and.message[2]).toBe(and.validatables[2].message);
                 expect(and.validatables[2].valid).toBe(false);
 
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(and.validatables[3].validatables[0].valid).toBe(false);
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(typeof and.validatables[3].validatables[0].message).toBe('string');
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(and.validatables[3].validatables[0].value).toEqual({});
 
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(and.validatables[3].validatables[1].valid).toBe(false);
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(typeof and.validatables[3].validatables[1].message).toBe('string');
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(and.validatables[3].validatables[1].value).toEqual({});
             });
 
@@ -1066,18 +1066,18 @@ describe("recursive", function() {
                 expect(or.message[2]).toBe(or.validatables[2].message);
                 expect(or.validatables[2].valid).toBe(false);
 
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(or.validatables[3].validatables[0].valid).toBe(false);
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(typeof or.validatables[3].validatables[0].message).toBe('string');
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(or.validatables[3].validatables[0].value).toEqual({});
 
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(or.validatables[3].validatables[1].valid).toBe(false);
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(typeof or.validatables[3].validatables[1].message).toBe('string');
-               // @ts-expect-error
+               // @ts-expecerror
                 expect(or.validatables[3].validatables[1].value).toEqual({});
             });
         });

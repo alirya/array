@@ -2,10 +2,10 @@ import Map from "../../../dist/validatable/map-callback-parameters";
 import Standard from "../../../dist/validator/validatable/list/map-parameters";
 import And from "../../../dist/validatable/and-parameters";
 import Or from "../../../dist/validatable/or-parameters";
-import ValidatorInterface from "@dikac/t-validator/simple";
+import ValidatorInterface from "@alirya/validator/simple";
 import MessageMap from "../../../dist/message/message/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-parameters";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import ValidatorType from "@alirya/type/validator/type-parameters";
+import Instance from "@alirya/validator/validatable/validatable";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -53,7 +53,7 @@ describe("valid", function() {
         let more = [...value, []];
 
         it(`and validation`, () => {
-            // @ts-expect-error
+            // @ts-expecerror
             let and = new Map(more, validator, Standard, And, MessageMap);
 
             expect(more).not.toEqual(and.value);
@@ -61,7 +61,7 @@ describe("valid", function() {
         });
 
         it(`or validation `, () => {
-            // @ts-expect-error
+            // @ts-expecerror
             let or = new Map(more, validator, Standard, Or, MessageMap);
 
             expect(more).not.toEqual(or.value);
@@ -75,7 +75,7 @@ describe("valid", function() {
 
         it(`and validation`, () => {
 
-            // @ts-expect-error
+            // @ts-expecerror
             let and = new Map(less, validator, Standard, And, MessageMap);
 
             expect(less).toEqual(and.value);
@@ -84,7 +84,7 @@ describe("valid", function() {
 
         it(`or validation `, () => {
 
-            // @ts-expect-error
+            // @ts-expecerror
             let or = new Map(less, validator, Standard, Or, MessageMap);
 
             expect(less).toEqual(or.value);

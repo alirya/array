@@ -1,5 +1,5 @@
-import Validatable from "@dikac/t-validatable/validatable";
-import IterableAnd from "@dikac/t-iterable/validatable/boolean/and-parameters";
+import Validatable from "@alirya/validatable/validatable";
+import IterableAnd from "@alirya/iterable/validatable/boolean/and-parameters";
 import Callback from "./callback-parameters";
 
 

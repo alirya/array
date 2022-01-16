@@ -1,7 +1,7 @@
-import Message from "@dikac/t-message/message";
+import Message from "@alirya/message/message";
 import ListInfer from "./infer";
 import MapUnion from "../../../unions";
-import Validatable from "@dikac/t-validatable/validatable";
+import Validatable from "@alirya/validatable/validatable";
 import FilterValid from "../../../validatable/list/valid";
 import Map from "./map";
 

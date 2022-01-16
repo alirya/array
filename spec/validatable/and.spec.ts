@@ -1,6 +1,6 @@
 import And from "../../dist/validatable/and-parameters";
-import Guard from "@dikac/t-validatable/boolean/validatable";
-import Validatable from "@dikac/t-validatable/validatable";
+import Guard from "@alirya/validatable/boolean/validatable";
+import Validatable from "@alirya/validatable/validatable";
 import Equal from "../../dist/boolean/equal-parameters";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});

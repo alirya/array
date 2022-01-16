@@ -1,7 +1,7 @@
 // import Value from "../../../../dist/validator/validatable/list/value-parameters";
-// import Validatable from "@dikac/t-validatable/validatable";
-// import Validator from "@dikac/t-validator/validator";
-// import ValidatorType from "@dikac/t-type/validator/type-parameters";
+// import Validatable from "@alirya/validatable/validatable";
+// import Validator from "@alirya/validator/validator";
+// import ValidatorType from "@alirya/type/validator/type-parameters";
 //
 // it("force console log", () => spyOn(console, 'log').and.callThrough());
 //
@@ -37,7 +37,7 @@
 //         valdiatable = result[2];
 //         valdiatable = result[3];
 //
-//         // @ts-expect-error
+//         // @ts-expecerror
 //         valdiatable = result[4];
 //
 //     });

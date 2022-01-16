@@ -1,13 +1,13 @@
-import Validator from "@dikac/t-validator/validator";
-import Validatable from "@dikac/t-validatable/validatable";
+import Validator from "@alirya/validator/validator";
+import Validatable from "@alirya/validatable/validatable";
 import ValidatableMap from "../validatable/map-callback-parameters";
 import ValidatableMapInterface from "../validatable/map";
 import BaseList from "./subject/list/allow";
 import TypeList from "./subject/list/expectation";
-import Construct from "@dikac/t-validator/validatable/simple";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Construct from "@alirya/validator/validatable/simple";
+import Instance from "@alirya/validator/validatable/validatable";
 import Map from "./map";
-import Replace from "@dikac/t-validatable/boolean/replace";
+import Replace from "@alirya/validatable/boolean/replace";
 
 /**
  * Base {@link Validator} for validating list of value with list of  {@link Validator}

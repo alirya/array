@@ -1,4 +1,4 @@
-import Validation from "@dikac/t-boolean/function/validation";
+import Validation from "@alirya/boolean/function/validation";
 
 /**
  * get index of first match values

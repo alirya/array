@@ -1,17 +1,17 @@
 import ValueAll from "../../dist/validator/value-all-parameters";
-import ListReturn from "../../dist/validator/validatable/list/list-parameters";
-import ListReturnPartial from "../../dist/validator/validatable/list/list-partial-parameters";
+import ListReturn from "../../dist/validator/validatable/list/lisparameters";
+import ListReturnPartial from "../../dist/validator/validatable/list/lispartial-parameters";
 import And from "../../dist/validatable/and-parameters";
 import Or from "../../dist/validatable/or-parameters";
-import Validatable from "@dikac/t-validatable/validatable";
-import ValidatorInterface from "@dikac/t-validator/simple";
-import Message from "@dikac/t-message/message";
+import Validatable from "@alirya/validatable/validatable";
+import ValidatorInterface from "@alirya/validator/simple";
+import Message from "@alirya/message/message";
 import MessageMap from "../../dist/message/message/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-parameters";
-import ValidatorInstance from "@dikac/t-class/validator/instance-parameters";
-import Value from "@dikac/t-value/value";
-import Instance from "@dikac/t-validator/validatable/validatable";
-import ListCallbackFunction from "../../dist/validator/list-callback-parameters";
+import ValidatorType from "@alirya/type/validator/type-parameters";
+import ValidatorInstance from "@alirya/class/validator/instance-parameters";
+import Value from "@alirya/value/value";
+import Instance from "@alirya/validator/validatable/validatable";
+import ListCallbackFunction from "../../dist/validator/liscallback-parameters";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -125,7 +125,7 @@ describe("compiler compatibility", function() {
 
             let value1 : string[]|unknown[] = validatable.value;
 
-            // @ts-expect-error
+            // @ts-expecerror
             let value2 : [string, string] = validatable.value;
 
             let instance : Validatable;
@@ -153,7 +153,7 @@ describe("compiler compatibility", function() {
 
             let value1 : string[]|unknown[] = validatable.value;
 
-            // @ts-expect-error
+            // @ts-expecerror
             let value2 : [string, string] = validatable.value;
 
             let instance : Validatable;
@@ -217,9 +217,9 @@ describe("explicit", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.message[3]).toBe(undefined);
             });
 
@@ -247,9 +247,9 @@ describe("explicit", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.message[3]).toBe(undefined);
             });
 
@@ -281,9 +281,9 @@ describe("explicit", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.message[3]).toBe(undefined);
             });
 
@@ -311,9 +311,9 @@ describe("explicit", function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.message[3]).toBe(undefined);
             });
         });
@@ -366,9 +366,9 @@ describe("explicit", function() {
                 expect(typeof and.validatables[2].message).toBe('string');
                 expect(and.message[2]).toBe(and.validatables[2].message);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.message[3]).toBe(undefined);
             });
 
@@ -398,9 +398,9 @@ describe("explicit", function() {
                 expect(or.message[2]).toBe(or.validatables[2].message);
                 expect(or.validatables[2].valid).toBe(true);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.message[3]).toBe(undefined);
 
             });
@@ -508,9 +508,9 @@ describe("explicit", function() {
                 expect(and.message[2]).toBe(and.validatables[2].message);
                 expect(and.validatables[2].valid).toBe(false);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(and.message[3]).toBe(undefined);
             });
 
@@ -539,9 +539,9 @@ describe("explicit", function() {
                 expect(or.message[2]).toBe(or.validatables[2].message);
                 expect(or.validatables[2].valid).toBe(false);
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.validatables[3]).toBe(undefined);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(or.message[3]).toBe(undefined);
             });
         });

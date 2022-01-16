@@ -1,9 +1,9 @@
 import List from "./array/list";
-import Value from "@dikac/t-value/value";
-import Validation from "@dikac/t-boolean/validation/validation";
+import Value from "@alirya/value/value";
+import Validation from "@alirya/boolean/validation/validation";
 import DifferenceParameters from "./difference-parameters";
-import Compare from "@dikac/t-boolean/compare/compare";
-import Equal from "@dikac/t-boolean/equal-parameter";
+import Compare from "@alirya/boolean/compare/compare";
+import Equal from "@alirya/boolean/equal-parameter";
 
 /**
  * option version of {@see DifferenceParameters}

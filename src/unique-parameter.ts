@@ -1,5 +1,5 @@
-import Value from "@dikac/t-value/value";
-import Validation from "@dikac/t-boolean/validation/validation";
+import Value from "@alirya/value/value";
+import Validation from "@alirya/boolean/validation/validation";
 import UniqueParameters from "./unique-parameters";
 
 /**

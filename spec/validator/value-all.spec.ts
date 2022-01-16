@@ -2,11 +2,11 @@ import ValueAll from "../../dist/validator/value-all-parameters";
 import And from "../../dist/validatable/and-parameters";
 import ValidatablesInterface from "../../dist/validatable/validatables/validatables";
 import Validatables from "../../dist/validatable/validatables/validatables";
-import Validatable from "@dikac/t-validatable/validatable";
-import SimpleValidator from "@dikac/t-validator/simple";
+import Validatable from "@alirya/validatable/validatable";
+import SimpleValidator from "@alirya/validator/simple";
 import MessageMap from "../../dist/message/message/list/map";
-import ValidatorType from "@dikac/t-type/validator/type-parameters";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import ValidatorType from "@alirya/type/validator/type-parameters";
+import Instance from "@alirya/validator/validatable/validatable";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -378,12 +378,12 @@ describe('recursive', ()=>{
 
             it('index 3.0', ()=>{
 
-                // @ts-expect-error
+                // @ts-expecerror
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[0]) {
 
-                    // @ts-expect-error
+                    // @ts-expecerror
                     expect(validatable.validatables[3].validatables[0].valid).toBe(true);
-                    // @ts-expect-error
+                    // @ts-expecerror
                     expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
 
                 } else {
@@ -394,12 +394,12 @@ describe('recursive', ()=>{
 
             it('index 3.1', ()=>{
 
-                // @ts-expect-error
+                // @ts-expecerror
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[1]) {
 
-                    // @ts-expect-error
+                    // @ts-expecerror
                     expect(validatable.validatables[3].validatables[1].valid).toBe(true);
-                    // @ts-expect-error
+                    // @ts-expecerror
                     expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
 
                 } else {
@@ -410,7 +410,7 @@ describe('recursive', ()=>{
 
             it('index 3.2', ()=>{
 
-                // @ts-expect-error
+                // @ts-expecerror
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[2]) {
 
                     fail('should exits')
@@ -488,12 +488,12 @@ describe('recursive', ()=>{
 
             it('index 3.0', ()=>{
 
-                // @ts-expect-error
+                // @ts-expecerror
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[0]) {
 
-                    // @ts-expect-error
+                    // @ts-expecerror
                     expect(validatable.validatables[3].validatables[0].valid).toBe(true);
-                    // @ts-expect-error
+                    // @ts-expecerror
                     expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
 
                 } else {
@@ -504,12 +504,12 @@ describe('recursive', ()=>{
 
             it('index 3.1', ()=>{
 
-                // @ts-expect-error
+                // @ts-expecerror
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[1]) {
 
-                    // @ts-expect-error
+                    // @ts-expecerror
                     expect(validatable.validatables[3].validatables[1].valid).toBe(false);
-                    // @ts-expect-error
+                    // @ts-expecerror
                     expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
 
                 } else {
@@ -520,7 +520,7 @@ describe('recursive', ()=>{
 
             it('index 3.2', ()=>{
 
-                // @ts-expect-error
+                // @ts-expecerror
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[2]) {
 
                     fail('index 2 should exits')
@@ -594,12 +594,12 @@ describe('recursive', ()=>{
 
         it('index 3.0', ()=>{
 
-            // @ts-expect-error
+            // @ts-expecerror
             if(validatable.validatables[3] && validatable.validatables[3].validatables[0]) {
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[0].valid).toBe(false);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
 
             } else {
@@ -610,12 +610,12 @@ describe('recursive', ()=>{
 
         it('index 3.1', ()=>{
 
-            // @ts-expect-error
+            // @ts-expecerror
             if(validatable.validatables[3] && validatable.validatables[3].validatables[1]) {
 
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(validatable.validatables[3].validatables[1].valid).toBe(false);
-                // @ts-expect-error
+                // @ts-expecerror
                 expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
 
             } else {
@@ -626,7 +626,7 @@ describe('recursive', ()=>{
 
         it('index 3.2', ()=>{
 
-            // @ts-expect-error
+            // @ts-expecerror
             if(validatable.validatables[3] && validatable.validatables[3].validatables[2]) {
 
                 fail('index 2 should exits')

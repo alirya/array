@@ -1,4 +1,4 @@
-import RandomBoolean from "@dikac/t-boolean/random";
+import RandomBoolean from "@alirya/boolean/random";
 
 /**
  * pick a random values

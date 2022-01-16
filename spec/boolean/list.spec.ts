@@ -1,5 +1,5 @@
 import List from "../../dist/boolean/list";
-import GuardBoolean from "@dikac/t-boolean/boolean";
+import GuardBoolean from "@alirya/boolean/boolean";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -15,7 +15,7 @@ describe(`compiler compatible`,function() {
 
         } else {
 
-            // @ts-expect-error
+            // @ts-expecerror
             let returns : boolean[] = argument;
         }
     });

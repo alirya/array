@@ -1,4 +1,4 @@
-import RemovesValue from "../../dist/extract-parameters";
+import RemovesValue from "../../dist/extracparameters";
 
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});

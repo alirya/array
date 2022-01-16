@@ -1,4 +1,4 @@
-import Message from "@dikac/t-message/message";
+import Message from "@alirya/message/message";
 import Messages from "./messages/messages";
 import JoinParameters from "./join-parameters";
 

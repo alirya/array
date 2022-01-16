@@ -1,6 +1,6 @@
 import ReturnInfer from "../../../../dist/function/return/list/infer";
 import Reset from "../../../../dist/reset";
-import Boolean from "@dikac/t-boolean/boolean";
+import Boolean from "@alirya/boolean/boolean";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -12,10 +12,10 @@ describe('compiler compatible', function() {
 
         let equal : ReturnInfer<[typeof Boolean, typeof Boolean]> = [true, false];
 
-        // @ts-expect-error
+        // @ts-expecerror
         let more : ReturnInfer<[typeof Boolean, typeof Boolean]> = [true, false, true];
 
-        // @ts-expect-error
+        // @ts-expecerror
         let less : ReturnInfer<[typeof Boolean, typeof Boolean]> = [true];
 
     });
@@ -25,10 +25,10 @@ describe('compiler compatible', function() {
 
         let equal : ReturnInfer<[typeof Reset, typeof Reset]> = [[], []];
 
-        // @ts-expect-error
+        // @ts-expecerror
         let more : ReturnInfer<[typeof Reset, typeof Reset]> = [[], [], []];
 
-        // @ts-expect-error
+        // @ts-expecerror
         let less : ReturnInfer<[typeof Reset, typeof Reset]> = [[]];
 
     });

@@ -1,9 +1,9 @@
-import Validation from "@dikac/t-boolean/validation/validation";
+import Validation from "@alirya/boolean/validation/validation";
 import Readonly from "./array/readonly";
 import IntersectionParameters from "./intersection-parameters";
-import Value from "@dikac/t-value/value";
-import Equal from "@dikac/t-boolean/equal-parameter";
-import Compare from "@dikac/t-boolean/compare/compare";
+import Value from "@alirya/value/value";
+import Equal from "@alirya/boolean/equal-parameter";
+import Compare from "@alirya/boolean/compare/compare";
 
 /**
  * return data which exists in all array

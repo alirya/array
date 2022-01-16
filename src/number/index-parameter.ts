@@ -1,4 +1,4 @@
-import Validation from "@dikac/t-boolean/validation/validation";
+import Validation from "@alirya/boolean/validation/validation";
 import Readonly from "../array/readonly";
 import IndexParameters from "./index-parameters";
 

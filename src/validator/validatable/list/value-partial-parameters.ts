@@ -1,4 +1,4 @@
-import Validator from "@dikac/t-validator/validator";
+import Validator from "@alirya/validator/validator";
 import {List} from "ts-toolbelt";
 import ListStrict from "./infer";
 import Unions from "../../../unions";

@@ -1,5 +1,5 @@
-import Validator from "@dikac/t-validator/validator";
-import Validatable from "@dikac/t-validatable/validatable";
+import Validator from "@alirya/validator/validator";
+import Validatable from "@alirya/validatable/validatable";
 import ValidateValue from "./validatable/list/value-parameters";
 import ListReturn from "./validatable/list/infer";
 import ValueCallback from "./value-callback-parameters";

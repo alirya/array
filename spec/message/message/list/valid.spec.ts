@@ -1,4 +1,4 @@
-// import ValidatorType from "@dikac/t-type/validator/type-parameters";
+// import ValidatorType from "@alirya/type/validator/type-parameters";
 // import ValueAll from "../../../../dist/validator/value-all-parameters";
 // import And from "../../../../dist/validatable/and-parameters";
 // import MessageMapValid from "../../../../dist/message/message/list/valid";
@@ -6,7 +6,7 @@
 // import ValidateValue from "../../../../dist/validator/validatable/list/value-parameters";
 // import MapAll from "../../../../dist/validator/map-all-parameters";
 // import Map from "../../../../dist/validator/map-partial-parameters";
-// import Validatable from "@dikac/t-validatable/validatable";
+// import Validatable from "@alirya/validatable/validatable";
 // import ValueCallback from "../../../../dist/validator/value-callback-parameters";
 // import MapCallbackFunction from "../../../../dist/validator/map-callback-parameters";
 // import Standard from "../../../../dist/validator/validatable/list/map-parameters";

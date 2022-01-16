@@ -1,6 +1,6 @@
-import ValueInterface from "@dikac/t-value/value";
+import ValueInterface from "@alirya/value/value";
 import List from "../../array/list";
-import ExtractParameters from "./extract-parameters";
+import ExtractParameters from "./extracparameters";
 
 /**
  * get and remove selected value

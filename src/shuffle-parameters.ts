@@ -1,4 +1,4 @@
-import Random from "@dikac/t-boolean/random";
+import Random from "@alirya/boolean/random";
 /**
  * randomize {@param value} array position
  *

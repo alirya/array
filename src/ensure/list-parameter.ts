@@ -1,5 +1,5 @@
-import Guard from "@dikac/t-boolean/validation/guard";
-import ListParameters from "./list-parameters";
+import Guard from "@alirya/boolean/validation/guard";
+import ListParameters from "./lisparameters";
 
 /**
  * Check if {@param list} is list of {@template Value}

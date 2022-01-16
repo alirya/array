@@ -3,14 +3,14 @@
 // import ValidateValuePartial from "../../dist/validator/validatable/list/value-partial-parameters";
 // import And from "../../dist/validatable/and-parameters";
 // import Or from "../../dist/validatable/or-parameters";
-// import Validatable from "@dikac/t-validatable/validatable";
-// import SimpleValidator from "@dikac/t-validator/simple";
-// import Message from "@dikac/t-message/message";
+// import Validatable from "@alirya/validatable/validatable";
+// import SimpleValidator from "@alirya/validator/simple";
+// import Message from "@alirya/message/message";
 // import MessageMap from "../../dist/message/message/list/map";
-// import ValidatorType from "@dikac/t-type/validator/type-parameters";
-// import {TypeType as ValidatableType} from "@dikac/t-type/validatable/type-parameters";
-// import ValueInterface from "@dikac/t-value/value";
-// import Instance from "@dikac/t-validator/validatable/dynamic";
+// import ValidatorType from "@alirya/type/validator/type-parameters";
+// import {TypeType as ValidatableType} from "@alirya/type/validatable/type-parameters";
+// import ValueInterface from "@alirya/value/value";
+// import Instance from "@alirya/validator/validatable/dynamic";
 //
 // it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 //
@@ -44,9 +44,9 @@
 //             let instance : Validatable;
 //             instance = validatable.validatables[0];
 //             instance = validatable.validatables[1];
-//             // @ts-expect-error
+//             // @ts-expecerror
 //             instance = validatable.validatables[3];
-//             // @ts-expect-error
+//             // @ts-expecerror
 //             instance = validatable.validatables[4];
 //
 //             describe("recursive", function() {
@@ -77,9 +77,9 @@
 //             let instance : Validatable;
 //             instance = validatable.validatables[0];
 //             instance = validatable.validatables[1];
-//               // @ts-expect-error
+//               // @ts-expecerror
 //             instance = validatable.validatables[3];
-//               // @ts-expect-error
+//               // @ts-expecerror
 //             instance = validatable.validatables[4];
 //         });
 //     });
@@ -106,7 +106,7 @@
 //
 //             let unknown : unknown = validatable.value;
 //
-//             // @ts-expect-error
+//             // @ts-expecerror
 //             let value1 : string[] = validatable.value;
 //
 //             let value2 : string = validatable.value;
@@ -128,18 +128,18 @@
 //
 //             let unknown : unknown = validatable.value;
 //
-//             // @ts-expect-error
+//             // @ts-expecerror
 //             let value1 : string[] = validatable.value;
 //
-//             // @ts-expect-error
+//             // @ts-expecerror
 //             let value2 : [string, string] = validatable.value;
 //
 //             let instance : Validatable;
 //             instance = validatable.validatables[0];
 //             instance = validatable.validatables[1];
-//             // @ts-expect-error
+//             // @ts-expecerror
 //             instance = validatable.validatables[3];
-//             // @ts-expect-error
+//             // @ts-expecerror
 //             instance = validatable.validatables[4];
 //         });
 //     });
@@ -188,7 +188,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //
@@ -213,7 +213,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //
@@ -244,7 +244,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //
@@ -271,7 +271,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //         });
@@ -318,7 +318,7 @@
 //                 expect(and.validatables[2].valid).toBe(true);
 //                 expect(typeof and.validatables[2].message).toBe('string');
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(and.validatables[3]).toBe(undefined);
 //             });
 //
@@ -344,7 +344,7 @@
 //                 expect(typeof or.validatables[2].message).toBe('string');
 //                 expect(or.validatables[2].valid).toBe(true);
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(or.validatables[3]).toBe(undefined);
 //
 //             });
@@ -375,7 +375,7 @@
 //
 //                 expect(and.validatables[2]).toBe(<any>undefined);
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(and.validatables[3]).toBe(<any>undefined);
 //             });
 //
@@ -402,7 +402,7 @@
 //
 //                 expect(or.validatables[2]).toBe(<any>undefined);
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(or.validatables[3]).toBe(<any>undefined);
 //
 //             });
@@ -447,7 +447,7 @@
 //                 expect(typeof and.validatables[2].message).toBe('string');
 //                 expect(and.validatables[2].valid).toBe(false);
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(and.validatables[3]).toBe(undefined);
 //             });
 //
@@ -472,7 +472,7 @@
 //                 expect(typeof or.validatables[2].message).toBe('string');
 //                 expect(or.validatables[2].valid).toBe(false);
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(or.validatables[3]).toBe(undefined);
 //             });
 //         });
@@ -498,7 +498,7 @@
 //
 //                 expect(and.validatables[1]).toBe(<any>undefined);
 //                 expect(and.validatables[2]).toBe(<any>undefined);
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(and.validatables[3]).toBe(<any>undefined);
 //             });
 //
@@ -521,7 +521,7 @@
 //                 expect(or.validatables[1]).toBe(<any>undefined);
 //                 expect(or.validatables[2]).toBe(<any>undefined);
 //
-//                 // @ts-expect-error
+//                 // @ts-expecerror
 //                 expect(or.validatables[3]).toBe(<any>undefined);
 //             });
 //         });
@@ -575,12 +575,12 @@
 //
 //                 it('index 3.0', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[0]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(validatable.validatables[3].validatables[0].valid).toBe(true);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
 //
 //                     } else {
@@ -591,12 +591,12 @@
 //
 //                 it('index 3.1', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[1]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(validatable.validatables[3].validatables[1].valid).toBe(true);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
 //
 //                     } else {
@@ -607,7 +607,7 @@
 //
 //                 it('index 3.2', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[2]) {
 //
 //                         fail('should not exits')
@@ -640,12 +640,12 @@
 //
 //                 it('index 3.0', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[0]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(validatable.validatables[3].validatables[0].valid).toBe(true);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
 //
 //                     } else {
@@ -656,12 +656,12 @@
 //
 //                 it('index 3.1', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[1]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(validatable.validatables[3].validatables[1].valid).toBe(true);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
 //
 //                     } else {
@@ -672,7 +672,7 @@
 //
 //                 it('index 3.2', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[2]) {
 //
 //                         fail('should not exits')
@@ -711,12 +711,12 @@
 //
 //                 it('index 3.0', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[0]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(validatable.validatables[3].validatables[0].valid).toBe(true);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
 //
 //                     } else {
@@ -727,12 +727,12 @@
 //
 //                 it('index 3.1', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[1]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(validatable.validatables[3].validatables[1].valid).toBe(true);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
 //
 //                     } else {
@@ -743,7 +743,7 @@
 //
 //                 it('index 3.2', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[2]) {
 //
 //                         fail('should not exits')
@@ -778,12 +778,12 @@
 //
 //                 it('index 3.0', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[0]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(validatable.validatables[3].validatables[0].valid).toBe(true);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
 //
 //                     } else {
@@ -794,12 +794,12 @@
 //
 //                 it('index 3.1', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[1]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(validatable.validatables[3].validatables[1].valid).toBe(true);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
 //
 //                     } else {
@@ -810,7 +810,7 @@
 //
 //                 it('index 3.2', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(validatable.validatables[3] && validatable.validatables[3].validatables[2]) {
 //
 //                         fail('should not exits')
@@ -862,12 +862,12 @@
 //
 //                 it('index 3.0', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(and.validatables[3] && and.validatables[3].validatables[0]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(and.validatables[3].validatables[0].valid).toBe(false);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof and.validatables[3].validatables[0].message).toBe('string');
 //
 //                     } else {
@@ -878,12 +878,12 @@
 //
 //                 it('index 3.1', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(and.validatables[3] && and.validatables[3].validatables[1]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(and.validatables[3].validatables[1].valid).toBe(true);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof and.validatables[3].validatables[1].message).toBe('string');
 //
 //                     } else {
@@ -894,7 +894,7 @@
 //
 //                 it('index 3.2', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(and.validatables[3] && and.validatables[3].validatables[2]) {
 //
 //                         fail('should not exits')
@@ -928,12 +928,12 @@
 //
 //                 it('index 3.0', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(or.validatables[3] && or.validatables[3].validatables[0]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(or.validatables[3].validatables[0].valid).toBe(false);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof or.validatables[3].validatables[0].message).toBe('string');
 //
 //                     } else {
@@ -944,12 +944,12 @@
 //
 //                 it('index 3.1', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(or.validatables[3] && or.validatables[3].validatables[1]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(or.validatables[3].validatables[1].valid).toBe(true);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof or.validatables[3].validatables[1].message).toBe('string');
 //
 //                     } else {
@@ -960,7 +960,7 @@
 //
 //                 it('index 3.2', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(or.validatables[3] && or.validatables[3].validatables[2]) {
 //
 //                         fail('should not exits')
@@ -1070,12 +1070,12 @@
 //
 //                 it('index 3.0', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(and.validatables[3] && and.validatables[3].validatables[0]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(and.validatables[3].validatables[0].valid).toBe(false);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof and.validatables[3].validatables[0].message).toBe('string');
 //
 //                     } else {
@@ -1086,12 +1086,12 @@
 //
 //                 it('index 3.1', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(and.validatables[3] && and.validatables[3].validatables[1]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(and.validatables[3].validatables[1].valid).toBe(false);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof and.validatables[3].validatables[1].message).toBe('string');
 //
 //                     } else {
@@ -1102,7 +1102,7 @@
 //
 //                 it('index 3.2', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(and.validatables[3] && and.validatables[3].validatables[2]) {
 //
 //                         fail('should not exits')
@@ -1135,12 +1135,12 @@
 //
 //                 it('index 3.0', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(or.validatables[3] && or.validatables[3].validatables[0]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(or.validatables[3].validatables[0].valid).toBe(false);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof or.validatables[3].validatables[0].message).toBe('string');
 //
 //                     } else {
@@ -1151,12 +1151,12 @@
 //
 //                 it('index 3.1', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(or.validatables[3] && or.validatables[3].validatables[1]) {
 //
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(or.validatables[3].validatables[1].valid).toBe(false);
-//                         // @ts-expect-error
+//                         // @ts-expecerror
 //                         expect(typeof or.validatables[3].validatables[1].message).toBe('string');
 //
 //                     } else {
@@ -1167,7 +1167,7 @@
 //
 //                 it('index 3.2', ()=>{
 //
-//                     // @ts-expect-error
+//                     // @ts-expecerror
 //                     if(or.validatables[3] && or.validatables[3].validatables[2]) {
 //
 //                         fail('should not exits')

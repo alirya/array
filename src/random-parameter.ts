@@ -1,4 +1,4 @@
-import ValueInterface from "@dikac/t-value/value";
+import ValueInterface from "@alirya/value/value";
 import RandomParameters from "./random-parameters";
 
 /**

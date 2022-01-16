@@ -29,28 +29,28 @@ describe("compiler compatible", function() {
     if(And(value, [TypeA])) {
 
         let result : A = value;
-        // @ts-expect-error
+        // @ts-expecerror
         let result2 : B = value;
 
     } else {
 
-        // @ts-expect-error
+        // @ts-expecerror
         let result1 : A = value;
-        // @ts-expect-error
+        // @ts-expecerror
         let result2 : B = value;
     }
 
     if(And(value, [TypeB])) {
 
-        // @ts-expect-error
+        // @ts-expecerror
         let result1 : A = value;
         let result2 : B = value;
 
     } else {
 
-        // @ts-expect-error
+        // @ts-expecerror
         let result1 : A = value;
-        // @ts-expect-error
+        // @ts-expecerror
         let result2 : B = value;
     }
 
@@ -61,9 +61,9 @@ describe("compiler compatible", function() {
 
     } else {
 
-        // @ts-expect-error
+        // @ts-expecerror
         let result1 : A = value;
-        // @ts-expect-error
+        // @ts-expecerror
         let result2 : B = value;
     }
 

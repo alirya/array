@@ -1,7 +1,7 @@
 import NotEmptyArgument from "../boolean/not-empty";
 import {List} from "ts-toolbelt";
-import Instance from "@dikac/t-validator/validatable/validatable";
-import Dynamic from "@dikac/t-validator/message/function/validatable-parameters";
+import Instance from "@alirya/validator/validatable/validatable";
+import Dynamic from "@alirya/validator/message/function/validatable-parameters";
 
 export type NotEmptyType<
     Values extends unknown[],

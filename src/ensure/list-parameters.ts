@@ -1,4 +1,4 @@
-import AssertList from "../assert/list-parameters";
+import AssertList from "../assert/lisparameters";
 
 /**
  * Check if {@param list} is list of {@template Value}

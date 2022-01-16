@@ -4,15 +4,15 @@
 // import And from "../../dist/validatable/and-parameters";
 // import Or from "../../dist/validatable/or-parameters";
 // import Validatables from "../../dist/validatable/callback-parameters";
-// import Validatable from "@dikac/t-validatable/validatable";
-// import ValidatableInterface from "@dikac/t-validatable/validatable";
-// import SimpleValidator from "@dikac/t-validator/simple";
-// import ValueInterface from "@dikac/t-value/value";
-// import Message from "@dikac/t-message/message";
+// import Validatable from "@alirya/validatable/validatable";
+// import ValidatableInterface from "@alirya/validatable/validatable";
+// import SimpleValidator from "@alirya/validator/simple";
+// import ValueInterface from "@alirya/value/value";
+// import Message from "@alirya/message/message";
 // import MessageMap from "../../dist/message/message/list/map";
-// import MessageInterface from "@dikac/t-message/message";
-// import ValidatorType from "@dikac/t-type/validator/type-parameters";
-// import Instance from "@dikac/t-validator/validatable/dynamic";
+// import MessageInterface from "@alirya/message/message";
+// import ValidatorType from "@alirya/type/validator/type-parameters";
+// import Instance from "@alirya/validator/validatable/dynamic";
 //
 // it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 //

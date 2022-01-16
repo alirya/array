@@ -1,10 +1,10 @@
-import Validator from "@dikac/t-validator/validator";
-import Validatable from "@dikac/t-validatable/validatable";
+import Validator from "@alirya/validator/validator";
+import Validatable from "@alirya/validatable/validatable";
 import BaseList from "./subject/list/allow";
-import Instance from "@dikac/t-validator/validatable/validatable";
+import Instance from "@alirya/validator/validatable/validatable";
 import Map from "./map";
 import ValidatorsContainer from "./validators/validators";
-import Message from "@dikac/t-message/message";
+import Message from "@alirya/message/message";
 import MapCallbackParameters from "./map-callback-parameters";
 
 

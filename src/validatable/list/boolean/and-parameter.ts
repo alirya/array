@@ -1,4 +1,4 @@
-import Validatable from "@dikac/t-validatable/validatable";
+import Validatable from "@alirya/validatable/validatable";
 import Validatables from "../../validatables/validatables";
 import AndParameters from "./and-parameters";
 
