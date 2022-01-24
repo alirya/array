@@ -15,6 +15,9 @@
     "ts-toolbelt": "^9.6.0",
     "utility-types": "^3.10.0"
   },
+  "devDependencies": {
+    "@alirya/type": "^0.7.0-beta.5"
+  },
   "homepage": "https://github.com/alirya/array",
   "repository": {
     "type": "git",
