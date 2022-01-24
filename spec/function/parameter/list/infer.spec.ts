@@ -12,10 +12,10 @@ describe('compiler compatible', function() {
 
         let equal : ParameterInfer<[typeof Boolean, typeof Boolean]> = [[1], [2]];
 
-        // @ts-expecerror
+        // @ts-expect-error
         let more : ParameterInfer<[typeof Boolean, typeof Boolean]> = [[1], [2], [3]];
 
-        // @ts-expecerror
+        // @ts-expect-error
         let less : ParameterInfer<[typeof Boolean, typeof Boolean]> = [[1]];
 
     });
@@ -25,10 +25,10 @@ describe('compiler compatible', function() {
 
         let equal : ParameterInfer<[typeof Reset, typeof Reset]> = [[[]], [[]]];
 
-        // @ts-expecerror
+        // @ts-expect-error
         let more : ParameterInfer<[typeof Reset, typeof Reset]> = [[[]], [[]], [[]]];
 
-        // @ts-expecerror
+        // @ts-expect-error
         let less : ParameterInfer<[typeof Reset, typeof Reset]> = [[[]]];
 
     });

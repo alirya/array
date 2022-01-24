@@ -58,7 +58,7 @@ describe('complete', function() {
         expect(and.validatables[2].valid).toBe(true);
         expect(typeof and.validatables[2].message).toBe('string');
 
-        // @ts-expecerror
+        // @ts-expect-error
         expect(and.validatables[3]).toBe(undefined);
     });
 
@@ -82,7 +82,7 @@ describe('complete', function() {
         expect(typeof or.validatables[2].message).toBe('string');
         expect(or.validatables[2].valid).toBe(true);
 
-        // @ts-expecerror
+        // @ts-expect-error
         expect(or.validatables[3]).toBe(undefined);
 
     });

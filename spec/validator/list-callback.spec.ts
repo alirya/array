@@ -125,7 +125,7 @@ describe('compiler compatibility', function() {
 
             let value1 : string[]|unknown[] = validatable.value;
 
-            // @ts-expecerror
+            // @ts-expect-error
             let value2 : [string, string] = validatable.value;
 
             let instance : Validatable;
@@ -153,7 +153,7 @@ describe('compiler compatibility', function() {
 
             let value1 : string[]|unknown[] = validatable.value;
 
-            // @ts-expecerror
+            // @ts-expect-error
             let value2 : [string, string] = validatable.value;
 
             let instance : Validatable;
@@ -217,9 +217,9 @@ describe('explicit', function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(validatable.message[3]).toBe(undefined);
             });
 
@@ -247,9 +247,9 @@ describe('explicit', function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(validatable.message[3]).toBe(undefined);
             });
 
@@ -281,9 +281,9 @@ describe('explicit', function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(validatable.message[3]).toBe(undefined);
             });
 
@@ -311,9 +311,9 @@ describe('explicit', function() {
                 expect(typeof validatable.validatables[2].message).toBe('string');
                 expect(validatable.message[2]).toBe(validatable.validatables[2].message);
 
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(validatable.validatables[3]).toBe(undefined);
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(validatable.message[3]).toBe(undefined);
             });
         });
@@ -366,9 +366,9 @@ describe('explicit', function() {
                 expect(typeof and.validatables[2].message).toBe('string');
                 expect(and.message[2]).toBe(and.validatables[2].message);
 
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(and.validatables[3]).toBe(undefined);
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(and.message[3]).toBe(undefined);
             });
 
@@ -398,9 +398,9 @@ describe('explicit', function() {
                 expect(or.message[2]).toBe(or.validatables[2].message);
                 expect(or.validatables[2].valid).toBe(true);
 
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(or.validatables[3]).toBe(undefined);
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(or.message[3]).toBe(undefined);
 
             });
@@ -508,9 +508,9 @@ describe('explicit', function() {
                 expect(and.message[2]).toBe(and.validatables[2].message);
                 expect(and.validatables[2].valid).toBe(false);
 
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(and.validatables[3]).toBe(undefined);
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(and.message[3]).toBe(undefined);
             });
 
@@ -539,9 +539,9 @@ describe('explicit', function() {
                 expect(or.message[2]).toBe(or.validatables[2].message);
                 expect(or.validatables[2].valid).toBe(false);
 
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(or.validatables[3]).toBe(undefined);
-                // @ts-expecerror
+                // @ts-expect-error
                 expect(or.message[3]).toBe(undefined);
             });
         });

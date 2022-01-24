@@ -45,7 +45,7 @@ describe('compiler compatibility', function() {
 
         let unknown : unknown = validatable.value;
 
-        // @ts-expecerror
+        // @ts-expect-error
         let string : Type = validatable.value;
 
         describe('recursive', function() {
@@ -93,7 +93,7 @@ describe('compiler compatibility', function() {
 
             key = validatable.validatables[1];
 
-            // @ts-expecerror
+            // @ts-expect-error
             key = validatable.validatables[2];
 
             let validatables : ValidatablesInterface = validatable;
@@ -120,7 +120,7 @@ describe('compiler compatibility', function() {
             key = validatable.validatables[0];
 
             key = validatable.validatables[1];
-            // @ts-expecerror
+            // @ts-expect-error
             key = validatable.validatables[2];
 
             let validatables : ValidatablesInterface = validatable;
@@ -377,27 +377,27 @@ describe('recursive', function() {
 
             if(validatable.validatables[3]) {
 
-                // @ts-expecerror
+                // @ts-expect-error
                 if(validatable.validatables[3].validatables[0]) {
-                     // @ts-expecerror
+                     // @ts-expect-error
                     expect(validatable.validatables[3].validatables[0].valid).toBe(false);
-                     // @ts-expecerror
+                     // @ts-expect-error
                     expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
                 } else {
                     fail('index 3.0 should exits');
                 }
 
-                // @ts-expecerror
+                // @ts-expect-error
                 if(validatable.validatables[3].validatables[1]) {
-                     // @ts-expecerror
+                     // @ts-expect-error
                     expect(validatable.validatables[3].validatables[1].valid).toBe(false);
-                     // @ts-expecerror
+                     // @ts-expect-error
                     expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
                 } else {
                     fail('index 3.1 should exits');
                 }
 
-                // @ts-expecerror
+                // @ts-expect-error
                 if(validatable.validatables[3].validatables[2]) {
                     fail('index 3.2 should no exits');
                 }

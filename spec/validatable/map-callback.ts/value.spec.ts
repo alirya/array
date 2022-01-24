@@ -53,7 +53,7 @@ describe('valid', function() {
         let more = [...value, []];
 
         it(`and validation`, () => {
-            // @ts-expecerror
+            // @ts-expect-error
             let and = new Map(more, validator, Standard, And, MessageMap);
 
             expect(more).not.toEqual(and.value);
@@ -61,7 +61,7 @@ describe('valid', function() {
         });
 
         it(`or validation `, () => {
-            // @ts-expecerror
+            // @ts-expect-error
             let or = new Map(more, validator, Standard, Or, MessageMap);
 
             expect(more).not.toEqual(or.value);
@@ -75,7 +75,7 @@ describe('valid', function() {
 
         it(`and validation`, () => {
 
-            // @ts-expecerror
+            // @ts-expect-error
             let and = new Map(less, validator, Standard, And, MessageMap);
 
             expect(less).toEqual(and.value);
@@ -84,7 +84,7 @@ describe('valid', function() {
 
         it(`or validation `, () => {
 
-            // @ts-expecerror
+            // @ts-expect-error
             let or = new Map(less, validator, Standard, Or, MessageMap);
 
             expect(less).toEqual(or.value);

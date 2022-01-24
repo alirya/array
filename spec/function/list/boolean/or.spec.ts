@@ -20,14 +20,14 @@ describe('compiler compatible', function() {
     if(Or(value, [Num])) {
 
         let result : number = value;
-        // @ts-expecerror
+        // @ts-expect-error
         let result2 : string = value;
 
     } else {
 
-        // @ts-expecerror
+        // @ts-expect-error
         let result1 : number = value;
-        // @ts-expecerror
+        // @ts-expect-error
         let result2 : string = value;
     }
 
@@ -35,18 +35,18 @@ describe('compiler compatible', function() {
 
         let result : number|string = value;
 
-        // @ts-expecerror
+        // @ts-expect-error
         let result2 : number = value;
-        // @ts-expecerror
+        // @ts-expect-error
         let result3 : string = value;
 
     } else {
 
-        // @ts-expecerror
+        // @ts-expect-error
         let result : number|string = value;
-        // @ts-expecerror
+        // @ts-expect-error
         let result2 : number = value;
-        // @ts-expecerror
+        // @ts-expect-error
         let result3 : string = value;
     }
 });

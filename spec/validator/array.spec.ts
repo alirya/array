@@ -18,7 +18,7 @@ describe(`compiler compatible`,function() {
 
         } else {
 
-            // @ts-expecerror
+            // @ts-expect-error
             let object : object = validatable.value;
             fail('validatable.valid should false');
         }
@@ -37,9 +37,9 @@ describe(`compiler compatible`,function() {
 
         } else {
 
-            // @ts-expecerror
+            // @ts-expect-error
             let object : object = validatable.value;
-            // @ts-expecerror
+            // @ts-expect-error
             expect(object).toEqual(1);
         }
     });
@@ -50,18 +50,18 @@ describe(`compiler compatible`,function() {
         let validatable = validator({});
 
         try {
-            // @ts-expecerror
+            // @ts-expect-error
             validatable.valid = true;
             fail('exception should thrown');
         } catch (e) {
             expect(e).toBeInstanceOf(Error);
         }
 
-        // @ts-expecerror
+        // @ts-expect-error
         validatable.value = true;
 
         try {
-            // @ts-expecerror
+            // @ts-expect-error
             validatable.message = 'message';
             fail('exception should thrown');
         } catch (e) {

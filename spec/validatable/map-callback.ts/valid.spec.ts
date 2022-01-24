@@ -53,7 +53,7 @@ it(`and validation`, () => {
     expect(validatable.validatables[2].valid).toBe(true);
     expect(typeof validatable.validatables[2].message).toBe('string');
 
-    // @ts-expecerror
+    // @ts-expect-error
     expect(validatable.validatables[3]).toBe(undefined);
 });
 
@@ -76,7 +76,7 @@ it(`or validation`, () => {
     expect(validatable.validatables[2].valid).toBe(true);
     expect(typeof validatable.validatables[2].message).toBe('string');
 
-    // @ts-expecerror
+    // @ts-expect-error
     expect(validatable.validatables[3]).toBe(undefined);
 });
 

@@ -44,7 +44,7 @@ describe('compiler compatibility', function() {
 
         let unknown : unknown = validatable.value;
 
-        // @ts-expecerror
+        // @ts-expect-error
         let string : Type = validatable.value;
 
         describe('recursive', function() {

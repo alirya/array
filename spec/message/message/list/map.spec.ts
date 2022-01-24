@@ -29,7 +29,7 @@ describe('flat & type explicit', ()=>{
 
         number = result[5];
 
-        // @ts-expecerror
+        // @ts-expect-error
         let string : string = result[5];
     });
 
@@ -76,10 +76,10 @@ describe('flat & type implicit', ()=>{
         number = result[3];
         number = result[4];
 
-        // @ts-expecerror
+        // @ts-expect-error
         number = result[5];
 
-        // @ts-expecerror
+        // @ts-expect-error
         let string : string = result[5];
     });
 

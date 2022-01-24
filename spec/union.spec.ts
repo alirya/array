@@ -28,9 +28,9 @@ describe('compiler compatibility', function() {
         let a : A = merged;
         let b : B = merged;
 
-        // @ts-expecerror
+        // @ts-expect-error
         merged = {a:''};
-        // @ts-expecerror
+        // @ts-expect-error
         merged = {b:''};
     });
 

@@ -37,7 +37,7 @@
 //         valdiatable = result[2];
 //         valdiatable = result[3];
 //
-//         // @ts-expecerror
+//         // @ts-expect-error
 //         valdiatable = result[4];
 //
 //     });

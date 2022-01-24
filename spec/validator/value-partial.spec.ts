@@ -363,12 +363,12 @@ describe('recursive', ()=>{
 
             it('index 3.0', ()=>{
 
-                // @ts-expecerror
+                // @ts-expect-error
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[0]) {
 
-                    // @ts-expecerror
+                    // @ts-expect-error
                     expect(validatable.validatables[3].validatables[0].valid).toBe(true);
-                    // @ts-expecerror
+                    // @ts-expect-error
                     expect(typeof validatable.validatables[3].validatables[0].message).toBe('string');
 
                 } else {
@@ -379,12 +379,12 @@ describe('recursive', ()=>{
 
             it('index 3.1', ()=>{
 
-                // @ts-expecerror
+                // @ts-expect-error
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[1]) {
 
-                    // @ts-expecerror
+                    // @ts-expect-error
                     expect(validatable.validatables[3].validatables[1].valid).toBe(true);
-                    // @ts-expecerror
+                    // @ts-expect-error
                     expect(typeof validatable.validatables[3].validatables[1].message).toBe('string');
 
                 } else {
@@ -395,7 +395,7 @@ describe('recursive', ()=>{
 
             it('index 3.2', ()=>{
 
-                // @ts-expecerror
+                // @ts-expect-error
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[2]) {
 
                     fail('index 2 should not exits');
@@ -467,7 +467,7 @@ describe('recursive', ()=>{
 
             it('index 3.0', ()=>{
 
-                // @ts-expecerror
+                // @ts-expect-error
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[0]) {
 
                     fail('should no exits');
@@ -476,7 +476,7 @@ describe('recursive', ()=>{
 
             it('index 3.1', ()=>{
 
-                // @ts-expecerror
+                // @ts-expect-error
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[1]) {
 
                     fail('should exits');
@@ -485,7 +485,7 @@ describe('recursive', ()=>{
 
             it('index 3.2', ()=>{
 
-                // @ts-expecerror
+                // @ts-expect-error
                 if(validatable.validatables[3] && validatable.validatables[3].validatables[2]) {
 
                     fail('should exits');

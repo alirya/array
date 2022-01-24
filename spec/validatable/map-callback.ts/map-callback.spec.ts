@@ -52,9 +52,9 @@
 //             let instance : Validatable;
 //             instance = validatable.validatables[0];
 //             instance = validatable.validatables[1];
-//             // @ts-expecerror
+//             // @ts-expect-error
 //             instance = validatable.validatables[3];
-//             // @ts-expecerror
+//             // @ts-expect-error
 //             instance = validatable.validatables[4];
 //         });
 //
@@ -103,7 +103,7 @@
 //
 //             let value1 : string[] = validatable.value;
 //
-//             // @ts-expecerror
+//             // @ts-expect-error
 //             let value2 : [string, string] = validatable.value;
 //
 //             let instance : Validatable;
@@ -125,7 +125,7 @@
 //
 //             let value1 : string[] = validatable.value;
 //
-//             // @ts-expecerror
+//             // @ts-expect-error
 //             let value2 : [string, string] = validatable.value;
 //
 //             let instance : Validatable;
@@ -189,7 +189,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expecerror
+//                 // @ts-expect-error
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //
@@ -212,7 +212,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expecerror
+//                 // @ts-expect-error
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //
@@ -240,7 +240,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expecerror
+//                 // @ts-expect-error
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //
@@ -264,7 +264,7 @@
 //                 expect(validatable.validatables[2].valid).toBe(true);
 //                 expect(typeof validatable.validatables[2].message).toBe('string');
 //
-//                 // @ts-expecerror
+//                 // @ts-expect-error
 //                 expect(validatable.validatables[3]).toBe(undefined);
 //             });
 //         });
@@ -319,7 +319,7 @@
 //                 expect(and.validatables[2].valid).toBe(true);
 //                 expect(typeof and.validatables[2].message).toBe('string');
 //
-//                 // @ts-expecerror
+//                 // @ts-expect-error
 //                 expect(and.validatables[3]).toBe(undefined);
 //             });
 //
@@ -343,7 +343,7 @@
 //                 expect(typeof or.validatables[2].message).toBe('string');
 //                 expect(or.validatables[2].valid).toBe(true);
 //
-//                 // @ts-expecerror
+//                 // @ts-expect-error
 //                 expect(or.validatables[3]).toBe(undefined);
 //
 //             });
@@ -439,7 +439,7 @@
 //                 expect(typeof and.validatables[2].message).toBe('string');
 //                 expect(and.validatables[2].valid).toBe(false);
 //
-//                 // @ts-expecerror
+//                 // @ts-expect-error
 //                 expect(and.validatables[3]).toBe(undefined);
 //             });
 //
@@ -463,7 +463,7 @@
 //                 expect(typeof or.validatables[2].message).toBe('string');
 //                 expect(or.validatables[2].valid).toBe(false);
 //
-//                 // @ts-expecerror
+//                 // @ts-expect-error
 //                 expect(or.validatables[3]).toBe(undefined);
 //             });
 //         });

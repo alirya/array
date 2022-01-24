@@ -15,7 +15,7 @@ describe(`compiler compatible`,function() {
 
         } else {
 
-            // @ts-expecerror
+            // @ts-expect-error
             let returns : boolean[] = argument;
         }
     });

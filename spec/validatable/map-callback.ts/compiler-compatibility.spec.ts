@@ -49,9 +49,9 @@
 //         let instance : Validatable;
 //         instance = validatable.validatables[0];
 //         instance = validatable.validatables[1];
-//         // @ts-expecerror
+//         // @ts-expect-error
 //         instance = validatable.validatables[3];
-//         // @ts-expecerror
+//         // @ts-expect-error
 //         instance = validatable.validatables[4];
 //     });
 //
@@ -100,7 +100,7 @@
 //
 //         let value1 : string[] = validatable.value;
 //
-//         // @ts-expecerror
+//         // @ts-expect-error
 //         let value2 : [string, string] = validatable.value;
 //
 //         let instance : Validatable;
@@ -122,7 +122,7 @@
 //
 //         let value1 : string[] = validatable.value;
 //
-//         // @ts-expecerror
+//         // @ts-expect-error
 //         let value2 : [string, string] = validatable.value;
 //
 //         let instance : Validatable;
