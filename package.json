@@ -30,7 +30,8 @@
     "tslint": "^5.13.0",
     "typedoc": "^0.22.10",
     "tsc-fancy": "^1.1.2",
-    "@alirya/type": "^0.7.0-beta.5"
+    "@alirya/type": "^0.7.0-beta.5",
+    "@alirya/class": "^0.3.0-beta.5"
   },
   "scripts": {
     "spec-run-js": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
