@@ -5,7 +5,7 @@ it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('compiler compatibility property', function() {
 
-    describe('explicit', function() {
+    it('explicit', function() {
 
         let record  = [
             {valid:true},
@@ -33,7 +33,7 @@ describe('compiler compatibility property', function() {
     });
 
 
-    describe('implicit', function() {
+    it('implicit', function() {
 
         let record : [
             Validatable,

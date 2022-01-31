@@ -31,7 +31,7 @@ describe('compiler compatibility', function() {
             'address',
         ];
 
-        describe('auto', function() {
+        it('auto', function() {
 
             let validatable = new ListCallback(value, validator,
                 (value, validators) => ListReturn(value, validators),
@@ -52,7 +52,7 @@ describe('compiler compatibility', function() {
             instance = validatable.validatables[4];
         });
 
-        describe('auto partial', function() {
+        it('auto partial', function() {
 
             let validatable = new ListCallback(value, validator,
                 (value, validators) =>
@@ -83,7 +83,7 @@ describe('compiler compatibility', function() {
         ];
 
 
-        describe('auto', function() {
+        it('auto', function() {
 
             let validatable = new ListCallback(value, validator,
                 (value, validators) => ListReturn(value, validators),
@@ -104,7 +104,7 @@ describe('compiler compatibility', function() {
             instance = validatable.validatables[4];
         });
 
-        describe('auto partial', function() {
+        it('auto partial', function() {
 
             let validatable = new ListCallback(value, validator,
                 (value, validators) =>

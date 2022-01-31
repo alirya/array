@@ -16,7 +16,7 @@ describe('flat & type explicit', ()=>{
 
     let result = Standard(data);
 
-    describe('compiler compatibility', () => {
+    it('compiler compatibility', () => {
 
 
         let number : number;
@@ -65,7 +65,7 @@ describe('flat & type implicit', ()=>{
 
     let result = Standard(data);
 
-    describe('compiler compatibility', () => {
+    it('compiler compatibility', () => {
 
 
         let number : number;

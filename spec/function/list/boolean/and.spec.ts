@@ -20,7 +20,7 @@ function TypeB(val : unknown) : val is B {
     return typeof val.b === 'string';
 }
 
-describe('compiler compatible', function() {
+it('compiler compatible', function() {
 
     let ab : A & B = {a:1, b:'b'};
 

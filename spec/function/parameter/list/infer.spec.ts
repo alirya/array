@@ -8,7 +8,7 @@ it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 describe('compiler compatible', function() {
 
 
-    describe('guard', function() {
+    it('guard', function() {
 
         let equal : ParameterInfer<[typeof Boolean, typeof Boolean]> = [[1], [2]];
 
@@ -21,7 +21,7 @@ describe('compiler compatible', function() {
     });
 
 
-    describe('return', function() {
+    it('return', function() {
 
         let equal : ParameterInfer<[typeof Reset, typeof Reset]> = [[[]], [[]]];
 

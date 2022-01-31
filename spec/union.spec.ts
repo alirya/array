@@ -4,7 +4,7 @@ it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('compiler compatibility', function() {
 
-    describe('native', function() {
+    it('native', function() {
 
         let merged : Union<[Array<any>, Map<any, any>]> = Object.assign([], new Map());
 
@@ -13,7 +13,7 @@ describe('compiler compatibility', function() {
 
     });
 
-    describe('native', function() {
+    it('native', function() {
 
         class A {
             public a : string = '';

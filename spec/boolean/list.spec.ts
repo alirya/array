@@ -5,7 +5,7 @@ it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe(`compiler compatible`,function() {
 
-    describe(`guard`,function() {
+    it(`guard`,function() {
 
         let argument : unknown[] = [true, false, true, false];
 
@@ -20,7 +20,7 @@ describe(`compiler compatible`,function() {
         }
     });
 
-    describe(`boolean`,function() {
+    it(`boolean`,function() {
 
         let argument : boolean[] = [true, false, true, false];
 

@@ -13,7 +13,7 @@ function Str(val : unknown) : val is string {
 }
 
 
-describe('compiler compatible', function() {
+it('compiler compatible', function() {
 
     let value : unknown = 1;
 
