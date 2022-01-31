@@ -44,7 +44,7 @@ describe('compiler compatibility', function() {
 
         let string : string[] = validatable.value;
 
-        describe('recursive', function() {
+        it('recursive', function() {
 
             let validator = ValidatorType('string');
             let list1 = List(validator, And, MessageMap);
@@ -70,7 +70,7 @@ describe('compiler compatibility', function() {
             'address',
         ];
 
-        describe('auto', function() {
+        it('auto', function() {
 
             let property = List/*<unknown[], Type>*/(validator, And, MessageMap);
 
@@ -95,7 +95,7 @@ describe('compiler compatibility', function() {
             let string : Type = validatable.value;
         });
 
-        describe('direct', function() {
+        it('direct', function() {
 
             let property = List(validator, And, MessageMap);
 

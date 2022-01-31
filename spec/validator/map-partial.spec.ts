@@ -47,7 +47,7 @@ describe('compiler compatibility', function() {
         // @ts-expect-error
         let string : Type = validatable.value;
 
-        describe('recursive', function() {
+        it('recursive', function() {
 
             let validator = ValidatorType('string');
             let list1 = MapPartial([validator], And, MessageMap);
@@ -80,7 +80,7 @@ describe('compiler compatibility', function() {
             'address',
         ];
 
-        describe('auto', function() {
+        it('auto', function() {
 
             let property = MapPartial(validator, And, MessageMap);
 
@@ -104,7 +104,7 @@ describe('compiler compatibility', function() {
 
         });
 
-        describe('direct', function() {
+        it('direct', function() {
 
             let property = MapPartial<TypeValidator>(validator, (v)=>And(v), MessageMap);
 

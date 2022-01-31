@@ -69,7 +69,7 @@ describe('compiler compatibility', function() {
             // @ts-expect-error
             message = validatable.messages[4];
 
-            describe('recursive', function() {
+            it('recursive', function() {
 
                 let validator = ValidatorType('string');
                 let list1 = MapCallbackFunction([validator], (value, validators) => Standard(value, validators), And, MessageMap);
@@ -79,7 +79,7 @@ describe('compiler compatibility', function() {
             });
         });
 
-        describe('auto partial', function() {
+        it('auto partial', function() {
 
             let validator = MapCallbackFunction(validators,
                 (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
@@ -119,7 +119,7 @@ describe('compiler compatibility', function() {
         ];
 
 
-        describe('auto', function() {
+        it('auto', function() {
 
             let validator = MapCallbackFunction(validators,
                 (value, validators) => Standard(value, validators),
@@ -148,7 +148,7 @@ describe('compiler compatibility', function() {
             message = validatable.messages[4];
         });
 
-        describe('auto partial', function() {
+        it('auto partial', function() {
 
             let validator = MapCallbackFunction(validators,
                 (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),

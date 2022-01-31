@@ -64,7 +64,7 @@ describe('compiler compatibility', function() {
 
             message = validatable.messages[4];
 
-            describe('recursive', function() {
+            it('recursive', function() {
 
                 let validator = ValidatorType('string');
 
@@ -76,7 +76,7 @@ describe('compiler compatibility', function() {
 
         });
 
-        describe('auto partial', function() {
+        it('auto partial', function() {
 
             let validator = ListCallbackFunction(validators,
                 (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial(value, validators),
@@ -112,7 +112,7 @@ describe('compiler compatibility', function() {
             'address',
         ];
 
-        describe('auto', function() {
+        it('auto', function() {
 
             let validator = ListCallbackFunction(validators,
                 (value, validators) => ListReturn(value, validators),
@@ -141,7 +141,7 @@ describe('compiler compatibility', function() {
             message = validatable.messages[4];
         });
 
-        describe('auto partial', function() {
+        it('auto partial', function() {
 
             let validator = ListCallbackFunction(validators,
                 (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial(value, validators),

@@ -48,7 +48,7 @@ describe('compiler compatibility', function() {
         // @ts-expect-error
         let string : Type = validatable.value;
 
-        describe('recursive', function() {
+        it('recursive', function() {
 
             let validator = ValidatorType('string');
             let list1 = MapAll([validator], And, MessageMap);
@@ -81,7 +81,7 @@ describe('compiler compatibility', function() {
             'address',
         ];
 
-        describe('auto', function() {
+        it('auto', function() {
 
             let property = MapAll(validator, (v)=>And(<Validatable[]>v), MessageMap);
 
@@ -108,7 +108,7 @@ describe('compiler compatibility', function() {
 
         });
 
-        describe('direct', function() {
+        it('direct', function() {
 
             let property = MapAll<TypeValidator>(validator, (v)=>And(<Validatable[]>v), MessageMap);
 

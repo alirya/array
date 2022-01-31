@@ -42,7 +42,7 @@ describe('compiler compatibility', function() {
 
             let string : string = validatable.value;
 
-            describe('recursive', function() {
+            it('recursive', function() {
 
                 let validator = ValidatorType('string');
                 let list1 = Value([validator], And, MessageMap);
@@ -53,7 +53,7 @@ describe('compiler compatibility', function() {
 
         });
 
-        describe('auto', function() {
+        it('auto', function() {
 
             let property = Value(validator, (v)=>And(v), (v)=>MessageMap(v));
 
@@ -81,7 +81,7 @@ describe('compiler compatibility', function() {
             ValidatorType('string'),
         ];
 
-        describe('complete', function() {
+        it('complete', function() {
 
             let property = Value(validator, (v)=>And(v), (v)=>MessageMap(v));
 
@@ -102,7 +102,7 @@ describe('compiler compatibility', function() {
 
         });
 
-        describe('auto', function() {
+        it('auto', function() {
 
             let property = Value(validator, (v)=>And(v), (v)=>MessageMap(v));
 
