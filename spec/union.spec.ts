@@ -1,4 +1,4 @@
-import Union from '../dist/union';
+import Union from '../dist/intersect';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
