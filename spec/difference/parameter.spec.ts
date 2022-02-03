@@ -1,5 +1,3 @@
-import DifferenceBothParameters from '../../dist/difference-both-parameters';
-import DifferenceBothParameter from '../../dist/difference-both-parameter';
 import EqualParameter from '@alirya/boolean/equal-parameter';
 import EqualParameters from '@alirya/boolean/equal-parameters';
 import DifferenceParameters from '../../dist/difference-parameters';

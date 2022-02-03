@@ -43,13 +43,14 @@ describe('compiler compatibility', function() {
         let unknown : unknown = validatable.value;
 
         let string : string[] = validatable.value;
-        // @ts-expect-errors
+
+        // @ts-expect-error
         let string2 : [string, string] = validatable.value;
 
         if(validatable.valid) {
 
             let string : string[] = validatable.value;
-            // @ts-expect-errors
+            // @ts-expect-error
             let string2 : [string, string] = validatable.value;
 
         } else {
