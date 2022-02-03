@@ -1,11 +1,11 @@
-import Array from "../array/array";
-import {Omit} from "utility-types";
-import InsertParameters from "./insert-parameters";
-import Callable from "@alirya/function/callable";
+import Array from '../array/array';
+import {Omit} from 'utility-types';
+import InsertParameters from './insert-parameters';
+import Callable from '@alirya/function/callable';
 
 export interface InsertParameterArgument<Value extends unknown> extends Array<Value[]> {
-    index : number,
-    fill ?: Value
+    index : number;
+    fill ?: Value;
 }
 /**
  * Object argument version of {@see InsertParameters}

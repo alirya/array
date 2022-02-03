@@ -1,4 +1,4 @@
-import Callable from "@alirya/function/callable";
+import Callable from '@alirya/function/callable';
 
 /**
  * Create a function which insert given argument to {@param array} at the specified {@param index}
@@ -35,5 +35,5 @@ export default function InsertParameters<Value extends unknown>(
     return function (array) {
 
         return head.concat(array, tail);
-    }
+    };
 }

@@ -1,18 +1,18 @@
-import Map from "../../../dist/validatable/map-callback-parameters";
-import Standard from "../../../dist/validator/validatable/list/map-parameters";
-import PartialStandard from "../../../dist/validator/validatable/list/map-partial-parameters";
-import And from "../../../dist/validatable/and-parameters";
-import Validatable from "@alirya/validatable/validatable";
-import ValidatorInterface from "@alirya/validator/simple";
-import ValueInterface from "@alirya/value/value";
-import Message from "@alirya/message/message";
-import MessageMap from "../../../dist/message/message/list/map";
-import ValidatorType from "@alirya/type/validator/type-parameters";
-import Instance from "@alirya/validator/validatable/validatable";
+import Map from '../../../dist/validatable/map-callback-parameters';
+import Standard from '../../../dist/validator/validatable/list/map-parameters';
+import PartialStandard from '../../../dist/validator/validatable/list/map-partial-parameters';
+import And from '../../../dist/validatable/and-parameters';
+import Validatable from '@alirya/validatable/validatable';
+import ValidatorInterface from '@alirya/validator/simple';
+import ValueInterface from '@alirya/value/value';
+import Message from '@alirya/message/message';
+import MessageMap from '../../../dist/message/message/list/map';
+import ValidatorType from '@alirya/type/validator/type-parameters';
+import Instance from '@alirya/validator/validatable/validatable';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("explicit typed", function() {
+describe('explicit typed', function() {
 
     type TypeValidator = [
         ValidatorInterface<any, string, Instance<any, string>>,
@@ -34,7 +34,7 @@ describe("explicit typed", function() {
         'address',
     ];
 
-    describe("auto", function() {
+    describe('auto', function() {
 
         let validatable = new Map(value, validator,
             (value, validators) => Standard(value, validators),
@@ -55,7 +55,7 @@ describe("explicit typed", function() {
         instance = validatable.validatables[4];
     });
 
-    describe("auto partial", function() {
+    describe('auto partial', function() {
 
         let validatable = new Map(value, validator,
             (value, validators) =>
@@ -76,7 +76,7 @@ describe("explicit typed", function() {
 });
 
 
-describe("explicit typed", function() {
+describe('explicit typed', function() {
 
     let validator  = [
         ValidatorType('string'),
@@ -89,7 +89,7 @@ describe("explicit typed", function() {
     ];
 
 
-    describe("auto", function() {
+    describe('auto', function() {
 
         let validatable = new Map(value, validator,
             (value, validators) => Standard(value, validators),
@@ -110,7 +110,7 @@ describe("explicit typed", function() {
         instance = validatable.validatables[4];
     });
 
-    describe("auto partial", function() {
+    describe('auto partial', function() {
 
         let validatable = new Map(value, validator,
             (value, validators) =>

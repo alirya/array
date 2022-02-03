@@ -1,7 +1,7 @@
-import {Omit} from "utility-types";
-import {InsertParameterArgument as InsertParameterFunctionArgument} from "./function/insert-parameter";
-import InsertParameters from "./insert-parameters";
-import Value from "@alirya/value/value";
+import {Omit} from 'utility-types';
+import {InsertParameterArgument as InsertParameterFunctionArgument} from './function/insert-parameter';
+import InsertParameters from './insert-parameters';
+import Value from '@alirya/value/value';
 
 
 export interface InsertParameterArgument<Type extends unknown> extends InsertParameterFunctionArgument<Type>, Value<Type[]> {}

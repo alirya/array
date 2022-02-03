@@ -1,4 +1,4 @@
-import InsertFunction from "./function/insert-parameters";
+import InsertFunction from './function/insert-parameters';
 /**
  * Insert {@param array} in the specified {@param index}, for reusable and more
  * performant instead use {@see InsertFunction}

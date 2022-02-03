@@ -1,21 +1,21 @@
-import Map from "../../../dist/validatable/map-callback-parameters";
-import Standard from "../../../dist/validator/validatable/list/map-parameters";
-import PartialStandard from "../../../dist/validator/validatable/list/map-partial-parameters";
-import And from "../../../dist/validatable/and-parameters";
-import Or from "../../../dist/validatable/or-parameters";
-import Validatable from "@alirya/validatable/validatable";
-import ValidatorInterface from "@alirya/validator/simple";
-import ValueInterface from "@alirya/value/value";
-import Message from "@alirya/message/message";
-import MessageMap from "../../../dist/message/message/list/map";
-import ValidatorType from "@alirya/type/validator/type-parameters";
-import Instance from "@alirya/validator/validatable/validatable";
+import Map from '../../../dist/validatable/map-callback-parameters';
+import Standard from '../../../dist/validator/validatable/list/map-parameters';
+import PartialStandard from '../../../dist/validator/validatable/list/map-partial-parameters';
+import And from '../../../dist/validatable/and-parameters';
+import Or from '../../../dist/validatable/or-parameters';
+import Validatable from '@alirya/validatable/validatable';
+import ValidatorInterface from '@alirya/validator/simple';
+import ValueInterface from '@alirya/value/value';
+import Message from '@alirya/message/message';
+import MessageMap from '../../../dist/message/message/list/map';
+import ValidatorType from '@alirya/type/validator/type-parameters';
+import Instance from '@alirya/validator/validatable/validatable';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("compiler compatibility", function() {
+describe('compiler compatibility', function() {
 
-    describe("explicit typed", function() {
+    describe('explicit typed', function() {
 
         type TypeValidator = [
             ValidatorInterface<any, string, Instance<any, string>>,
@@ -37,7 +37,7 @@ describe("compiler compatibility", function() {
             'address',
         ];
 
-        describe("auto", function() {
+        describe('auto', function() {
 
             let validatable = new Map(value, validator,
                 (value, validators) => Standard(value, validators),
@@ -58,7 +58,7 @@ describe("compiler compatibility", function() {
             instance = validatable.validatables[4];
         });
 
-        describe("auto partial", function() {
+        describe('auto partial', function() {
 
             let validatable = new Map(value, validator,
                 (value, validators) =>
@@ -79,7 +79,7 @@ describe("compiler compatibility", function() {
     });
 
 
-    describe("explicit typed", function() {
+    describe('explicit typed', function() {
 
         let validator  = [
             ValidatorType('string'),
@@ -92,7 +92,7 @@ describe("compiler compatibility", function() {
         ];
 
 
-        describe("auto", function() {
+        describe('auto', function() {
 
             let validatable = new Map(value, validator,
                 (value, validators) => Standard(value, validators),
@@ -113,7 +113,7 @@ describe("compiler compatibility", function() {
             instance = validatable.validatables[4];
         });
 
-        describe("auto partial", function() {
+        describe('auto partial', function() {
 
             let validatable = new Map(value, validator,
                 (value, validators) =>
@@ -140,9 +140,9 @@ describe("compiler compatibility", function() {
 
 
 
-describe("explicit", function() {
+describe('explicit', function() {
 
-    describe("all valid", function() {
+    describe('all valid', function() {
 
         type TypeValidator = [
             ValidatorInterface<any, string, Instance<any, string>>,
@@ -154,7 +154,7 @@ describe("explicit", function() {
             string,
             string,
             string,
-        ]
+        ];
 
         let validator : TypeValidator = [
             ValidatorType('string'),
@@ -168,7 +168,7 @@ describe("explicit", function() {
             'address',
         ];
 
-        describe("complete", function() {
+        describe('complete', function() {
 
             it(`and validation`, () => {
 
@@ -218,7 +218,7 @@ describe("explicit", function() {
 
         });
 
-        describe("partial", function() {
+        describe('partial', function() {
 
             it(`and validation`, () => {
 
@@ -271,7 +271,7 @@ describe("explicit", function() {
 
     });
 
-    describe("mixed", function() {
+    describe('mixed', function() {
 
 
         type TypeValidator = [
@@ -284,7 +284,7 @@ describe("explicit", function() {
             string,
             string,
             string,
-        ]
+        ];
 
         let validator : TypeValidator= [
             ValidatorType('string'),
@@ -293,12 +293,12 @@ describe("explicit", function() {
         ];
 
         let value : Type = [
-            "11",
+            '11',
             'name',
             'address',
         ];
 
-        describe("complete", function() {
+        describe('complete', function() {
 
             it(`and validation`, () => {
 
@@ -350,7 +350,7 @@ describe("explicit", function() {
         });
 
 
-        describe("partial", function() {
+        describe('partial', function() {
 
             it(`and validation`, () => {
 
@@ -396,7 +396,7 @@ describe("explicit", function() {
         });
     });
 
-    describe("all invalid", function() {
+    describe('all invalid', function() {
 
         type TypeValidator = [
             ValidatorInterface<any, string, Instance<any, string>>,
@@ -408,7 +408,7 @@ describe("explicit", function() {
             object,
             object,
             object,
-        ]
+        ];
 
         let validator : TypeValidator = [
             ValidatorType('string'),
@@ -418,7 +418,7 @@ describe("explicit", function() {
 
         let value : Type = [{}, {}, {}];
 
-        describe("complete", function() {
+        describe('complete', function() {
             it(`and validation`, () => {
 
                 let and = new Map(value, validator,
@@ -469,7 +469,7 @@ describe("explicit", function() {
         });
 
 
-        describe("partial", function() {
+        describe('partial', function() {
             it(`and validation`, () => {
 
                 let and = new Map(value, validator,
