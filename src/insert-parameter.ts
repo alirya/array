@@ -1,9 +1,6 @@
-import Union from "./union";
-import Array from "./assert/array";
 import {Omit} from "utility-types";
-import InsertFunctionParameter, {InsertParameterArgument as InsertParameterFunctionArgument} from "./function/insert-parameter";
+import {InsertParameterArgument as InsertParameterFunctionArgument} from "./function/insert-parameter";
 import InsertParameters from "./insert-parameters";
-import InsertFunction from "./function/insert-parameters";
 import Value from "@alirya/value/value";
 
 

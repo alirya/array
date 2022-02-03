@@ -1,4 +1,3 @@
-import Union from "../union";
 import Array from "../array/array";
 import {Omit} from "utility-types";
 import InsertParameters from "./insert-parameters";
