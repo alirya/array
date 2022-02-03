@@ -11,6 +11,6 @@ import {List, Union} from 'ts-toolbelt';
  * };
  *
  */
-type MergeTypes<Types extends unknown[]> = Union.IntersectOf<List.UnionOf<Types>>;
+type Intersect<Types extends unknown[]> = Union.IntersectOf<List.UnionOf<Types>>;
 
-export default MergeTypes;
+export default Intersect;
