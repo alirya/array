@@ -3,21 +3,21 @@
   "version": "0.26.0",
   "description": "Typescript array",
   "dependencies": {
-    "@alirya/boolean": "0.11.0",
-    "@alirya/function": "0.15.0",
-    "@alirya/iterable": "0.5.0",
-    "@alirya/message": "0.12.0",
-    "@alirya/object": "0.37.1",
-    "@alirya/string": "0.16.1",
-    "@alirya/validatable": "0.20.0",
-    "@alirya/validator": "0.19.1",
-    "@alirya/value": "0.15.0",
+    "@alirya/boolean": "^0.11.0",
+    "@alirya/function": "^0.15.0",
+    "@alirya/iterable": "^0.5.0",
+    "@alirya/message": "^0.12.0",
+    "@alirya/object": "^0.37.1",
+    "@alirya/string": "^0.16.2",
+    "@alirya/validatable": "^0.20.0",
+    "@alirya/validator": "^0.19.1",
+    "@alirya/value": "^0.15.0",
     "ts-toolbelt": "^9.6.0",
     "utility-types": "^3.10.0"
   },
   "devDependencies": {
-    "@alirya/type": "0.7.1",
-    "@alirya/class": "0.3.1"
+    "@alirya/type": "^0.7.1",
+    "@alirya/class": "^0.3.1"
   },
   "homepage": "https://github.com/alirya/array",
   "repository": {
