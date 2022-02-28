@@ -7,6 +7,8 @@ import InsertFunction from './function/insert-parameters';
  *
  * @param array
  * @param value
+ * value to be inserted
+ *
  * @param index
  * @param fill
  */

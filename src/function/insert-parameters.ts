@@ -4,7 +4,11 @@ import Callable from '@alirya/function/callable';
  * Create a function which insert given argument to {@param array} at the specified {@param index}
  *
  * @param array
+ * initial source
+ *
  * @param index
+ * position to be inserted
+ *
  * @param fill
  * value to fill when {@param index} exceed {@param array.length}
  */
