@@ -60,7 +60,7 @@ export default function ValueCallbackParameter<
     } : ValueCallbackArgument<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>
 ) : Value<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType> {
 
-    return ValueCallbackParameters(validators, map, validation, message);
+    return ValueCallbackParameters(validators, map, validation, message) as Value<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>;
 
 }
 

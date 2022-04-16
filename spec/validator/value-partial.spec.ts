@@ -69,7 +69,6 @@ describe('compiler compatibility', function() {
 
             let unknown : unknown = validatable.value;
 
-            // @ts-expect-errors
             let string : string = validatable.value;
 
         });
@@ -99,7 +98,6 @@ describe('compiler compatibility', function() {
 
             let unknown : unknown = validatable.value;
 
-            // @ts-expect-errors
             let string : string = validatable.value;
 
         });
@@ -121,7 +119,6 @@ describe('compiler compatibility', function() {
 
             let unknown : unknown = validatable.value;
 
-            // @ts-expect-error
             let string : string = validatable.value;
 
         });
