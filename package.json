@@ -20,7 +20,7 @@
     "@alirya/function": "^0.16.2",
     "@alirya/iterable": "^0.5.3",
     "@alirya/message": "^0.12.2",
-    "@alirya/object": "^0.37.4",
+    "@alirya/object": "^0.37.8",
     "@alirya/string": "^0.16.8",
     "@alirya/validatable": "^0.20.2",
     "@alirya/validator": "^0.19.4",
@@ -48,7 +48,7 @@
     "package-version-git-tag": "^3.0.0",
     "@alirya/type": "^0.7.1",
     "@alirya/class": "^0.3.3",
-    "cpx": "^1.5.0"
+    "cpx2": "^4.2.0"
   },
   "scripts": {
     "spec-run-js": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
