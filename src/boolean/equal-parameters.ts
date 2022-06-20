@@ -11,32 +11,13 @@ export default function EqualParameters<Value>(
         return false;
     }
 
-    let valids : (number|string)[] = [];
+    for(const [index, value] of array1.entries()) {
 
-    PARENT : for(let i in array1) {
+        if(!compare(value, array2[index])) {
 
-        for(let j in array2) {
-
-            if(valids.includes(j)) {
-
-                continue ;
-            }
-
-            if(compare(array1[i], array2[j])) {
-
-                valids.push(j);
-
-                continue PARENT;
-            }
+            return false;
         }
-
-        return false;
     }
 
-    if(array1.length === valids.length) {
-
-        return true;
-    }
-
-    return false;
+    return true;
 }
