@@ -34,7 +34,7 @@ export function EmptyParameters(
     return strings.filter(v=>v.length).join(' ') + '.';
 }
 
-export type EmptyArgument = Readonly<Value<unknown[]> & Validatable> & {subject?:string}
+export type EmptyArgument = Readonly<Value<unknown[]> & Validatable> & {subject?:string};
 /**
  * string intended for empty array
  *
