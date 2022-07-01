@@ -1,4 +1,4 @@
-import Join from '../../dist/message/join-parameters';
+import {JoinParameters} from '../../dist/message/join';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -11,7 +11,7 @@ let messages = [
     {message:'e'},
 ];
 
-let join = new Join(messages, ',');
+let join = new JoinParameters(messages, ',');
 it('check data', ()=>{
 
    expect(join.separator).toBe(',');

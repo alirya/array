@@ -1,7 +1,6 @@
-import EqualParameter from '@alirya/boolean/equal-parameter';
-import EqualParameters from '@alirya/boolean/equal-parameters';
-import DifferenceParameters from '../../dist/difference-parameters';
-import DifferenceParameter from '../../dist/difference-parameter';
+import {EqualParameter} from '@alirya/boolean/equal';
+import {EqualParameters} from '@alirya/boolean/equal';
+import {DifferenceParameters, DifferenceParameter} from '../../dist/difference';
 
 
 it('enable console.log', () => { spyOn(console, 'log').and.callThrough();});

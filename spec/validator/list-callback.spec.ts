@@ -1,17 +1,17 @@
-import ValueAll from '../../dist/validator/value-all-parameters';
-import ListReturn from '../../dist/validator/validatable/list/list-parameters';
-import ListReturnPartial from '../../dist/validator/validatable/list/list-partial-parameters';
-import And from '../../dist/validatable/and-parameters';
-import Or from '../../dist/validatable/or-parameters';
+import ValueAll from '../../dist/validator/value-all';
+import ListReturn from '../../dist/validator/validatable/list/list';
+import ListReturnPartial from '../../dist/validator/validatable/list/list-partial';
+import And from '../../dist/validatable/and';
+import Or from '../../dist/validatable/or';
 import Validatable from '@alirya/validatable/validatable';
 import ValidatorInterface from '@alirya/validator/simple';
 import Message from '@alirya/message/message';
 import MessageMap from '../../dist/message/message/list/map';
-import ValidatorType from '@alirya/type/validator/type-parameters';
-import ValidatorInstance from '@alirya/class/validator/instance-parameters';
+import {TypeParameters} from '@alirya/type/validator/type';
+import {InstanceParameters} from '@alirya/class/validator/instance';
 import Value from '@alirya/value/value';
 import Instance from '@alirya/validator/validatable/validatable';
-import ListCallbackFunction from '../../dist/validator/list-callback-parameters';
+import ListCallbackFunction from '../../dist/validator/list-callback';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -26,7 +26,7 @@ describe('compiler compatibility', function() {
             string,
         ];
 
-        let validators : TypeValidator = ValidatorType('string');
+        let validators : TypeValidator = TypeParameters('string');
 
         let value : Type = [
             'name',
@@ -35,9 +35,9 @@ describe('compiler compatibility', function() {
 
         describe('auto', function() {
 
-            let validator = ListCallbackFunction(validators,
-                (value, validators) => ListReturn(value, validators),
-                And, MessageMap
+            let validator = ListCallbackFunction.Parameters(validators,
+                (value, validators) => ListReturn.Parameters(value, validators),
+                And.Parameters, MessageMap
             );
 
             let validatable = validator(value);
@@ -66,11 +66,11 @@ describe('compiler compatibility', function() {
 
             it('recursive', function() {
 
-                let validator = ValidatorType('string');
+                let validator = TypeParameters('string');
 
-                let list1 = ListCallbackFunction(validator,    (value, validators) => ListReturn(value, validators), And, MessageMap);
-                let list2 = ListCallbackFunction(list1,    (value, validators) => ListReturn(value, validators), And, MessageMap);
-                let list3 = ListCallbackFunction(list2,    (value, validators) => ListReturn(value, validators), And, MessageMap);
+                let list1 = ListCallbackFunction.Parameters(validator, (value, validators) => ListReturn.Parameters(value, validators), And.Parameters, MessageMap);
+                let list2 = ListCallbackFunction.Parameters(list1, (value, validators) => ListReturn.Parameters(value, validators), And.Parameters, MessageMap);
+                let list3 = ListCallbackFunction.Parameters(list2, (value, validators) => ListReturn.Parameters(value, validators), And.Parameters, MessageMap);
 
             });
 
@@ -78,9 +78,9 @@ describe('compiler compatibility', function() {
 
         it('auto partial', function() {
 
-            let validator = ListCallbackFunction(validators,
-                (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial(value, validators),
-                And, (v)=>MessageMap(v)
+            let validator = ListCallbackFunction.Parameters(validators,
+                (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial.Parameters(value, validators),
+                And.Parameters, (v)=>MessageMap(v)
             );
 
             let validatable = validator(value);
@@ -105,7 +105,7 @@ describe('compiler compatibility', function() {
 
     describe('explicit typed', function() {
 
-        let validators  = ValidatorType('string');
+        let validators  = TypeParameters('string');
 
         let value  = [
             'name',
@@ -114,9 +114,9 @@ describe('compiler compatibility', function() {
 
         it('auto', function() {
 
-            let validator = ListCallbackFunction(validators,
-                (value, validators) => ListReturn(value, validators),
-                And, (v)=>MessageMap(v)
+            let validator = ListCallbackFunction.Parameters(validators,
+                (value, validators) => ListReturn.Parameters(value, validators),
+                And.Parameters, (v)=>MessageMap(v)
             );
 
             let validatable = validator(value);
@@ -143,9 +143,9 @@ describe('compiler compatibility', function() {
 
         it('auto partial', function() {
 
-            let validator = ListCallbackFunction(validators,
-                (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial(value, validators),
-                And, (v)=>MessageMap(v)
+            let validator = ListCallbackFunction.Parameters(validators,
+                (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial.Parameters(value, validators),
+                And.Parameters, (v)=>MessageMap(v)
             );
             let validatable = validator(value);
 
@@ -184,7 +184,7 @@ describe('explicit', function() {
             string,
         ];
 
-        let validators : TypeValidator = ValidatorType('string');
+        let validators : TypeValidator = TypeParameters('string');
 
         let value : Type = [
             'user',
@@ -196,9 +196,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    And, (v)=>MessageMap(v)
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    And.Parameters, (v)=>MessageMap(v)
                 );
                 let validatable = validator(value);
 
@@ -225,9 +225,9 @@ describe('explicit', function() {
 
             it(`or validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    Or, (v)=>MessageMap(v)
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    Or.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -259,9 +259,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial(value, validators),
-                    And, (v)=>MessageMap(v)
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial.Parameters(value, validators),
+                    And.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -289,9 +289,9 @@ describe('explicit', function() {
 
             it(`or validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial(value, validators),
-                    Or, (v)=>MessageMap(v)
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial.Parameters(value, validators),
+                    Or.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -331,7 +331,7 @@ describe('explicit', function() {
             string,
         ];
 
-        let validators : TypeValidator= ValidatorType('string');
+        let validators : TypeValidator= TypeParameters('string');
 
         let value : Type = [
             'name',
@@ -343,9 +343,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    (v)=>And(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -375,9 +375,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    (v)=>Or(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -411,9 +411,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial(value, validators),
-                    (v)=>And(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -440,9 +440,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial(value, validators),
-                    (v)=>Or(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -478,16 +478,16 @@ describe('explicit', function() {
             object,
         ];
 
-        let validators : TypeValidator = ValidatorType('string');
+        let validators : TypeValidator = TypeParameters('string');
 
         let value : Type = [{}, {}, {}];
 
         describe('complete', function() {
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    (v)=>And(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -516,9 +516,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    (v)=>Or(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -550,9 +550,9 @@ describe('explicit', function() {
         describe('partial', function() {
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial(value, validators),
-                    (v)=>And(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
                 let and = validator(value);
@@ -575,9 +575,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial(value, validators),
-                    (v)=>Or(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>ListReturnPartial.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
                 let or = validator(value);
@@ -607,10 +607,10 @@ describe('recursive', function() {
     describe('all valid', function() {
 
         let validators =
-            ValueAll([
-                ValidatorType('string'),
-                ValidatorInstance(Array),
-            ], Or, MessageMap)
+            ValueAll.Parameters([
+                TypeParameters('string'),
+                InstanceParameters(Array),
+            ], Or.Parameters, MessageMap)
         ;
 
         let value = [
@@ -627,9 +627,9 @@ describe('recursive', function() {
 
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    And, (v)=>MessageMap(v)
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    And.Parameters, (v)=>MessageMap(v)
                 );
                 let validatable = validator(value);
 
@@ -665,9 +665,9 @@ describe('recursive', function() {
 
             it(`or validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    Or, (v)=>MessageMap(v)
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    Or.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -708,9 +708,9 @@ describe('recursive', function() {
 
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturnPartial(value, validators),
-                    And, (v)=>MessageMap(v)
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturnPartial.Parameters(value, validators),
+                    And.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -747,9 +747,9 @@ describe('recursive', function() {
 
             it(`or validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturnPartial(value, validators),
-                    Or, (v)=>MessageMap(v)
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturnPartial.Parameters(value, validators),
+                    Or.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -789,10 +789,10 @@ describe('recursive', function() {
 
     describe('mixed', function() {
 
-        let validators = ValueAll([
-                ValidatorType('string'),
-                ValidatorInstance(Array),
-            ], Or, MessageMap);
+        let validators = ValueAll.Parameters([
+                TypeParameters('string'),
+                InstanceParameters(Array),
+            ], Or.Parameters, MessageMap);
 
         let value = [
             '11',
@@ -808,9 +808,9 @@ describe('recursive', function() {
 
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    (v)=>And(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -849,9 +849,9 @@ describe('recursive', function() {
 
             it(`or validation `, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    Or,
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    Or.Parameters,
                     MessageMap
                 );
 
@@ -894,9 +894,9 @@ describe('recursive', function() {
 
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturnPartial(value, validators),
-                    And,
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturnPartial.Parameters(value, validators),
+                    And.Parameters,
                     MessageMap
                 );
 
@@ -927,9 +927,9 @@ describe('recursive', function() {
 
             it(`or validation `, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturnPartial(value, validators),
-                    (v)=>Or(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturnPartial.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -958,19 +958,19 @@ describe('recursive', function() {
 
     describe('all invalid', function() {
 
-        let validators = ValueAll([
-            ValidatorType('string'),
-            ValidatorType('number'),
-        ], Or, MessageMap);
+        let validators = ValueAll.Parameters([
+            TypeParameters('string'),
+            TypeParameters('number'),
+        ], Or.Parameters, MessageMap);
 
         let value = [{}, {}, {}, [{}, {}]];
 
         describe('complete', function() {
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    (v)=>And(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -1008,9 +1008,9 @@ describe('recursive', function() {
 
             it(`or validation `, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturn(value, validators),
-                    (v)=>Or(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturn.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -1051,9 +1051,9 @@ describe('recursive', function() {
         describe('partial', function() {
             it(`and validation`, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturnPartial(value, validators),
-                    (v)=>And(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturnPartial.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
                 let and = validator(value);
@@ -1076,9 +1076,9 @@ describe('recursive', function() {
 
             it(`or validation `, () => {
 
-                let validator = ListCallbackFunction(validators,
-                    (value, validators) => ListReturnPartial(value, validators),
-                    (v)=>Or(v),
+                let validator = ListCallbackFunction.Parameters(validators,
+                    (value, validators) => ListReturnPartial.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
                 let or = validator(value);

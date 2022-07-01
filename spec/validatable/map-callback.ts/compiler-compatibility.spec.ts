@@ -1,13 +1,13 @@
-import Map from '../../../dist/validatable/map-callback-parameters';
-import Standard from '../../../dist/validator/validatable/list/map-parameters';
-import PartialStandard from '../../../dist/validator/validatable/list/map-partial-parameters';
-import And from '../../../dist/validatable/and-parameters';
+import {MapCallbackParameters} from '../../../dist/validatable/map-callback';
+import {MapParameters} from '../../../dist/validator/validatable/list/map';
+import {MapPartialParameters} from '../../../dist/validator/validatable/list/map-partial';
+import {AndParameters} from '../../../dist/validatable/and';
 import Validatable from '@alirya/validatable/validatable';
 import ValidatorInterface from '@alirya/validator/simple';
 import ValueInterface from '@alirya/value/value';
 import Message from '@alirya/message/message';
 import MessageMap from '../../../dist/message/message/list/map';
-import ValidatorType from '@alirya/type/validator/type-parameters';
+import {TypeParameters} from '@alirya/type/validator/type';
 import Instance from '@alirya/validator/validatable/validatable';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
@@ -25,8 +25,8 @@ describe('explicit typed', function() {
     ];
 
     let validator : TypeValidator = [
-        ValidatorType('string'),
-        ValidatorType('string'),
+        TypeParameters('string'),
+        TypeParameters('string'),
     ];
 
     let value : Type = [
@@ -36,9 +36,9 @@ describe('explicit typed', function() {
 
     describe('auto', function() {
 
-        let validatable = new Map(value, validator,
-            (value, validators) => Standard(value, validators),
-            And,
+        let validatable = new MapCallbackParameters(value, validator,
+            (value, validators) => MapParameters(value, validators),
+            AndParameters,
             (v)=>MessageMap(v)
         );
 
@@ -57,10 +57,10 @@ describe('explicit typed', function() {
 
     describe('auto partial', function() {
 
-        let validatable = new Map(value, validator,
+        let validatable = new MapCallbackParameters(value, validator,
             (value, validators) =>
-                <(Validatable & ValueInterface & Message<string>)[]>PartialStandard(value, validators),
-            And,
+                <(Validatable & ValueInterface & Message<string>)[]>MapPartialParameters(value, validators),
+            AndParameters,
             (v)=>MessageMap(v)
         );
 
@@ -79,8 +79,8 @@ describe('explicit typed', function() {
 describe('explicit typed', function() {
 
     let validator  = [
-        ValidatorType('string'),
-        ValidatorType('string'),
+        TypeParameters('string'),
+        TypeParameters('string'),
     ];
 
     let value  = [
@@ -91,9 +91,9 @@ describe('explicit typed', function() {
 
     describe('auto', function() {
 
-        let validatable = new Map(value, validator,
-            (value, validators) => Standard(value, validators),
-            And, (v)=>MessageMap(v)
+        let validatable = new MapCallbackParameters(value, validator,
+            (value, validators) => MapParameters(value, validators),
+            AndParameters, (v)=>MessageMap(v)
         );
 
         let unknown : unknown = validatable.value;
@@ -112,10 +112,10 @@ describe('explicit typed', function() {
 
     describe('auto partial', function() {
 
-        let validatable = new Map(value, validator,
+        let validatable = new MapCallbackParameters(value, validator,
             (value, validators) =>
-                <(Validatable & ValueInterface & Message<string>)[]>PartialStandard(value, validators),
-            And, (v)=>MessageMap(v)
+                <(Validatable & ValueInterface & Message<string>)[]>MapPartialParameters(value, validators),
+            AndParameters, (v)=>MessageMap(v)
         );
 
         let unknown : unknown = validatable.value;

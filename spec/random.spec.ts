@@ -1,11 +1,11 @@
-import Random from '../dist/random-parameters';
+import {RandomParameters} from '../dist/random';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 let array : number[] = [1, 2, 3, 4, 5, 6];
-let random = Random(array);
+let random = RandomParameters(array);
 
 for (let value of random) {
 

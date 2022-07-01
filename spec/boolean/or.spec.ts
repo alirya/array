@@ -1,4 +1,4 @@
-import Or from '../../dist/boolean/or-parameters';
+import {OrParameters} from '../../dist/boolean/or';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -6,12 +6,12 @@ describe('empty', function() {
 
     it('default true', () => {
 
-        expect(Or([], false)).toBeFalse();
+        expect(OrParameters([], false)).toBeFalse();
     });
 
     it('default false', () => {
 
-        expect(Or([], true)).toBeTrue();
+        expect(OrParameters([], true)).toBeTrue();
     });
 
 });
@@ -20,12 +20,12 @@ describe('true', function() {
 
     it('default true', () => {
 
-        expect(Or([true, true, true], false)).toBeTrue();
+        expect(OrParameters([true, true, true], false)).toBeTrue();
     });
 
     it('default false', () => {
 
-        expect(Or([true, true, true], true)).toBeTrue();
+        expect(OrParameters([true, true, true], true)).toBeTrue();
     });
 
 });
@@ -34,12 +34,12 @@ describe('false', function() {
 
     it('default true', () => {
 
-        expect(Or([false, false, false], false)).toBeFalse();
+        expect(OrParameters([false, false, false], false)).toBeFalse();
     });
 
     it('default false', () => {
 
-        expect(Or([false, false, false], true)).toBeFalse();
+        expect(OrParameters([false, false, false], true)).toBeFalse();
     });
 
 });
@@ -48,12 +48,12 @@ describe('mixed', function() {
 
     it('default true', () => {
 
-        expect(Or([false, true, false], false)).toBeTrue();
+        expect(OrParameters([false, true, false], false)).toBeTrue();
     });
 
     it('default false', () => {
 
-        expect(Or([false, true, false], true)).toBeTrue();
+        expect(OrParameters([false, true, false], true)).toBeTrue();
     });
 
 });

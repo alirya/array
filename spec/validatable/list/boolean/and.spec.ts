@@ -1,4 +1,4 @@
-import And from '../../../../dist/validatable/list/boolean/and-parameters';
+import {AndParameters} from '../../../../dist/validatable/list/boolean/and';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -10,7 +10,7 @@ it('all true', function () {
         {valid:true},
     ];
 
-    expect(And(record)).toBeTrue();
+    expect(AndParameters(record)).toBeTrue();
 });
 
 it('all false', function () {
@@ -21,7 +21,7 @@ it('all false', function () {
         {valid:false},
     ];
 
-    expect(And(record)).toBeFalse();
+    expect(AndParameters(record)).toBeFalse();
 });
 
 
@@ -33,6 +33,6 @@ it('mixed', function () {
         {valid:false},
     ];
 
-    expect(And(record)).toBeFalse();
+    expect(AndParameters(record)).toBeFalse();
 });
 

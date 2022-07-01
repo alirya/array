@@ -1,5 +1,5 @@
-import Map from '../../../../dist/validator/validatable/list/map-parameters';
-import ValidatorType from '@alirya/type/validator/type-parameters';
+import {MapParameters} from '../../../../dist/validator/validatable/list/map';
+import {TypeParameters} from '@alirya/type/validator/type';
 
 
 it('force console log', () => spyOn(console, 'log').and.callThrough());
@@ -7,14 +7,14 @@ it('force console log', () => spyOn(console, 'log').and.callThrough());
 describe('simple validatable', function() {
 
     let validator = [
-        ValidatorType('number'), //new Num(),
-        ValidatorType('number'), //new NumAny(),
-        ValidatorType('string'), //new Str(),
-        ValidatorType('string'), //new StrAny(),
-        ValidatorType('number'), //new Num(),
-        ValidatorType('number'), //new NumAny(),
-        ValidatorType('string'), //new Str(),
-        ValidatorType('string'), //new StrAny(),
+        TypeParameters('number'), //new Num(),
+        TypeParameters('number'), //new NumAny(),
+        TypeParameters('string'), //new Str(),
+        TypeParameters('string'), //new StrAny(),
+        TypeParameters('number'), //new Num(),
+        TypeParameters('number'), //new NumAny(),
+        TypeParameters('string'), //new Str(),
+        TypeParameters('string'), //new StrAny(),
     ];
 
     let value = [
@@ -28,7 +28,7 @@ describe('simple validatable', function() {
         10,
     ];
 
-    let result = Map(value, validator);
+    let result = MapParameters(value, validator);
     it('match validator1', ()=> expect(result[0].valid).toBe(true));
     it('match validator2', ()=> expect(result[1].valid).toBe(true));
     it('match validator4', ()=> expect(result[2].valid).toBe(true));
@@ -44,14 +44,14 @@ describe('simple validatable', function() {
 describe('simple validatable', function() {
 
     let validator = [
-        ValidatorType('number'), //new Num(),
-        ValidatorType('number'), //new NumAny(),
-        ValidatorType('string'), //new Str(),
-        ValidatorType('string'), //new StrAny(),
-        ValidatorType('number'), //new Num(),
-        ValidatorType('number'), //new NumAny(),
-        ValidatorType('string'), //new Str(),
-        ValidatorType('string'), //new StrAny()
+        TypeParameters('number'), //new Num(),
+        TypeParameters('number'), //new NumAny(),
+        TypeParameters('string'), //new Str(),
+        TypeParameters('string'), //new StrAny(),
+        TypeParameters('number'), //new Num(),
+        TypeParameters('number'), //new NumAny(),
+        TypeParameters('string'), //new Str(),
+        TypeParameters('string'), //new StrAny()
     ];
 
     let value = [
@@ -65,7 +65,7 @@ describe('simple validatable', function() {
         10,
     ];
 
-    let result = Map(value, validator);
+    let result = MapParameters(value, validator);
     it('match validator1', ()=> expect(result[0].valid).toBe(true));
     it('match validator2', ()=> expect(result[1].valid).toBe(true));
     it('match validator4', ()=> expect(result[2].valid).toBe(true));
@@ -81,14 +81,14 @@ describe('simple validatable', function() {
 describe('extended validatable', function() {
 
     let validator = [
-        ValidatorType('number'), //new ExtendedNum(),
-        ValidatorType('number'), //new ExtendedNumAny(),
-        ValidatorType('string'), //new ExtendedStr(),
-        ValidatorType('string'), //new ExtendedStrAny(),
-        ValidatorType('number'), //new ExtendedNum(),
-        ValidatorType('number'), //new ExtendedNumAny(),
-        ValidatorType('string'), //new ExtendedStr(),
-        ValidatorType('string'), //new ExtendedStrAny(),
+        TypeParameters('number'), //new ExtendedNum(),
+        TypeParameters('number'), //new ExtendedNumAny(),
+        TypeParameters('string'), //new ExtendedStr(),
+        TypeParameters('string'), //new ExtendedStrAny(),
+        TypeParameters('number'), //new ExtendedNum(),
+        TypeParameters('number'), //new ExtendedNumAny(),
+        TypeParameters('string'), //new ExtendedStr(),
+        TypeParameters('string'), //new ExtendedStrAny(),
     ];
 
     let value = [
@@ -103,7 +103,7 @@ describe('extended validatable', function() {
 
     ];
 
-    let result = Map(value, validator);
+    let result = MapParameters(value, validator);
 
     it('match validator1', ()=> expect(result[0].valid).toBe(true));
     it('match validator1', ()=> expect(result[0].message).toBe('value is type of "number"'));

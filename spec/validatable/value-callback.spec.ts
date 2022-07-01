@@ -1,18 +1,3 @@
-// import Value from "../../dist/validatable/value-callback-parameters";
-// import ValidateValue from "../../dist/validator/validatable/list/value-parameters";
-// import ValidateValuePartial from "../../dist/validator/validatable/list/value-partial-parameters";
-// import And from "../../dist/validatable/and-parameters";
-// import Or from "../../dist/validatable/or-parameters";
-// import Validatables from "../../dist/validatable/callback-parameters";
-// import Validatable from "@alirya/validatable/validatable";
-// import ValidatableInterface from "@alirya/validatable/validatable";
-// import SimpleValidator from "@alirya/validator/simple";
-// import ValueInterface from "@alirya/value/value";
-// import Message from "@alirya/message/message";
-// import MessageMap from "../../dist/message/message/list/map";
-// import MessageInterface from "@alirya/message/message";
-// import ValidatorType from "@alirya/type/validator/type-parameters";
-// import Instance from "@alirya/validator/validatable/dynamic";
 //
 // it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 //

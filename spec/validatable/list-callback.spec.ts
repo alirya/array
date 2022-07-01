@@ -1,14 +1,14 @@
-import ListCallback from '../../dist/validatable/list-callback-parameters';
-import ListReturn from '../../dist/validator/validatable/list/list-parameters';
-import ListReturnPartial from '../../dist/validator/validatable/list/list-partial-parameters';
-import And from '../../dist/validatable/and-parameters';
-import Or from '../../dist/validatable/or-parameters';
+import {ListCallbackParameters} from '../../dist/validatable/list-callback';
+import {ListParameters} from '../../dist/validator/validatable/list/list';
+import {ListPartialParameters} from '../../dist/validator/validatable/list/list-partial';
+import {AndParameters} from '../../dist/validatable/and';
+import {OrParameters} from '../../dist/validatable/or';
 import Validatable from '@alirya/validatable/validatable';
 import SimpleValidator from '@alirya/validator/simple';
 import ValueInterface from '@alirya/value/value';
 import Message from '@alirya/message/message';
 import MessageMap from '../../dist/message/message/list/map';
-import ValidatorType from '@alirya/type/validator/type-parameters';
+import {TypeParameters} from '@alirya/type/validator/type';
 import Instance from '@alirya/validator/validatable/validatable';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
@@ -24,7 +24,7 @@ describe('compiler compatibility', function() {
             string,
         ];
 
-        let validator : TypeValidator =  ValidatorType('string');
+        let validator : TypeValidator =  TypeParameters('string');
 
         let value : Type = [
             'name',
@@ -33,9 +33,9 @@ describe('compiler compatibility', function() {
 
         it('auto', function() {
 
-            let validatable = new ListCallback(value, validator,
-                (value, validators) => ListReturn(value, validators),
-                And,
+            let validatable = new ListCallbackParameters(value, validator,
+                (value, validators) => ListParameters(value, validators),
+                AndParameters,
                 (v)=>MessageMap(v)
             );
 
@@ -54,10 +54,10 @@ describe('compiler compatibility', function() {
 
         it('auto partial', function() {
 
-            let validatable = new ListCallback(value, validator,
+            let validatable = new ListCallbackParameters(value, validator,
                 (value, validators) =>
-                    <(Validatable & ValueInterface & Message<string>)[]>ListReturnPartial(value, validators),
-                And,
+                    <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
+                AndParameters,
                 (v)=>MessageMap(v)
             );
 
@@ -75,7 +75,7 @@ describe('compiler compatibility', function() {
 
     describe('explicit typed', function() {
 
-        let validator  = ValidatorType('string');
+        let validator  = TypeParameters('string');
 
         let value  = [
             'name',
@@ -85,9 +85,9 @@ describe('compiler compatibility', function() {
 
         it('auto', function() {
 
-            let validatable = new ListCallback(value, validator,
-                (value, validators) => ListReturn(value, validators),
-                And, (v)=>MessageMap(v)
+            let validatable = new ListCallbackParameters(value, validator,
+                (value, validators) => ListParameters(value, validators),
+                AndParameters, (v)=>MessageMap(v)
             );
 
             let unknown : unknown = validatable.value;
@@ -106,10 +106,10 @@ describe('compiler compatibility', function() {
 
         it('auto partial', function() {
 
-            let validatable = new ListCallback(value, validator,
+            let validatable = new ListCallbackParameters(value, validator,
                 (value, validators) =>
-                    <(Validatable & ValueInterface & Message<string>)[]>ListReturnPartial(value, validators),
-                And, (v)=>MessageMap(v)
+                    <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
+                AndParameters, (v)=>MessageMap(v)
             );
 
             let unknown : unknown = validatable.value;
@@ -142,7 +142,7 @@ describe('explicit', function() {
             string,
         ];
 
-        let validator : TypeValidator = ValidatorType('string');
+        let validator : TypeValidator = TypeParameters('string');
 
         let value : Type = [
             'user',
@@ -154,9 +154,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validatable = new ListCallback(value, validator,
-                    (value, validators) => ListReturn(value, validators),
-                    And, (v)=>MessageMap(v)
+                let validatable = new ListCallbackParameters(value, validator,
+                    (value, validators) => ListParameters(value, validators),
+                    AndParameters, (v)=>MessageMap(v)
                 );
 
                 expect(validatable.valid).toBe(true);
@@ -177,9 +177,9 @@ describe('explicit', function() {
 
             it(`or validation`, () => {
 
-                let validatable = new ListCallback(value, validator,
-                    (value, validators) => ListReturn(value, validators),
-                    Or, (v)=>MessageMap(v)
+                let validatable = new ListCallbackParameters(value, validator,
+                    (value, validators) => ListParameters(value, validators),
+                    OrParameters, (v)=>MessageMap(v)
                 );
 
                 expect(validatable.valid).toBe(true);
@@ -204,10 +204,10 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validatable = new ListCallback(value, validator,
+                let validatable = new ListCallbackParameters(value, validator,
                     (value, validators) =>
-                        <(Validatable & ValueInterface & Message<string>)[]>ListReturnPartial(value, validators),
-                    And, (v)=>MessageMap(v)
+                        <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
+                    AndParameters, (v)=>MessageMap(v)
                 );
 
                 expect(validatable.valid).toBe(true);
@@ -228,10 +228,10 @@ describe('explicit', function() {
 
             it(`or validation`, () => {
 
-                let validatable = new ListCallback(value, validator,
+                let validatable = new ListCallbackParameters(value, validator,
                     (value, validators) =>
-                        <(Validatable & ValueInterface & Message<string>)[]>ListReturnPartial(value, validators),
-                    Or, (v)=>MessageMap(v)
+                        <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
+                    OrParameters, (v)=>MessageMap(v)
                 );
 
                 expect(validatable.valid).toBe(true);
@@ -264,7 +264,7 @@ describe('explicit', function() {
             string,
         ];
 
-        let validator : TypeValidator= ValidatorType('string');
+        let validator : TypeValidator= TypeParameters('string');
 
         let value : Type = [
             'name',
@@ -276,9 +276,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let and = new ListCallback(value, validator,
-                    (value, validators) => ListReturn(value, validators),
-                    (v)=>And(v), (v)=>MessageMap(v)
+                let and = new ListCallbackParameters(value, validator,
+                    (value, validators) => ListParameters(value, validators),
+                    (v)=>AndParameters(v), (v)=>MessageMap(v)
                 );
 
                 expect(and.valid).toBe(false);
@@ -300,9 +300,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new ListCallback(value, validator,
-                    (value, validators) => ListReturn(value, validators),
-                    (v)=>Or(v), (v)=>MessageMap(v)
+                let or = new ListCallbackParameters(value, validator,
+                    (value, validators) => ListParameters(value, validators),
+                    (v)=>OrParameters(v), (v)=>MessageMap(v)
                 );
 
                 expect(or.valid).toBe(true);
@@ -328,9 +328,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let and = new ListCallback(value, validator,
-                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>ListReturnPartial(value, validators),
-                    (v)=>And(v), (v)=>MessageMap(v)
+                let and = new ListCallbackParameters(value, validator,
+                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
+                    (v)=>AndParameters(v), (v)=>MessageMap(v)
                 );
 
                 expect(and.valid).toBe(false);
@@ -349,9 +349,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new ListCallback(value, validator,
-                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>ListReturnPartial(value, validators),
-                    (v)=>Or(v), (v)=>MessageMap(v)
+                let or = new ListCallbackParameters(value, validator,
+                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
+                    (v)=>OrParameters(v), (v)=>MessageMap(v)
                 );
 
                 expect(or.valid).toBe(true);
@@ -380,7 +380,7 @@ describe('explicit', function() {
             any,
         ];
 
-        let validator : TypeValidator = ValidatorType('string');
+        let validator : TypeValidator = TypeParameters('string');
 
         let value : Type = [{}, {}, {}];
 
@@ -388,9 +388,9 @@ describe('explicit', function() {
         describe('complete', function() {
             it(`and validation`, () => {
 
-                let and = new ListCallback(value, validator,
-                    (value, validators) => ListReturn(value, validators),
-                    (v)=>And(v),
+                let and = new ListCallbackParameters(value, validator,
+                    (value, validators) => ListParameters(value, validators),
+                    (v)=>AndParameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -412,9 +412,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new ListCallback(value, validator,
-                    (value, validators) => ListReturn(value, validators),
-                    (v)=>Or(v),
+                let or = new ListCallbackParameters(value, validator,
+                    (value, validators) => ListParameters(value, validators),
+                    (v)=>OrParameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -439,9 +439,9 @@ describe('explicit', function() {
         describe('partial', function() {
             it(`and validation`, () => {
 
-                let and = new ListCallback(value, validator,
-                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>ListReturnPartial(value, validators),
-                    (v)=>And(v),
+                let and = new ListCallbackParameters(value, validator,
+                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
+                    (v)=>AndParameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -458,10 +458,10 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new ListCallback(value, validator,
+                let or = new ListCallbackParameters(value, validator,
                     (value, validators) =>
-                        <(Validatable & ValueInterface & Message<string>)[]>ListReturnPartial(value, validators),
-                    (v)=>Or(v),
+                        <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
+                    (v)=>OrParameters(v),
                     MessageMap
                 );
 

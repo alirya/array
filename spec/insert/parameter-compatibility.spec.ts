@@ -1,12 +1,11 @@
-import InsertParameter, {InsertParameterArgument} from '../../dist/insert-parameter';
-import InsertParameters from '../../dist/insert-parameters';
+import {InsertArgument, InsertParameter, InsertParameters} from '../../dist/insert';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 it('auto', function() {
 
-    let argument : InsertParameterArgument<number|string> = {
+    let argument : InsertArgument<number|string> = {
         array: [1,2,3],
         value : ['a'],
         index : 2,

@@ -1,7 +1,6 @@
-import DuplicateParameters from '../../dist/duplicate-parameters';
-import DuplicateParameter from '../../dist/duplicate-parameter';
-import EqualParameter from '@alirya/boolean/equal-parameter';
-import EqualParameters from '@alirya/boolean/equal-parameters';
+import {DuplicateParameters, DuplicateParameter} from '../../dist/duplicate';
+import {EqualParameter} from '@alirya/boolean/equal';
+import {EqualParameters} from '@alirya/boolean/equal';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

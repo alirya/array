@@ -1,5 +1,5 @@
 import Validatable from '@alirya/validatable/validatable';
-import EnsureValidatable from '@alirya/validatable/ensure/validatable-parameters';
+import {ValidatableParameters} from '@alirya/validatable/ensure/validatable';
 import ValidatableInValid from '@alirya/validatable/boolean/invalid';
 import MapUnion from '../../unions';
 
@@ -13,6 +13,6 @@ export default function Invalid<
 ) : MapUnion<Object> {
 
     return  list
-        .map((value)=>EnsureValidatable(value))
+        .map((value)=>ValidatableParameters(value))
         .filter(ValidatableInValid);
 }

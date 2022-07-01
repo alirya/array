@@ -1,4 +1,3 @@
-// import RemovesValues from "../dist/removes-values-parameters";
 //
 //
 // it("force console log", () => { spyOn(console, 'log').and.callThrough();});

@@ -1,4 +1,4 @@
-import Or from '../../../../dist/validatable/list/boolean/or-parameters';
+import {OrParameters} from '../../../../dist/validatable/list/boolean/or';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -9,7 +9,7 @@ it('all true', function () {
         {valid:true},
     ];
 
-    expect(Or(record)).toBeTrue();
+    expect(OrParameters(record)).toBeTrue();
 });
 
 it('all false', function () {
@@ -19,7 +19,7 @@ it('all false', function () {
         {valid:false},
     ];
 
-    expect(Or(record)).toBeFalse();
+    expect(OrParameters(record)).toBeFalse();
 });
 
 
@@ -30,6 +30,6 @@ it('mixed', function () {
         {valid:false},
     ];
 
-    expect(Or(record)).toBeTrue();
+    expect(OrParameters(record)).toBeTrue();
 });
 

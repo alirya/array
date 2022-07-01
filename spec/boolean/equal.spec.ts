@@ -1,5 +1,5 @@
-import Equal from '../../dist/boolean/equal-parameters';
-import Shuffle from '../../dist/shuffle-parameters';
+import {EqualParameters} from '../../dist/boolean/equal';
+import {ShuffleParameters} from '../../dist/shuffle';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -9,27 +9,27 @@ describe('equal', function() {
 
         let data = [1,2,3,4,5,6,7,8,9,10];
 
-        expect(Equal(data, data)).toBeTrue();
+        expect(EqualParameters(data, data)).toBeTrue();
     });
 
     it('unordered', () => {
 
         let data = [1,2,3,4,5,6,7,8,9,10];
 
-        expect(Equal(Shuffle(data), Shuffle(data))).toBeTrue();
+        expect(EqualParameters(ShuffleParameters(data), ShuffleParameters(data))).toBeTrue();
 
     });
 });
 
 describe('not equal', function() {
 
-    it('duplicate', () => expect(Equal(
+    it('duplicate', () => expect(EqualParameters(
         [1,2,3,4,5,6,7,8,9,10],
         [1,2,3,4,5,6,7,8,9,1]
     )).toBeFalse());
 
 
-    it('ordered missing', () => expect(Equal(
+    it('ordered missing', () => expect(EqualParameters(
         [1,2,3,4,5,6,7,8,9,10],
         [1,2,3,4,5,6,7,8,9]
     )).toBeFalse());
@@ -56,12 +56,12 @@ describe('equal object', function() {
 
     it('ordered', () => {
 
-        expect(Equal(data1, data2, (data1, data2)=>data1.number === data2.number)).toBeTrue();
+        expect(EqualParameters(data1, data2, (data1, data2)=>data1.number === data2.number)).toBeTrue();
     });
 
     it('unordered', () => {
 
-        expect(Equal(Shuffle(data1), Shuffle(data2), (data1, data2)=>data1.number === data2.number)).toBeTrue();
+        expect(EqualParameters(ShuffleParameters(data1), ShuffleParameters(data2), (data1, data2)=>data1.number === data2.number)).toBeTrue();
 
     });
 });
@@ -85,12 +85,12 @@ describe('not equal object', function() {
 
     it('ordered', () => {
 
-        expect(Equal(data1, data2, (data1, data2)=>data1.number === data2.number)).toBeFalse();
+        expect(EqualParameters(data1, data2, (data1, data2)=>data1.number === data2.number)).toBeFalse();
     });
 
     it('unordered', () => {
 
-        expect(Equal(Shuffle(data1), Shuffle(data2), (data1, data2)=>data1.number === data2.number)).toBeFalse();
+        expect(EqualParameters(ShuffleParameters(data1), ShuffleParameters(data2), (data1, data2)=>data1.number === data2.number)).toBeFalse();
 
     });
 });

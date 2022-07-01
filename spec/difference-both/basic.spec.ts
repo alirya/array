@@ -1,4 +1,4 @@
-import DifferenceBoth from '../../dist/difference-both-parameters';
+import {DifferenceBothParameters} from '../../dist/difference-both';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
@@ -7,11 +7,11 @@ describe('primitive', function() {
 
     let target : number[] = [1,2,3,4,5];
     let compare : number[] = [2,3,4,6];
-    let left = DifferenceBoth(target, compare);
+    let left = DifferenceBothParameters(target, compare);
 
     it('left valid', () => expect(left).toEqual([1,5,6]));
 
-    let right = DifferenceBoth(compare, target);
+    let right = DifferenceBothParameters(compare, target);
 
     it('right valid', () => expect(right).toEqual([6,1,5]));
 
@@ -55,14 +55,14 @@ describe('custom comparison', function() {
 
     it('left without', function() {
 
-        let removed = DifferenceBoth(target, compare);
+        let removed = DifferenceBothParameters(target, compare);
         expect([...target, ...compare]).toEqual(removed);
 
     });
 
     it('left with', function() {
 
-        let removed = DifferenceBoth(target, compare, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
+        let removed = DifferenceBothParameters(target, compare, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
 
         expect(target).not.toEqual(removed);
         expect(3).toBe(removed.length);
@@ -76,14 +76,14 @@ describe('custom comparison', function() {
 
     it('right without', function() {
 
-        let removed = DifferenceBoth(compare, target);
+        let removed = DifferenceBothParameters(compare, target);
         expect([...compare, ...target]).toEqual(removed);
 
     });
 
     it('right with', function() {
 
-        let removed = DifferenceBoth(compare, target, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
+        let removed = DifferenceBothParameters(compare, target, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
         expect(target).not.toEqual(removed);
         expect(3).toBe(removed.length);
 

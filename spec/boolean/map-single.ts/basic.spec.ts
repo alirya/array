@@ -1,5 +1,5 @@
-import MapSingle from '../../../dist/boolean/map-single-parameters';
-import Type from '@alirya/type/boolean/type-parameters';
+import {MapSingleParameters} from '../../../dist/boolean/map-single';
+import {TypeParameters} from '@alirya/type/boolean/type';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -12,12 +12,12 @@ it('valid', function() {
     ];
 
     let validations = [
-        (v)=>Type(v, 'number'),
-        (v)=>Type(v, 'string'),
-        (v)=>Type(v, 'boolean'),
+        (v)=>TypeParameters(v, 'number'),
+        (v)=>TypeParameters(v, 'string'),
+        (v)=>TypeParameters(v, 'boolean'),
     ];
 
-    expect(MapSingle(values, validations)).toBe(true);
+    expect(MapSingleParameters(values, validations)).toBe(true);
 
 });
 
@@ -31,11 +31,11 @@ it('invalid', function() {
     ];
 
     let validations = [
-        (v)=>Type(v, 'number'),
-        (v)=>Type(v, 'string'),
-        (v)=>Type(v, 'boolean'),
+        (v)=>TypeParameters(v, 'number'),
+        (v)=>TypeParameters(v, 'string'),
+        (v)=>TypeParameters(v, 'boolean'),
     ];
 
-    expect(MapSingle(values, validations)).toBe(false);
+    expect(MapSingleParameters(values, validations)).toBe(false);
 
 });

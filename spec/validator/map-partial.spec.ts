@@ -1,11 +1,11 @@
-import MapPartial from '../../dist/validator/map-partial-parameters';
-import And from '../../dist/validatable/and-parameters';
-import Or from '../../dist/validatable/or-parameters';
+import MapPartial from '../../dist/validator/map-partial';
+import And from '../../dist/validatable/and';
+import Or from '../../dist/validatable/or';
 import Validatable from '@alirya/validatable/validatable';
 import SimpleValidator from '@alirya/validator/simple';
 import Validatables from '../../dist/validatable/validatables/validatables';
 import MessageMap from '../../dist/message/message/list/map';
-import ValidatorType from '@alirya/type/validator/type-parameters';
+import {TypeParameters} from '@alirya/type/validator/type';
 import Instance from '@alirya/validator/validatable/validatable';
 
 
@@ -17,8 +17,8 @@ describe('compiler compatibility', function() {
     describe('implicit partial', function() {
 
         let validator = [
-            ValidatorType('string'), // new Validator('string'),
-            ValidatorType('string'), // new Validator('string'),
+            TypeParameters('string'), // new Validator('string'),
+            TypeParameters('string'), // new Validator('string'),
         ];
 
         let value = [
@@ -26,7 +26,7 @@ describe('compiler compatibility', function() {
             'address',
         ];
 
-        let property = MapPartial(validator, (v)=>And(v), MessageMap);
+        let property = MapPartial.Parameters(validator, (v)=>And.Parameters(v), MessageMap);
 
         let validatable = property(value);
 
@@ -49,10 +49,11 @@ describe('compiler compatibility', function() {
 
         it('recursive', function() {
 
-            let validator = ValidatorType('string');
-            let list1 = MapPartial([validator], And, MessageMap);
-            let list2 = MapPartial([list1], And, MessageMap);
-            let list3 = MapPartial([list2], And, MessageMap);
+            let validator = TypeParameters('string');
+            let list1 = MapPartial.Parameters([validator], And.Parameters, MessageMap);
+            let list2 = MapPartial.Parameters([list1], And.Parameters, MessageMap);
+            // @ts-expect-errors
+            let list3 = MapPartial.Parameters([list2], And.Parameters, MessageMap);
 
         });
     });
@@ -66,8 +67,8 @@ describe('compiler compatibility', function() {
         ];
 
         let validator : TypeValidator = [
-            ValidatorType('string'),
-            ValidatorType('string'),
+            TypeParameters('string'),
+            TypeParameters('string'),
         ];
 
         type Type = [
@@ -82,7 +83,7 @@ describe('compiler compatibility', function() {
 
         it('auto', function() {
 
-            let property = MapPartial(validator, And, MessageMap);
+            let property = MapPartial.Parameters(validator, And.Parameters, MessageMap);
 
             let validatable = property(value);
 
@@ -106,7 +107,7 @@ describe('compiler compatibility', function() {
 
         it('direct', function() {
 
-            let property = MapPartial<TypeValidator>(validator, (v)=>And(v), MessageMap);
+            let property = MapPartial.Parameters<TypeValidator>(validator, (v)=>And.Parameters(v), MessageMap);
 
             let validatable = property(<any>value);
 
@@ -135,9 +136,9 @@ describe('compiler compatibility', function() {
 describe('all valid', function() {
 
     let validator = [
-        ValidatorType('string'),
-        ValidatorType('string'),
-        ValidatorType('string'),
+        TypeParameters('string'),
+        TypeParameters('string'),
+        TypeParameters('string'),
     ];
 
     let value = [
@@ -148,7 +149,7 @@ describe('all valid', function() {
 
     it(`check validate return`, () => {
 
-        let property = MapPartial(validator,(v)=>And(v), MessageMap);
+        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(v), MessageMap);
         let validatable = property(value);
 
         if(validatable.validatables[0]) {
@@ -175,7 +176,7 @@ describe('all valid', function() {
 
     it(`check handler and`, () => {
 
-        let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
         let validatable = property(value);
 
         expect(validatable.valid).toBe(true);
@@ -184,7 +185,7 @@ describe('all valid', function() {
 
     it(`check handler or`, () => {
 
-        let property = MapPartial(validator,(v)=>Or(<Validatable[]>v), MessageMap);
+        let property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
         let validatable = property(value);
 
         expect(validatable.valid).toBe(true);
@@ -196,9 +197,9 @@ describe('all valid', function() {
 describe('mixed', function() {
 
     let validator = [
-        ValidatorType('string'),
-        ValidatorType('number'),
-        ValidatorType('string'),
+        TypeParameters('string'),
+        TypeParameters('number'),
+        TypeParameters('string'),
     ];
 
     let value = [
@@ -209,7 +210,7 @@ describe('mixed', function() {
 
     it(`check validate return`, () => {
 
-        let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
         let validatable = property(value);
 
         if(validatable.validatables[0]) {
@@ -233,7 +234,7 @@ describe('mixed', function() {
 
     it(`check handler and`, () => {
 
-        let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
         let validatable = property(value);
 
         expect<boolean>(validatable.valid).toBe(false);
@@ -242,7 +243,7 @@ describe('mixed', function() {
 
     it(`check handler or`, () => {
 
-        let property = MapPartial(validator,(v)=>Or(<Validatable[]>v), MessageMap);
+        let property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
         let validatable = property(value);
 
         expect(validatable.valid).toBe(true);
@@ -254,9 +255,9 @@ describe('mixed', function() {
 describe('all invalid', function() {
 
     let validator = [
-        ValidatorType('number'),
-        ValidatorType('number'),
-        ValidatorType('number'),
+        TypeParameters('number'),
+        TypeParameters('number'),
+        TypeParameters('number'),
     ];
 
     let value = [
@@ -267,7 +268,7 @@ describe('all invalid', function() {
 
     it(`check validate return`, () => {
 
-        let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
         let validatable = property(value);
 
         if(validatable.validatables[0]) {
@@ -288,7 +289,7 @@ describe('all invalid', function() {
 
     it(`check handler and`, () => {
 
-        let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
         let validatable = property(value);
 
         expect(validatable.valid).toBe(false);
@@ -297,7 +298,7 @@ describe('all invalid', function() {
 
     it(`check handler or`, () => {
 
-        let property = MapPartial(validator,(v)=>Or(<Validatable[]>v), MessageMap);
+        let property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
         let validatable = property(value);
 
         expect(validatable.valid).toBe(false);
@@ -312,13 +313,13 @@ describe('recursive', function() {
     describe('all invalid', function() {
 
         let validator = [
-            ValidatorType('number'),
-            ValidatorType('number'),
-            ValidatorType('number'),
-            MapPartial([
-                ValidatorType('number'),
-                ValidatorType('number')
-            ],(v)=>And(<Validatable[]>v), MessageMap)
+            TypeParameters('number'),
+            TypeParameters('number'),
+            TypeParameters('number'),
+            MapPartial.Parameters([
+                TypeParameters('number'),
+                TypeParameters('number')
+            ],(v)=>And.Parameters(<Validatable[]>v), MessageMap)
         ];
 
         let value = [
@@ -333,7 +334,7 @@ describe('recursive', function() {
 
         it(`check validate return`, () => {
 
-            let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+            let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
             let validatable = property(value);
 
             if(validatable.validatables[0]) {
@@ -354,7 +355,7 @@ describe('recursive', function() {
 
         it(`check handler and`, () => {
 
-            let property = MapPartial(validator,(v)=>And(<Validatable[]>v), MessageMap);
+            let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
             let validatable = property(value);
 
             expect(validatable.valid).toBe(false);
@@ -363,7 +364,7 @@ describe('recursive', function() {
 
         it(`check handler or`, () => {
 
-            let property = MapPartial(validator,(v)=>Or(<Validatable[]>v), MessageMap);
+            let property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
             let validatable = property(value);
 
             expect(validatable.valid).toBe(false);

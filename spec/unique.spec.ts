@@ -1,4 +1,4 @@
-import Unique from '../dist/unique-parameters';
+import {UniqueParameters} from '../dist/unique';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
@@ -9,7 +9,7 @@ describe('single string', function() {
         'a','b',
         'b','a',
     ];
-    let removed = Unique(array);
+    let removed = UniqueParameters(array);
     it('remove duplicate', () => expect(removed).toEqual(['a','b']));
 
 });
@@ -20,7 +20,7 @@ describe('single string custom', function() {
         'A','B',
         'b','a',
     ];
-    let removed = Unique(array, (v1, v2)=>v1.toLowerCase() === v2.toLowerCase());
+    let removed = UniqueParameters(array, (v1, v2)=>v1.toLowerCase() === v2.toLowerCase());
     it('remove duplicate', () => expect(removed).toEqual(['A','B']));
 
 });
@@ -31,7 +31,7 @@ describe('single number', function() {
         1,2,
         1,2,
     ];
-    let removed = Unique(array);
+    let removed = UniqueParameters(array);
     it('remove duplicate', () => expect(removed).toEqual([1,2]));
 
 });
@@ -47,7 +47,7 @@ describe('multiple number', function() {
           2,3
     ];
 
-    let removed = Unique(array);
+    let removed = UniqueParameters(array);
     it('remove duplicate', () => expect(removed).toEqual([1,2,3,4]));
 
 });
@@ -66,7 +66,7 @@ describe('multiple number with hole', function() {
     delete array[1];
     delete array[4];
 
-    let removed = Unique(array);
+    let removed = UniqueParameters(array);
 
     it('remove duplicate', () => expect(removed).toEqual([1,3,6,2,5,4]));
 
@@ -97,7 +97,7 @@ describe('multiple object custom', function() {
         { data: 4, id: 13 }
     ];
 
-    let removed = Unique(array, (v1, v2)=>v1.data === v2.data);
+    let removed = UniqueParameters(array, (v1, v2)=>v1.data === v2.data);
 
     for(let [index, value] of removed.entries()) {
 
@@ -139,7 +139,7 @@ describe('multiple object custom with hole', function() {
     delete array[1];
     delete array[4];
 
-    let removed = Unique(array, (v1, v2)=>v1.data === v2.data);
+    let removed = UniqueParameters(array, (v1, v2)=>v1.data === v2.data);
 
     for(let [index, value] of removed.entries()) {
 

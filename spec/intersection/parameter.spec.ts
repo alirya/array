@@ -1,7 +1,6 @@
-import IntersectionParameters from '../../dist/intersection-parameters';
-import IntersectionParameter from '../../dist/intersection-parameter';
-import EqualParameter from '@alirya/boolean/equal-parameter';
-import EqualParameters from '@alirya/boolean/equal-parameters';
+import {IntersectionParameters, IntersectionParameter} from '../../dist/intersection';
+import {EqualParameter} from '@alirya/boolean/equal';
+import {EqualParameters} from '@alirya/boolean/equal';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

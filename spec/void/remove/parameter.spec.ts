@@ -1,5 +1,4 @@
-import RemoveParameter from '../../../dist/void/remove-parameter';
-import RemoveParameters from '../../../dist/void/remove-parameters';
+import { RemoveParameter, RemoveParameters } from '../../../dist/void/remove';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});

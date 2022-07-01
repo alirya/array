@@ -1,14 +1,14 @@
-import Map from '../../../dist/validatable/map-callback-parameters';
-import Standard from '../../../dist/validator/validatable/list/map-parameters';
-import PartialStandard from '../../../dist/validator/validatable/list/map-partial-parameters';
-import And from '../../../dist/validatable/and-parameters';
-import Or from '../../../dist/validatable/or-parameters';
+import Map from '../../../dist/validatable/map-callback';
+import Standard from '../../../dist/validator/validatable/list/map';
+import PartialStandard from '../../../dist/validator/validatable/list/map-partial';
+import And from '../../../dist/validatable/and';
+import Or from '../../../dist/validatable/or';
 import Validatable from '@alirya/validatable/validatable';
 import ValidatorInterface from '@alirya/validator/simple';
 import ValueInterface from '@alirya/value/value';
 import Message from '@alirya/message/message';
 import MessageMap from '../../../dist/message/message/list/map';
-import ValidatorType from '@alirya/type/validator/type-parameters';
+import {TypeParameters} from '@alirya/type/validator/type';
 import Instance from '@alirya/validator/validatable/validatable';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
@@ -28,8 +28,8 @@ describe('compiler compatibility', function() {
         ];
 
         let validator : TypeValidator = [
-            ValidatorType('string'),
-            ValidatorType('string'),
+            TypeParameters('string'),
+            TypeParameters('string'),
         ];
 
         let value : Type = [
@@ -39,9 +39,9 @@ describe('compiler compatibility', function() {
 
         describe('auto', function() {
 
-            let validatable = new Map(value, validator,
-                (value, validators) => Standard(value, validators),
-                And,
+            let validatable = new Map.Parameters(value, validator,
+                (value, validators) => Standard.Parameters(value, validators),
+                And.Parameters,
                 (v)=>MessageMap(v)
             );
 
@@ -60,10 +60,10 @@ describe('compiler compatibility', function() {
 
         describe('auto partial', function() {
 
-            let validatable = new Map(value, validator,
+            let validatable = new Map.Parameters(value, validator,
                 (value, validators) =>
-                    <(Validatable & ValueInterface & Message<string>)[]>PartialStandard(value, validators),
-                And,
+                    <(Validatable & ValueInterface & Message<string>)[]>PartialStandard.Parameters(value, validators),
+                And.Parameters,
                 (v)=>MessageMap(v)
             );
 
@@ -82,8 +82,8 @@ describe('compiler compatibility', function() {
     describe('explicit typed', function() {
 
         let validator  = [
-            ValidatorType('string'),
-            ValidatorType('string'),
+            TypeParameters('string'),
+            TypeParameters('string'),
         ];
 
         let value  = [
@@ -94,9 +94,9 @@ describe('compiler compatibility', function() {
 
         describe('auto', function() {
 
-            let validatable = new Map(value, validator,
-                (value, validators) => Standard(value, validators),
-                And, (v)=>MessageMap(v)
+            let validatable = new Map.Parameters(value, validator,
+                (value, validators) => Standard.Parameters(value, validators),
+                And.Parameters, (v)=>MessageMap(v)
             );
 
             let unknown : unknown = validatable.value;
@@ -115,10 +115,10 @@ describe('compiler compatibility', function() {
 
         describe('auto partial', function() {
 
-            let validatable = new Map(value, validator,
+            let validatable = new Map.Parameters(value, validator,
                 (value, validators) =>
-                    <(Validatable & ValueInterface & Message<string>)[]>PartialStandard(value, validators),
-                And, (v)=>MessageMap(v)
+                    <(Validatable & ValueInterface & Message<string>)[]>PartialStandard.Parameters(value, validators),
+                And.Parameters, (v)=>MessageMap(v)
             );
 
             let unknown : unknown = validatable.value;
@@ -157,9 +157,9 @@ describe('explicit', function() {
         ];
 
         let validator : TypeValidator = [
-            ValidatorType('string'),
-            ValidatorType('string'),
-            ValidatorType('string'),
+            TypeParameters('string'),
+            TypeParameters('string'),
+            TypeParameters('string'),
         ];
 
         let value : Type = [
@@ -172,9 +172,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validatable = new Map(value, validator,
-                    (value, validators) => Standard(value, validators),
-                    And, (v)=>MessageMap(v)
+                let validatable = new Map.Parameters(value, validator,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    And.Parameters, (v)=>MessageMap(v)
                 );
 
                 expect(validatable.valid).toBe(true);
@@ -195,9 +195,9 @@ describe('explicit', function() {
 
             it(`or validation`, () => {
 
-                let validatable = new Map(value, validator,
-                    (value, validators) => Standard(value, validators),
-                    Or, (v)=>MessageMap(v)
+                let validatable = new Map.Parameters(value, validator,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    Or.Parameters, (v)=>MessageMap(v)
                 );
 
                 expect(validatable.valid).toBe(true);
@@ -222,10 +222,10 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validatable = new Map(value, validator,
+                let validatable = new Map.Parameters(value, validator,
                     (value, validators) =>
-                        <(Validatable & ValueInterface & Message<string>)[]>PartialStandard(value, validators),
-                    And, (v)=>MessageMap(v)
+                        <(Validatable & ValueInterface & Message<string>)[]>PartialStandard.Parameters(value, validators),
+                    And.Parameters, (v)=>MessageMap(v)
                 );
 
                 expect(validatable.valid).toBe(true);
@@ -246,10 +246,10 @@ describe('explicit', function() {
 
             it(`or validation`, () => {
 
-                let validatable = new Map(value, validator,
+                let validatable = new Map.Parameters(value, validator,
                     (value, validators) =>
-                        <(Validatable & ValueInterface & Message<string>)[]>PartialStandard(value, validators),
-                    Or, (v)=>MessageMap(v)
+                        <(Validatable & ValueInterface & Message<string>)[]>PartialStandard.Parameters(value, validators),
+                    Or.Parameters, (v)=>MessageMap(v)
                 );
 
                 expect(validatable.valid).toBe(true);
@@ -287,9 +287,9 @@ describe('explicit', function() {
         ];
 
         let validator : TypeValidator= [
-            ValidatorType('string'),
-            ValidatorType('number'),
-            ValidatorType('string'),
+            TypeParameters('string'),
+            TypeParameters('number'),
+            TypeParameters('string'),
         ];
 
         let value : Type = [
@@ -302,9 +302,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let and = new Map(value, validator,
-                    (value, validators) => Standard(value, validators),
-                    (v)=>And(v), (v)=>MessageMap(v)
+                let and = new Map.Parameters(value, validator,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    (v)=>And.Parameters(v), (v)=>MessageMap(v)
                 );
 
                 expect(and.valid).toBe(false);
@@ -326,9 +326,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new Map(value, validator,
-                    (value, validators) => Standard(value, validators),
-                    (v)=>Or(v), (v)=>MessageMap(v)
+                let or = new Map.Parameters(value, validator,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    (v)=>Or.Parameters(v), (v)=>MessageMap(v)
                 );
 
                 expect(or.valid).toBe(true);
@@ -354,9 +354,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let and = new Map(value, validator,
-                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>PartialStandard(value, validators),
-                    (v)=>And(v), (v)=>MessageMap(v)
+                let and = new Map.Parameters(value, validator,
+                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>PartialStandard.Parameters(value, validators),
+                    (v)=>And.Parameters(v), (v)=>MessageMap(v)
                 );
 
                 expect(and.valid).toBe(false);
@@ -375,9 +375,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new Map(value, validator,
-                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>PartialStandard(value, validators),
-                    (v)=>Or(v), (v)=>MessageMap(v)
+                let or = new Map.Parameters(value, validator,
+                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>PartialStandard.Parameters(value, validators),
+                    (v)=>Or.Parameters(v), (v)=>MessageMap(v)
                 );
 
                 expect(or.valid).toBe(true);
@@ -411,9 +411,9 @@ describe('explicit', function() {
         ];
 
         let validator : TypeValidator = [
-            ValidatorType('string'),
-            ValidatorType('number'),
-            ValidatorType('string'),
+            TypeParameters('string'),
+            TypeParameters('number'),
+            TypeParameters('string'),
         ];
 
         let value : Type = [{}, {}, {}];
@@ -421,9 +421,9 @@ describe('explicit', function() {
         describe('complete', function() {
             it(`and validation`, () => {
 
-                let and = new Map(value, validator,
-                    (value, validators) => Standard(value, validators),
-                    (v)=>And(v),
+                let and = new Map.Parameters(value, validator,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -445,9 +445,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new Map(value, validator,
-                    (value, validators) => Standard(value, validators),
-                    (v)=>Or(v),
+                let or = new Map.Parameters(value, validator,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -472,9 +472,9 @@ describe('explicit', function() {
         describe('partial', function() {
             it(`and validation`, () => {
 
-                let and = new Map(value, validator,
-                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>PartialStandard(value, validators),
-                    (v)=>And(v),
+                let and = new Map.Parameters(value, validator,
+                    (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>PartialStandard.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -491,10 +491,10 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new Map(value, validator,
+                let or = new Map.Parameters(value, validator,
                     (value, validators) =>
-                        <(Validatable & ValueInterface & Message<string>)[]>PartialStandard(value, validators),
-                    (v)=>Or(v),
+                        <(Validatable & ValueInterface & Message<string>)[]>PartialStandard.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     MessageMap
                 );
 

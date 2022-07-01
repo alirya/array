@@ -1,10 +1,10 @@
 import Message from '@alirya/message/message';
 import Messages from './messages/messages';
-import JoinParameters from './join-parameters';
+import Join from './join';
 
 export default function And<MessageType extends Message<string>[]>(
     messages : MessageType,
 ) : Messages<MessageType> & Message <string>{
 
-    return new JoinParameters(messages, ' and ');
+    return new Join.Parameters(messages, ' and ');
 }

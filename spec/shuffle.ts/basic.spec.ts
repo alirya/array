@@ -1,4 +1,4 @@
-import Shuffle from '../../dist/shuffle-parameters';
+import {ShuffleParameters} from '../../dist/shuffle';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -11,5 +11,5 @@ it('test', function() {
         target.push(i);
     }
 
-    expect(target).not.toEqual(Shuffle(target));
+    expect(target).not.toEqual(ShuffleParameters(target));
 });

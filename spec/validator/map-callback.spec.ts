@@ -1,13 +1,13 @@
-import MapCallbackFunction from '../../dist/validator/map-callback-parameters';
-import Standard from '../../dist/validator/validatable/list/map-parameters';
-import MapPartial from '../../dist/validator/validatable/list/map-partial-parameters';
-import And from '../../dist/validatable/and-parameters';
-import Or from '../../dist/validatable/or-parameters';
+import MapCallbackFunction from '../../dist/validator/map-callback';
+import Standard from '../../dist/validator/validatable/list/map';
+import MapPartial from '../../dist/validator/validatable/list/map-partial';
+import And from '../../dist/validatable/and';
+import Or from '../../dist/validatable/or';
 import Validatable from '@alirya/validatable/validatable';
 import SimpleValidator from '@alirya/validator/simple';
 import Message from '@alirya/message/message';
 import MessageMap from '../../dist/message/message/list/map';
-import ValidatorType from '@alirya/type/validator/type-parameters';
+import {TypeParameters} from '@alirya/type/validator/type';
 import Value from '@alirya/value/value';
 import Instance from '@alirya/validator/validatable/validatable';
 
@@ -28,8 +28,8 @@ describe('compiler compatibility', function() {
         ];
 
         let validators : TypeValidator = [
-            ValidatorType('string'),
-            ValidatorType('string'),
+            TypeParameters('string'),
+            TypeParameters('string'),
         ];
 
         let value : Type = [
@@ -39,9 +39,9 @@ describe('compiler compatibility', function() {
 
         describe('auto', function() {
 
-            let validator = MapCallbackFunction(validators,
-                (value, validators) => Standard(value, validators),
-                And, (v)=>MessageMap(v)
+            let validator = MapCallbackFunction.Parameters(validators,
+                (value, validators) => Standard.Parameters(value, validators),
+                And.Parameters, (v)=>MessageMap(v)
             );
 
             let validatable = validator(value);
@@ -71,19 +71,19 @@ describe('compiler compatibility', function() {
 
             it('recursive', function() {
 
-                let validator = ValidatorType('string');
-                let list1 = MapCallbackFunction([validator], (value, validators) => Standard(value, validators), And, MessageMap);
-                let list2 = MapCallbackFunction([list1], (value, validators) => Standard(value, validators), And, MessageMap);
-                let list3 = MapCallbackFunction([list2], (value, validators) => Standard(value, validators), And, MessageMap);
+                let validator = TypeParameters('string');
+                let list1 = MapCallbackFunction.Parameters([validator], (value, validators) => Standard.Parameters(value, validators), And.Parameters, MessageMap);
+                let list2 = MapCallbackFunction.Parameters([list1], (value, validators) => Standard.Parameters(value, validators), And.Parameters, MessageMap);
+                let list3 = MapCallbackFunction.Parameters([list2], (value, validators) => Standard.Parameters(value, validators), And.Parameters, MessageMap);
 
             });
         });
 
         it('auto partial', function() {
 
-            let validator = MapCallbackFunction(validators,
-                (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                And, (v)=>MessageMap(v)
+            let validator = MapCallbackFunction.Parameters(validators,
+                (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                And.Parameters, (v)=>MessageMap(v)
             );
 
             let validatable = validator(value);
@@ -109,8 +109,8 @@ describe('compiler compatibility', function() {
     describe('explicit typed', function() {
 
         let validators  = [
-            ValidatorType('string'),
-            ValidatorType('string'),
+            TypeParameters('string'),
+            TypeParameters('string'),
         ];
 
         let value  = [
@@ -121,9 +121,9 @@ describe('compiler compatibility', function() {
 
         it('auto', function() {
 
-            let validator = MapCallbackFunction(validators,
-                (value, validators) => Standard(value, validators),
-                And, (v)=>MessageMap(v)
+            let validator = MapCallbackFunction.Parameters(validators,
+                (value, validators) => Standard.Parameters(value, validators),
+                And.Parameters, (v)=>MessageMap(v)
             );
 
             let validatable = validator(value);
@@ -150,9 +150,9 @@ describe('compiler compatibility', function() {
 
         it('auto partial', function() {
 
-            let validator = MapCallbackFunction(validators,
-                (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                And, (v)=>MessageMap(v)
+            let validator = MapCallbackFunction.Parameters(validators,
+                (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                And.Parameters, (v)=>MessageMap(v)
             );
             let validatable = validator(value);
 
@@ -196,9 +196,9 @@ describe('explicit', function() {
         ];
 
         let validators : TypeValidator = [
-            ValidatorType('string'),
-            ValidatorType('string'),
-            ValidatorType('string'),
+            TypeParameters('string'),
+            TypeParameters('string'),
+            TypeParameters('string'),
         ];
 
         let value : Type = [
@@ -211,9 +211,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => Standard(value, validators),
-                    And, (v)=>MessageMap(v)
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    And.Parameters, (v)=>MessageMap(v)
                 );
                 let validatable = validator(value);
 
@@ -240,9 +240,9 @@ describe('explicit', function() {
 
             it(`or validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => Standard(value, validators),
-                    Or, (v)=>MessageMap(v)
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    Or.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -274,9 +274,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    And, (v)=>MessageMap(v)
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    And.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -304,9 +304,9 @@ describe('explicit', function() {
 
             it(`or validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    Or, (v)=>MessageMap(v)
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    Or.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -351,9 +351,9 @@ describe('explicit', function() {
         ];
 
         let validators : TypeValidator= [
-            ValidatorType('string'),
-            ValidatorType('number'),
-            ValidatorType('string'),
+            TypeParameters('string'),
+            TypeParameters('number'),
+            TypeParameters('string'),
         ];
 
         let value : Type = [
@@ -366,9 +366,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => Standard(value, validators),
-                    (v)=>And(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -398,9 +398,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => Standard(value, validators),
-                    (v)=>Or(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -434,9 +434,9 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    (v)=>And(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -463,9 +463,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    (v)=>Or(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -506,9 +506,9 @@ describe('explicit', function() {
         ];
 
         let validators : TypeValidator = [
-            ValidatorType('string'),
-            ValidatorType('number'),
-            ValidatorType('string'),
+            TypeParameters('string'),
+            TypeParameters('number'),
+            TypeParameters('string'),
         ];
 
         let value : Type = [{}, {}, {}];
@@ -516,9 +516,9 @@ describe('explicit', function() {
         describe('complete', function() {
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => Standard(value, validators),
-                    (v)=>And(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -547,9 +547,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => Standard(value, validators),
-                    (v)=>Or(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -581,9 +581,9 @@ describe('explicit', function() {
         describe('partial', function() {
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    (v)=>And(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
                 let and = validator(value);
@@ -606,9 +606,9 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    (v)=>Or(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
                 let or = validator(value);
@@ -638,14 +638,14 @@ describe('recursive', function() {
     describe('all valid', function() {
 
         let validators = [
-            ValidatorType('string'),
-            ValidatorType('string'),
-            ValidatorType('string'),
-            MapCallbackFunction([
-                ValidatorType('string'),
-                ValidatorType('string'),
-            ], (value, validators) => Standard(value, validators),
-                And, (v)=>MessageMap(v)
+            TypeParameters('string'),
+            TypeParameters('string'),
+            TypeParameters('string'),
+            MapCallbackFunction.Parameters([
+                TypeParameters('string'),
+                TypeParameters('string'),
+            ], (value, validators) => Standard.Parameters(value, validators),
+                And.Parameters, (v)=>MessageMap(v)
             )
         ];
 
@@ -663,9 +663,9 @@ describe('recursive', function() {
 
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => Standard(value, validators),
-                    And, (v)=>MessageMap(v)
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    And.Parameters, (v)=>MessageMap(v)
                 );
                 let validatable = validator(value);
 
@@ -701,9 +701,9 @@ describe('recursive', function() {
 
             it(`or validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => Standard(value, validators),
-                    Or, (v)=>MessageMap(v)
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    Or.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -744,9 +744,9 @@ describe('recursive', function() {
 
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    And, (v)=>MessageMap(v)
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    And.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -783,9 +783,9 @@ describe('recursive', function() {
 
             it(`or validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    Or, (v)=>MessageMap(v)
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    Or.Parameters, (v)=>MessageMap(v)
                 );
 
                 let validatable = validator(value);
@@ -826,13 +826,13 @@ describe('recursive', function() {
     describe('mixed', function() {
 
         let validators = [
-            ValidatorType('string'),
-            ValidatorType('number'),
-            ValidatorType('string'),
-            MapCallbackFunction([
-                ValidatorType('string'),
-                ValidatorType('number'),
-            ], (value, validators) => Standard(value, validators), And, MessageMap)
+            TypeParameters('string'),
+            TypeParameters('number'),
+            TypeParameters('string'),
+            MapCallbackFunction.Parameters([
+                TypeParameters('string'),
+                TypeParameters('number'),
+            ], (value, validators) => Standard.Parameters(value, validators), And.Parameters, MessageMap)
         ];
 
         let value = [
@@ -849,7 +849,7 @@ describe('recursive', function() {
 
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators, Standard, And, MessageMap);
+                let validator = MapCallbackFunction.Parameters(validators, Standard.Parameters, And.Parameters, MessageMap);
 
                 let and = validator(value);
 
@@ -886,9 +886,9 @@ describe('recursive', function() {
 
             it(`or validation `, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => Standard(value, validators),
-                    (v)=>Or(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -931,9 +931,9 @@ describe('recursive', function() {
 
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    (v)=>And(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -957,9 +957,9 @@ describe('recursive', function() {
 
             it(`or validation `, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    (v)=>Or(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -988,13 +988,13 @@ describe('recursive', function() {
     describe('all invalid', function() {
 
         let validators  = [
-            ValidatorType('string'),
-            ValidatorType('number'),
-            ValidatorType('string'),
-            MapCallbackFunction([
-                ValidatorType('string'),
-                ValidatorType('number'),
-            ], (value, validators) => Standard(value, validators), And, MessageMap)
+            TypeParameters('string'),
+            TypeParameters('number'),
+            TypeParameters('string'),
+            MapCallbackFunction.Parameters([
+                TypeParameters('string'),
+                TypeParameters('number'),
+            ], (value, validators) => Standard.Parameters(value, validators), And.Parameters, MessageMap)
 
         ];
 
@@ -1003,9 +1003,9 @@ describe('recursive', function() {
         describe('complete', function() {
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => Standard(value, validators),
-                    (v)=>And(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -1043,9 +1043,9 @@ describe('recursive', function() {
 
             it(`or validation `, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => Standard(value, validators),
-                    (v)=>Or(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => Standard.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
 
@@ -1086,9 +1086,9 @@ describe('recursive', function() {
         describe('partial', function() {
             it(`and validation`, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    (v)=>And(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    (v)=>And.Parameters(v),
                     (v)=>MessageMap(v)
                 );
                 let and = validator(value);
@@ -1111,9 +1111,9 @@ describe('recursive', function() {
 
             it(`or validation `, () => {
 
-                let validator = MapCallbackFunction(validators,
-                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial(value, validators),
-                    (v)=>Or(v),
+                let validator = MapCallbackFunction.Parameters(validators,
+                    (value, validators) => <(Validatable & Value & Message<string>)[]>MapPartial.Parameters(value, validators),
+                    (v)=>Or.Parameters(v),
                     (v)=>MessageMap(v)
                 );
                 let or = validator(value);

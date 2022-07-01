@@ -1,5 +1,5 @@
 import Guard from '../boolean/empty';
-import Callback from '@alirya/function/assert/callback-parameters';
+import {CallbackParameters} from '@alirya/function/assert/callback';
 import EmptyError from './throwable/empty';
 
 export default function Empty(
@@ -7,5 +7,5 @@ export default function Empty(
     error : (value:unknown[])=>Error = EmptyError
 ) : asserts value is unknown[] {
 
-    Callback(value, Guard, error);
+    CallbackParameters(value, Guard, error);
 }

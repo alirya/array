@@ -1,4 +1,4 @@
-import Includes from '../../dist/boolean/includes-parameters';
+import {IncludesParameters} from '../../dist/boolean/includes';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -7,12 +7,12 @@ describe('true match', function() {
 
     it('default compare', function() {
 
-        expect(Includes('true', ['true'], ['false'])).toBeTrue();
+        expect(IncludesParameters('true', ['true'], ['false'])).toBeTrue();
     });
 
     it('custom compare', function() {
 
-        expect(Includes('true', ['TRUE'], ['FALSE'], undefined,
+        expect(IncludesParameters('true', ['TRUE'], ['FALSE'], undefined,
             (value1, value2) => value1.toLocaleLowerCase() === value2.toLocaleLowerCase()
         )).toBeTrue();
     });
@@ -24,12 +24,12 @@ describe('false match', function() {
 
     it('default compare', function() {
 
-        expect(Includes('false', ['true'], ['false'])).toBeFalse();
+        expect(IncludesParameters('false', ['true'], ['false'])).toBeFalse();
     });
 
     it('custom compare', function() {
 
-        expect(Includes('false', ['TRUE'], ['FALSE'], undefined,
+        expect(IncludesParameters('false', ['TRUE'], ['FALSE'], undefined,
             (value1, value2) => value1.toLocaleLowerCase() === value2.toLocaleLowerCase()
         )).toBeFalse();
     });
@@ -39,7 +39,7 @@ describe('false match', function() {
 it('no match', function() {
 
     try {
-        Includes('true', ['TRUE'], ['FALSE']);
+        IncludesParameters('true', ['TRUE'], ['FALSE']);
         fail('exception should be thrown');
     } catch (e) {
         expect(e).toBeInstanceOf(Error);
@@ -48,6 +48,6 @@ it('no match', function() {
 
 it('default', function() {
 
-    expect(Includes('false', ['TRUE'], ['FALSE'], ()=>true)).toBeTrue();
-    expect(Includes('false', ['TRUE'], ['FALSE'], ()=>false)).toBeFalse();
+    expect(IncludesParameters('false', ['TRUE'], ['FALSE'], ()=>true)).toBeTrue();
+    expect(IncludesParameters('false', ['TRUE'], ['FALSE'], ()=>false)).toBeFalse();
 });

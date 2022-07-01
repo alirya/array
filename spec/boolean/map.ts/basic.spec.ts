@@ -1,5 +1,5 @@
-import Map from '../../../dist/boolean/map-parameters';
-import Type from '@alirya/type/boolean/type-parameters';
+import {MapParameters} from '../../../dist/boolean/map';
+import {TypeParameters} from '@alirya/type/boolean/type';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -12,12 +12,12 @@ it('valid', function() {
     ];
 
     let validations = [
-        (v)=>Type(v, 'number'),
-        (v)=>Type(v, 'string'),
-        (v)=>Type(v, 'boolean'),
+        (v)=>TypeParameters(v, 'number'),
+        (v)=>TypeParameters(v, 'string'),
+        (v)=>TypeParameters(v, 'boolean'),
     ];
 
-    expect(Map(values, validations)).toBe(true);
+    expect(MapParameters(values, validations)).toBe(true);
 });
 
 
@@ -30,11 +30,11 @@ it('invalid', function() {
     ];
 
     let validations = [
-        (v)=>Type(v, 'number'),
-        (v)=>Type(v, 'string'),
-        (v)=>Type(v, 'boolean'),
+        (v)=>TypeParameters(v, 'number'),
+        (v)=>TypeParameters(v, 'string'),
+        (v)=>TypeParameters(v, 'boolean'),
     ];
 
-    expect(Map(values, validations)).toBe(false);
+    expect(MapParameters(values, validations)).toBe(false);
 
 });

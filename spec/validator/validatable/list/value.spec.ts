@@ -1,7 +1,3 @@
-// import Value from "../../../../dist/validator/validatable/list/value-parameters";
-// import Validatable from "@alirya/validatable/validatable";
-// import Validator from "@alirya/validator/validator";
-// import ValidatorType from "@alirya/type/validator/type-parameters";
 //
 // it("force console log", () => spyOn(console, 'log').and.callThrough());
 //
