@@ -1,4 +1,4 @@
-import {EqualParameters, EqualParameter} from '@alirya/boolean/equal';
+import {EqualStrictParameters, EqualStrictParameter} from '@alirya/boolean/equal-strict';
 import Validation from '@alirya/boolean/validation/validation';
 import Readonly from './array/readonly';
 import Value from '@alirya/value/value';
@@ -14,7 +14,7 @@ import Compare from '@alirya/boolean/compare/compare';
 
 export function IntersectionParameters<Value>(
     list : ReadonlyArray<ReadonlyArray<Value>>,
-    validation : (target : Value, comparison : Value) => boolean = EqualParameters,
+    validation : (target : Value, comparison : Value) => boolean = EqualStrictParameters,
 ) : Value[] {
 
     const val = list.slice(0);
@@ -55,7 +55,7 @@ export function IntersectionParameters<Value>(
  * @constructor
  */
 export function IntersectionParameter<Type>({
-    validation = EqualParameter,
+    validation = EqualStrictParameter,
     array,
 } : Partial<Validation<[Value<Type> & Compare<Type>]>> & Readonly<ReadonlyArray<Type>>) : Type[] {
 
