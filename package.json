@@ -1,6 +1,6 @@
 {
   "name": "@alirya/array",
-  "version": "0.26.3",
+  "version": "0.27.0",
   "description": "Typescript array",
   "publishConfig": {
     "directory": "dist"
@@ -16,15 +16,15 @@
   },
   "dependencies": {
     "tslib": "^2.3.1",
-    "@alirya/boolean": "^0.11.2",
-    "@alirya/function": "^0.16.2",
-    "@alirya/iterable": "^0.5.3",
-    "@alirya/message": "^0.12.2",
-    "@alirya/object": "^0.37.8",
-    "@alirya/string": "^0.16.8",
-    "@alirya/validatable": "^0.20.2",
-    "@alirya/validator": "^0.19.4",
-    "@alirya/value": "^0.15.2",
+    "@alirya/boolean": "^0.12.0",
+    "@alirya/function": "^0.17.0",
+    "@alirya/iterable": "^0.6.0",
+    "@alirya/message": "^0.13.0",
+    "@alirya/object": "^0.38.0",
+    "@alirya/string": "^0.17.0",
+    "@alirya/validatable": "^0.21.0",
+    "@alirya/validator": "^0.20.0",
+    "@alirya/value": "^0.16.0",
     "ts-toolbelt": "^9.6.0",
     "utility-types": "^3.10.0"
   },
@@ -46,8 +46,8 @@
     "ts-toolbelt": "^9.6.0",
     "utility-types": "^3.10.0",
     "package-version-git-tag": "^3.0.0",
-    "@alirya/type": "^0.7.1",
-    "@alirya/class": "^0.3.3",
+    "@alirya/type": "^0.8.0",
+    "@alirya/class": "^0.4.0",
     "cpx2": "^4.2.0"
   },
   "scripts": {
