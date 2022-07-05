@@ -1,6 +1,6 @@
-import Validation from '@alirya/boolean/function/validation';
-import ValidationContainer from '@alirya/boolean/validation/validation';
-import Readonly from '../array/readonly';
+import Validation from '@alirya/boolean/function/validation.js';
+import ValidationContainer from '@alirya/boolean/validation/validation.js';
+import Readonly from '../array/readonly.js';
 
 /**
  * get index of first match values

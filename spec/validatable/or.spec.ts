@@ -1,7 +1,7 @@
-import Or from '../../dist/validatable/or';
-import Guard from '@alirya/validatable/boolean/validatable';
-import Validatable from '@alirya/validatable/validatable';
-import Equal from '../../dist/boolean/equal';
+import Or from '../../dist/validatable/or.js';
+import Guard from '@alirya/validatable/boolean/validatable.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import Equal from '../../dist/boolean/equal.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -10,8 +10,8 @@ describe('structure', function () {
 
     describe('subjects', function () {
 
-        let subjects = [];
-        let and = Or.Parameters<Validatable[]>(subjects, true);
+        const subjects = [];
+        const and = Or.Parameters<Validatable[]>(subjects, true);
 
         it('constructor', () => {
             expect(Equal.Parameters(subjects, and.validatables)).toBeTrue();
@@ -41,12 +41,12 @@ describe('empty', function () {
     describe('initial', function () {
 
         it('true', () => {
-            let and = Or.Parameters<Validatable[]>([], true);
+            const and = Or.Parameters<Validatable[]>([], true);
             expect(and.valid).toBe(true);
         });
 
         it('false', () => {
-            let and = Or.Parameters<Validatable[]>([], false);
+            const and = Or.Parameters<Validatable[]>([], false);
             expect(and.valid).toBe(false);
         });
 
@@ -54,7 +54,7 @@ describe('empty', function () {
 
     describe('set', function () {
 
-        let and = Or.Parameters<Validatable[]>([], true);
+        const and = Or.Parameters<Validatable[]>([], true);
 
         it('true', () => {
 
@@ -70,19 +70,19 @@ describe('single', function() {
     describe('constructor', function () {
 
         it('true', () => {
-            let and = Or.Parameters<Validatable[]>([{valid:true}], false);
+            const and = Or.Parameters<Validatable[]>([{valid:true}], false);
             expect(and.valid).toBe(true);
         });
 
         it('false', () => {
-            let and = Or.Parameters<Validatable[]>([{valid:false}], true);
+            const and = Or.Parameters<Validatable[]>([{valid:false}], true);
             expect(and.valid).toBe(false);
         });
     });
 
     describe('set', function () {
 
-        let and = Or.Parameters<Validatable[]>([], true);
+        const and = Or.Parameters<Validatable[]>([], true);
 
         it('true', () => {
 
@@ -103,15 +103,15 @@ describe('single', function() {
 describe('multi same', function() {
 
     it('valids', () => {
-        let and = Or.Parameters<Validatable[]>([{valid:true}, {valid:true}], false);
+        const and = Or.Parameters<Validatable[]>([{valid:true}, {valid:true}], false);
         expect(and.valid).toBe(true);
     });
 
     it('iterator', ()=>{
-        let and = Or.Parameters<Validatable[]>([{valid:true}, {valid:true}], false);
+        const and = Or.Parameters<Validatable[]>([{valid:true}, {valid:true}], false);
         let number = 0;
 
-        for(let value of and.validatables) {
+        for(const value of and.validatables) {
 
             number++;
             expect(Guard(value)).toBeTrue();
@@ -122,15 +122,15 @@ describe('multi same', function() {
     });
 
     it('invalids', () => {
-        let and = Or.Parameters<Validatable[]>([{valid:false}, {valid:false}], false);
+        const and = Or.Parameters<Validatable[]>([{valid:false}, {valid:false}], false);
         expect(and.valid).toBe(false);
     });
 
     it('iterator', ()=>{
-        let and = Or.Parameters<Validatable[]>([{valid:false}, {valid:false}], false);
+        const and = Or.Parameters<Validatable[]>([{valid:false}, {valid:false}], false);
         let number = 0;
 
-        for(let value of and.validatables) {
+        for(const value of and.validatables) {
 
             number++;
             expect(Guard(value)).toBeTrue();
@@ -147,15 +147,15 @@ describe('multi mixed', function() {
 
 
     it('valids', () => {
-        let and = Or.Parameters<Validatable[]>([{valid:true}, {valid:false}], false);
+        const and = Or.Parameters<Validatable[]>([{valid:true}, {valid:false}], false);
         expect(and.valid).toBe(true);
     });
 
     it('iterator', ()=>{
-        let and = Or.Parameters<Validatable[]>([{valid:true}, {valid:false}], false);
+        const and = Or.Parameters<Validatable[]>([{valid:true}, {valid:false}], false);
         let number = 0;
 
-        for(let value of and.validatables) {
+        for(const value of and.validatables) {
 
             number++;
             expect(Guard(value)).toBeTrue();
@@ -166,15 +166,15 @@ describe('multi mixed', function() {
     });
 
     it('invalids', () => {
-        let and = Or.Parameters<Validatable[]>([{valid:true}, {valid:false}], false);
+        const and = Or.Parameters<Validatable[]>([{valid:true}, {valid:false}], false);
         expect(and.valid).toBe(true);
     });
 
     it('iterator', ()=>{
-        let and = Or.Parameters<Validatable[]>([{valid:true}, {valid:false}], false);
+        const and = Or.Parameters<Validatable[]>([{valid:true}, {valid:false}], false);
         let number = 0;
 
-        for(let value of and.validatables) {
+        for(const value of and.validatables) {
 
             number++;
             expect(Guard(value)).toBeTrue();

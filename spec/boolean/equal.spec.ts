@@ -1,5 +1,4 @@
-import {EqualParameters} from '../../dist/boolean/equal';
-import {ShuffleParameters} from '../../dist/shuffle';
+import {EqualParameters} from '../../dist/boolean/equal.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -7,7 +6,7 @@ describe('equal', function() {
 
     it('ordered', () => {
 
-        let data = [1,2,3,4,5,6,7,8,9,10];
+        const data = [1,2,3,4,5,6,7,8,9,10];
 
         expect(EqualParameters(data, data)).toBeTrue();
     });
@@ -31,7 +30,7 @@ describe('not equal', function() {
 
 describe('equal object', function() {
 
-    let data1 = [
+    const data1 = [
         {number:1},
         {number:2},
         {number:3},
@@ -39,7 +38,7 @@ describe('equal object', function() {
         {number:5},
     ];
 
-    let data2 = [
+    const data2 = [
         {number:1},
         {number:2},
         {number:3},
@@ -56,7 +55,7 @@ describe('equal object', function() {
 
 describe('not equal object', function() {
 
-    let data1 = [
+    const data1 = [
         {number:1},
         {number:2},
         {number:3},
@@ -64,7 +63,7 @@ describe('not equal object', function() {
         {number:5},
     ];
 
-    let data2 = [
+    const data2 = [
         {number:1},
         {number:2},
         {number:3},

@@ -1,6 +1,6 @@
-import Guard from '../boolean/array';
-import {CallbackParameters} from '@alirya/function/assert/callback';
-import ArrayError from './throwable/array';
+import Guard from '../boolean/array.js';
+import {CallbackParameters} from '@alirya/function/assert/callback.js';
+import ArrayError from './throwable/array.js';
 
 export default function Array(
     value : unknown,

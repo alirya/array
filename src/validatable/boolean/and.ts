@@ -1,6 +1,6 @@
-import Validatable from '@alirya/validatable/validatable';
-import IterableAnd from '@alirya/iterable/validatable/boolean/and';
-import Validatables from '../validatables/validatables';
+import Validatable from '@alirya/validatable/validatable.js';
+import IterableAnd from '@alirya/iterable/validatable/boolean/and.js';
+import Validatables from '../validatables/validatables.js';
 
 export function AndParameters<
     ValidatableList extends ReadonlyArray<Validatable>

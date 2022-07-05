@@ -1,11 +1,11 @@
-import {ExtractParameters, ExtractParameter} from '../../dist/extract';
+import {ExtractParameters, ExtractParameter} from '../../dist/extract.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 it('default', () => {
 
-    let parameters : number[] = [1,2,3,1,5];
-    let parameter : number[] = [1,2,3,1,5];
+    const parameters : number[] = [1,2,3,1,5];
+    const parameter : number[] = [1,2,3,1,5];
 
     expect(
         ExtractParameters(parameters, v=>v===1)
@@ -19,8 +19,8 @@ it('default', () => {
 
 it('with start', () => {
 
-    let parameters : number[] = [1,2,3,1,5];
-    let parameter : number[] = [1,2,3,1,5];
+    const parameters : number[] = [1,2,3,1,5];
+    const parameter : number[] = [1,2,3,1,5];
 
     expect(
         ExtractParameters(parameters, v=>v===1, 1)
@@ -37,8 +37,8 @@ it('with start', () => {
 
 it('with start, end', () => {
 
-    let parameters : number[] = [1,2,3,1,5,1,1];
-    let parameter : number[] = [1,2,3,1,5,1,1];
+    const parameters : number[] = [1,2,3,1,5,1,1];
+    const parameter : number[] = [1,2,3,1,5,1,1];
 
     expect(
         ExtractParameters(parameters, v=>v===1, 1, 2)
@@ -56,8 +56,8 @@ it('with start, end', () => {
 
 it('with start, end, limit', () => {
 
-    let parameters : number[] = [1,2,3,1,5,1,1];
-    let parameter : number[] = [1,2,3,1,5,1,1];
+    const parameters : number[] = [1,2,3,1,5,1,1];
+    const parameter : number[] = [1,2,3,1,5,1,1];
 
     expect(
         ExtractParameters(parameters, v=>v===1, 1, 5, 2)

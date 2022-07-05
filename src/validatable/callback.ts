@@ -1,5 +1,5 @@
-import Validatable from '@alirya/validatable/validatable';
-import Validatables from './validatables/validatables';
+import Validatable from '@alirya/validatable/validatable.js';
+import Validatables from './validatables/validatables.js';
 import {List} from 'ts-toolbelt';
 
 export interface CallbackType<
@@ -18,7 +18,7 @@ export class CallbackParameters<
 
     constructor(
         public validatables : ValidatableList,
-        public validation : (results:ValidatableList)=>Boolean
+        public validation : (results:ValidatableList)=>boolean
     ) {
 
         this.valid = this.validation(this.validatables);
@@ -34,13 +34,13 @@ export class CallbackParameters<
 export class CallbackParameter<
     ValidatableList extends ReadonlyArray<Validatable> = ReadonlyArray<Validatable>,
     Boolean extends boolean = boolean
-> extends CallbackParameters<ValidatableList, Boolean>
+> extends CallbackParameters<ValidatableList, boolean>
 {
     constructor(
         {
             validatables,
             validation,
-        } : Validatables<ValidatableList> & {validation : (results:ValidatableList)=>Boolean}
+        } : Validatables<ValidatableList> & {validation : (results:ValidatableList)=>boolean}
     ) {
 
         super(validatables, validation);

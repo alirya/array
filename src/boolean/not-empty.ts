@@ -1,4 +1,4 @@
-import Empty from './empty';
+import Empty from './empty.js';
 
 export default function NotEmpty(array : ReadonlyArray<unknown>) : boolean {
 

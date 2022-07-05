@@ -1,6 +1,6 @@
-import Name from '@alirya/object/string/name';
-import Value from '@alirya/value/value';
-import Validatable from '@alirya/validatable/validatable';
+import Name from '@alirya/object/string/name.js';
+import Value from '@alirya/value/value.js';
+import Validatable from '@alirya/validatable/validatable.js';
 
 /**
  * string intended for not empty array message
@@ -31,7 +31,7 @@ export function NotEmptyParameters(
     strings.push('empty array');
 
 
-    return strings.filter(s => s.length).join(' ') + '.';
+    return strings.filter(s => s.length).join(' ') + '..js';
 }
 
 

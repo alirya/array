@@ -1,6 +1,6 @@
-import AssertArray from '../assert/array';
-import ArrayError from '../assert/throwable/array';
-import Value from '@alirya/value/value';
+import AssertArray from '../assert/array.js';
+import ArrayError from '../assert/throwable/array.js';
+import Value from '@alirya/value/value.js';
 
 export function ArrayParameters(
     value : unknown,

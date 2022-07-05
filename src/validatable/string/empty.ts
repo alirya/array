@@ -1,6 +1,6 @@
-import AssertEmpty from '../../assert/string/empty';
-import Value from '@alirya/value/value';
-import Validatable from '@alirya/validatable/validatable';
+import AssertEmpty from '../../assert/string/empty.js';
+import Value from '@alirya/value/value.js';
+import Validatable from '@alirya/validatable/validatable.js';
 
 export function EmptyParameters(value : unknown[], valid : boolean) : string {
 

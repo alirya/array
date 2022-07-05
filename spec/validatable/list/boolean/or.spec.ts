@@ -1,10 +1,10 @@
-import {OrParameters} from '../../../../dist/validatable/list/boolean/or';
+import {OrParameters} from '../../../../dist/validatable/list/boolean/or.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 it('all true', function () {
 
-    let record = [
+    const record = [
         {valid:true},
         {valid:true},
     ];
@@ -14,7 +14,7 @@ it('all true', function () {
 
 it('all false', function () {
 
-    let record = [
+    const record = [
         {valid:false},
         {valid:false},
     ];
@@ -25,7 +25,7 @@ it('all false', function () {
 
 it('mixed', function () {
 
-    let record = [
+    const record = [
         {valid:true},
         {valid:false},
     ];

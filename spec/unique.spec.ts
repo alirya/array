@@ -1,37 +1,37 @@
-import {UniqueParameters} from '../dist/unique';
+import {UniqueParameters} from '../dist/unique.js';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('single string', function() {
 
-    let array : string[] = [
+    const array : string[] = [
         'a','b',
         'b','a',
     ];
-    let removed = UniqueParameters(array);
+    const removed = UniqueParameters(array);
     it('remove duplicate', () => expect(removed).toEqual(['a','b']));
 
 });
 
 describe('single string custom', function() {
 
-    let array : string[] = [
+    const array : string[] = [
         'A','B',
         'b','a',
     ];
-    let removed = UniqueParameters(array, (v1, v2)=>v1.toLowerCase() === v2.toLowerCase());
+    const removed = UniqueParameters(array, (v1, v2)=>v1.toLowerCase() === v2.toLowerCase());
     it('remove duplicate', () => expect(removed).toEqual(['A','B']));
 
 });
 
 describe('single number', function() {
 
-    let array : number[] = [
+    const array : number[] = [
         1,2,
         1,2,
     ];
-    let removed = UniqueParameters(array);
+    const removed = UniqueParameters(array);
     it('remove duplicate', () => expect(removed).toEqual([1,2]));
 
 });
@@ -39,7 +39,7 @@ describe('single number', function() {
 
 describe('multiple number', function() {
 
-    let array : number[] = [
+    const array : number[] = [
         1,2,3,
         1,2,3,
         1,2,
@@ -47,14 +47,14 @@ describe('multiple number', function() {
           2,3
     ];
 
-    let removed = UniqueParameters(array);
+    const removed = UniqueParameters(array);
     it('remove duplicate', () => expect(removed).toEqual([1,2,3,4]));
 
 });
 
 describe('multiple number with hole', function() {
 
-    let array : number[] = [
+    const array : number[] = [
         1,2,3,    6,
         1,2,3, // removed by "delete"
         1,2,    5,
@@ -66,7 +66,7 @@ describe('multiple number with hole', function() {
     delete array[1];
     delete array[4];
 
-    let removed = UniqueParameters(array);
+    const removed = UniqueParameters(array);
 
     it('remove duplicate', () => expect(removed).toEqual([1,3,6,2,5,4]));
 
@@ -79,7 +79,7 @@ describe('multiple object custom', function() {
         id : number;
     }
 
-    let array : Data[] = [
+    const array : Data[] = [
         {data:1, id:1}, {data:2, id:2},   {data:3, id:3},                                   {data:6, id:4},
         {data:1, id:5}, {data:2, id:6},   {data:3, id:7}, // removed by "delete"
         {data:1, id:8}, {data:2, id:9},                                    {data: 5, id:10},
@@ -88,7 +88,7 @@ describe('multiple object custom', function() {
                         {data:2, id:16}
     ];
 
-    let result = [
+    const result = [
         { data: 1, id: 1 },
         { data: 2, id: 2 },
         { data: 3, id: 3 },
@@ -97,9 +97,9 @@ describe('multiple object custom', function() {
         { data: 4, id: 13 }
     ];
 
-    let removed = UniqueParameters(array, (v1, v2)=>v1.data === v2.data);
+    const removed = UniqueParameters(array, (v1, v2)=>v1.data === v2.data);
 
-    for(let [index, value] of removed.entries()) {
+    for(const [index, value] of removed.entries()) {
 
         it('remove duplicate', () => {
             expect(value.data).toEqual(result[index].data);
@@ -118,7 +118,7 @@ describe('multiple object custom with hole', function() {
         id : number;
     }
 
-    let array : Data[] = [
+    const array : Data[] = [
         {data:1, id:1}, {data:2, id:2},   {data:3, id:3},                                   {data:6, id:4},
         {data:1, id:5}, {data:2, id:6},   {data:3, id:7}, // removed by "delete"
         {data:1, id:8}, {data:2, id:9},                                    {data: 5, id:10},
@@ -127,7 +127,7 @@ describe('multiple object custom with hole', function() {
         {data:2, id:16}
     ];
 
-    let result = [
+    const result = [
         { data: 1, id: 1 },
         { data: 3, id: 3 },
         { data: 6, id: 4 },
@@ -139,9 +139,9 @@ describe('multiple object custom with hole', function() {
     delete array[1];
     delete array[4];
 
-    let removed = UniqueParameters(array, (v1, v2)=>v1.data === v2.data);
+    const removed = UniqueParameters(array, (v1, v2)=>v1.data === v2.data);
 
-    for(let [index, value] of removed.entries()) {
+    for(const [index, value] of removed.entries()) {
 
         it('remove duplicate', () => {
             expect(value.data).toEqual(result[index].data);

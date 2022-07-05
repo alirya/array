@@ -1,4 +1,4 @@
-import EqualBoolean from '@alirya/boolean/equal';
+import EqualBoolean from '@alirya/boolean/equal.js';
 
 export function EqualParameters<Value>(
     array1 : ReadonlyArray<Value>,

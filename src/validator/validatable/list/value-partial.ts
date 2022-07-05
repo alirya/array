@@ -1,9 +1,9 @@
-import Validator from '@alirya/validator/validator';
+import Validator from '@alirya/validator/validator.js';
 import {List} from 'ts-toolbelt';
-import ListStrict from './infer';
-import Unions from '../../../unions';
-import Value from '@alirya/value/value';
-import ValidatorsContainer from '../../validators/validators';
+import ListStrict from './infer.js';
+import Unions from '../../../unions.js';
+import Value from '@alirya/value/value.js';
+import ValidatorsContainer from '../../validators/validators.js';
 
 export function ValuePartialParameters<
     ValueType,

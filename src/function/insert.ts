@@ -1,5 +1,5 @@
-import Callable from '@alirya/function/callable';
-import Array from '../array/array';
+import Callable from '@alirya/function/callable.js';
+import Array from '../array/array.js';
 import {Omit} from 'utility-types';
 
 /**

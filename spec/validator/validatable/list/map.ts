@@ -1,12 +1,12 @@
-import {MapParameters} from '../../../../dist/validator/validatable/list/map';
-import {TypeParameters} from '@alirya/type/validator/type';
+import {MapParameters} from '../../../../dist/validator/validatable/list/map.js';
+import {TypeParameters} from '@alirya/type/validator/type.js';
 
 
 it('force console log', () => spyOn(console, 'log').and.callThrough());
 
 describe('simple validatable', function() {
 
-    let validator = [
+    const validator = [
         TypeParameters('number'), //new Num(),
         TypeParameters('number'), //new NumAny(),
         TypeParameters('string'), //new Str(),
@@ -17,7 +17,7 @@ describe('simple validatable', function() {
         TypeParameters('string'), //new StrAny(),
     ];
 
-    let value = [
+    const value = [
         10,
         10,
         'str',
@@ -28,7 +28,7 @@ describe('simple validatable', function() {
         10,
     ];
 
-    let result = MapParameters(value, validator);
+    const result = MapParameters(value, validator);
     it('match validator1', ()=> expect(result[0].valid).toBe(true));
     it('match validator2', ()=> expect(result[1].valid).toBe(true));
     it('match validator4', ()=> expect(result[2].valid).toBe(true));
@@ -43,7 +43,7 @@ describe('simple validatable', function() {
 
 describe('simple validatable', function() {
 
-    let validator = [
+    const validator = [
         TypeParameters('number'), //new Num(),
         TypeParameters('number'), //new NumAny(),
         TypeParameters('string'), //new Str(),
@@ -54,7 +54,7 @@ describe('simple validatable', function() {
         TypeParameters('string'), //new StrAny()
     ];
 
-    let value = [
+    const value = [
         10,
         10,
         'str',
@@ -65,7 +65,7 @@ describe('simple validatable', function() {
         10,
     ];
 
-    let result = MapParameters(value, validator);
+    const result = MapParameters(value, validator);
     it('match validator1', ()=> expect(result[0].valid).toBe(true));
     it('match validator2', ()=> expect(result[1].valid).toBe(true));
     it('match validator4', ()=> expect(result[2].valid).toBe(true));
@@ -80,7 +80,7 @@ describe('simple validatable', function() {
 
 describe('extended validatable', function() {
 
-    let validator = [
+    const validator = [
         TypeParameters('number'), //new ExtendedNum(),
         TypeParameters('number'), //new ExtendedNumAny(),
         TypeParameters('string'), //new ExtendedStr(),
@@ -91,7 +91,7 @@ describe('extended validatable', function() {
         TypeParameters('string'), //new ExtendedStrAny(),
     ];
 
-    let value = [
+    const value = [
         10,
         10,
         'str',
@@ -103,7 +103,7 @@ describe('extended validatable', function() {
 
     ];
 
-    let result = MapParameters(value, validator);
+    const result = MapParameters(value, validator);
 
     it('match validator1', ()=> expect(result[0].valid).toBe(true));
     it('match validator1', ()=> expect(result[0].message).toBe('value is type of "number"'));

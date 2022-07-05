@@ -1,14 +1,14 @@
-import Validator from '@alirya/validator/validator';
-import Validatable from '@alirya/validatable/validatable';
-import Instance from '@alirya/validator/validatable/validatable';
-import MemoizeAccessor from '@alirya/object/function/memoize-accessor';
-import ValueInterface from '@alirya/value/value';
-import Validators from '../validator/validators/validators';
-import Message from '@alirya/message/message';
-import BaseValue from '@alirya/value/value';
-import Messages from '../message/messages/messages';
-import ValidatableContainer from '@alirya/validatable/validatable/Validatable';
-import Validatables from './validatables/validatables';
+import Validator from '@alirya/validator/validator.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
+import MemoizeAccessor from '@alirya/object/function/memoize-accessor.js';
+import ValueInterface from '@alirya/value/value.js';
+import Validators from '../validator/validators/validators.js';
+import Message from '@alirya/message/message.js';
+import BaseValue from '@alirya/value/value.js';
+import Messages from '../message/messages/messages.js';
+import ValidatableContainer from '@alirya/validatable/validatable/Validatable.js';
+import Validatables from './validatables/validatables.js';
 
 export interface ValueCallbackType<
     ValueType,

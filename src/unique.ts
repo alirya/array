@@ -1,7 +1,7 @@
-import {EqualParameters} from '@alirya/boolean/equal';
-import Callable from '@alirya/function/callable';
-import Value from '@alirya/value/value';
-import Validation from '@alirya/boolean/validation/validation';
+import {EqualParameters} from '@alirya/boolean/equal.js';
+import Callable from '@alirya/function/callable.js';
+import Value from '@alirya/value/value.js';
+import Validation from '@alirya/boolean/validation/validation.js';
 
 /**
  * pick a unique value from {@param value}
@@ -16,11 +16,11 @@ export function UniqueParameters<Value>(
     validation : Callable<[Value, Value], boolean> = EqualParameters
 ) : Value[] {
 
-    let results : Value[] = [];
+    const results : Value[] = [];
 
-    PARENT: for(let index1 in value) {
+    PARENT: for(const index1 in value) {
 
-        for(let result of results) {
+        for(const result of results) {
 
             if(validation(value[index1], result)) {
 

@@ -1,10 +1,10 @@
-import {CallbackClassParameters} from '@alirya/validator/validatable/callback';
-import ObjectGuard from '../boolean/array';
-import Instance from '@alirya/validator/validatable/validatable';
-import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable';
-import Value from '@alirya/value/value';
-import Simple from '@alirya/validator/validatable/simple';
-import Message from '@alirya/message/message';
+import {CallbackClassParameters} from '@alirya/validator/validatable/callback.js';
+import ObjectGuard from '../boolean/array.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
+import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable.js';
+import Value from '@alirya/value/value.js';
+import Simple from '@alirya/validator/validatable/simple.js';
+import Message from '@alirya/message/message.js';
 
 
 export function ArrayParameters<Argument, MessageType>(

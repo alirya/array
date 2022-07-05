@@ -1,5 +1,5 @@
-import ArrayType from '../string/array';
-import Value from '@alirya/value/value';
+import ArrayType from '../string/array.js';
+import Value from '@alirya/value/value.js';
 
 export function ArrayParameters(
     value : unknown,

@@ -1,15 +1,15 @@
-import Validator from '@alirya/validator/validator';
-import Validatable from '@alirya/validatable/validatable';
-import ValidatableListCallback from '../validatable/list-callback';
-import Instance from '@alirya/validator/validatable/validatable';
-import BaseInfer from '@alirya/validator/subject/allow';
-import Message from '@alirya/message/message';
-import ValidatorContainer from '@alirya/validator/validator/validator';
-import ValidatorValidatable from '@alirya/validator/validatable/validatable';
-import SimpleValidator from '@alirya/validator/simple';
-import TypeInfer from '@alirya/validator/subject/expectation';
-import ValidatableListInterface from '../validatable/list-callback';
-import SubjectInfer from '@alirya/validator/subject/subject';
+import Validator from '@alirya/validator/validator.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import ValidatableListCallback from '../validatable/list-callback.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
+import BaseInfer from '@alirya/validator/subject/allow.js';
+import Message from '@alirya/message/message.js';
+import ValidatorContainer from '@alirya/validator/validator/validator.js';
+import ValidatorValidatable from '@alirya/validator/validatable/validatable.js';
+import SimpleValidator from '@alirya/validator/simple.js';
+import TypeInfer from '@alirya/validator/subject/expectation.js';
+import ValidatableListInterface from '../validatable/list-callback.js';
+import SubjectInfer from '@alirya/validator/subject/subject.js';
 
 
 /**

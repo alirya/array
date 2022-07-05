@@ -1,12 +1,12 @@
-import ValueAll from '../../dist/validator/value-all';
-import And from '../../dist/validatable/and';
-import ValidatablesInterface from '../../dist/validatable/validatables/validatables';
-import Validatables from '../../dist/validatable/validatables/validatables';
-import Validatable from '@alirya/validatable/validatable';
-import SimpleValidator from '@alirya/validator/simple';
-import MessageMap from '../../dist/message/message/list/map';
-import {TypeParameters} from '@alirya/type/validator/type';
-import Instance from '@alirya/validator/validatable/validatable';
+import ValueAll from '../../dist/validator/value-all.js';
+import And from '../../dist/validatable/and.js';
+import ValidatablesInterface from '../../dist/validatable/validatables/validatables.js';
+import Validatables from '../../dist/validatable/validatables/validatables.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import SimpleValidator from '@alirya/validator/simple.js';
+import MessageMap from '../../dist/message/message/list/map.js';
+import {TypeParameters} from '@alirya/type/validator/type.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -19,104 +19,104 @@ describe('compiler compatibility', function() {
             SimpleValidator<any, string, Instance<any, string>>,
         ];
 
-        let validator : TypeValidator = [
+        const validator : TypeValidator = [
             TypeParameters('string'),
             TypeParameters('string'),
         ];
 
         describe('complete', function() {
 
-            let property = ValueAll.Parameters<any, string, TypeValidator>(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
+            const property = ValueAll.Parameters<any, string, TypeValidator>(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
 
-            let validatable = property('data');
+            const validatable = property('data');
 
-            let key : Validatable = validatable[0];
+            const key : Validatable = validatable[0];
 
-            let validatables : ValidatablesInterface = validatable;
+            const validatables : ValidatablesInterface = validatable;
 
-            let record : Validatable[] = validatable.validatables;
+            const record : Validatable[] = validatable.validatables;
 
-            let and : Validatables = validatable;
+            const and : Validatables = validatable;
 
-            let unknown : unknown = validatable.value;
+            const unknown : unknown = validatable.value;
 
-            let string : string = validatable.value;
+            const string : string = validatable.value;
 
             it('recursive', function() {
 
-                let validator = TypeParameters('string');
-                let list1 = ValueAll.Parameters([validator], And.Parameters, MessageMap);
-                let list2 = ValueAll.Parameters([list1], And.Parameters, MessageMap);
-                let list3 = ValueAll.Parameters([list2], And.Parameters, MessageMap);
+                const validator = TypeParameters('string');
+                const list1 = ValueAll.Parameters([validator], And.Parameters, MessageMap);
+                const list2 = ValueAll.Parameters([list1], And.Parameters, MessageMap);
+                const list3 = ValueAll.Parameters([list2], And.Parameters, MessageMap);
 
             });
         });
 
         it('auto', function() {
 
-            let property = ValueAll.Parameters(validator, (v)=>And.Parameters(<[Validatable, Validatable]>v), MessageMap);
+            const property = ValueAll.Parameters(validator, (v)=>And.Parameters(<[Validatable, Validatable]>v), MessageMap);
 
-            let validatable = property('data');
+            const validatable = property('data');
 
-            let key : Validatable = validatable[0];
+            const key : Validatable = validatable[0];
 
-            let validatables : ValidatablesInterface = validatable;
+            const validatables : ValidatablesInterface = validatable;
 
-            let record : Validatable[] = validatable.validatables;
+            const record : Validatable[] = validatable.validatables;
 
-            let and : Validatables = validatable;
+            const and : Validatables = validatable;
 
-            let unknown : unknown = validatable.value;
+            const unknown : unknown = validatable.value;
 
-            let string : string = validatable.value;
+            const string : string = validatable.value;
 
         });
     });
 
     describe('implicit type', function() {
 
-        let validator  = [
+        const validator  = [
             TypeParameters('string'),
             TypeParameters('string'),
         ];
 
         it('complete', function() {
 
-            let property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
+            const property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
 
-            let validatable = property('data');
+            const validatable = property('data');
 
-            let key : Validatable = validatable[0];
+            const key : Validatable = validatable[0];
 
-            let validatables : ValidatablesInterface = validatable;
+            const validatables : ValidatablesInterface = validatable;
 
-            let record : Validatable[] = validatable.validatables;
+            const record : Validatable[] = validatable.validatables;
 
-            let and : Validatables = validatable;
+            const and : Validatables = validatable;
 
-            let unknown : unknown = validatable.value;
+            const unknown : unknown = validatable.value;
 
-            let string : string = validatable.value;
+            const string : string = validatable.value;
 
         });
 
         it('auto', function() {
 
-            let property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
+            const property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
 
-            let validatable = property('data');
+            const validatable = property('data');
 
-            let key : Validatable = validatable[0];
+            const key : Validatable = validatable[0];
 
-            let validatables : ValidatablesInterface = validatable;
+            const validatables : ValidatablesInterface = validatable;
 
-            let record : Validatable[] = validatable.validatables;
+            const record : Validatable[] = validatable.validatables;
 
-            let and : Validatables = validatable;
+            const and : Validatables = validatable;
 
-            let unknown : unknown = validatable.value;
+            const unknown : unknown = validatable.value;
 
-            let string : string = validatable.value;
+            const string : string = validatable.value;
 
         });
     });
@@ -126,7 +126,7 @@ describe('compiler compatibility', function() {
 describe('all valid', function() {
 
 
-    let validator  = [
+    const validator  = [
         TypeParameters('string'),
         TypeParameters('string'),
         TypeParameters('string'),
@@ -134,9 +134,9 @@ describe('all valid', function() {
 
     describe('complete', function() {
 
-        let property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
+        const property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
 
-        let validatable = property('data');
+        const validatable = property('data');
 
         it('value', ()=>{
             expect(validatable.value).toBe('data');
@@ -190,7 +190,7 @@ describe('all valid', function() {
 describe('mixed', function() {
 
 
-    let validator  = [
+    const validator  = [
         TypeParameters('string'),
         TypeParameters('number'),
         TypeParameters('string'),
@@ -198,9 +198,9 @@ describe('mixed', function() {
 
     describe('complete', function() {
 
-        let property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
+        const property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
 
-        let validatable = property('data');
+        const validatable = property('data');
 
         it('value', ()=>{
             expect(validatable.value).toBe('data');
@@ -252,15 +252,15 @@ describe('mixed', function() {
 
 describe('all invalid', function() {
 
-    let validator  = [
+    const validator  = [
         TypeParameters('number'),
         TypeParameters('number'),
         TypeParameters('number'),
     ];
 
-    let property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
+    const property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
 
-    let validatable = property('data');
+    const validatable = property('data');
 
     it('value', ()=>{
         expect(validatable.value).toBe('data');
@@ -315,7 +315,7 @@ describe('recursive', ()=>{
     describe('all valid', function() {
 
 
-        let validator  = [
+        const validator  = [
             TypeParameters('string'),
             TypeParameters('string'),
             TypeParameters('string'),
@@ -327,9 +327,9 @@ describe('recursive', ()=>{
 
         describe('complete', function() {
 
-            let property = ValueAll.Parameters(validator, And.Parameters, MessageMap);
+            const property = ValueAll.Parameters(validator, And.Parameters, MessageMap);
 
-            let validatable = property('data');
+            const validatable = property('data');
 
             it('value', ()=>{
                 expect(validatable.value).toBe('data');
@@ -425,7 +425,7 @@ describe('recursive', ()=>{
     describe('mixed', function() {
 
 
-        let validator  = [
+        const validator  = [
             TypeParameters('string'),
             TypeParameters('number'),
             TypeParameters('string'),
@@ -437,9 +437,9 @@ describe('recursive', ()=>{
 
         describe('complete', function() {
 
-            let property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
+            const property = ValueAll.Parameters(validator, (v)=>And.Parameters(<Validatable[]>v), MessageMap);
 
-            let validatable = property('data');
+            const validatable = property('data');
 
             it('value', ()=>{
                 expect(validatable.value).toBe('data');
@@ -533,7 +533,7 @@ describe('recursive', ()=>{
 
     describe('all invalid', function() {
 
-        let validator  = [
+        const validator  = [
             TypeParameters('number'),
             TypeParameters('number'),
             TypeParameters('number'),
@@ -543,9 +543,9 @@ describe('recursive', ()=>{
             ], And.Parameters, MessageMap)
         ];
 
-        let property = ValueAll.Parameters(validator, And.Parameters, MessageMap);
+        const property = ValueAll.Parameters(validator, And.Parameters, MessageMap);
 
-        let validatable = property('data');
+        const validatable = property('data');
 
         it('value', ()=>{
             expect(validatable.value).toBe('data');

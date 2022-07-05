@@ -1,4 +1,4 @@
-import Heads from '../../dist/heads';
+import Heads from '../../dist/heads.js';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});

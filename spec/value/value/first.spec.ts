@@ -1,18 +1,18 @@
-import First from '../../../dist/value/value/first';
+import First from '../../../dist/value/value/first.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 it('sequence', () => {
 
-    let array : number[] = [1,2,3,4,5];
+    const array : number[] = [1,2,3,4,5];
     expect(First(array)).toBe(1);
 });
 
 
 it('skipped', () => {
 
-    let array : number[] = [];
+    const array : number[] = [];
     array[5] = 1;
     array[6] = 2;
     array[7] = 3;
@@ -25,6 +25,6 @@ it('skipped', () => {
 
 it('empty', () => {
 
-    let array : number[] = [];
+    const array : number[] = [];
     expect(First(array)).toBe(undefined);
 });

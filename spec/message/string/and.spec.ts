@@ -1,8 +1,8 @@
-import And from '../../../dist/message/string/and';
+import And from '../../../dist/message/string/and.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-let messages = [
+const messages = [
     {message:'a'},
     {message:'b'},
     {message:'c'},

@@ -1,5 +1,5 @@
-import Message from '@alirya/message/message';
-import OrObject from '../or';
+import Message from '@alirya/message/message.js';
+import OrObject from '../or.js';
 
 export default function Or<MessageT extends Message<string>[]>(
     messages : MessageT,

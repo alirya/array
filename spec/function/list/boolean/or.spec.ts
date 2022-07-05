@@ -1,4 +1,4 @@
-import Or from '../../../../dist/function/list/boolean/or';
+import Or from '../../../../dist/function/list/boolean/or.js';
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
@@ -15,47 +15,47 @@ function Str(val : unknown) : val is string {
 
 it('compiler compatible', function() {
 
-    let value : unknown = 1;
+    const value : unknown = 1;
 
     if(Or(value, [Num])) {
 
-        let result : number = value;
+        const result : number = value;
         // @ts-expect-error
-        let result2 : string = value;
+        const result2 : string = value;
 
     } else {
 
         // @ts-expect-error
-        let result1 : number = value;
+        const result1 : number = value;
         // @ts-expect-error
-        let result2 : string = value;
+        const result2 : string = value;
     }
 
     if(Or(value, [Num, Str])) {
 
-        let result : number|string = value;
+        const result : number|string = value;
 
         // @ts-expect-error
-        let result2 : number = value;
+        const result2 : number = value;
         // @ts-expect-error
-        let result3 : string = value;
+        const result3 : string = value;
 
     } else {
 
         // @ts-expect-error
-        let result : number|string = value;
+        const result : number|string = value;
         // @ts-expect-error
-        let result2 : number = value;
+        const result2 : number = value;
         // @ts-expect-error
-        let result3 : string = value;
+        const result3 : string = value;
     }
 });
 
 describe('single', function() {
 
-    let ab = 1;
+    const ab = 1;
 
-    it(`one`, () => {
+    it('one', () => {
 
         expect(Or(ab, [Str])).toBeFalse();
         expect(Or(ab, [Num])).toBeTrue();
@@ -65,16 +65,16 @@ describe('single', function() {
 
 describe('multi', function() {
 
-    let num = 1;
+    const num = 1;
 
 
-    it(`number`, () => {
+    it('number', () => {
         expect(Or(num, [Num, Str])).toBeTrue();
     });
 
-    let str = '1;';
+    const str = '1;.js';
 
-    it(`string`, () => {
+    it('string', () => {
         expect(Or(str, [Str, Num])).toBeTrue();
     });
 

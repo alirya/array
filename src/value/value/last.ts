@@ -9,7 +9,7 @@ export default function Last <Value>(value : ReadonlyArray<Value>) : Value|undef
 
     if(last === undefined) {
 
-        let clone = value.slice(0);
+        const clone = value.slice(0);
 
         do {
 

@@ -1,9 +1,9 @@
-import {JoinParameters} from '../../dist/message/join';
+import {JoinParameters} from '../../dist/message/join.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
-let messages = [
+const messages = [
     {message:'a'},
     {message:'b'},
     {message:'c'},
@@ -11,7 +11,7 @@ let messages = [
     {message:'e'},
 ];
 
-let join = new JoinParameters(messages, ',');
+const join = new JoinParameters(messages, ',');
 it('check data', ()=>{
 
    expect(join.separator).toBe(',');
@@ -35,7 +35,7 @@ it('check message', ()=>{
 
 it('change delimiter', ()=>{
 
-    join.separator = '|';
+    join.separator = '|.js';
    expect(join.message).toBe('a|b|c|d|e');
 
 });

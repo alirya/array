@@ -1,20 +1,20 @@
-import Validator from '@alirya/validator/validator';
-import Validatable from '@alirya/validatable/validatable';
-import ValidateValue from './validatable/list/value';
-import ListReturn from './validatable/list/infer';
-import ValueCallback from './value-callback';
-import InferMessage from '../message/message/list/infer';
-import Map from '../message/message/list/map';
+import Validator from '@alirya/validator/validator.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import ValidateValue from './validatable/list/value.js';
+import ListReturn from './validatable/list/infer.js';
+import ValueCallback from './value-callback.js';
+import InferMessage from '../message/message/list/infer.js';
+import Map from '../message/message/list/map.js';
 import {List} from 'ts-toolbelt';
-import Allow from './subject/list/allow';
-import Expectation from './subject/list/expectation';
-import ValidatorsContainer from './validators/validators';
-import Message from '@alirya/message/message';
-import Unions from '../unions';
-import StrictOmit from '@alirya/object/strict-omit';
+import Allow from './subject/list/allow.js';
+import Expectation from './subject/list/expectation.js';
+import ValidatorsContainer from './validators/validators.js';
+import Message from '@alirya/message/message.js';
+import Unions from '../unions.js';
+import StrictOmit from '@alirya/object/strict-omit.js';
 import {Required} from 'utility-types';
-import Instance from '@alirya/validator/validatable/validatable';
-import {ValueCallbackReturn as ValueAllReturn} from './value-callback';
+import Instance from '@alirya/validator/validatable/validatable.js';
+import {ValueCallbackReturn as ValueAllReturn} from './value-callback.js';
 
 /**
  * more specific implementation of {@link ValueCallback}

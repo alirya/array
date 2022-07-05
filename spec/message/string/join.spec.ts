@@ -1,9 +1,9 @@
-import {JoinParameters} from '../../../dist/message/string/join';
+import {JoinParameters} from '../../../dist/message/string/join.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
-let messages = [
+const messages = [
     {message:'a'},
     {message:'b'},
     {message:'c'},

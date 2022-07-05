@@ -1,15 +1,15 @@
-import Map from '../../../dist/validatable/map-callback';
-import Standard from '../../../dist/validator/validatable/list/map';
-import PartialStandard from '../../../dist/validator/validatable/list/map-partial';
-import And from '../../../dist/validatable/and';
-import Or from '../../../dist/validatable/or';
-import Validatable from '@alirya/validatable/validatable';
-import ValidatorInterface from '@alirya/validator/simple';
-import ValueInterface from '@alirya/value/value';
-import Message from '@alirya/message/message';
-import MessageMap from '../../../dist/message/message/list/map';
-import {TypeParameters} from '@alirya/type/validator/type';
-import Instance from '@alirya/validator/validatable/validatable';
+import Map from '../../../dist/validatable/map-callback.js';
+import Standard from '../../../dist/validator/validatable/list/map.js';
+import PartialStandard from '../../../dist/validator/validatable/list/map-partial.js';
+import And from '../../../dist/validatable/and.js';
+import Or from '../../../dist/validatable/or.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import ValidatorInterface from '@alirya/validator/simple.js';
+import ValueInterface from '@alirya/value/value.js';
+import Message from '@alirya/message/message.js';
+import MessageMap from '../../../dist/message/message/list/map.js';
+import {TypeParameters} from '@alirya/type/validator/type.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -25,13 +25,13 @@ type Type = [
     string,
 ];
 
-let validator : TypeValidator= [
+const validator : TypeValidator= [
     TypeParameters('string'),
     TypeParameters('number'),
     TypeParameters('string'),
 ];
 
-let value : Type = [
+const value : Type = [
     '11',
     'name',
     'address',
@@ -39,9 +39,9 @@ let value : Type = [
 
 describe('complete', function() {
 
-    it(`and validation`, () => {
+    it('and validation', () => {
 
-        let and = new Map.Parameters(value, validator,
+        const and = new Map.Parameters(value, validator,
             (value, validators) => Standard.Parameters(value, validators),
             (v)=>And.Parameters(v), (v)=>MessageMap(v)
         );
@@ -63,9 +63,9 @@ describe('complete', function() {
     });
 
 
-    it(`or validation `, () => {
+    it('or validation ', () => {
 
-        let or = new Map.Parameters(value, validator,
+        const or = new Map.Parameters(value, validator,
             (value, validators) => Standard.Parameters(value, validators),
             (v)=>Or.Parameters(v), (v)=>MessageMap(v)
         );
@@ -91,9 +91,9 @@ describe('complete', function() {
 
 describe('partial', function() {
 
-    it(`and validation`, () => {
+    it('and validation', () => {
 
-        let and = new Map.Parameters(value, validator,
+        const and = new Map.Parameters(value, validator,
             (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>PartialStandard.Parameters(value, validators),
             (v)=>And.Parameters(v), (v)=>MessageMap(v)
         );
@@ -112,9 +112,9 @@ describe('partial', function() {
     });
 
 
-    it(`or validation `, () => {
+    it('or validation ', () => {
 
-        let or = new Map.Parameters(value, validator,
+        const or = new Map.Parameters(value, validator,
             (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>PartialStandard.Parameters(value, validators),
             (v)=>Or.Parameters(v), (v)=>MessageMap(v)
         );

@@ -1,13 +1,13 @@
-import {TypeParameters} from '@alirya/type/validator/type';
-import ListAll from '../../dist/validator/list-all';
-import And from '../../dist/validatable/and';
-import Validatable from '@alirya/validatable/validatable';
-import MessageMap from '../../dist/message/message/list/map';
-import ValidatablesInterface from '../../dist/validatable/validatables/validatables';
-import Validatables from '../../dist/validatable/validatables/validatables';
-import SimpleValidator from '@alirya/validator/simple';
-import Or from '../../dist/validatable/or';
-import Instance from '@alirya/validator/validatable/validatable';
+import {TypeParameters} from '@alirya/type/validator/type.js';
+import ListAll from '../../dist/validator/list-all.js';
+import And from '../../dist/validatable/and.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import MessageMap from '../../dist/message/message/list/map.js';
+import ValidatablesInterface from '../../dist/validatable/validatables/validatables.js';
+import Validatables from '../../dist/validatable/validatables/validatables.js';
+import SimpleValidator from '@alirya/validator/simple.js';
+import Or from '../../dist/validatable/or.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -15,16 +15,16 @@ describe('compiler compatibility', function() {
 
     describe('implicit partial', function() {
 
-        let validator = TypeParameters('string');
+        const validator = TypeParameters('string');
 
-        let value = [
+        const value = [
             'name',
             'address',
         ];
 
-        let property = ListAll.Parameters(validator, And.Parameters, MessageMap);
+        const property = ListAll.Parameters(validator, And.Parameters, MessageMap);
 
-        let validatable = property(<[string, string]>value);
+        const validatable = property(<[string, string]>value);
 
         let key : Validatable;
 
@@ -34,42 +34,42 @@ describe('compiler compatibility', function() {
 
         key = validatable.validatables[2];
 
-        let validatables : ValidatablesInterface = validatable;
+        const validatables : ValidatablesInterface = validatable;
 
-        let record : Validatable[] = validatable.validatables;
+        const record : Validatable[] = validatable.validatables;
 
-        let validatable1 : Validatables = validatable;
+        const validatable1 : Validatables = validatable;
 
-        let unknown : unknown = validatable.value;
+        const unknown : unknown = validatable.value;
 
-        let string : string[] = validatable.value;
+        const string : string[] = validatable.value;
 
-        let string2 : [string, string] = validatable.value;
+        const string2 : [string, string] = validatable.value;
 
         if(validatable.valid) {
 
-            let string : string[] = validatable.value;
+            const string : string[] = validatable.value;
 
-            let string2 : [string, string] = validatable.value;
+            const string2 : [string, string] = validatable.value;
 
         } else {
 
-            let string : string[] = validatable.value;
-            let string2 : [string, string] = validatable.value;
+            const string : string[] = validatable.value;
+            const string2 : [string, string] = validatable.value;
         }
 
         it('recursive', function() {
 
-            let validator = TypeParameters('string');
+            const validator = TypeParameters('string');
 
-            let value = [
+            const value = [
                 'name',
                 'address',
             ];
 
-            let list1 = ListAll.Parameters(validator, And.Parameters, MessageMap);
-            let list2 = ListAll.Parameters(list1, And.Parameters, MessageMap);
-            let list3 = ListAll.Parameters(list2, And.Parameters, MessageMap);
+            const list1 = ListAll.Parameters(validator, And.Parameters, MessageMap);
+            const list2 = ListAll.Parameters(list1, And.Parameters, MessageMap);
+            const list3 = ListAll.Parameters(list2, And.Parameters, MessageMap);
 
         });
     });
@@ -78,23 +78,23 @@ describe('compiler compatibility', function() {
 
         type TypeValidator = SimpleValidator<any, string, Instance<any, string>>;
 
-        let validator : TypeValidator = TypeParameters('string');
+        const validator : TypeValidator = TypeParameters('string');
 
         type Type = [
             string,
             string,
         ];
 
-        let value : Type = [
+        const value : Type = [
             'name',
             'address',
         ];
 
         it('auto', function() {
 
-            let property = ListAll.Parameters/*<unknown[], Type>*/(validator, And.Parameters, MessageMap);
+            const property = ListAll.Parameters/*<unknown[], Type>*/(validator, And.Parameters, MessageMap);
 
-            let validatable = property(value);
+            const validatable = property(value);
 
             let key : Validatable;
 
@@ -104,23 +104,23 @@ describe('compiler compatibility', function() {
 
             key = validatable.validatables[2];
 
-            let validatables : ValidatablesInterface = validatable;
+            const validatables : ValidatablesInterface = validatable;
 
-            let record : Validatable[] = validatable.validatables;
+            const record : Validatable[] = validatable.validatables;
 
-            let validatable1 : Validatables = validatable;
+            const validatable1 : Validatables = validatable;
 
-            let unknown : unknown = validatable.value;
+            const unknown : unknown = validatable.value;
 
-            let string : Type = validatable.value;
+            const string : Type = validatable.value;
 
         });
 
         it('direct', function() {
 
-            let property = ListAll.Parameters(validator, And.Parameters, MessageMap);
+            const property = ListAll.Parameters(validator, And.Parameters, MessageMap);
 
-            let validatable = property(value);
+            const validatable = property(value);
 
 
             let key : Validatable;
@@ -131,15 +131,15 @@ describe('compiler compatibility', function() {
 
             key = validatable.validatables[2];
 
-            let validatables : ValidatablesInterface = validatable;
+            const validatables : ValidatablesInterface = validatable;
 
-            let record : Validatable[] = validatable.validatables;
+            const record : Validatable[] = validatable.validatables;
 
-            let validatable1 : Validatables = validatable;
+            const validatable1 : Validatables = validatable;
 
-            let unknown : unknown = validatable.value;
+            const unknown : unknown = validatable.value;
 
-            let string : Type|unknown[] = validatable.value;
+            const string : Type|unknown[] = validatable.value;
 
 
         });
@@ -152,18 +152,18 @@ describe('compiler compatibility', function() {
 
 describe('all valid', function() {
 
-    let validator = TypeParameters('string');
+    const validator = TypeParameters('string');
 
-    let value = [
+    const value = [
         'user',
         'name',
         'address',
     ];
 
-    it(`check validate return`, () => {
+    it('check validate return', () => {
 
-        let property = ListAll.Parameters(validator, And.Parameters, MessageMap);
-        let validatable = property(value);
+        const property = ListAll.Parameters(validator, And.Parameters, MessageMap);
+        const validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(true);
@@ -187,19 +187,19 @@ describe('all valid', function() {
         }
     });
 
-    it(`check handler and`, () => {
+    it('check handler and', () => {
 
-        let property = ListAll.Parameters(validator, And.Parameters, MessageMap);
-        let validatable = property(value);
+        const property = ListAll.Parameters(validator, And.Parameters, MessageMap);
+        const validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toBe(value);
     });
 
-    it(`check handler or`, () => {
+    it('check handler or', () => {
 
-        let property = ListAll.Parameters(validator, Or.Parameters, MessageMap);
-        let validatable = property(value);
+        const property = ListAll.Parameters(validator, Or.Parameters, MessageMap);
+        const validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toBe(value);
@@ -209,18 +209,18 @@ describe('all valid', function() {
 
 describe('mixed', function() {
 
-    let validator = TypeParameters('string');
+    const validator = TypeParameters('string');
 
-    let value = [
+    const value = [
         'user',
         1,
         'address',
     ];
 
-    it(`check validate return`, () => {
+    it('check validate return', () => {
 
-        let property = ListAll.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
-        let validatable = property(value);
+        const property = ListAll.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
+        const validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(true);
@@ -245,19 +245,19 @@ describe('mixed', function() {
 
     });
 
-    it(`check handler and`, () => {
+    it('check handler and', () => {
 
-        let property = ListAll.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
-        let validatable = property(value);
+        const property = ListAll.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
+        const validatable = property(value);
 
         expect<boolean>(validatable.valid).toBe(false);
         expect(validatable.value).toBe(value);
     });
 
-    it(`check handler or`, () => {
+    it('check handler or', () => {
 
-        let property = ListAll.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
-        let validatable = property(value);
+        const property = ListAll.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
+        const validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toBe(value);
@@ -267,18 +267,18 @@ describe('mixed', function() {
 
 describe('all invalid', function() {
 
-    let validator = TypeParameters('number');
+    const validator = TypeParameters('number');
 
-    let value = [
+    const value = [
         'user',
         'name',
         'address',
     ];
 
-    it(`check validate return`, () => {
+    it('check validate return', () => {
 
-        let property = ListAll.Parameters(validator, And.Parameters, MessageMap);
-        let validatable = property(value);
+        const property = ListAll.Parameters(validator, And.Parameters, MessageMap);
+        const validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(false);
@@ -302,19 +302,19 @@ describe('all invalid', function() {
         }
     });
 
-    it(`check handler and`, () => {
+    it('check handler and', () => {
 
-        let property = ListAll.Parameters(validator, And.Parameters, MessageMap);
-        let validatable = property(value);
+        const property = ListAll.Parameters(validator, And.Parameters, MessageMap);
+        const validatable = property(value);
 
         expect<boolean>(validatable.valid).toBe(false);
         expect(validatable.value).toBe(value);
     });
 
-    it(`check handler or`, () => {
+    it('check handler or', () => {
 
-        let property = ListAll.Parameters(validator, Or.Parameters, MessageMap);
-        let validatable = property(value);
+        const property = ListAll.Parameters(validator, Or.Parameters, MessageMap);
+        const validatable = property(value);
 
         expect<boolean>(validatable.valid).toBe(false);
         expect(validatable.value).toBe(value);

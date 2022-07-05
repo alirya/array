@@ -1,4 +1,4 @@
-import Convert from '../../dist/map';
+import Convert from '../../dist/map.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -6,7 +6,7 @@ it('complex', () => {
 
     type Data = [string, number];
 
-    let convert : Convert<Data, boolean> = [
+    const convert : Convert<Data, boolean> = [
          true,
          false,
     ];

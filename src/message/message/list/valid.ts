@@ -1,9 +1,9 @@
-import Message from '@alirya/message/message';
-import ListInfer from './infer';
-import MapUnion from '../../../unions';
-import Validatable from '@alirya/validatable/validatable';
-import FilterValid from '../../../validatable/list/valid';
-import Map from './map';
+import Message from '@alirya/message/message.js';
+import ListInfer from './infer.js';
+import MapUnion from '../../../unions.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import FilterValid from '../../../validatable/list/valid.js';
+import Map from './map.js';
 
 export default function Invalid<
     Messages extends (Message & Validatable)[]

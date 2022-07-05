@@ -1,6 +1,6 @@
-import Message from '@alirya/message/message';
-import JoinObject from '../join';
-import {JoinArgument} from '../join';
+import Message from '@alirya/message/message.js';
+import JoinObject from '../join.js';
+import {JoinArgument} from '../join.js';
 
 export function JoinParameters<MessageT extends Message<string>[]>(
     messages : MessageT,

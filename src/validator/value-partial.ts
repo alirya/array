@@ -1,16 +1,16 @@
-import Validator from '@alirya/validator/validator';
-import Validatable from '@alirya/validatable/validatable';
-import ValidateValuePartial from './validatable/list/value-partial';
-import ListReturn from './validatable/list/infer';
-import ValueCallback, {ValueCallbackReturn as ValuePartialReturn} from './value-callback';
-import Unions from '../unions';
-import InferMessage from '../message/message/list/infer';
-import Map from '../message/message/list/map';
-import ValidatorsContainer from '../validator/validators/validators';
-import Message from '@alirya/message/message';
+import Validator from '@alirya/validator/validator.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import ValidateValuePartial from './validatable/list/value-partial.js';
+import ListReturn from './validatable/list/infer.js';
+import ValueCallback, {ValueCallbackReturn as ValuePartialReturn} from './value-callback.js';
+import Unions from '../unions.js';
+import InferMessage from '../message/message/list/infer.js';
+import Map from '../message/message/list/map.js';
+import ValidatorsContainer from '../validator/validators/validators.js';
+import Message from '@alirya/message/message.js';
 import {Required} from 'utility-types';
-import StrictOmit from '@alirya/object/strict-omit';
-import Instance from '@alirya/validator/validatable/validatable';
+import StrictOmit from '@alirya/object/strict-omit.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
 
 
 /**

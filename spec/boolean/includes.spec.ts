@@ -1,4 +1,4 @@
-import {IncludesParameters} from '../../dist/boolean/includes';
+import {IncludesParameters} from '../../dist/boolean/includes.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

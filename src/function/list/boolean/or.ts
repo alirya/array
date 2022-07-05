@@ -1,4 +1,4 @@
-import {Guard, Validation} from './and';
+import {Guard, Validation} from './and.js';
 import {List} from 'ts-toolbelt';
 
 
@@ -24,7 +24,7 @@ export default function Or<Result extends unknown[]>(
     validators : Validation<Result>
 ) : value is List.UnionOf<Result> {
 
-    for(let validator of validators) {
+    for(const validator of validators) {
 
         if(validator(value)) {
 

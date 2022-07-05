@@ -1,4 +1,4 @@
-import Union from '../dist/intersect';
+import Union from '../dist/intersect.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -6,27 +6,27 @@ describe('compiler compatibility', function() {
 
     it('native', function() {
 
-        let merged : Union<[Array<any>, Map<any, any>]> = Object.assign([], new Map());
+        const merged : Union<[Array<any>, Map<any, any>]> = Object.assign([], new Map());
 
-        let map : Map<any, any> = merged;
-        let array : any[] = merged;
+        const map : Map<any, any> = merged;
+        const array : any[] = merged;
 
     });
 
     it('native', function() {
 
         class A {
-            public a : string = '';
+            public a : string = '.js';
         }
 
         class B {
-            public b : string = '';
+            public b : string = '.js';
         }
 
         let merged : Union<[A, B]> = {a:'', b:''};
 
-        let a : A = merged;
-        let b : B = merged;
+        const a : A = merged;
+        const b : B = merged;
 
         // @ts-expect-error
         merged = {a:''};

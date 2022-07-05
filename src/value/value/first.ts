@@ -5,7 +5,7 @@
  */
 export default function First <Value>(values : ReadonlyArray<Value>) : Value|undefined {
 
-    let first = values[0];
+    const first = values[0];
 
     if(first === undefined) {
 

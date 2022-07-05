@@ -1,4 +1,4 @@
-import MapSingle from '../function/parameter/list/map-single';
+import MapSingle from '../function/parameter/list/map-single.js';
 
 export function MapSingleParameters<List extends unknown[]>(
     values : Readonly<List>,
@@ -7,7 +7,7 @@ export function MapSingleParameters<List extends unknown[]>(
 
     if(values.length === validations.length) {
 
-        for(let [index, value] of values.entries()) {
+        for(const [index, value] of values.entries()) {
 
             if(!validations[index](value)) {
 

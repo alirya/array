@@ -1,11 +1,11 @@
-import {RemoveIndexParameters} from '../../dist/boolean/remove-index';
+import {RemoveIndexParameters} from '../../dist/boolean/remove-index.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('remove valid', function() {
 
-    let target : number[] = [1,2,3,4,5];
-    let result = RemoveIndexParameters(target, 2);
+    const target : number[] = [1,2,3,4,5];
+    const result = RemoveIndexParameters(target, 2);
     it('compare result', () => {expect(result).toBeTrue();});
     it('compare array', () => {expect(target).toEqual([1,2,4,5]);});
 
@@ -13,8 +13,8 @@ describe('remove valid', function() {
 
 describe('remove single valid', function() {
 
-    let target : number[] = [1];
-    let result = RemoveIndexParameters(target, 0);
+    const target : number[] = [1];
+    const result = RemoveIndexParameters(target, 0);
     it('compare result', () => {expect(result).toBeTrue();});
     it('compare array', () => {expect(target).toEqual([]);});
 
@@ -22,8 +22,8 @@ describe('remove single valid', function() {
 
 describe('remove invalid', function() {
 
-    let target : number[] = [1,2,3,4,5];
-    let result = RemoveIndexParameters(target, 8);
+    const target : number[] = [1,2,3,4,5];
+    const result = RemoveIndexParameters(target, 8);
     it('compare result', () => {expect(result).toBeFalse();});
     it('compare array', () => {expect(target).toEqual([1,2,3,4,5]);});
 
@@ -31,8 +31,8 @@ describe('remove invalid', function() {
 
 describe('remove empty invalid', function() {
 
-    let target : number[] = [];
-    let result = RemoveIndexParameters(target, 8);
+    const target : number[] = [];
+    const result = RemoveIndexParameters(target, 8);
     it('compare result', () => {expect(result).toBeFalse();});
     it('compare array', () => {expect(target).toEqual([]);});
 

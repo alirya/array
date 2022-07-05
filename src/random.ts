@@ -1,5 +1,5 @@
-import ValueInterface from '@alirya/value/value';
-import RandomBoolean from '@alirya/boolean/random';
+import ValueInterface from '@alirya/value/value.js';
+import RandomBoolean from '@alirya/boolean/random.js';
 
 /**
  * pick a random values
@@ -12,9 +12,9 @@ export function RandomParameters<Value>(
     random : ()=> boolean = RandomBoolean
 ) : Value[] {
 
-    let gets : Value[]= [];
+    const gets : Value[]= [];
 
-    for (let data of value) {
+    for (const data of value) {
 
         if (random()) {
 

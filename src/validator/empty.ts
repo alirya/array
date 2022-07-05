@@ -1,9 +1,9 @@
-import Validator from '@alirya/validator/validator';
-import EmptyValidatable from '../validatable/empty';
-import EmptyMessage from '../validatable/string/empty';
-import Validatable from '@alirya/validator/validatable/validatable';
-import EmptyMessageParameter from '../validatable/string/empty';
-import {ValidatableParameter, ValidatableParameters} from '@alirya/validator/message/function/validatable';
+import Validator from '@alirya/validator/validator.js';
+import EmptyValidatable from '../validatable/empty.js';
+import EmptyMessage from '../validatable/string/empty.js';
+import Validatable from '@alirya/validator/validatable/validatable.js';
+import EmptyMessageParameter from '../validatable/string/empty.js';
+import {ValidatableParameter, ValidatableParameters} from '@alirya/validator/message/function/validatable.js';
 
 /**
  *  validate if array is empty

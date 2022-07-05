@@ -1,4 +1,4 @@
-import Tails from '../../dist/tails';
+import Tails from '../../dist/tails.js';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});

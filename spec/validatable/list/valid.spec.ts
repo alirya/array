@@ -1,5 +1,5 @@
-import Valid from '../../../dist/validatable/list/valid';
-import Validatable from '@alirya/validatable/validatable';
+import Valid from '../../../dist/validatable/list/valid.js';
+import Validatable from '@alirya/validatable/validatable.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -7,12 +7,12 @@ describe('compiler compatibility property', function() {
 
     it('explicit', function() {
 
-        let record  = [
+        const record  = [
             {valid:true},
             {valid:false},
         ];
 
-        let result = Valid(record);
+        const result = Valid(record);
 
         let validatable : Validatable;
 
@@ -35,7 +35,7 @@ describe('compiler compatibility property', function() {
 
     it('implicit', function() {
 
-        let record : [
+        const record : [
             Validatable,
             Validatable
         ] = [
@@ -43,7 +43,7 @@ describe('compiler compatibility property', function() {
             {valid:false},
         ];
 
-        let result = Valid<[Validatable, Validatable]>(record);
+        const result = Valid<[Validatable, Validatable]>(record);
 
         let validatable : Validatable;
 
@@ -62,14 +62,14 @@ describe('compiler compatibility property', function() {
 
 describe('check property', function() {
 
-    let record  = [
+    const record  = [
         {valid:true},
         {valid:false},
         {valid:true},
         {valid:false},
     ];
 
-    let result = Valid(record);
+    const result = Valid(record);
 
     it('valid', () => {
 
@@ -108,7 +108,7 @@ describe('check property', function() {
 
 describe('all false', function() {
 
-    let record  = [
+    const record  = [
         {valid:false},
         {valid:false},
         {valid:false},
@@ -120,7 +120,7 @@ describe('all false', function() {
 
     ];
 
-    let result = Valid(record);
+    const result = Valid(record);
 
     it('empty', () => {
 

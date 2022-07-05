@@ -1,6 +1,6 @@
-import StringNotEmpty from '../../assert/string/not-empty';
-import Value from '@alirya/value/value';
-import Validatable from '@alirya/validatable/validatable';
+import StringNotEmpty from '../../assert/string/not-empty.js';
+import Value from '@alirya/value/value.js';
+import Validatable from '@alirya/validatable/validatable.js';
 
 export function NotEmptyParameters(
     value : ReadonlyArray<unknown>,

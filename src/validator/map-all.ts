@@ -1,19 +1,19 @@
-import Validator from '@alirya/validator/validator';
-import Validatable from '@alirya/validatable/validatable';
-import ValidateMap from './validatable/list/map';
-import ListReturn from './validatable/list/infer';
-import MapCallback from './map-callback';
-import InferMessage from '../message/message/list/infer';
-import InferList from './validatable/list/infer';
-import Map from '../message/message/list/map';
-import ValidatorsContainer from './validators/validators';
-import Message from '@alirya/message/message';
-import Unions from '../unions';
-import ListStrict from './validatable/list/infer';
-import StrictOmit from '@alirya/object/strict-omit';
+import Validator from '@alirya/validator/validator.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import ValidateMap from './validatable/list/map.js';
+import ListReturn from './validatable/list/infer.js';
+import MapCallback from './map-callback.js';
+import InferMessage from '../message/message/list/infer.js';
+import InferList from './validatable/list/infer.js';
+import Map from '../message/message/list/map.js';
+import ValidatorsContainer from './validators/validators.js';
+import Message from '@alirya/message/message.js';
+import Unions from '../unions.js';
+import ListStrict from './validatable/list/infer.js';
+import StrictOmit from '@alirya/object/strict-omit.js';
 import {Required} from 'utility-types';
-import {MapCallbackReturn as MapAllReturn} from './map-callback';
-import Instance from '@alirya/validator/validatable/validatable';
+import {MapCallbackReturn as MapAllReturn} from './map-callback.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
 
 /**
  * more specific implementation of {@link MapCallback}

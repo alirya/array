@@ -1,5 +1,5 @@
-import Message from '@alirya/message/message';
-import AndObject from '../and';
+import Message from '@alirya/message/message.js';
+import AndObject from '../and.js';
 
 export default function And<MessageT extends Message<string>[]>(
     messages : MessageT,

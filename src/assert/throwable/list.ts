@@ -1,5 +1,5 @@
-import ListType from '../string/list';
-import Value from '@alirya/value/value';
+import ListType from '../string/list.js';
+import Value from '@alirya/value/value.js';
 
 export function ListParameters(
     value : unknown,

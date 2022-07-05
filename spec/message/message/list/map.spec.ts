@@ -1,12 +1,12 @@
-import Standard from '../../../../dist/message/message/list/map';
-import Message from '@alirya/message/message';
+import Standard from '../../../../dist/message/message/list/map.js';
+import Message from '@alirya/message/message.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 describe('flat & type explicit', ()=>{
 
-    let data = [
+    const data = [
         {message:1},
         {message:2},
         {message:3},
@@ -14,7 +14,7 @@ describe('flat & type explicit', ()=>{
         {message:5},
     ];
 
-    let result = Standard(data);
+    const result = Standard(data);
 
     it('compiler compatibility', () => {
 
@@ -30,7 +30,7 @@ describe('flat & type explicit', ()=>{
         number = result[5];
 
         // @ts-expect-error
-        let string : string = result[5];
+        const string : string = result[5];
     });
 
 
@@ -49,7 +49,7 @@ describe('flat & type explicit', ()=>{
 
 describe('flat & type implicit', ()=>{
 
-    let data : [
+    const data : [
         Message<number>,
         Message<number>,
         Message<number>,
@@ -63,7 +63,7 @@ describe('flat & type implicit', ()=>{
         {message:5},
     ];
 
-    let result = Standard(data);
+    const result = Standard(data);
 
     it('compiler compatibility', () => {
 
@@ -80,7 +80,7 @@ describe('flat & type implicit', ()=>{
         number = result[5];
 
         // @ts-expect-error
-        let string : string = result[5];
+        const string : string = result[5];
     });
 
 

@@ -1,4 +1,4 @@
-import And from '../../../../dist/function/list/boolean/and';
+import And from '../../../../dist/function/list/boolean/and.js';
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
@@ -12,74 +12,74 @@ interface B {
 
 function TypeA(val : unknown) : val is A {
     // @ts-ignore
-    return typeof val.a === 'number';
+    return typeof val.a === 'number.js';
 }
 
 function TypeB(val : unknown) : val is B {
     // @ts-ignore
-    return typeof val.b === 'string';
+    return typeof val.b === 'string.js';
 }
 
 it('compiler compatible', function() {
 
-    let ab : A & B = {a:1, b:'b'};
+    const ab : A & B = {a:1, b:'b'};
 
-    let value : unknown = ab;
+    const value : unknown = ab;
 
     if(And(value, [TypeA])) {
 
-        let result : A = value;
+        const result : A = value;
         // @ts-expect-error
-        let result2 : B = value;
+        const result2 : B = value;
 
     } else {
 
         // @ts-expect-error
-        let result1 : A = value;
+        const result1 : A = value;
         // @ts-expect-error
-        let result2 : B = value;
+        const result2 : B = value;
     }
 
     if(And(value, [TypeB])) {
 
         // @ts-expect-error
-        let result1 : A = value;
-        let result2 : B = value;
+        const result1 : A = value;
+        const result2 : B = value;
 
     } else {
 
         // @ts-expect-error
-        let result1 : A = value;
+        const result1 : A = value;
         // @ts-expect-error
-        let result2 : B = value;
+        const result2 : B = value;
     }
 
     if(And(value, [TypeA, TypeB])) {
 
-        let result1 : A = value;
-        let result2 : B = value;
+        const result1 : A = value;
+        const result2 : B = value;
 
     } else {
 
         // @ts-expect-error
-        let result1 : A = value;
+        const result1 : A = value;
         // @ts-expect-error
-        let result2 : B = value;
+        const result2 : B = value;
     }
 
 });
 
 describe('all valid', function() {
 
-    let ab : A & B = {a:1, b:'b'};
+    const ab : A & B = {a:1, b:'b'};
 
-    it(`one`, () => {
+    it('one', () => {
 
         expect(And(ab, [TypeA])).toBeTrue();
         expect(And(ab, [TypeB])).toBeTrue();
     });
 
-    it(`multi`, () => {
+    it('multi', () => {
         expect(And(ab, [TypeA, TypeB])).toBeTrue();
     });
 
@@ -87,9 +87,9 @@ describe('all valid', function() {
 
 describe('mixed invalid', function() {
 
-    let ab : A  = {a:1};
+    const ab : A  = {a:1};
 
-    it(`multi`, () => {
+    it('multi', () => {
         expect(And(ab, [TypeA, TypeB])).toBeFalse();
     });
 

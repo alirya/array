@@ -1,5 +1,5 @@
-import ValueInterface from '@alirya/value/value';
-import List from '../../array/list';
+import ValueInterface from '@alirya/value/value.js';
+import List from '../../array/list.js';
 /**
  * get and remove selected value
  *

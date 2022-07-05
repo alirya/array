@@ -1,9 +1,9 @@
-import StringIncludes from '../assert/string/includes';
-import {EqualParameter, EqualParameters} from '@alirya/boolean/equal';
-import Validation from '@alirya/boolean/function/validation';
-import ValueType from '@alirya/value/value';
-import CompareType from '@alirya/boolean/compare/compare';
-import Value from '@alirya/value/value';
+import StringIncludes from '../assert/string/includes.js';
+import {EqualParameter, EqualParameters} from '@alirya/boolean/equal.js';
+import Validation from '@alirya/boolean/function/validation.js';
+import ValueType from '@alirya/value/value.js';
+import CompareType from '@alirya/boolean/compare/compare.js';
+import Value from '@alirya/value/value.js';
 
 export function IncludesParameters<Type>(
     value : Type,

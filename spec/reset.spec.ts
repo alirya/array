@@ -1,4 +1,4 @@
-import Reset from '../dist/reset';
+import Reset from '../dist/reset.js';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
@@ -6,14 +6,14 @@ it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('skip', function() {
 
-    let array : number[] = [];
+    const array : number[] = [];
     array[0] = 1;
     array[3] = 2;
     array[50] = 3;
     array[1000] = 4;
     array[1001] = 5;
 
-    let reset = Reset(array);
+    const reset = Reset(array);
 
     it('removed', () => expect(array).not.toEqual(reset));
 
@@ -27,7 +27,7 @@ describe('skip', function() {
 
 describe('unordered set', function() {
 
-    let array : number[] = [];
+    const array : number[] = [];
 
     array[1001] = 5;
     array[1000] = 4;
@@ -35,7 +35,7 @@ describe('unordered set', function() {
     array[3] = 2;
     array[0] = 1;
 
-    let reset = Reset(array);
+    const reset = Reset(array);
 
     it('removed', () => expect(array).not.toEqual(reset));
 

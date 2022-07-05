@@ -1,4 +1,4 @@
-import List from '../array/list';
+import List from '../array/list.js';
 export function RemoveIndexParameters(
     array : any[],
     index : number

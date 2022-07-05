@@ -1,10 +1,10 @@
-import Message from '@alirya/message/message';
-import ListInfer from './infer';
+import Message from '@alirya/message/message.js';
+import ListInfer from './infer.js';
 import {List} from 'ts-toolbelt';
-import MapUnion from '../../../unions';
-import Messages from '../../../message/messages/messages';
-import Filter from './filter';
-import Value from '@alirya/value/value';
+import MapUnion from '../../../unions.js';
+import Messages from '../../../message/messages/messages.js';
+import Filter from './filter.js';
+import Value from '@alirya/value/value.js';
 
 export function MessagesFilterParameters<
     MessagesType extends Message[]

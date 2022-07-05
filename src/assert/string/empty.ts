@@ -1,6 +1,6 @@
-import Name from '@alirya/object/string/name';
-import Value from '@alirya/value/value';
-import Validatable from '@alirya/validatable/validatable';
+import Name from '@alirya/object/string/name.js';
+import Value from '@alirya/value/value.js';
+import Validatable from '@alirya/validatable/validatable.js';
 
 /**
  * string intended for empty array
@@ -31,7 +31,7 @@ export function EmptyParameters(
 
     strings.push('empty array');
 
-    return strings.filter(v=>v.length).join(' ') + '.';
+    return strings.filter(v=>v.length).join(' ') + '..js';
 }
 
 export type EmptyArgument = Readonly<Value<unknown[]> & Validatable> & {subject?:string};

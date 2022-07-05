@@ -1,10 +1,10 @@
-import Last from '../../../dist/value/value/last';
+import Last from '../../../dist/value/value/last.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 it('sequence', () => {
 
-    let array : number[] = [1,2,3,4,5];
+    const array : number[] = [1,2,3,4,5];
 
     expect(Last(array)).toBe(5);
 });
@@ -12,7 +12,7 @@ it('sequence', () => {
 
 it('skipped', () => {
 
-    let array : number[] = [];
+    const array : number[] = [];
     array[5] = 1;
     array[6] = 2;
     array[7] = 3;
@@ -26,7 +26,7 @@ it('skipped', () => {
 
 it('empty', () => {
 
-    let array : number[] = [];
+    const array : number[] = [];
 
     expect(Last(array)).toBe(undefined);
 });

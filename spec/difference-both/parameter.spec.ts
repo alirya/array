@@ -1,5 +1,5 @@
-import {DifferenceBothParameters, DifferenceBothParameter} from '../../dist/difference-both';
-import {EqualParameter, EqualParameters} from '@alirya/boolean/equal';
+import {DifferenceBothParameters, DifferenceBothParameter} from '../../dist/difference-both.js';
+import {EqualParameter, EqualParameters} from '@alirya/boolean/equal.js';
 
 
 it('enable console.log', () => { spyOn(console, 'log').and.callThrough();});
@@ -7,9 +7,9 @@ it('enable console.log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('check equality result', function() {
 
-    let target : number[] = [1,2,3,4,5];
-    let compare : number[] = [2,3,4,6];
-    let equal = EqualParameters;
+    const target : number[] = [1,2,3,4,5];
+    const compare : number[] = [2,3,4,6];
+    const equal = EqualParameters;
 
     it('default', () => {
 

@@ -1,7 +1,7 @@
-import Validator from '@alirya/validator/validator';
-import Instance from '@alirya/validator/validatable/validatable';
-import Validatable from '@alirya/validatable/validatable/validatable';
-import InstanceInfer from '@alirya/validator/validatable/infer-static';
+import Validator from '@alirya/validator/validator.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
+import Validatable from '@alirya/validatable/validatable/validatable.js';
+import InstanceInfer from '@alirya/validator/validatable/infer-static.js';
 
 /**
  *  validate array length
@@ -21,7 +21,7 @@ export default function Length<
 > {
     return function (value) {
 
-        let validatable = validator(value.length);
+        const validatable = validator(value.length);
 
         return {
             get validatable() {

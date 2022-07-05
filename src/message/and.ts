@@ -1,6 +1,6 @@
-import Message from '@alirya/message/message';
-import Messages from './messages/messages';
-import Join from './join';
+import Message from '@alirya/message/message.js';
+import Messages from './messages/messages.js';
+import Join from './join.js';
 
 export default function And<MessageType extends Message<string>[]>(
     messages : MessageType,

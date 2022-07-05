@@ -1,9 +1,9 @@
-import EmptyArgument from '../boolean/empty';
-import {CallbackClassParameters} from '@alirya/validator/validatable/callback';
-import Validatable from '@alirya/validator/validatable/validatable';
-import Value from '@alirya/value/value';
-import Message from '@alirya/message/message';
-import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable';
+import EmptyArgument from '../boolean/empty.js';
+import {CallbackClassParameters} from '@alirya/validator/validatable/callback.js';
+import Validatable from '@alirya/validator/validatable/validatable.js';
+import Value from '@alirya/value/value.js';
+import Message from '@alirya/message/message.js';
+import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable.js';
 
 export function EmptyParameters<Values extends unknown[], MessageType>(
     value : Values,

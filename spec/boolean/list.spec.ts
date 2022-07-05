@@ -1,47 +1,47 @@
-import List from '../../dist/boolean/list';
-import GuardBoolean from '@alirya/boolean/boolean';
+import List from '../../dist/boolean/list.js';
+import GuardBoolean from '@alirya/boolean/boolean.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe(`compiler compatible`,function() {
+describe('compiler compatible',function() {
 
-    it(`guard`,function() {
+    it('guard',function() {
 
-        let argument : unknown[] = [true, false, true, false];
+        const argument : unknown[] = [true, false, true, false];
 
         if(List(argument, GuardBoolean)) {
 
-            let returns : boolean[] = argument;
+            const returns : boolean[] = argument;
 
         } else {
 
             // @ts-expect-error
-            let returns : boolean[] = argument;
+            const returns : boolean[] = argument;
         }
     });
 
-    it(`boolean`,function() {
+    it('boolean',function() {
 
-        let argument : boolean[] = [true, false, true, false];
+        const argument : boolean[] = [true, false, true, false];
 
         if(List(argument, (value) : boolean => typeof value === 'boolean')) {
 
-            let returns : boolean[] = argument;
+            const returns : boolean[] = argument;
 
         } else {
 
-            let returns : boolean[] = argument;
+            const returns : boolean[] = argument;
         }
     });
 
 });
 
-it(`boolean/boolean`, () => {
+it('boolean/boolean', () => {
 
     expect(List([true, false, true, false], GuardBoolean)).toBeTrue();
 });
 
-it(`integer/boolean`, () => {
+it('integer/boolean', () => {
 
     expect(List([1, 0, 2, 3], GuardBoolean)).toBeFalse();
 });

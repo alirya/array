@@ -1,15 +1,13 @@
-import {EqualParameter} from '@alirya/boolean/equal';
-import {EqualParameters} from '@alirya/boolean/equal';
-import {DifferenceParameters, DifferenceParameter} from '../../dist/difference';
-
+import {EqualParameter} from '@alirya/boolean/equal.js';
+import {EqualParameters} from '@alirya/boolean/equal.js';
+import {DifferenceParameters, DifferenceParameter} from '../../dist/difference.js';
 
 it('enable console.log', () => { spyOn(console, 'log').and.callThrough();});
 
-
 describe('check equality result', function() {
 
-    let target : number[] = [1,2,3,4,5];
-    let compare : number[] = [2,3,4,6];
+    const target : number[] = [1,2,3,4,5];
+    const compare : number[] = [2,3,4,6];
 
     // it("default", () => {
     //
