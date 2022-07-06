@@ -1,21 +1,14 @@
 {
-  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint",
     "import"
   ],
-  "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    },
-    "import/resolver": {
-    }
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "root": true,
   "rules": {
     "import/no-unresolved": "error",
     "@typescript-eslint/ban-ts-comment": "off",
@@ -31,5 +24,14 @@
       "warn",
       "always"
     ]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {}
   }
 }
