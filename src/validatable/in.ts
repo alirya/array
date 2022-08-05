@@ -1,0 +1,113 @@
+import Validatable from '@alirya/validatable/validatable';
+import MemoizeAccessor from '@alirya/object/function/memoize-accessor';
+import ValueInterface from '@alirya/value/value';
+import Message from '@alirya/message/message';
+import Value from '@alirya/value/value';
+import ReadonlyList from '../array/readonly';
+import Callable from '@alirya/function/callable';
+
+export interface InType<
+    ValueType extends unknown,
+    MessageType = unknown,
+> extends
+    Readonly<Value<ValueType>>,
+    Readonly<Validatable>,
+    Readonly<ReadonlyList<ValueType>>,
+    Readonly<Message<MessageType>> {
+}
+
+export class InParameters<
+    ValueType extends unknown,
+    MessageType = unknown,
+>  implements InType<ValueType, MessageType> {
+
+    #message : Callable<[ValueType, boolean, ReadonlyArray<ValueType>], MessageType>;
+
+    constructor(
+        readonly value: ValueType,
+        readonly array: ReadonlyArray<ValueType>,
+        readonly validation : (value:ValueType, list: ReadonlyArray<ValueType>)=>boolean,
+        message : Callable<[ValueType, boolean, ReadonlyArray<ValueType>], MessageType>,
+    ) {
+
+        this.#message = message;
+    }
+
+    @MemoizeAccessor()
+    get valid() : boolean {
+        return this.validation(this.value, this.array);
+    }
+
+    @MemoizeAccessor()
+    get message() : MessageType {
+
+        try {
+
+            return this.#message(this.value, this.valid, this.array);
+
+        } catch (e) {
+
+            throw new Error(`error on generating message, ${e}`);
+        }
+
+    }
+}
+
+
+
+export type InArgument<
+    ValueType extends unknown,
+    MessageType = unknown,
+> =
+    ValueInterface<ValueType> &
+    Readonly<ReadonlyList<ValueType>> &
+    {validation : (results:Pick<InType<ValueType, MessageType>, 'value'|'array'>)=>boolean} &
+    Message<Callable<[Omit<InType<ValueType, MessageType>, 'message'>], MessageType>>
+;
+
+export class InParameter<
+    ValueType extends unknown,
+    MessageType = unknown,
+> extends InParameters<
+    ValueType,
+    MessageType
+> {
+
+    constructor({
+        value,
+        array,
+        validation,
+        message,
+    } : InArgument<ValueType, MessageType>) {
+
+        super(
+            value,
+            array,
+            (value, array) => validation({value, array}),
+            (value, valid, array) => message({value, valid, array})
+        );
+    }
+}
+
+
+
+
+namespace In {
+    export const Parameters = InParameters;
+    export const Parameter = InParameter;
+    export type Type<
+        ValueType extends unknown[],
+        MessageType = unknown
+    > = InType<
+        ValueType,
+        MessageType
+    >;
+    export type Argument<
+        ValueType extends unknown,
+        MessageType = unknown
+    > = InArgument<
+        ValueType,
+        MessageType
+    >;
+}
+export default In;
