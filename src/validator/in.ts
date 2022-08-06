@@ -1,10 +1,14 @@
 import Validator from '@alirya/validator/simple';
-import In from '../validatable/in';
+import In, {InArgumentsMessage, InArgumentMessage} from '../validatable/in';
 import Instance from '@alirya/validator/validatable/validatable';
 import InMessage from '../assert/string/in';
 import Callable from '@alirya/function/callable';
 import {Optional} from 'utility-types';
 
+export {
+    InArgumentsMessage,
+    InArgumentMessage
+};
 /**
  *  validate if value is array
  */

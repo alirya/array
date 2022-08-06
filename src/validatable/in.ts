@@ -16,6 +16,11 @@ export interface InType<
     Readonly<Message<MessageType>> {
 }
 
+export type InArgumentsMessage<
+    ValueType extends unknown,
+    MessageType = unknown,
+> = Callable<[ValueType, boolean, ReadonlyArray<ValueType>], MessageType>;
+
 export class InParameters<
     ValueType extends unknown,
     MessageType = unknown,
@@ -27,7 +32,7 @@ export class InParameters<
         readonly value: ValueType,
         readonly array: ReadonlyArray<ValueType>,
         readonly validation : (value:ValueType, list: ReadonlyArray<ValueType>)=>boolean,
-        message : Callable<[ValueType, boolean, ReadonlyArray<ValueType>], MessageType>,
+        message : InArgumentsMessage<ValueType, MessageType>,
     ) {
 
         this.#message = message;
@@ -62,8 +67,14 @@ export type InArgument<
     ValueInterface<ValueType> &
     Readonly<ReadonlyList<ValueType>> &
     {validation : (results:Pick<InType<ValueType, MessageType>, 'value'|'array'>)=>boolean} &
-    Message<Callable<[Omit<InType<ValueType, MessageType>, 'message'>], MessageType>>
+    Message<InArgumentMessage<ValueType, MessageType>>
 ;
+
+
+export type InArgumentMessage<
+    ValueType extends unknown,
+    MessageType = unknown,
+> = Callable<[Omit<InType<ValueType, MessageType>, 'message'>], MessageType>;
 
 export class InParameter<
     ValueType extends unknown,
@@ -106,6 +117,21 @@ namespace In {
         ValueType extends unknown,
         MessageType = unknown
     > = InArgument<
+        ValueType,
+        MessageType
+    >;
+
+    export type ArgumentsMessage<
+        ValueType extends unknown,
+        MessageType = unknown
+    > = InArgumentsMessage<
+        ValueType,
+        MessageType
+    >;
+    export type ArgumentMessage<
+        ValueType extends unknown,
+        MessageType = unknown
+    > = InArgumentMessage<
         ValueType,
         MessageType
     >;
