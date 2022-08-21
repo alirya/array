@@ -1,7 +1,7 @@
 import ArrayMessage from '../../assert/string/array';
 import Value from '@alirya/value/value';
 import Validatable from '@alirya/validatable/validatable';
-
+// TODO DEPRECATED?
 export function ArrayParameters(
     value : unknown,
     valid : boolean

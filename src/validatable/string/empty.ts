@@ -1,7 +1,7 @@
 import AssertEmpty from '../../assert/string/empty';
 import Value from '@alirya/value/value';
 import Validatable from '@alirya/validatable/validatable';
-
+// TODO DEPRECATED?
 export function EmptyParameters(value : unknown[], valid : boolean) : string {
 
     return AssertEmpty.Parameters(value, valid);

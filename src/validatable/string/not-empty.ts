@@ -1,7 +1,7 @@
 import StringNotEmpty from '../../assert/string/not-empty';
 import Value from '@alirya/value/value';
 import Validatable from '@alirya/validatable/validatable';
-
+// TODO DEPRECATED?
 export function NotEmptyParameters(
     value : ReadonlyArray<unknown>,
     valid : boolean,
