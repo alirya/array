@@ -10,6 +10,7 @@ import SimpleValidator from '@alirya/validator/simple';
 import TypeInfer from '@alirya/validator/subject/expectation';
 import ValidatableListInterface from '../validatable/list-callback';
 import SubjectInfer from '@alirya/validator/subject/subject';
+import {ArrayParameters} from './array';
 
 
 /**
@@ -43,7 +44,17 @@ export function ListCallbackParameters<
     message : (result:Validatables)=>MessageType
 ) : ListCallbackReturn<MessageType, ValidatorType, Validatables, ValidatableType> {
 
+    const array = ArrayParameters();
+
     return function  (value) {
+
+        const validatable = array(value);
+
+        if(!validatable.valid) {
+
+            return validatable;
+        }
+
 
         return new ValidatableListCallback.Parameters(value, validator, map, validation, message);
 
