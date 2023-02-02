@@ -1,5 +1,5 @@
 import {CallbackClassParameters} from '@alirya/validator/validatable/callback';
-import ObjectGuard from '../boolean/array';
+import ArrayGuard from '../boolean/array';
 import Instance from '@alirya/validator/validatable/validatable';
 import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable';
 import Value from '@alirya/value/value';
@@ -10,9 +10,9 @@ import Message from '@alirya/message/message';
 export function ArrayParameters<Argument, MessageType>(
     value : Argument,
     message : ValidatableParameters<Argument, MessageType>
-) : ArrayReturn<Argument, MessageType> {
+) : ArrayValidator<Argument, MessageType> {
 
-    return <Readonly<Simple<Argument, unknown[], Instance<Argument, MessageType>>>> new CallbackClassParameters<Argument>(value, ObjectGuard, message);
+    return <Readonly<Simple<Argument, unknown[], MessageType>>> new CallbackClassParameters<Argument>(value, ArrayGuard, message);
 }
 
 export type ArrayArgument<Argument, MessageType> =
@@ -24,12 +24,14 @@ export function ArrayParameter<Argument, MessageType>(
         value,
         message,
     } : ArrayArgument<Argument, MessageType>
-) : ArrayReturn<Argument, MessageType> {
+) : ArrayValidator<Argument, MessageType> {
 
     return ArrayParameters(value, (value, valid) => message({value, valid}));
 }
 
-export type ArrayReturn<Argument, MessageType> = Readonly<Simple<Argument, unknown[], Instance<Argument, MessageType>>>;
+export {ArrayParameters as ArrayValidatorParameters};
+
+export type ArrayValidator<Argument, MessageType> = Readonly<Simple<Argument, unknown[], MessageType>>;
 
 namespace Array {
     export const Parameters = ArrayParameters;

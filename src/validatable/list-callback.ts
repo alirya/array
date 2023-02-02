@@ -1,5 +1,6 @@
 import Validator from '@alirya/validator/validator';
 import Validatable from '@alirya/validatable/validatable';
+import ValidatorValidatable from '@alirya/validator/validatable/validatable';
 import Instance from '@alirya/validator/validatable/validatable';
 import MemoizeAccessor from '@alirya/object/function/memoize-accessor';
 import ValueInterface from '@alirya/value/value';
@@ -8,19 +9,14 @@ import ValidatorContainer from '@alirya/validator/validator/validator';
 import Value from '@alirya/value/value';
 import Messages from '../message/messages/messages';
 import Validatables from './validatables/validatables';
-import ValidatableContainer from '@alirya/validatable/validatable/Validatable';
+import ValidatableContainer from '@alirya/validatable/validatable/validatable';
 
-export interface ListCallbackType<
-    ValueType extends unknown[],
+export interface ListCallbackContext<
     ValidatorType extends Validator = Validator,
     Results extends Instance[] = Instance[],
-    MessageType = unknown,
     ValidatableType extends Validatable = Validatable
 > extends
-    Readonly<Value<ValueType>>,
-    Readonly<Validatable>,
     Readonly<ValidatorContainer<ValidatorType>>,
-    Readonly<Message<MessageType>>,
     Readonly<Messages<Results>>,
     Readonly<Validatables<Results>>,
     Readonly<ValidatableContainer<ValidatableType>> {
@@ -32,7 +28,7 @@ export class ListCallbackParameters<
     Results extends Instance[] = Instance[],
     MessageType = unknown,
     ValidatableType extends Validatable = Validatable
->  implements ListCallbackType<ValueType, ValidatorType, Results, MessageType, ValidatableType>{
+>  implements ValidatorValidatable<ValueType, MessageType>, ListCallbackContext<ValidatorType, Results, ValidatableType>{
 
     readonly validatable;
     readonly valid;
@@ -124,16 +120,16 @@ namespace ListCallback {
     export const Parameters = ListCallbackParameters;
     export const Parameter = ListCallbackParameter;
     export type Type<
-        ValueType extends unknown[],
+        // ValueType extends unknown[],
         ValidatorType extends Validator = Validator,
         Results extends Instance[] = Instance[],
-        MessageType = unknown,
+        // MessageType = unknown,
         ValidatableType extends Validatable = Validatable
-    > = ListCallbackType<
-        ValueType,
+    > = ListCallbackContext<
+        // ValueType,
         ValidatorType,
         Results,
-        MessageType,
+        // MessageType,
         ValidatableType
     >;
     export type Argument<

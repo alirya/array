@@ -3,14 +3,15 @@ import Validatable from '@alirya/validatable/validatable';
 import ValidatableListCallback from '../validatable/list-callback';
 import Instance from '@alirya/validator/validatable/validatable';
 import BaseInfer from '@alirya/validator/subject/allow';
+import SubjectInfer from '@alirya/validator/subject/subject';
 import Message from '@alirya/message/message';
 import ValidatorContainer from '@alirya/validator/validator/validator';
 import ValidatorValidatable from '@alirya/validator/validatable/validatable';
 import SimpleValidator from '@alirya/validator/simple';
 import TypeInfer from '@alirya/validator/subject/expectation';
 import ValidatableListInterface from '../validatable/list-callback';
-import SubjectInfer from '@alirya/validator/subject/subject';
 import {ArrayParameters} from './array';
+import Chain from '../../../validator/dist/chain';
 
 
 /**
@@ -39,26 +40,33 @@ export function ListCallbackParameters<
     ValidatableType extends Validatable  = Validatable
 > (
     validator : ValidatorType,
-    map : (value:BaseInfer<ValidatorType>[], validator:ValidatorType)=>Validatables,
+    map : (value:SubjectInfer<ValidatorType>[], validator:ValidatorType)=>Validatables,
     validation : (result:Validatables)=>ValidatableType,
     message : (result:Validatables)=>MessageType
 ) : ListCallbackReturn<MessageType, ValidatorType, Validatables, ValidatableType> {
 
-    const array = ArrayParameters();
 
-    return function  (value) {
-
-        const validatable = array(value);
-
-        if(!validatable.valid) {
-
-            return validatable;
-        }
-
+    return Chain(ArrayParameters(), function (value) {
 
         return new ValidatableListCallback.Parameters(value, validator, map, validation, message);
 
-    } as ListCallbackReturn<MessageType, ValidatorType, Validatables, ValidatableType>;
+    }) as ListCallbackReturn<MessageType, ValidatorType, Validatables, ValidatableType>;
+
+    // const array = ArrayParameters();
+    //
+    // return function  (value) {
+    //
+    //     const validatable = array(value);
+    //
+    //     if(!validatable.valid) {
+    //
+    //         return validatable;
+    //     }
+    //
+    //
+    //     return new ValidatableListCallback.Parameters(value, validator, map, validation, message);
+    //
+    // } as ListCallbackReturn<MessageType, ValidatorType, Validatables, ValidatableType>;
 }
 
 
@@ -137,7 +145,8 @@ export type ListCallbackReturn<
     SimpleValidator<
         BaseInfer<ValidatorType>[],
         TypeInfer<ValidatorType>[],
-        ValidatableListInterface.Type<SubjectInfer<ValidatorType>[], ValidatorType, Validatables, MessageType, ValidatableType>
+        MessageType,
+        ValidatableListInterface.Type</*SubjectInfer<ValidatorType>[],*/ ValidatorType, Validatables, /*MessageType,*/ ValidatableType>
     >;
 
 

@@ -12,6 +12,11 @@ import StrictOmit from '@alirya/object/strict-omit';
 import {Required} from 'utility-types';
 import {ListCallbackReturn as ListPartialReturn} from './list-callback';
 import ValidatorValidatable from '@alirya/validator/validatable/validatable';
+import BaseInfer from '@alirya/validator/subject/allow';
+import {List as ListHelper} from 'ts-toolbelt';
+import InferAllow from '@alirya/validator/subject/allow';
+import Expectation from './subject/list/expectation';
+import Allow from './subject/list/allow';
 /**
  * more specific implementation of {@link ListCallback}
  *
@@ -61,16 +66,19 @@ export function ListPartialParameters<
      message : ((result:Unions<InferReturn<ValidatorType>[]>)=>MessageType|Unions<InferMessage<InferReturn<ValidatorType>[]>>) = Map,
      stop : boolean = false,
 
-) : ListPartialReturn<MessageType|Unions<InferMessage<InferReturn<ValidatorType>[]>>, ValidatorType, Unions<InferReturn<ValidatorType>[]>, ValidatableType> {
+) : ListPartialReturn<MessageType, ValidatorType, Unions<InferReturn<ValidatorType>[]>, ValidatableType> {
 
-    return ListCallback.Parameters(
+    return ListCallback.Parameters<MessageType|Unions<InferMessage<InferReturn<ValidatorType>[]>>>(
         validator,
-        (value, validators)=>ValidateMapPartial.Parameters(value, validators, stop),
+        (value, validators)=>{
+
+            return ValidateMapPartial.Parameters(value, validators, stop);
+        }
+            ,
         validation,
         message
     ) as ListPartialReturn<MessageType, ValidatorType, Unions<InferReturn<ValidatorType>[]>, ValidatableType>;
 }
-
 
 
 

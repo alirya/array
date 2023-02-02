@@ -19,7 +19,7 @@ describe('compiler compatibility', function() {
 
     describe('explicit typed', function() {
 
-        type TypeValidator = ValidatorInterface<any, string, Instance<any, string>>;
+        type TypeValidator = ValidatorInterface<any, string, string>;
 
         type Type = [
             string,
@@ -176,7 +176,7 @@ describe('explicit', function() {
 
     describe('all valid', function() {
 
-        type TypeValidator = ValidatorInterface<any, string, Instance<any, string>>;
+        type TypeValidator = ValidatorInterface<any, string, string>;
 
         type Type = [
             string,
@@ -323,7 +323,7 @@ describe('explicit', function() {
     describe('mixed', function() {
 
 
-        type TypeValidator = ValidatorInterface<any, string, Instance<any, string>>;
+        type TypeValidator = ValidatorInterface<any, string, string>;
 
         type Type = [
             string,
@@ -470,7 +470,7 @@ describe('explicit', function() {
 
     describe('all invalid', function() {
 
-        type TypeValidator = ValidatorInterface<any, string, Instance<any, string>>;
+        type TypeValidator = ValidatorInterface<any, string, string>;
 
         type Type = [
             object,

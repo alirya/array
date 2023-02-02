@@ -62,8 +62,8 @@ describe('compiler compatibility', function() {
 
 
         type TypeValidator = [
-            SimpleValidator<any, string, Instance<any, string>>,
-            SimpleValidator<any, string, Instance<any, string>>,
+            SimpleValidator<any, string, string>,
+            SimpleValidator<any, string, string>,
         ];
 
         let validator : TypeValidator = [

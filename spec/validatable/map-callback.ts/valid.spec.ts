@@ -10,9 +10,9 @@ import Instance from '@alirya/validator/validatable/validatable';
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 type TypeValidator = [
-    ValidatorInterface<any, string, Instance<any, string>>,
-    ValidatorInterface<any, string, Instance<any, string>>,
-    ValidatorInterface<any, string, Instance<any, string>>,
+    ValidatorInterface<any, string, string>,
+    ValidatorInterface<any, string, string>,
+    ValidatorInterface<any, string, string>,
 ];
 
 type Type = [

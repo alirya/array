@@ -56,7 +56,7 @@ export function ListAllParameters<
 
 ) : ListAllReturn<MessageType, ValidatorType, InferReturn<ValidatorType>[], ValidatableType> {
 
-    return ListCallback.Parameters(
+    return ListCallback.Parameters<MessageType|InferMessage<InferReturn<ValidatorType>[]>>(
         validator,
         ValidateMap.Parameters,
         validation,

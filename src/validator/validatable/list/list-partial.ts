@@ -10,7 +10,7 @@ export function ListPartialParameters<
     ValueType extends unknown[],
     ValidatorType extends Validator<ListHelper.UnionOf<ValueType>>
 >(
-    values : ValueType,
+    values : [...ValueType],
     validator : ValidatorType,
     stop : boolean = false
 ) : ListPartialReturn<ValueType, ValidatorType> {
@@ -39,7 +39,7 @@ export type ListPartialArgument<
     ValueType extends unknown[],
     ValidatorType extends Validator<ListHelper.UnionOf<ValueType>>
 > =
-    Value<ValueType> &
+    Value<[...ValueType]> &
     ValidatorContainer<ValidatorType> &
     {stop?:boolean};
 
@@ -59,20 +59,20 @@ export function ListPartialParameter<
 
 export type ListPartialReturn<
     ValueType extends unknown[],
-    ValidatorType extends Validator<ListHelper.UnionOf<ValueType>>
-    > = Unions<Map<ValueType, InferReturn<ValidatorType>>>;
+    ValidatorType extends Validator<ListHelper.UnionOf<[...ValueType]>>
+> = Unions<Map<[...ValueType], InferReturn<ValidatorType>>>;
 
 namespace ListPartial {
     export const Parameters = ListPartialParameters;
     export const Parameter = ListPartialParameter;
-    export type  Argument<
+    export type Argument<
         ValueType extends unknown[],
         ValidatorType extends Validator<ListHelper.UnionOf<ValueType>>
     > = ListPartialArgument<
         ValueType,
         ValidatorType
     >;
-    export type  Return<
+    export type Return<
         ValueType extends unknown[],
         ValidatorType extends Validator<ListHelper.UnionOf<ValueType>>
     > = ListPartialReturn<

@@ -4,6 +4,8 @@ import Instance from '@alirya/validator/validatable/validatable';
 import InMessage from '../assert/string/in';
 import Callable from '@alirya/function/callable';
 import {Optional} from 'utility-types';
+import {ArrayParameters} from './array';
+import Chain from '../../../validator/dist/chain';
 
 export {
     InArgumentsMessage,
@@ -15,25 +17,25 @@ export {
 export function InParameters<ValueType>(
     array: ReadonlyArray<ValueType>,
     validation ?: (value:ValueType, list: ReadonlyArray<ValueType>)=>boolean,
-) : Validator<ValueType, ValueType, Readonly<Instance<ValueType, string>>>;
+) : Validator<ValueType, ValueType, string>;
 
 export function InParameters<ValueType, MessageType>(
     array: ReadonlyArray<ValueType>,
     validation ?: (value:ValueType, list: ReadonlyArray<ValueType>)=>boolean,
     message ?: Callable<[ValueType, boolean, ReadonlyArray<ValueType>], MessageType>
-) : Validator<ValueType, ValueType, Readonly<Instance<ValueType, MessageType>>>;
+) : Validator<ValueType, ValueType, MessageType>;
 
 export function InParameters<ValueType, MessageType>(
     array: ReadonlyArray<ValueType>,
     validation : (value:ValueType, list: ReadonlyArray<ValueType>)=>boolean = (value, list) => list.includes(value),
     message : Callable<[ValueType, boolean, ReadonlyArray<ValueType>], MessageType|string> = InMessage.Parameters
-) : Validator<ValueType, ValueType, Readonly<Instance<ValueType, MessageType>>> {
+) : Validator<ValueType, ValueType, MessageType> {
 
-    return function (value) {
+    return Chain(ArrayParameters(), function (value) {
 
         return new In.Parameters(value, array, validation, message);
 
-    } as Validator<ValueType, ValueType, Readonly<Instance<ValueType, MessageType>>>;
+    }) as Validator<ValueType, ValueType, MessageType>
 }
 
 
@@ -42,7 +44,7 @@ export type InArgument<ValueType, MessageType> = Optional<Omit<In.Argument<Value
 /**
  *  validate if value is array
  */
-export function InParameter<ValueType>(array: InArgument<ValueType, string>) : Validator<unknown, Array<any>, Readonly<Instance<unknown, string>>>;
+export function InParameter<ValueType>(array: InArgument<ValueType, string>) : Validator<unknown, Array<any>, string>;
 
 export function InParameter<ValueType, MessageType>(
     {
@@ -50,7 +52,7 @@ export function InParameter<ValueType, MessageType>(
         validation,
         message,
     }: InArgument<ValueType, MessageType>,
-) : Validator<ValueType, ValueType, Readonly<Instance<ValueType, MessageType>>>;
+) : Validator<ValueType, ValueType, MessageType>;
 
 export function InParameter<ValueType, MessageType>(
     {
@@ -58,7 +60,7 @@ export function InParameter<ValueType, MessageType>(
         validation = ({value, array}) => array.includes(value),
         message = InMessage.Parameter,
     }: InArgument<ValueType, MessageType|string>
-) : Validator<ValueType, ValueType, Readonly<Instance<ValueType, MessageType|string>>> {
+) : Validator<ValueType, ValueType, MessageType|string> {
 
     return InParameters(
         array,

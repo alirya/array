@@ -15,8 +15,8 @@ it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 describe('explicit typed', function() {
 
     type TypeValidator = [
-        ValidatorInterface<any, string, Instance<any, string>>,
-        ValidatorInterface<any, string, Instance<any, string>>,
+        ValidatorInterface<any, string, string>,
+        ValidatorInterface<any, string, string>,
     ];
 
     type Type = [

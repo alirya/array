@@ -2,7 +2,7 @@ import Validator from '@alirya/validator/validator';
 import Validatable from '@alirya/validatable/validatable';
 import ValidateValuePartial from './validatable/list/value-partial';
 import ListReturn from './validatable/list/infer';
-import ValueCallback, {ValueCallbackReturn as ValuePartialReturn} from './value-callback';
+import ValueCallback, {ValueCallbackValidator as ValuePartialReturn} from './value-callback';
 import Unions from '../unions';
 import InferMessage from '../message/message/list/infer';
 import Map from '../message/message/list/map';
@@ -217,7 +217,7 @@ namespace ValuePartial {
         ValueType,
         MessageType,
         ValidatorsType extends Validator<Base, ValueType>[],
-        Validatables extends Instance[],
+        Validatables extends Instance<Base|ValueType>[],
         ValidatableType extends Validatable
     > = ValuePartialReturn<
         Base,

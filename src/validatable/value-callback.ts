@@ -7,20 +7,16 @@ import Validators from '../validator/validators/validators';
 import Message from '@alirya/message/message';
 import BaseValue from '@alirya/value/value';
 import Messages from '../message/messages/messages';
-import ValidatableContainer from '@alirya/validatable/validatable/Validatable';
+import ValidatableContainer from '@alirya/validatable/validatable/validatable';
 import Validatables from './validatables/validatables';
+import ValidatorValidatable from '@alirya/validator/validatable/validatable';
 
-export interface ValueCallbackType<
-    ValueType,
+export interface ValueCallbackContext<
     Container extends Validator[],
     Results extends Instance[],
-    MessageType,
     ValidatableType extends Validatable
 > extends
-    BaseValue<ValueType>,
-    Validatable,
     Validators<Container>,
-    Message<MessageType>,
     Messages<Results>,
     ValidatableContainer<ValidatableType>,
     Validatables<Results>
@@ -33,7 +29,7 @@ export class ValueCallbackParameters<
     Results extends Instance[] = Instance[],
     MessageType = unknown,
     ValidatableType extends Validatable = Validatable
->  implements ValueCallbackType<ValueType, ValidatorList, Results, MessageType, ValidatableType> {
+>  implements ValidatorValidatable<ValueType, MessageType>, ValueCallbackContext<ValidatorList, Results, ValidatableType> {
 
     readonly validatable : ValidatableType;
     readonly valid;
@@ -67,7 +63,7 @@ export class ValueCallbackParameters<
 
 export type ValueCallbackArgument<
     ValueType,
-    ValidatorList extends Validator[] = Validator[],
+    ValidatorList extends Validator<ValueType>[] = Validator<ValueType>[],
     Results extends Instance[] = Instance[],
     MessageType = unknown,
     ValidatableType extends Validatable = Validatable
@@ -81,7 +77,7 @@ export type ValueCallbackArgument<
 
 export class ValueCallbackParameter<
     ValueType,
-    Container extends Validator[] = Validator[],
+    Container extends Validator<ValueType>[] = Validator<ValueType>[],
     Results extends Instance[] = Instance[],
     MessageType = unknown,
     ValidatableType extends Validatable = Validatable
@@ -108,22 +104,18 @@ export class ValueCallbackParameter<
 namespace ValueCallback {
     export const Parameters = ValueCallbackParameters;
     export const Parameter = ValueCallbackParameter;
-    export type Type<
-        ValueType,
+    export type Context<
         Container extends Validator[],
         Results extends Instance[],
-        MessageType,
         ValidatableType extends Validatable
-    > = ValueCallbackType<
-        ValueType,
+    > = ValueCallbackContext<
         Container,
         Results,
-        MessageType,
         ValidatableType
     >;
     export type Argument<
         ValueType,
-        ValidatorList extends Validator[] = Validator[],
+        ValidatorList extends Validator<ValueType>[] = Validator<ValueType>[],
         Results extends Instance[] = Instance[],
         MessageType = unknown,
         ValidatableType extends Validatable = Validatable

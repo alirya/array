@@ -9,23 +9,21 @@ import Message from '@alirya/message/message';
 import Validators from '../validator/validators/validators';
 import Value from '@alirya/value/value';
 import Validatables from './validatables/validatables';
-import ValidatableContainer from '@alirya/validatable/validatable/Validatable';
+import ValidatableContainer from '@alirya/validatable/validatable/validatable';
 import Messages from '../message/messages/messages';
+import ValidatorValidatable from '@alirya/validator/validatable/validatable';
 
-
-export interface MapCallbackType<
+export interface MapCallbackContext<
     ValidatorsType extends Validator[],
     Result extends Instance[],
-    MessageType,
     ValidatableType extends Validatable,
 > extends
     Readonly<Validators<ValidatorsType>>,
-    Readonly<Value<ListParameter<ValidatorsType>>>,
-    Readonly<Validatable>,
     Readonly<Validatables<Result>>,
-    Readonly<Message<MessageType>>,
     Readonly<ValidatableContainer<ValidatableType>>,
-    Readonly<Messages<Result>> {}
+    Readonly<Messages<Result>> {
+
+}
 
 
 export class MapCallbackParameters<
@@ -34,7 +32,7 @@ export class MapCallbackParameters<
     MessageType = unknown,
     ValidatableType extends Validatable = Validatable,
     ValueType extends ListParameter<Validators> = ListParameter<Validators>
-    > implements MapCallbackType<Validators, Result, MessageType, ValidatableType/*, ValueType*/> {
+    > implements ValidatorValidatable<ValueType, MessageType>, MapCallbackContext<Validators, Result, ValidatableType> {
 
     #message : (result:Result)=>MessageType;
     #value : ValueType;
@@ -136,15 +134,13 @@ export class MapCallbackParameter<
 namespace MapCallback {
     export const Parameters = MapCallbackParameters;
     export const Parameter = MapCallbackParameter;
-    export type Type<
+    export type Context<
         ValidatorsType extends Validator[],
         Result extends Instance[],
-        MessageType,
         ValidatableType extends Validatable,
-    > = MapCallbackType<
+    > = MapCallbackContext<
         ValidatorsType,
         Result,
-        MessageType,
         ValidatableType
     >;
     export type Argument<

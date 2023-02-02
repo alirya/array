@@ -1,4 +1,4 @@
-import {UniqueParameters} from '../dist/unique';
+import {UniqueParameters} from '../../dist/unique';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});

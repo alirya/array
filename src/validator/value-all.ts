@@ -14,7 +14,7 @@ import Unions from '../unions';
 import StrictOmit from '@alirya/object/strict-omit';
 import {Required} from 'utility-types';
 import Instance from '@alirya/validator/validatable/validatable';
-import {ValueCallbackReturn as ValueAllReturn} from './value-callback';
+import {ValueCallbackValidator as ValueAllReturn} from './value-callback';
 
 /**
  * more specific implementation of {@link ValueCallback}
@@ -31,23 +31,27 @@ import {ValueCallbackReturn as ValueAllReturn} from './value-callback';
  * combined all result from {@link Validator} list into {@link Message} value
  */
 export function ValueAllParameters<
-    Validators extends Validator[] = Validator[],
+    BaseType = unknown,
+    ValueType = unknown,
+    Validators extends Validator<BaseType,ValueType>[] = Validator<BaseType,ValueType>[],
     ReturnType extends Validatable = Validatable,
     MessageType = unknown,
 >(
     validators : Validators,
     validation : (result:ListReturn<Validators>)=>ReturnType,
     message : (result:ListReturn<Validators>)=>MessageType
-) : ValueAllReturn<List.UnionOf<Allow<Validators>>, List.UnionOf<Expectation<Validators>>, MessageType, Validators, ListReturn<Validators>, ReturnType>;
+) : ValueAllReturn<BaseType, ValueType, MessageType, Validators, ListReturn<Validators>, ReturnType>;
 
 
 export function ValueAllParameters<
-    Validators extends Validator[] = Validator[],
+    BaseType = unknown,
+    ValueType = unknown,
+    Validators extends Validator<BaseType,ValueType>[] = Validator<BaseType,ValueType>[],
     ReturnType extends Validatable = Validatable,
 >(
     validators : Validators,
     validation : (result:ListReturn<Validators>)=>ReturnType,
-) : ValueAllReturn<List.UnionOf<Allow<Validators>>, List.UnionOf<Expectation<Validators>>, InferMessage<ListReturn<Validators>>, Validators, ListReturn<Validators>, ReturnType>;
+) : ValueAllReturn<BaseType, ValueType, InferMessage<ListReturn<Validators>>, Validators, ListReturn<Validators>, ReturnType>;
 
 
 export function ValueAllParameters<
@@ -220,7 +224,7 @@ namespace ValueAll {
         ValueType,
         MessageType,
         ValidatorsType extends Validator<Base, ValueType>[],
-        Validatables extends Instance[],
+        Validatables extends Instance<Base, ValueType>[],
         ValidatableType extends Validatable
     > = ValueAllReturn<
         Base,

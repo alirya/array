@@ -1,4 +1,4 @@
-import Validator from '@alirya/validator/validator';
+import ValidatorT from '@alirya/validator/validator';
 import Validatable from '@alirya/validatable/validatable';
 import ValidatableValue from '../validatable/value-callback';
 import Instance from '@alirya/validator/validatable/validatable';
@@ -8,19 +8,19 @@ import SimpleValidator from '@alirya/validator/simple';
 import ValidatableValueInterface from '../validatable/value-callback';
 
 /**
- * Base {@link Validator} for validating value with list of {@link Validator}
+ * Base {@link ValidatorT} for validating value with list of {@link ValidatorT}
  *
  * @template BaseType
- * see {@link Validator}
+ * see {@link ValidatorT}
  *
  * @template ValueType
- * see {@link Validator}
+ * see {@link ValidatorT}
  *
  * @template MessageType
- * see {@link Validator}
+ * see {@link ValidatorT}
  *
  * @template ValidatorsType
- * list of {@link Validator} to be used against {@template BaseType} or {@template ValueType}
+ * list of {@link ValidatorT} to be used against {@template BaseType} or {@template ValueType}
  *
  * @template Validatables
  * result after processing {@template ValidatorsType} with {@template BaseType} or {@template ValueType}
@@ -33,39 +33,39 @@ export function ValueCallbackParameters<
     BaseType = unknown,
     ValueType = unknown,
     MessageType = unknown,
-    Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
-    Validatables extends Instance[] = Instance[],
+    Validators extends ValidatorT<BaseType, ValueType>[] = ValidatorT<BaseType, ValueType>[],
+    Validatables extends Instance<BaseType|ValueType>[] = Instance<BaseType|ValueType>[],
     ValidatableType extends Validatable  = Validatable
 > (
     validators : Validators,
     map : (value:BaseType|ValueType, validators:Validators)=>Validatables,
     validation : (result:Validatables)=>ValidatableType,
     message : (result:Validatables)=>MessageType
-) : ValueCallbackReturn<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType> {
+) : ValueCallbackValidator<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType> {
 
     return function(value) {
 
         return new ValidatableValue.Parameters(value, validators, map, validation, message);
 
-    } as ValueCallbackReturn<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>;
+    } as ValueCallbackValidator<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>;
 }
 
 
 
 /**
- * Base {@link Validator} for validating value with list of {@link Validator}
+ * Base {@link ValidatorT} for validating value with list of {@link ValidatorT}
  *
  * @template BaseType
- * see {@link Validator}
+ * see {@link ValidatorT}
  *
  * @template ValueType
- * see {@link Validator}
+ * see {@link ValidatorT}
  *
  * @template MessageType
- * see {@link Validator}
+ * see {@link ValidatorT}
  *
  * @template ValidatorsType
- * list of {@link Validator} to be used against {@template BaseType} or {@template ValueType}
+ * list of {@link ValidatorT} to be used against {@template BaseType} or {@template ValueType}
  *
  * @template Validatables
  * result after processing {@template ValidatorsType} with {@template BaseType} or {@template ValueType}
@@ -78,7 +78,7 @@ export type ValueCallbackArgument<
     BaseType = unknown,
     ValueType = unknown,
     MessageType = unknown,
-    Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
+    Validators extends ValidatorT<BaseType, ValueType>[] = ValidatorT<BaseType, ValueType>[],
     Validatables extends Instance<BaseType|ValueType>[] = Instance<BaseType|ValueType>[],
     ValidatableType extends Validatable  = Validatable
 > =
@@ -93,7 +93,7 @@ export function ValueCallbackParameter<
     BaseType = unknown,
     ValueType = unknown,
     MessageType = unknown,
-    Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
+    Validators extends ValidatorT<BaseType, ValueType>[] = ValidatorT<BaseType, ValueType>[],
     Validatables extends Instance<BaseType|ValueType>[] = Instance<BaseType|ValueType>[],
     ValidatableType extends Validatable  = Validatable
 > (
@@ -103,24 +103,27 @@ export function ValueCallbackParameter<
         validation,
         message,
     } : ValueCallbackArgument<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>
-) : ValueCallbackReturn<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType> {
+) : ValueCallbackValidator<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType> {
 
-    return ValueCallbackParameters(validators, map, validation, message) as ValueCallbackReturn<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>;
+    return ValueCallbackParameters<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>(
+        validators, map, validation, message
+    );
 
 }
 
-export type ValueCallbackReturn<
+export type ValueCallbackValidator<
     Base,
     ValueType,
     MessageType,
-    ValidatorsType extends Validator<Base, ValueType>[],
-    Validatables extends Instance[],
+    ValidatorsType extends ValidatorT<Base, ValueType>[],
+    Validatables extends Instance<Base|ValueType>[],
     ValidatableType extends Validatable
     > =
     SimpleValidator<
         Base,
         ValueType,
-        ValidatableValueInterface.Type<Base, ValidatorsType, Validatables, MessageType, ValidatableType>
+        MessageType,
+        ValidatableValueInterface.Context</*Base, */ValidatorsType, Validatables, /*MessageType, */ValidatableType>
         >;
 
 
@@ -131,19 +134,19 @@ namespace ValueCallback {
         BaseType = unknown,
         ValueType = unknown,
         MessageType = unknown,
-        Validators extends Validator<BaseType, ValueType>[] = Validator<BaseType, ValueType>[],
+        Validators extends ValidatorT<BaseType, ValueType>[] = ValidatorT<BaseType, ValueType>[],
         Validatables extends Instance<BaseType|ValueType>[] = Instance<BaseType|ValueType>[],
         ValidatableType extends Validatable  = Validatable
     > = ValueCallbackArgument<BaseType, ValueType, MessageType, Validators, Validatables, ValidatableType>;
 
-    export type Return<
+    export type Validator<
         Base,
         ValueType,
         MessageType,
-        ValidatorsType extends Validator<Base, ValueType>[],
-        Validatables extends Instance[],
+        ValidatorsType extends ValidatorT<Base, ValueType>[],
+        Validatables extends Instance<Base|ValueType>[],
         ValidatableType extends Validatable
-    > = ValueCallbackReturn<
+    > = ValueCallbackValidator<
         Base,
         ValueType,
         MessageType,

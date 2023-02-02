@@ -44,9 +44,9 @@ export function MapCallbackParameters<
 
     return function(value) {
 
-        return new ValidatableMap.Parameters(value, validators, map, validation, message) as
+        return new ValidatableMap.Parameters(value, validators, map, validation, message)/* as
             Replace<ValidatableMap.Type<Validators, Validatables, MessageType, ValidatableType>, true> |
-            Construct<BaseList<Validators>, TypeList<Validators>, ValidatableMap.Type<Validators, Validatables, MessageType, ValidatableType>>;
+            Construct<BaseList<Validators>, TypeList<Validators>, ValidatableMap.Type<Validators, Validatables, MessageType, ValidatableType>>*/;
 
     } as MapCallbackReturn<Validators, Validatables, MessageType, ValidatableType>;
 }
@@ -133,7 +133,8 @@ export type MapCallbackReturn<
     SimpleValidator<
         BaseList<ValidatorsType>,
         TypeList<ValidatorsType>,
-        ValidatableMap.Type<ValidatorsType, Validatables, MessageType, ValidatableType/*, BaseList<ValidatorsType>*/>
+        MessageType,
+        ValidatableMap.Context<ValidatorsType, Validatables, /*MessageType,*/ ValidatableType/*, BaseList<ValidatorsType>*/>
     >;
 
 

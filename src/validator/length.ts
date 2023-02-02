@@ -6,10 +6,10 @@ import InstanceInfer from '@alirya/validator/validatable/infer-static';
 /**
  *  validate array length
  */
-
+// TODO MOVE TO NUMER FOLDER
 export default function Length<
     MessageType,
-    ValidatorType extends Validator<number, number, boolean, boolean, Instance<number, MessageType>>
+    ValidatorType extends Validator<number, number, boolean, boolean, MessageType>
 > (
     validator : ValidatorType
 ) : Validator<
@@ -17,7 +17,7 @@ export default function Length<
     any[],
     boolean,
     boolean,
-    Readonly<Instance<any[], MessageType> & Validatable<InstanceInfer<ValidatorType>>>
+    MessageType
 > {
     return function (value) {
 
@@ -42,6 +42,6 @@ export default function Length<
         any[],
         boolean,
         boolean,
-        Readonly<Instance<any[], MessageType> & Validatable<InstanceInfer<ValidatorType>>>
+        MessageType
         >;
 }

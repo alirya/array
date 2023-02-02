@@ -76,7 +76,7 @@ describe('compiler compatibility', function() {
 
     describe('explicit', function() {
 
-        type TypeValidator = SimpleValidator<any, string, Instance<any, string>>;
+        type TypeValidator = SimpleValidator<any, string, string>;
 
         let validator : TypeValidator = TypeParameters('string');
 

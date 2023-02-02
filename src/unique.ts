@@ -35,6 +35,7 @@ export function UniqueParameters<Value>(
 }
 
 
+type UniqueArgument<Type> = Value<ReadonlyArray<Type>> & Partial<Validation<[Type, Type]>>;
 
 /**
  * object argument version of {@link UniqueParameters}
@@ -42,9 +43,26 @@ export function UniqueParameters<Value>(
  * @param validation
  */
 export function UniqueParameter<Type>(
-    {value, validation} : Value<ReadonlyArray<Type>> & Partial<Validation<[Type, Type]>>
-) {
+    {value, validation} : UniqueArgument<Type>
+) : Type[] {
     return UniqueParameters(value, validation);
+}
+
+
+function Unique<Type>(value : ReadonlyArray<Type>, validation ?: Callable<[Type, Type], boolean>) : Type[];
+function Unique<Type>(argument:UniqueArgument<Type>) : Type[];
+function Unique<Type>(argument:UniqueArgument<Type>|ReadonlyArray<Type>, validation ?: Callable<[Type, Type], boolean>) : Type[] {
+
+    if(Array.isArray(argument)) {
+
+        return UniqueParameters(argument, validation);
+
+    } else {
+
+        return UniqueParameter(argument as UniqueArgument<Type>);
+    }
+
+
 }
 
 
@@ -52,4 +70,6 @@ namespace Unique {
     export const Parameters = UniqueParameters;
     export const Parameter = UniqueParameter;
 }
+
 export default Unique;
+export {Unique as ArrayUnique};
