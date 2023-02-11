@@ -1,11 +1,11 @@
-import Map from '../../../dist/validatable/map-callback';
-import Standard from '../../../dist/validator/validatable/list/map';
-import And from '../../../dist/validatable/and';
-import Or from '../../../dist/validatable/or';
-import ValidatorInterface from '@alirya/validator/simple';
-import MessageMap from '../../../dist/message/message/list/map';
-import {TypeParameters} from '@alirya/type/validator/type';
-import Instance from '@alirya/validator/validatable/validatable';
+import Map from '../../../dist/validatable/map-callback.js';
+import Standard from '../../../dist/validator/validatable/list/map.js';
+import And from '../../../dist/validatable/and.js';
+import Or from '../../../dist/validatable/or.js';
+import ValidatorInterface from '@alirya/validator/simple.js';
+import MessageMap from '../../../dist/message/message/list/map.js';
+import {TypeParameters} from '@alirya/type/validator/type.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -15,7 +15,7 @@ type TypeValidator = [
     ValidatorInterface<any, string, string>,
 ];
 
-let validator : TypeValidator = [
+const validator : TypeValidator = [
     TypeParameters('string'),
     TypeParameters('string'),
     TypeParameters('string'),
@@ -29,20 +29,20 @@ describe('valid', function() {
         string,
     ];
 
-    let value : Type = ['a', 'b', 'c'];
+    const value : Type = ['a', 'b', 'c'];
 
     describe('equal', function() {
 
         it(`and validation`, () => {
 
-            let and = new Map.Parameters(value, validator, Standard.Parameters, And.Parameters, MessageMap);
+            const and = new Map.Parameters(value, validator, Standard.Parameters, And.Parameters, MessageMap);
 
             expect(value).toEqual(and.value);
         });
 
         it(`or validation `, () => {
 
-            let or = new Map.Parameters(value, validator, Standard.Parameters, Or.Parameters, MessageMap);
+            const or = new Map.Parameters(value, validator, Standard.Parameters, Or.Parameters, MessageMap);
 
             expect(value).toEqual(or.value);
         });
@@ -50,11 +50,11 @@ describe('valid', function() {
 
     describe('more', function() {
 
-        let more = [...value, []];
+        const more = [...value, []];
 
         it(`and validation`, () => {
             // @ts-expect-error
-            let and = new Map.Parameters(more, validator, Standard.Parameters, And.Parameters, MessageMap);
+            const and = new Map.Parameters(more, validator, Standard.Parameters, And.Parameters, MessageMap);
 
             expect(more).not.toEqual(and.value);
             expect(value).toEqual(and.value);
@@ -62,7 +62,7 @@ describe('valid', function() {
 
         it(`or validation `, () => {
             // @ts-expect-error
-            let or = new Map.Parameters(more, validator, Standard.Parameters, Or.Parameters, MessageMap);
+            const or = new Map.Parameters(more, validator, Standard.Parameters, Or.Parameters, MessageMap);
 
             expect(more).not.toEqual(or.value);
             expect(value).toEqual(or.value);
@@ -71,12 +71,12 @@ describe('valid', function() {
 
     describe('less', function() {
 
-        let less = value.slice(0, value.length - 1);
+        const less = value.slice(0, value.length - 1);
 
         it(`and validation`, () => {
 
             // @ts-expect-error
-            let and = new Map.Parameters(less, validator, Standard.Parameters, And.Parameters, MessageMap);
+            const and = new Map.Parameters(less, validator, Standard.Parameters, And.Parameters, MessageMap);
 
             expect(less).toEqual(and.value);
             expect(value).not.toEqual(and.value);
@@ -85,7 +85,7 @@ describe('valid', function() {
         it(`or validation `, () => {
 
             // @ts-expect-error
-            let or = new Map.Parameters(less, validator, Standard.Parameters, Or.Parameters, MessageMap);
+            const or = new Map.Parameters(less, validator, Standard.Parameters, Or.Parameters, MessageMap);
 
             expect(less).toEqual(or.value);
             expect(value).not.toEqual(or.value);
@@ -102,20 +102,20 @@ describe('mixed', function() {
         string,
     ];
 
-    let value : Type = [{}, 'a', 'b'];
+    const value : Type = [{}, 'a', 'b'];
 
     describe('equal', function() {
 
         it(`and validation`, () => {
 
-            let and = new Map.Parameters(value, validator, Standard.Parameters, And.Parameters, MessageMap);
+            const and = new Map.Parameters(value, validator, Standard.Parameters, And.Parameters, MessageMap);
 
             expect(value).toEqual(and.value);
         });
 
         it(`or validation `, () => {
 
-            let or = new Map.Parameters(value, validator, Standard.Parameters, Or.Parameters, MessageMap);
+            const or = new Map.Parameters(value, validator, Standard.Parameters, Or.Parameters, MessageMap);
 
             expect(value).toEqual(or.value);
         });
@@ -123,11 +123,11 @@ describe('mixed', function() {
 
     describe('more', function() {
 
-        let more = [...value, []];
+        const more = [...value, []];
 
         it(`and validation`, () => {
 
-            let and = new Map.Parameters(value, validator, Standard.Parameters, And.Parameters, MessageMap);
+            const and = new Map.Parameters(value, validator, Standard.Parameters, And.Parameters, MessageMap);
 
             expect(more).not.toEqual(and.value);
             expect(value).toEqual(and.value);
@@ -135,7 +135,7 @@ describe('mixed', function() {
 
         it(`or validation `, () => {
 
-            let or = new Map.Parameters(value, validator, Standard.Parameters, Or.Parameters, MessageMap);
+            const or = new Map.Parameters(value, validator, Standard.Parameters, Or.Parameters, MessageMap);
 
             expect(more).not.toEqual(or.value);
             expect(value).toEqual(or.value);
@@ -152,20 +152,20 @@ describe('invalid', function() {
         object,
     ];
 
-    let value : Type = [{}, {}, {}];
+    const value : Type = [{}, {}, {}];
 
     describe('equal', function() {
 
         it(`and validation`, () => {
 
-            let and = new Map.Parameters(value, validator, Standard.Parameters, And.Parameters, MessageMap);
+            const and = new Map.Parameters(value, validator, Standard.Parameters, And.Parameters, MessageMap);
 
             expect(value).toEqual(and.value);
         });
 
         it(`or validation `, () => {
 
-            let or = new Map.Parameters(value, validator, Standard.Parameters, Or.Parameters, MessageMap);
+            const or = new Map.Parameters(value, validator, Standard.Parameters, Or.Parameters, MessageMap);
 
             expect(value).toEqual(or.value);
         });
@@ -173,11 +173,11 @@ describe('invalid', function() {
 
     describe('more', function() {
 
-        let more = [...value, []];
+        const more = [...value, []];
 
         it(`and validation`, () => {
 
-            let and = new Map.Parameters(value, validator, Standard.Parameters, And.Parameters, MessageMap);
+            const and = new Map.Parameters(value, validator, Standard.Parameters, And.Parameters, MessageMap);
 
             expect(more).not.toEqual(and.value);
             expect(value).toEqual(and.value);
@@ -185,7 +185,7 @@ describe('invalid', function() {
 
         it(`or validation `, () => {
 
-            let or = new Map.Parameters(value, validator, Standard.Parameters, Or.Parameters, MessageMap);
+            const or = new Map.Parameters(value, validator, Standard.Parameters, Or.Parameters, MessageMap);
 
             expect(more).not.toEqual(or.value);
             expect(value).toEqual(or.value);

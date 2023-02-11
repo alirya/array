@@ -1,11 +1,11 @@
-import Validator from '@alirya/validator/simple';
-import In, {InArgumentsMessage, InArgumentMessage} from '../validatable/in';
-import Instance from '@alirya/validator/validatable/validatable';
-import InMessage from '../assert/string/in';
-import Callable from '@alirya/function/callable';
+import Validator from '@alirya/validator/simple.js';
+import In, {InArgumentsMessage, InArgumentMessage} from '../validatable/in.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
+import InMessage from '../assert/string/in.js';
+import Callable from '@alirya/function/callable.js';
 import {Optional} from 'utility-types';
-import {ArrayParameters} from './array';
-import Chain from '../../../validator/dist/chain';
+import {ArrayParameters} from './array.js';
+import Chain from '../../../validator/dist/chain.js';
 
 export {
     InArgumentsMessage,
@@ -31,11 +31,11 @@ export function InParameters<ValueType, MessageType>(
     message : Callable<[ValueType, boolean, ReadonlyArray<ValueType>], MessageType|string> = InMessage.Parameters
 ) : Validator<ValueType, ValueType, MessageType> {
 
-    return Chain(ArrayParameters(), function (value) {
+    return /*Chain(ArrayParameters(),*/ function (value) {
 
         return new In.Parameters(value, array, validation, message);
 
-    }) as Validator<ValueType, ValueType, MessageType>
+    }/*)*/ as Validator<ValueType, ValueType, MessageType>;
 }
 
 

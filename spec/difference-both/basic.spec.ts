@@ -1,17 +1,17 @@
-import {DifferenceBothParameters} from '../../dist/difference-both';
+import {DifferenceBothParameters} from '../../dist/difference-both.js';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('primitive', function() {
 
-    let target : number[] = [1,2,3,4,5];
-    let compare : number[] = [2,3,4,6];
-    let left = DifferenceBothParameters(target, compare);
+    const target : number[] = [1,2,3,4,5];
+    const compare : number[] = [2,3,4,6];
+    const left = DifferenceBothParameters(target, compare);
 
     it('left valid', () => expect(left).toEqual([1,5,6]));
 
-    let right = DifferenceBothParameters(compare, target);
+    const right = DifferenceBothParameters(compare, target);
 
     it('right valid', () => expect(right).toEqual([6,1,5]));
 
@@ -25,7 +25,7 @@ describe('custom comparison', function() {
         boolean : Boolean,
     };
 
-    let target : Data[] = [
+    const target : Data[] = [
         {
             string : new String('str1'),
             number : new Number(1),
@@ -41,7 +41,7 @@ describe('custom comparison', function() {
         }
     ];
 
-    let compare : Data[] = [
+    const compare : Data[] = [
         {
             string : new String('str2'),
             number : new Number(2),
@@ -55,14 +55,14 @@ describe('custom comparison', function() {
 
     it('left without', function() {
 
-        let removed = DifferenceBothParameters(target, compare);
+        const removed = DifferenceBothParameters(target, compare);
         expect([...target, ...compare]).toEqual(removed);
 
     });
 
     it('left with', function() {
 
-        let removed = DifferenceBothParameters(target, compare, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
+        const removed = DifferenceBothParameters(target, compare, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
 
         expect(target).not.toEqual(removed);
         expect(3).toBe(removed.length);
@@ -76,14 +76,14 @@ describe('custom comparison', function() {
 
     it('right without', function() {
 
-        let removed = DifferenceBothParameters(compare, target);
+        const removed = DifferenceBothParameters(compare, target);
         expect([...compare, ...target]).toEqual(removed);
 
     });
 
     it('right with', function() {
 
-        let removed = DifferenceBothParameters(compare, target, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
+        const removed = DifferenceBothParameters(compare, target, (target: Data, comparison: Data) => target.string.toString() === comparison.string.toString());
         expect(target).not.toEqual(removed);
         expect(3).toBe(removed.length);
 

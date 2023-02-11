@@ -1,7 +1,7 @@
-import Validatable from '@alirya/validatable/validatable';
-import {ValidatableParameters} from '@alirya/validatable/ensure/validatable';
-import ValidatableValid from '@alirya/validatable/boolean/value';
-import MapUnion from '../../unions';
+import Validatable from '@alirya/validatable/validatable.js';
+import {ValidatableParameters} from '@alirya/validatable/ensure/validatable.js';
+import ValidatableValid from '@alirya/validatable/boolean/value.js';
+import MapUnion from '../../unions.js';
 
 /**
  * filter all valid {@link Validatable}

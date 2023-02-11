@@ -1,10 +1,10 @@
-import Validatable from '@alirya/validatable/validatable';
-import MemoizeAccessor from '@alirya/object/function/memoize-accessor';
-import ValueInterface from '@alirya/value/value';
-import Message from '@alirya/message/message';
-import Value from '@alirya/value/value';
-import ReadonlyList from '../array/readonly';
-import Callable from '@alirya/function/callable';
+import Validatable from '@alirya/validatable/validatable.js';
+import MemoizeAccessor from '@alirya/object/function/memoize-accessor.js';
+import ValueInterface from '@alirya/value/value.js';
+import Message from '@alirya/message/message.js';
+import Value from '@alirya/value/value.js';
+import ReadonlyList from '../array/readonly.js';
+import Callable from '@alirya/function/callable.js';
 
 export interface InType<
     ValueType extends unknown,

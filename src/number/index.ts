@@ -1,6 +1,6 @@
-import Validation from '@alirya/boolean/function/validation';
-import ValidationContainer from '@alirya/boolean/validation/validation';
-import Readonly from '../array/readonly';
+import Validation from '@alirya/boolean/function/validation.js';
+import ValidationContainer from '@alirya/boolean/validation/validation.js';
+import Readonly from '../array/readonly.js';
 
 /**
  * get index of first match values
@@ -21,8 +21,8 @@ import Readonly from '../array/readonly';
 export function IndexParameters<Value = unknown>(
     list : ReadonlyArray<Value>,
     validation : Validation<[Value]>,
-    start : number = 0,
-    end : number = Infinity,
+    start  = 0,
+    end  = Infinity,
 ) : number|null {
 
     const direct = list.findIndex((value, index) => {

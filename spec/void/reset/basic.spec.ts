@@ -1,11 +1,11 @@
-import Reset from '../../../dist/void/reset';
+import Reset from '../../../dist/void/reset.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 it('explicit set', () =>{
 
-    let argument = [0, 1, undefined, undefined, 3, 4, 5, undefined];
+    const argument = [0, 1, undefined, undefined, 3, 4, 5, undefined];
 
     Reset(argument);
 
@@ -16,9 +16,9 @@ it('explicit set', () =>{
 
 it('deleted', () =>{
 
-    let argument = [0, 1, 'del1', 'del2', 3, 4, 5, 'del3'];
+    const argument = [0, 1, 'del1', 'del2', 3, 4, 5, 'del3'];
 
-    for (let [i, value] of argument.entries()) {
+    for (const [i, value] of argument.entries()) {
 
         if(typeof value === 'string') {
 

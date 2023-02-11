@@ -1,15 +1,15 @@
-import {MapCallbackParameters} from '../../../dist/validatable/map-callback';
-import {MapParameters} from '../../../dist/validator/validatable/list/map';
-import {MapPartialParameters} from '../../../dist/validator/validatable/list/map-partial';
-import {AndParameters} from '../../../dist/validatable/and';
-import {OrParameters} from '../../../dist/validatable/or';
-import Validatable from '@alirya/validatable/validatable';
-import ValidatorInterface from '@alirya/validator/simple';
-import ValueInterface from '@alirya/value/value';
-import Message from '@alirya/message/message';
-import MessageMap from '../../../dist/message/message/list/map';
-import {TypeParameters} from '@alirya/type/validator/type';
-import Instance from '@alirya/validator/validatable/validatable';
+import {MapCallbackParameters} from '../../../dist/validatable/map-callback.js';
+import {MapParameters} from '../../../dist/validator/validatable/list/map.js';
+import {MapPartialParameters} from '../../../dist/validator/validatable/list/map-partial.js';
+import {AndParameters} from '../../../dist/validatable/and.js';
+import {OrParameters} from '../../../dist/validatable/or.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import ValidatorInterface from '@alirya/validator/simple.js';
+import ValueInterface from '@alirya/value/value.js';
+import Message from '@alirya/message/message.js';
+import MessageMap from '../../../dist/message/message/list/map.js';
+import {TypeParameters} from '@alirya/type/validator/type.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -25,19 +25,19 @@ type Type = [
     object,
 ];
 
-let validator : TypeValidator = [
+const validator : TypeValidator = [
     TypeParameters('string'),
     TypeParameters('number'),
     TypeParameters('string'),
 ];
 
-let value : Type = [{}, {}, {}];
+const value : Type = [{}, {}, {}];
 
 describe('complete', function() {
 
     it(`and validation`, () => {
 
-        let and = new MapCallbackParameters(value, validator,
+        const and = new MapCallbackParameters(value, validator,
             (value, validators) => MapParameters(value, validators),
             (v)=>AndParameters(v),
             (v)=>MessageMap(v)
@@ -61,7 +61,7 @@ describe('complete', function() {
 
     it(`or validation `, () => {
 
-        let or = new MapCallbackParameters(value, validator,
+        const or = new MapCallbackParameters(value, validator,
             (value, validators) => MapParameters(value, validators),
             (v)=>OrParameters(v),
             (v)=>MessageMap(v)
@@ -88,7 +88,7 @@ describe('complete', function() {
 describe('partial', function() {
     it(`and validation`, () => {
 
-        let and = new MapCallbackParameters(value, validator,
+        const and = new MapCallbackParameters(value, validator,
             (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>MapPartialParameters(value, validators),
             (v)=>AndParameters(v),
             (v)=>MessageMap(v)
@@ -107,7 +107,7 @@ describe('partial', function() {
 
     it(`or validation `, () => {
 
-        let or = new MapCallbackParameters(value, validator,
+        const or = new MapCallbackParameters(value, validator,
             (value, validators) =>
                 <(Validatable & ValueInterface & Message<string>)[]>MapPartialParameters(value, validators),
             (v)=>OrParameters(v),

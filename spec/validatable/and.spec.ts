@@ -1,7 +1,7 @@
-import {AndParameters} from '../../dist/validatable/and';
-import Guard from '@alirya/validatable/boolean/validatable';
-import Validatable from '@alirya/validatable/validatable';
-import {EqualParameters} from '../../dist/boolean/equal';
+import {AndParameters} from '../../dist/validatable/and.js';
+import Guard from '@alirya/validatable/boolean/validatable.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import {EqualParameters} from '../../dist/boolean/equal.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -10,8 +10,8 @@ describe('structure', function () {
 
     describe('subjects', function () {
 
-        let subjects = [];
-        let and = AndParameters<Validatable[]>(subjects, true);
+        const subjects = [];
+        const and = AndParameters<Validatable[]>(subjects, true);
 
         it('constructor', () => {
             expect(EqualParameters(subjects, and.validatables)).toBeTrue();
@@ -39,12 +39,12 @@ describe('empty', function () {
     describe('initial', function () {
 
         it('true', () => {
-            let and = AndParameters<Validatable[]>([], true);
+            const and = AndParameters<Validatable[]>([], true);
             expect(and.valid).toBe(true);
         });
 
         it('false', () => {
-            let and = AndParameters<Validatable[]>([], false);
+            const and = AndParameters<Validatable[]>([], false);
             expect(and.valid).toBe(false);
         });
 
@@ -52,7 +52,7 @@ describe('empty', function () {
 
     describe('set', function () {
 
-        let and = AndParameters<Validatable[]>([], true);
+        const and = AndParameters<Validatable[]>([], true);
 
         it('true', () => {
             expect(and.valid).toBe(true);
@@ -67,12 +67,12 @@ describe('single', function() {
     describe('constructor', function () {
 
         it('true', () => {
-            let and = AndParameters<Validatable[]>([{valid:true}], false);
+            const and = AndParameters<Validatable[]>([{valid:true}], false);
             expect(and.valid).toBe(true);
         });
 
         it('false', () => {
-            let and = AndParameters<Validatable[]>([{valid:false}], true);
+            const and = AndParameters<Validatable[]>([{valid:false}], true);
             expect(and.valid).toBe(false);
         });
     });
@@ -81,12 +81,12 @@ describe('single', function() {
 
 
         it('true', () => {
-            let and = AndParameters<Validatable[]>([{valid:true}], true);
+            const and = AndParameters<Validatable[]>([{valid:true}], true);
             expect(and.valid).toBe(true);
         });
 
         it('false', () => {
-            let and = AndParameters<Validatable[]>([{valid:false}], true);
+            const and = AndParameters<Validatable[]>([{valid:false}], true);
 
             expect(and.valid).toBe(false);
         });
@@ -100,15 +100,15 @@ describe('multi same', function() {
 
 
     it('valids', () => {
-        let and = AndParameters<Validatable[]>([{valid:true}, {valid:true}], false);
+        const and = AndParameters<Validatable[]>([{valid:true}, {valid:true}], false);
         expect(and.valid).toBe(true);
     });
 
     it('iterator', ()=>{
-        let and = AndParameters<Validatable[]>([{valid:true}, {valid:true}], false);
+        const and = AndParameters<Validatable[]>([{valid:true}, {valid:true}], false);
         let number = 0;
 
-        for(let value of and.validatables) {
+        for(const value of and.validatables) {
 
             number++;
             expect(Guard(value)).toBeTrue();
@@ -119,15 +119,15 @@ describe('multi same', function() {
     });
 
     it('invalids', () => {
-        let and = AndParameters<Validatable[]>([{valid:false}, {valid:false}], false);
+        const and = AndParameters<Validatable[]>([{valid:false}, {valid:false}], false);
         expect(and.valid).toBe(false);
     });
 
     it('iterator', ()=>{
-        let and = AndParameters<Validatable[]>([{valid:false}, {valid:false}], false);
+        const and = AndParameters<Validatable[]>([{valid:false}, {valid:false}], false);
         let number = 0;
 
-        for(let value of and.validatables) {
+        for(const value of and.validatables) {
 
             number++;
             expect(Guard(value)).toBeTrue();
@@ -141,7 +141,7 @@ describe('multi same', function() {
 
 describe('multi mixed', function() {
 
-    let and = AndParameters<Validatable[]>([], false);
+    const and = AndParameters<Validatable[]>([], false);
 
     it('valids', () => {
         and.validatables.push({valid:true}, {valid:false});
@@ -152,7 +152,7 @@ describe('multi mixed', function() {
 
         let number = 0;
 
-        for(let value of and.validatables) {
+        for(const value of and.validatables) {
 
             number++;
             expect(Guard(value)).toBeTrue();
@@ -171,7 +171,7 @@ describe('multi mixed', function() {
 
         let number = 0;
 
-        for(let value of and.validatables) {
+        for(const value of and.validatables) {
 
             number++;
             expect(Guard(value)).toBeTrue();

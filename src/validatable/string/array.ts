@@ -1,6 +1,6 @@
-import ArrayMessage from '../../assert/string/array';
-import Value from '@alirya/value/value';
-import Validatable from '@alirya/validatable/validatable';
+import ArrayMessage from '../../assert/string/array.js';
+import Value from '@alirya/value/value.js';
+import Validatable from '@alirya/validatable/validatable.js';
 // TODO DEPRECATED?
 export function ArrayParameters(
     value : unknown,

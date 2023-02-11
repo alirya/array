@@ -1,13 +1,13 @@
-import Validatable from '@alirya/validatable/validatable';
-import IterableAnd from '@alirya/iterable/validatable/boolean/and';
-import Callback from './callback';
-import {CallbackType} from './callback';
-import Validatables from './validatables/validatables';
+import Validatable from '@alirya/validatable/validatable.js';
+import IterableAnd from '@alirya/iterable/validatable/boolean/and.js';
+import Callback from './callback.js';
+import {CallbackType} from './callback.js';
+import Validatables from './validatables/validatables.js';
 
 
 export function AndParameters<List extends ReadonlyArray<Validatable>>(
     validatables : List,
-    defaults : boolean = true
+    defaults  = true
 ) : Callback.Type<List> {
 
     return new Callback.Parameters(validatables, (v)=>IterableAnd.Parameters(v, defaults));

@@ -1,13 +1,13 @@
-import Validatable from '@alirya/validatable/validatable';
-import IterableOr from '@alirya/iterable/validatable/boolean/or';
-import Validatables from '../validatables/validatables';
+import Validatable from '@alirya/validatable/validatable.js';
+import IterableOr from '@alirya/iterable/validatable/boolean/or.js';
+import Validatables from '../validatables/validatables.js';
 
 
 export function OrParameters<
     ValidatableList extends ReadonlyArray<Validatable>
 >(
     validatables : ValidatableList,
-    defaults : boolean = true
+    defaults  = true
 ) : boolean {
 
     return IterableOr.Parameters(validatables, defaults);

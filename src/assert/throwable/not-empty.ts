@@ -1,4 +1,4 @@
-import NotEmptyType from '../../assert/string/not-empty';
+import NotEmptyType from '../../assert/string/not-empty.js';
 
 export default function NotEmpty(string : unknown[]) : Error {
 

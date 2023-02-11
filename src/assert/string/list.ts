@@ -1,11 +1,11 @@
-import Value from '@alirya/value/value';
-import Validatable from '@alirya/validatable/validatable';
+import Value from '@alirya/value/value.js';
+import Validatable from '@alirya/validatable/validatable.js';
 
 export function ListParameters(
     value : unknown,
     valid : boolean,
     expect : string,
-    subject : string = 'type',
+    subject  = 'type',
     conversion : (value:unknown)=>string = value=>typeof value
 ) : string {
 

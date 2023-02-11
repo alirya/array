@@ -1,4 +1,4 @@
-import NotEmpty from '../../dist/boolean/not-empty';
+import NotEmpty from '../../dist/boolean/not-empty.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 

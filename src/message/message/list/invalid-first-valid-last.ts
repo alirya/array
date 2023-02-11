@@ -1,6 +1,6 @@
-import Message from '@alirya/message/message';
-import Validatable from '@alirya/validatable/validatable';
-import InferMessage from '@alirya/message/message/infer';
+import Message from '@alirya/message/message.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import InferMessage from '@alirya/message/message/infer.js';
 
 export default function InvalidFirstValidLast<
     Messages extends (Message & Validatable)
@@ -10,7 +10,7 @@ export default function InvalidFirstValidLast<
 
     let validatable : undefined|Messages = undefined;
 
-    for (let value of list) {
+    for (const value of list) {
 
         if(!value.valid) {
 

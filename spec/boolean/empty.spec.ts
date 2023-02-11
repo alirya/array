@@ -1,4 +1,4 @@
-import Empty from '../../dist/boolean/empty';
+import Empty from '../../dist/boolean/empty.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 

@@ -13,7 +13,7 @@
 //         ] = [
 //             ValidatorType("number"), // new Num(),
 //             ValidatorType("number"), // new NumAny(),
-//             ValidatorType("string"), // new Str(),
+//             ValidatorType("str.jsing"), // new Str(),
 //             ValidatorType("string"), // new StrAny(),
 //         ];
 //
@@ -108,7 +108,7 @@
 //         ValidatorType("string"), //new StrAny(),
 //     ];
 //
-//     let value = 'str';
+//     let value = 'str.js';
 //
 //     let result = Value<any, typeof validator>(value, validator);
 //     it('match validator1', ()=> expect(result[0].valid).toBe(false));

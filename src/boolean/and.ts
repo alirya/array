@@ -1,8 +1,8 @@
-import {OrArgument as AndArgument} from './or';
+import {OrArgument as AndArgument} from './or.js';
 
 export function AndParameters(
     booleans : ReadonlyArray<boolean>,
-    defaults : boolean = true
+    defaults  = true
 ) : boolean {
 
     if(!booleans.length) {
@@ -10,7 +10,7 @@ export function AndParameters(
         return defaults;
     }
 
-    for(let boolean of booleans) {
+    for(const boolean of booleans) {
 
         if(!boolean) {
 

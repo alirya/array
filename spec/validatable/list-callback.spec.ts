@@ -1,15 +1,15 @@
-import {ListCallbackParameters} from '../../dist/validatable/list-callback';
-import {ListParameters} from '../../dist/validator/validatable/list/list';
-import {ListPartialParameters} from '../../dist/validator/validatable/list/list-partial';
-import {AndParameters} from '../../dist/validatable/and';
-import {OrParameters} from '../../dist/validatable/or';
-import Validatable from '@alirya/validatable/validatable';
-import SimpleValidator from '@alirya/validator/simple';
-import ValueInterface from '@alirya/value/value';
-import Message from '@alirya/message/message';
-import MessageMap from '../../dist/message/message/list/map';
-import {TypeParameters} from '@alirya/type/validator/type';
-import Instance from '@alirya/validator/validatable/validatable';
+import {ListCallbackParameters} from '../../dist/validatable/list-callback.js';
+import {ListParameters} from '../../dist/validator/validatable/list/list.js';
+import {ListPartialParameters} from '../../dist/validator/validatable/list/list-partial.js';
+import {AndParameters} from '../../dist/validatable/and.js';
+import {OrParameters} from '../../dist/validatable/or.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import SimpleValidator from '@alirya/validator/simple.js';
+import ValueInterface from '@alirya/value/value.js';
+import Message from '@alirya/message/message.js';
+import MessageMap from '../../dist/message/message/list/map.js';
+import {TypeParameters} from '@alirya/type/validator/type.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -24,24 +24,24 @@ describe('compiler compatibility', function() {
             string,
         ];
 
-        let validator : TypeValidator =  TypeParameters('string');
+        const validator : TypeValidator =  TypeParameters('string');
 
-        let value : Type = [
+        const value : Type = [
             'name',
             'address',
         ];
 
         it('auto', function() {
 
-            let validatable = new ListCallbackParameters(value, validator,
+            const validatable = new ListCallbackParameters(value, validator,
                 (value, validators) => ListParameters(value, validators),
                 AndParameters,
                 (v)=>MessageMap(v)
             );
 
-            let unknown : unknown = validatable.value;
+            const unknown : unknown = validatable.value;
 
-            let record : Type = validatable.value;
+            const record : Type = validatable.value;
 
             let instance : Validatable;
             instance = validatable.validatables[0];
@@ -54,15 +54,15 @@ describe('compiler compatibility', function() {
 
         it('auto partial', function() {
 
-            let validatable = new ListCallbackParameters(value, validator,
+            const validatable = new ListCallbackParameters(value, validator,
                 (value, validators) =>
                     <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
                 AndParameters,
                 (v)=>MessageMap(v)
             );
 
-            let unknown : unknown = validatable.value;
-            let string : Type = validatable.value;
+            const unknown : unknown = validatable.value;
+            const string : Type = validatable.value;
 
             let instance : Validatable;
             instance = validatable.validatables[0];
@@ -75,9 +75,9 @@ describe('compiler compatibility', function() {
 
     describe('explicit typed', function() {
 
-        let validator  = TypeParameters('string');
+        const validator  = TypeParameters('string');
 
-        let value  = [
+        const value  = [
             'name',
             'address',
         ];
@@ -85,17 +85,17 @@ describe('compiler compatibility', function() {
 
         it('auto', function() {
 
-            let validatable = new ListCallbackParameters(value, validator,
+            const validatable = new ListCallbackParameters(value, validator,
                 (value, validators) => ListParameters(value, validators),
                 AndParameters, (v)=>MessageMap(v)
             );
 
-            let unknown : unknown = validatable.value;
+            const unknown : unknown = validatable.value;
 
-            let value1 : string[] = validatable.value;
+            const value1 : string[] = validatable.value;
 
             // @ts-expect-error
-            let value2 : [string, string] = validatable.value;
+            const value2 : [string, string] = validatable.value;
 
             let instance : Validatable;
             instance = validatable.validatables[0];
@@ -106,18 +106,18 @@ describe('compiler compatibility', function() {
 
         it('auto partial', function() {
 
-            let validatable = new ListCallbackParameters(value, validator,
+            const validatable = new ListCallbackParameters(value, validator,
                 (value, validators) =>
                     <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
                 AndParameters, (v)=>MessageMap(v)
             );
 
-            let unknown : unknown = validatable.value;
+            const unknown : unknown = validatable.value;
 
-            let value1 : string[] = validatable.value;
+            const value1 : string[] = validatable.value;
 
             // @ts-expect-error
-            let value2 : [string, string] = validatable.value;
+            const value2 : [string, string] = validatable.value;
 
             let instance : Validatable;
             instance = validatable.validatables[0];
@@ -142,9 +142,9 @@ describe('explicit', function() {
             string,
         ];
 
-        let validator : TypeValidator = TypeParameters('string');
+        const validator : TypeValidator = TypeParameters('string');
 
-        let value : Type = [
+        const value : Type = [
             'user',
             'name',
             'address',
@@ -154,7 +154,7 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validatable = new ListCallbackParameters(value, validator,
+                const validatable = new ListCallbackParameters(value, validator,
                     (value, validators) => ListParameters(value, validators),
                     AndParameters, (v)=>MessageMap(v)
                 );
@@ -177,7 +177,7 @@ describe('explicit', function() {
 
             it(`or validation`, () => {
 
-                let validatable = new ListCallbackParameters(value, validator,
+                const validatable = new ListCallbackParameters(value, validator,
                     (value, validators) => ListParameters(value, validators),
                     OrParameters, (v)=>MessageMap(v)
                 );
@@ -204,7 +204,7 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let validatable = new ListCallbackParameters(value, validator,
+                const validatable = new ListCallbackParameters(value, validator,
                     (value, validators) =>
                         <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
                     AndParameters, (v)=>MessageMap(v)
@@ -228,7 +228,7 @@ describe('explicit', function() {
 
             it(`or validation`, () => {
 
-                let validatable = new ListCallbackParameters(value, validator,
+                const validatable = new ListCallbackParameters(value, validator,
                     (value, validators) =>
                         <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
                     OrParameters, (v)=>MessageMap(v)
@@ -264,9 +264,9 @@ describe('explicit', function() {
             string,
         ];
 
-        let validator : TypeValidator= TypeParameters('string');
+        const validator : TypeValidator= TypeParameters('string');
 
-        let value : Type = [
+        const value : Type = [
             'name',
             11,
             'address',
@@ -276,7 +276,7 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let and = new ListCallbackParameters(value, validator,
+                const and = new ListCallbackParameters(value, validator,
                     (value, validators) => ListParameters(value, validators),
                     (v)=>AndParameters(v), (v)=>MessageMap(v)
                 );
@@ -300,7 +300,7 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new ListCallbackParameters(value, validator,
+                const or = new ListCallbackParameters(value, validator,
                     (value, validators) => ListParameters(value, validators),
                     (v)=>OrParameters(v), (v)=>MessageMap(v)
                 );
@@ -328,7 +328,7 @@ describe('explicit', function() {
 
             it(`and validation`, () => {
 
-                let and = new ListCallbackParameters(value, validator,
+                const and = new ListCallbackParameters(value, validator,
                     (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
                     (v)=>AndParameters(v), (v)=>MessageMap(v)
                 );
@@ -349,7 +349,7 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new ListCallbackParameters(value, validator,
+                const or = new ListCallbackParameters(value, validator,
                     (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
                     (v)=>OrParameters(v), (v)=>MessageMap(v)
                 );
@@ -380,15 +380,15 @@ describe('explicit', function() {
             any,
         ];
 
-        let validator : TypeValidator = TypeParameters('string');
+        const validator : TypeValidator = TypeParameters('string');
 
-        let value : Type = [{}, {}, {}];
+        const value : Type = [{}, {}, {}];
 
 
         describe('complete', function() {
             it(`and validation`, () => {
 
-                let and = new ListCallbackParameters(value, validator,
+                const and = new ListCallbackParameters(value, validator,
                     (value, validators) => ListParameters(value, validators),
                     (v)=>AndParameters(v),
                     (v)=>MessageMap(v)
@@ -412,7 +412,7 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new ListCallbackParameters(value, validator,
+                const or = new ListCallbackParameters(value, validator,
                     (value, validators) => ListParameters(value, validators),
                     (v)=>OrParameters(v),
                     (v)=>MessageMap(v)
@@ -439,7 +439,7 @@ describe('explicit', function() {
         describe('partial', function() {
             it(`and validation`, () => {
 
-                let and = new ListCallbackParameters(value, validator,
+                const and = new ListCallbackParameters(value, validator,
                     (value, validators) => <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
                     (v)=>AndParameters(v),
                     (v)=>MessageMap(v)
@@ -458,7 +458,7 @@ describe('explicit', function() {
 
             it(`or validation `, () => {
 
-                let or = new ListCallbackParameters(value, validator,
+                const or = new ListCallbackParameters(value, validator,
                     (value, validators) =>
                         <(Validatable & ValueInterface & Message<string>)[]>ListPartialParameters(value, validators),
                     (v)=>OrParameters(v),

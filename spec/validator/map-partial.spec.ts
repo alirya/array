@@ -1,12 +1,12 @@
-import MapPartial from '../../dist/validator/map-partial';
-import And from '../../dist/validatable/and';
-import Or from '../../dist/validatable/or';
-import Validatable from '@alirya/validatable/validatable';
-import SimpleValidator from '@alirya/validator/simple';
-import Validatables from '../../dist/validatable/validatables/validatables';
-import MessageMap from '../../dist/message/message/list/map';
-import {TypeParameters} from '@alirya/type/validator/type';
-import Instance from '@alirya/validator/validatable/validatable';
+import MapPartial from '../../dist/validator/map-partial.js';
+import And from '../../dist/validatable/and.js';
+import Or from '../../dist/validatable/or.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import SimpleValidator from '@alirya/validator/simple.js';
+import Validatables from '../../dist/validatable/validatables/validatables.js';
+import MessageMap from '../../dist/message/message/list/map.js';
+import {TypeParameters} from '@alirya/type/validator/type.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
@@ -16,19 +16,19 @@ describe('compiler compatibility', function() {
 
     describe('implicit partial', function() {
 
-        let validator = [
+        const validator = [
             TypeParameters('string'), // new Validator('string'),
             TypeParameters('string'), // new Validator('string'),
         ];
 
-        let value = [
+        const value = [
             'name',
             'address',
         ];
 
-        let property = MapPartial.Parameters(validator, (v)=>And.Parameters(v), MessageMap);
+        const property = MapPartial.Parameters(validator, (v)=>And.Parameters(v), MessageMap);
 
-        let validatable = property(value);
+        const validatable = property(value);
 
         let key : Validatable;
 
@@ -36,24 +36,24 @@ describe('compiler compatibility', function() {
         key = validatable.validatables[1];
         key = validatable.validatables[2];
 
-        let validatables : Validatables = validatable;
+        const validatables : Validatables = validatable;
 
-        let record : Validatable[] = validatable.validatables;
+        const record : Validatable[] = validatable.validatables;
 
-        let validatable1 : Validatables<Validatable[]> = validatable;
+        const validatable1 : Validatables<Validatable[]> = validatable;
 
-        let unknown : unknown = validatable.value;
+        const unknown : unknown = validatable.value;
 
         // @ts-expect-error
-        let string : Type = validatable.value;
+        const string : Type = validatable.value;
 
         it('recursive', function() {
 
-            let validator = TypeParameters('string');
-            let list1 = MapPartial.Parameters([validator], And.Parameters, MessageMap);
-            let list2 = MapPartial.Parameters([list1], And.Parameters, MessageMap);
-            // @ts-expect-errors
-            let list3 = MapPartial.Parameters([list2], And.Parameters, MessageMap);
+            const validator = TypeParameters('string');
+            const list1 = MapPartial.Parameters([validator], And.Parameters, MessageMap);
+            const list2 = MapPartial.Parameters([list1], And.Parameters, MessageMap);
+            // // @ts-expect-errors
+            const list3 = MapPartial.Parameters([list2], And.Parameters, MessageMap);
 
         });
     });
@@ -66,7 +66,7 @@ describe('compiler compatibility', function() {
             SimpleValidator<any, string, string>,
         ];
 
-        let validator : TypeValidator = [
+        const validator : TypeValidator = [
             TypeParameters('string'),
             TypeParameters('string'),
         ];
@@ -76,16 +76,16 @@ describe('compiler compatibility', function() {
             string,
         ];
 
-        let value : Type = [
+        const value : Type = [
             'name',
             'address',
         ];
 
         it('auto', function() {
 
-            let property = MapPartial.Parameters(validator, And.Parameters, MessageMap);
+            const property = MapPartial.Parameters(validator, And.Parameters, MessageMap);
 
-            let validatable = property(value);
+            const validatable = property(value);
 
             let key : Validatable;
 
@@ -93,23 +93,23 @@ describe('compiler compatibility', function() {
             key = validatable.validatables[1];
             key = validatable.validatables[2];
 
-            let validatables : Validatables = validatable;
+            const validatables : Validatables = validatable;
 
-            let record : Validatable[] = validatable.validatables;
+            const record : Validatable[] = validatable.validatables;
 
-            let validatable1 : Validatables<Validatable[]> = validatable;
+            const validatable1 : Validatables<Validatable[]> = validatable;
 
-            let unknown : unknown = validatable.value;
+            const unknown : unknown = validatable.value;
 
-            let string : Type = validatable.value;
+            const string : Type = validatable.value;
 
         });
 
         it('direct', function() {
 
-            let property = MapPartial.Parameters<TypeValidator>(validator, (v)=>And.Parameters(v), MessageMap);
+            const property = MapPartial.Parameters<TypeValidator>(validator, (v)=>And.Parameters(v), MessageMap);
 
-            let validatable = property(<any>value);
+            const validatable = property(<any>value);
 
 
             let key : Validatable;
@@ -117,15 +117,15 @@ describe('compiler compatibility', function() {
             key = validatable.validatables[1];
             key = validatable.validatables[2];
 
-            let validatables : Validatables = validatable;
+            const validatables : Validatables = validatable;
 
-            let record : Validatable[] = validatable.validatables;
+            const record : Validatable[] = validatable.validatables;
 
-            let validatable1 : Validatables<Validatable[]> = validatable;
+            const validatable1 : Validatables<Validatable[]> = validatable;
 
-            let unknown : unknown = validatable.value;
+            const unknown : unknown = validatable.value;
 
-            let string : Type = validatable.value;
+            const string : Type = validatable.value;
         });
     });
 });
@@ -135,13 +135,13 @@ describe('compiler compatibility', function() {
 
 describe('all valid', function() {
 
-    let validator = [
+    const validator = [
         TypeParameters('string'),
         TypeParameters('string'),
         TypeParameters('string'),
     ];
 
-    let value = [
+    const value = [
         'user',
         'name',
         'address',
@@ -149,8 +149,8 @@ describe('all valid', function() {
 
     it(`check validate return`, () => {
 
-        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(v), MessageMap);
-        let validatable = property(value);
+        const property = MapPartial.Parameters(validator,(v)=>And.Parameters(v), MessageMap);
+        const validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(true);
@@ -176,8 +176,8 @@ describe('all valid', function() {
 
     it(`check handler and`, () => {
 
-        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
-        let validatable = property(value);
+        const property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
+        const validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toEqual(value);
@@ -185,8 +185,8 @@ describe('all valid', function() {
 
     it(`check handler or`, () => {
 
-        let property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
-        let validatable = property(value);
+        const property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
+        const validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toEqual(value);
@@ -196,13 +196,13 @@ describe('all valid', function() {
 
 describe('mixed', function() {
 
-    let validator = [
+    const validator = [
         TypeParameters('string'),
         TypeParameters('number'),
         TypeParameters('string'),
     ];
 
-    let value = [
+    const value = [
         'user',
         'name',
         'address',
@@ -210,8 +210,8 @@ describe('mixed', function() {
 
     it(`check validate return`, () => {
 
-        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
-        let validatable = property(value);
+        const property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
+        const validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(true);
@@ -234,8 +234,8 @@ describe('mixed', function() {
 
     it(`check handler and`, () => {
 
-        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
-        let validatable = property(value);
+        const property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
+        const validatable = property(value);
 
         expect<boolean>(validatable.valid).toBe(false);
         expect(validatable.value).toEqual(value);
@@ -243,8 +243,8 @@ describe('mixed', function() {
 
     it(`check handler or`, () => {
 
-        let property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
-        let validatable = property(value);
+        const property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
+        const validatable = property(value);
 
         expect(validatable.valid).toBe(true);
         expect(validatable.value).toEqual(value);
@@ -254,13 +254,13 @@ describe('mixed', function() {
 
 describe('all invalid', function() {
 
-    let validator = [
+    const validator = [
         TypeParameters('number'),
         TypeParameters('number'),
         TypeParameters('number'),
     ];
 
-    let value = [
+    const value = [
         'user',
         'name',
         'address',
@@ -268,8 +268,8 @@ describe('all invalid', function() {
 
     it(`check validate return`, () => {
 
-        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
-        let validatable = property(value);
+        const property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
+        const validatable = property(value);
 
         if(validatable.validatables[0]) {
             expect(validatable.validatables[0].valid).toBe(false);
@@ -289,8 +289,8 @@ describe('all invalid', function() {
 
     it(`check handler and`, () => {
 
-        let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
-        let validatable = property(value);
+        const property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
+        const validatable = property(value);
 
         expect(validatable.valid).toBe(false);
         expect(validatable.value).toEqual(value);
@@ -298,8 +298,8 @@ describe('all invalid', function() {
 
     it(`check handler or`, () => {
 
-        let property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
-        let validatable = property(value);
+        const property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
+        const validatable = property(value);
 
         expect(validatable.valid).toBe(false);
         expect(validatable.value).toEqual(value);
@@ -312,7 +312,7 @@ describe('recursive', function() {
 
     describe('all invalid', function() {
 
-        let validator = [
+        const validator = [
             TypeParameters('number'),
             TypeParameters('number'),
             TypeParameters('number'),
@@ -322,7 +322,7 @@ describe('recursive', function() {
             ],(v)=>And.Parameters(<Validatable[]>v), MessageMap)
         ];
 
-        let value = [
+        const value = [
             'user',
             'name',
             'address',
@@ -334,8 +334,8 @@ describe('recursive', function() {
 
         it(`check validate return`, () => {
 
-            let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
-            let validatable = property(value);
+            const property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
+            const validatable = property(value);
 
             if(validatable.validatables[0]) {
                 expect(validatable.validatables[0].valid).toBe(false);
@@ -355,8 +355,8 @@ describe('recursive', function() {
 
         it(`check handler and`, () => {
 
-            let property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
-            let validatable = property(value);
+            const property = MapPartial.Parameters(validator,(v)=>And.Parameters(<Validatable[]>v), MessageMap);
+            const validatable = property(value);
 
             expect(validatable.valid).toBe(false);
             expect(validatable.value).toEqual(value);
@@ -364,8 +364,8 @@ describe('recursive', function() {
 
         it(`check handler or`, () => {
 
-            let property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
-            let validatable = property(value);
+            const property = MapPartial.Parameters(validator,(v)=>Or.Parameters(<Validatable[]>v), MessageMap);
+            const validatable = property(value);
 
             expect(validatable.valid).toBe(false);
             expect(validatable.value).toEqual(value);

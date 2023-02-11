@@ -1,7 +1,7 @@
 
 export function IncludesParameters(
     valid : boolean,
-    subject : string = 'value',
+    subject  = 'value',
 ) : string {
 
     const strings : string[] = [];
@@ -27,7 +27,7 @@ export function IncludesParameters(
 
 export function IncludesParameter(
     valid : boolean,
-    subject : string = '',
+    subject  = '',
 ) : string {
 
     return IncludesParameters(valid, subject);

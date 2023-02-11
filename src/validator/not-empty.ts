@@ -1,8 +1,8 @@
-import Validator from '@alirya/validator/validator';
-import NotEmptyValidatable, {NotEmptyType} from '../validatable/not-empty';
-import NotEmptyMessage from '../validatable/string/not-empty';
-import NotEmptyMessageParameter from '../validatable/string/not-empty';
-import {ValidatableParameter, ValidatableParameters} from '@alirya/validator/message/function/validatable';
+import Validator from '@alirya/validator/validator.js';
+import NotEmptyValidatable, {NotEmptyType} from '../validatable/not-empty.js';
+import NotEmptyMessage from '../validatable/string/not-empty.js';
+import NotEmptyMessageParameter from '../validatable/string/not-empty.js';
+import {ValidatableParameter, ValidatableParameters} from '@alirya/validator/message/function/validatable.js';
 
 export function NotEmptyParameters () : Validator<Array<any>, Array<any>, boolean, boolean, string>;
 

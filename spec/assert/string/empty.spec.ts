@@ -1,4 +1,4 @@
-import {EmptyParameters} from '../../../dist/assert/string/empty';
+import {EmptyParameters} from '../../../dist/assert/string/empty.js';
 
 
 it('enable console log', () => {spyOn(console, 'log').and.callThrough();});

@@ -1,17 +1,17 @@
-import {MapParameters} from '../../../dist/boolean/map';
-import {TypeParameters} from '@alirya/type/boolean/type';
+import {MapParameters} from '../../../dist/boolean/map.js';
+import {TypeParameters} from '@alirya/type/boolean/type.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 it('valid', function() {
 
-    let values = [
+    const values = [
         [1],
         ['1'],
         [true]
     ];
 
-    let validations = [
+    const validations = [
         (v)=>TypeParameters(v, 'number'),
         (v)=>TypeParameters(v, 'string'),
         (v)=>TypeParameters(v, 'boolean'),
@@ -23,13 +23,13 @@ it('valid', function() {
 
 it('invalid', function() {
 
-    let values = [
+    const values = [
         [1],
         ['1'],
         [1]
     ];
 
-    let validations = [
+    const validations = [
         (v)=>TypeParameters(v, 'number'),
         (v)=>TypeParameters(v, 'string'),
         (v)=>TypeParameters(v, 'boolean'),

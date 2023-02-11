@@ -16,7 +16,7 @@
 //             ValidatorType('string'),
 //         ];
 //
-//         let value : string = 'name';
+//         let value : string = 'name.js';
 //
 //         describe("auto", function() {
 //
@@ -79,7 +79,7 @@
 //             ValidatorType('string'),
 //         ];
 //
-//         let value  = 'name';
+//         let value  = 'name.js';
 //
 //
 //         describe("auto", function() {
@@ -151,7 +151,7 @@
 //             ValidatorType('string'),
 //         ];
 //
-//         let value : string = 'user';
+//         let value : string = 'user.js';
 //
 //         describe("complete", function() {
 //
@@ -280,7 +280,7 @@
 //             ValidatorType('string'),
 //         ];
 //
-//         let value : string = 'name';
+//         let value : string = 'name.js';
 //
 //         describe("complete", function() {
 //
@@ -534,7 +534,7 @@
 //                 And, (v)=>MessageMap(v))
 //         ];
 //
-//         let value : string = 'user';
+//         let value : string = 'user.js';
 //
 //         describe("complete", function() {
 //
@@ -820,7 +820,7 @@
 //             ], (value, validators) => ValidateValue(value, validators), And, (v)=>MessageMap(v))
 //         ];
 //
-//         let value : string = 'name';
+//         let value : string = 'name.js';
 //
 //         describe("complete", function() {
 //

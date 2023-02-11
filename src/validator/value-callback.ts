@@ -1,11 +1,11 @@
-import ValidatorT from '@alirya/validator/validator';
-import Validatable from '@alirya/validatable/validatable';
-import ValidatableValue from '../validatable/value-callback';
-import Instance from '@alirya/validator/validatable/validatable';
-import ValidatorsContainer from './validators/validators';
-import Message from '@alirya/message/message';
-import SimpleValidator from '@alirya/validator/simple';
-import ValidatableValueInterface from '../validatable/value-callback';
+import ValidatorT from '@alirya/validator/validator.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import ValidatableValue from '../validatable/value-callback.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
+import ValidatorsContainer from './validators/validators.js';
+import Message from '@alirya/message/message.js';
+import SimpleValidator from '@alirya/validator/simple.js';
+import ValidatableValueInterface from '../validatable/value-callback.js';
 
 /**
  * Base {@link ValidatorT} for validating value with list of {@link ValidatorT}

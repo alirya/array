@@ -1,9 +1,9 @@
-import Callable from '@alirya/function/callable';
-import Readonly from './array/readonly';
-import Validation from '@alirya/boolean/validation/validation';
-import Value from '@alirya/value/value';
-import Compare from '@alirya/boolean/compare/compare';
-import {EqualParameter, EqualParameters} from '@alirya/boolean/equal';
+import Callable from '@alirya/function/callable.js';
+import Readonly from './array/readonly.js';
+import Validation from '@alirya/boolean/validation/validation.js';
+import Value from '@alirya/value/value.js';
+import Compare from '@alirya/boolean/compare/compare.js';
+import {EqualParameter, EqualParameters} from '@alirya/boolean/equal.js';
 
 /**
  * pick a duplicate value from {@param list}
@@ -18,11 +18,11 @@ export function DuplicateParameters<Value>(
     validation : Callable<[Value, Value], boolean> = EqualParameters
 ) : Value[] {
 
-    let duplicates : Value[] = [];
+    const duplicates : Value[] = [];
 
-    for(let [index1, value1] of list.entries()) {
+    for(const [index1, value1] of list.entries()) {
 
-        for(let [index2, value2] of list.entries()) {
+        for(const [index2, value2] of list.entries()) {
 
             if(index1 === index2) {
 

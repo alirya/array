@@ -1,22 +1,22 @@
-import Validator from '@alirya/validator/validator';
-import Validatable from '@alirya/validatable/validatable';
-import InferReturn from '@alirya/validator/validatable/infer-static';
-import ListCallback from './list-callback';
-import ValidateMapPartial from './validatable/list/list-partial';
-import Unions from '../unions';
-import InferMessage from '../message/message/list/infer';
-import Map from '../message/message/list/map';
-import Message from '@alirya/message/message';
-import ValidatorContainer from '@alirya/validator/validator/validator';
-import StrictOmit from '@alirya/object/strict-omit';
+import Validator from '@alirya/validator/validator.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import InferReturn from '@alirya/validator/validatable/infer-static.js';
+import ListCallback from './list-callback.js';
+import ValidateMapPartial from './validatable/list/list-partial.js';
+import Unions from '../unions.js';
+import InferMessage from '../message/message/list/infer.js';
+import Map from '../message/message/list/map.js';
+import Message from '@alirya/message/message.js';
+import ValidatorContainer from '@alirya/validator/validator/validator.js';
+import StrictOmit from '@alirya/object/strict-omit.js';
 import {Required} from 'utility-types';
-import {ListCallbackReturn as ListPartialReturn} from './list-callback';
-import ValidatorValidatable from '@alirya/validator/validatable/validatable';
-import BaseInfer from '@alirya/validator/subject/allow';
+import {ListCallbackReturn as ListPartialReturn} from './list-callback.js';
+import ValidatorValidatable from '@alirya/validator/validatable/validatable.js';
+import BaseInfer from '@alirya/validator/subject/allow.js';
 import {List as ListHelper} from 'ts-toolbelt';
-import InferAllow from '@alirya/validator/subject/allow';
-import Expectation from './subject/list/expectation';
-import Allow from './subject/list/allow';
+import InferAllow from '@alirya/validator/subject/allow.js';
+import Expectation from './subject/list/expectation.js';
+import Allow from './subject/list/allow.js';
 /**
  * more specific implementation of {@link ListCallback}
  *
@@ -64,7 +64,7 @@ export function ListPartialParameters<
      validator : ValidatorType,
      validation : (result:Unions<InferReturn<ValidatorType>[]>)=>ValidatableType,
      message : ((result:Unions<InferReturn<ValidatorType>[]>)=>MessageType|Unions<InferMessage<InferReturn<ValidatorType>[]>>) = Map,
-     stop : boolean = false,
+     stop  = false,
 
 ) : ListPartialReturn<MessageType, ValidatorType, Unions<InferReturn<ValidatorType>[]>, ValidatableType> {
 

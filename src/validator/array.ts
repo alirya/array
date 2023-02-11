@@ -1,10 +1,10 @@
-import Validator from '@alirya/validator/simple';
-import Value from '@alirya/value/value';
-import ArrayValidatable from '../validatable/array';
-import Instance from '@alirya/validator/validatable/validatable';
-import ArrayMessage from '../validatable/string/array';
-import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable';
-import ArrayMessageParameter from '../validatable/string/array';
+import Validator from '@alirya/validator/simple.js';
+import Value from '@alirya/value/value.js';
+import ArrayValidatable from '../validatable/array.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
+import ArrayMessage from '../validatable/string/array.js';
+import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable.js';
+import ArrayMessageParameter from '../validatable/string/array.js';
 
 /**
  *  validate if value is array

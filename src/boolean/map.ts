@@ -1,4 +1,4 @@
-import Map from '../function/parameter/list/map';
+import Map from '../function/parameter/list/map.js';
 
 export function MapParameters<List extends unknown[][]>(
     values : Readonly<List>,
@@ -7,7 +7,7 @@ export function MapParameters<List extends unknown[][]>(
 
     if(values.length === validations.length) {
 
-        for(let [index, value] of values.entries()) {
+        for(const [index, value] of values.entries()) {
 
             if(!validations[index](...value)) {
 

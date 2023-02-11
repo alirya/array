@@ -1,11 +1,11 @@
-import Map from '../../../dist/validatable/map-callback';
-import Standard from '../../../dist/validator/validatable/list/map';
-import And from '../../../dist/validatable/and';
-import Or from '../../../dist/validatable/or';
-import ValidatorInterface from '@alirya/validator/simple';
-import MessageMap from '../../../dist/message/message/list/map';
-import {TypeParameters} from '@alirya/type/validator/type';
-import Instance from '@alirya/validator/validatable/validatable';
+import Map from '../../../dist/validatable/map-callback.js';
+import Standard from '../../../dist/validator/validatable/list/map.js';
+import And from '../../../dist/validatable/and.js';
+import Or from '../../../dist/validatable/or.js';
+import ValidatorInterface from '@alirya/validator/simple.js';
+import MessageMap from '../../../dist/message/message/list/map.js';
+import {TypeParameters} from '@alirya/type/validator/type.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -21,13 +21,13 @@ type Type = [
     string,
 ];
 
-let validator : TypeValidator = [
+const validator : TypeValidator = [
     TypeParameters('string'),
     TypeParameters('string'),
     TypeParameters('string'),
 ];
 
-let value : Type = [
+const value : Type = [
     'user',
     'name',
     'address',
@@ -36,7 +36,7 @@ let value : Type = [
 
 it(`and validation`, () => {
 
-    let validatable = new Map.Parameters(value, validator,
+    const validatable = new Map.Parameters(value, validator,
         (value, validators) => Standard.Parameters(value, validators),
         And.Parameters, (v)=>MessageMap(v)
     );
@@ -59,7 +59,7 @@ it(`and validation`, () => {
 
 it(`or validation`, () => {
 
-    let validatable = new Map.Parameters(value, validator,
+    const validatable = new Map.Parameters(value, validator,
         (value, validators) => Standard.Parameters(value, validators),
         Or.Parameters, (v)=>MessageMap(v)
     );

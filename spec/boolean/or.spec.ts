@@ -1,4 +1,4 @@
-import {OrParameters} from '../../dist/boolean/or';
+import {OrParameters} from '../../dist/boolean/or.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

@@ -1,4 +1,4 @@
-import {ArrayUnique} from '../../dist/unique';
+import {ArrayUnique} from '../../dist/unique.js';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});

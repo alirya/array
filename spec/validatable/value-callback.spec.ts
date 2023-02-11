@@ -10,7 +10,7 @@
 //
 //     describe("implicit complete", function() {
 //
-//         let validatable = new Value('data', validator, ValidateValue, And, MessageMap);
+//         let validata.jsble = new Value('data', validator, ValidateValue, And, MessageMap);
 //
 //         let key : Validatable = validatable[0];
 //
@@ -84,7 +84,7 @@
 //             ValidatorType('string'),
 //         ];
 //
-//         let value = 'data';
+//         let value = 'data.js';
 //
 //         it(`and validation`, () => {
 //
@@ -132,7 +132,7 @@
 //
 //     describe("mixed", function() {
 //
-//         let value = 'data';
+//         let value = 'data.js';
 //
 //         let validator = [
 //             ValidatorType('string'),
@@ -248,7 +248,7 @@
 //             ValidatorType('string'),
 //         ];
 //
-//         let value = 'data';
+//         let value = 'data.js';
 //
 //         it(`and validation`, () => {
 //

@@ -1,4 +1,4 @@
-import {NotEmptyParameters} from '../../../dist/assert/string/not-empty';
+import {NotEmptyParameters} from '../../../dist/assert/string/not-empty.js';
 
 
 it('enable console log', () => {spyOn(console, 'log').and.callThrough();});

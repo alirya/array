@@ -1,10 +1,10 @@
-import Validator from '@alirya/validator/validator';
-import Unions from '../../../unions';
-import Map from '../../../map';
+import Validator from '@alirya/validator/validator.js';
+import Unions from '../../../unions.js';
+import Map from '../../../map.js';
 import {List as ListHelper} from 'ts-toolbelt';
-import InferReturn from '@alirya/validator/validatable/infer-static';
-import Value from '@alirya/value/value';
-import ValidatorContainer from '@alirya/validator/validator/validator';
+import InferReturn from '@alirya/validator/validatable/infer-static.js';
+import Value from '@alirya/value/value.js';
+import ValidatorContainer from '@alirya/validator/validator/validator.js';
 
 
 export function ListParameters<

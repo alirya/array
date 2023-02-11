@@ -1,5 +1,5 @@
-import Validator from '../../dist/validator/array';
-import ObjectMessage from '../../dist/validatable/string/array';
+import Validator from '../../dist/validator/array.js';
+import ObjectMessage from '../../dist/validatable/string/array.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -7,38 +7,38 @@ describe(`compiler compatible`,function() {
 
     it(`valid value`,function() {
 
-        let validator = Validator.Parameters(ObjectMessage.Parameters);
-        let validatable = validator(<unknown>new Array());
+        const validator = Validator.Parameters(ObjectMessage.Parameters);
+        const validatable = validator(<unknown>[]);
 
         if(validatable.valid) {
 
             // compiler pass
-            let object : object = validatable.value;
+            const object : object = validatable.value;
             expect(object).toEqual([]);
 
         } else {
 
             // @ts-expect-error
-            let object : object = validatable.value;
+            const object : object = validatable.value;
             fail('validatable.valid should false');
         }
     });
 
     it(`invalid value`,function() {
 
-        let validator = Validator.Parameters(ObjectMessage.Parameters);
-        let validatable = validator(1);
+        const validator = Validator.Parameters(ObjectMessage.Parameters);
+        const validatable = validator(1);
 
         if(validatable.valid) {
 
             // compiler pass
-            let object : object = validatable.value;
+            const object : object = validatable.value;
             fail('validatable.valid should false');
 
         } else {
 
             // @ts-expect-error
-            let object : object = validatable.value;
+            const object : object = validatable.value;
             // @ts-expect-error
             expect(object).toEqual(1);
         }
@@ -46,8 +46,8 @@ describe(`compiler compatible`,function() {
 
     it(`readonly`,function() {
 
-        let validator = Validator.Parameters(ObjectMessage.Parameters);
-        let validatable = validator({});
+        const validator = Validator.Parameters(ObjectMessage.Parameters);
+        const validatable = validator({});
 
         try {
             // @ts-expect-error
@@ -62,7 +62,7 @@ describe(`compiler compatible`,function() {
 
         try {
             // @ts-expect-error
-            validatable.message = 'message';
+            validatable.message.js = 'message.js';
             fail('exception should thrown');
         } catch (e) {
             expect(e).toBeInstanceOf(Error);
@@ -74,8 +74,8 @@ describe(`compiler compatible`,function() {
 
 it(`valid`,function() {
 
-    let validator = Validator.Parameters(ObjectMessage.Parameters);
-    let validatable = validator([]);
+    const validator = Validator.Parameters(ObjectMessage.Parameters);
+    const validatable = validator([]);
 
     expect(validatable.valid).toBe(true);
     expect(validatable.value).toEqual([]);
@@ -85,8 +85,8 @@ it(`valid`,function() {
 
 it(`invalid`,function() {
 
-    let validator = Validator.Parameters(ObjectMessage.Parameters);
-    let validatable = validator('a');
+    const validator = Validator.Parameters(ObjectMessage.Parameters);
+    const validatable = validator('a');
 
     expect(validatable.valid).toBe(false);
     expect(validatable.value).toBe('a');

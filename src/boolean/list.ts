@@ -22,7 +22,7 @@ export default function List(
     validation : (value:unknown)=>boolean,
 ) : boolean {
 
-    for(let value of list) {
+    for(const value of list) {
 
         if(validation(value)) {
 

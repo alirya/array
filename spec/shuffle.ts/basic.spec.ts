@@ -1,4 +1,4 @@
-import {ShuffleParameters} from '../../dist/shuffle';
+import {ShuffleParameters} from '../../dist/shuffle.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

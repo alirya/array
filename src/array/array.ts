@@ -1,4 +1,4 @@
-import Array from './tuple';
+import Array from './tuple.js';
 
 
 

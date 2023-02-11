@@ -1,4 +1,4 @@
-import And from '../../../../dist/function/list/boolean/and';
+import And from '../../../../dist/function/list/boolean/and.js';
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
@@ -22,56 +22,56 @@ function TypeB(val : unknown) : val is B {
 
 it('compiler compatible', function() {
 
-    let ab : A & B = {a:1, b:'b'};
+    const ab : A & B = {a:1, b:'b'};
 
-    let value : unknown = ab;
+    const value : unknown = ab;
 
     if(And(value, [TypeA])) {
 
-        let result : A = value;
+        const result : A = value;
         // @ts-expect-error
-        let result2 : B = value;
+        const result2 : B = value;
 
     } else {
 
         // @ts-expect-error
-        let result1 : A = value;
+        const result1 : A = value;
         // @ts-expect-error
-        let result2 : B = value;
+        const result2 : B = value;
     }
 
     if(And(value, [TypeB])) {
 
         // @ts-expect-error
-        let result1 : A = value;
-        let result2 : B = value;
+        const result1 : A = value;
+        const result2 : B = value;
 
     } else {
 
         // @ts-expect-error
-        let result1 : A = value;
+        const result1 : A = value;
         // @ts-expect-error
-        let result2 : B = value;
+        const result2 : B = value;
     }
 
     if(And(value, [TypeA, TypeB])) {
 
-        let result1 : A = value;
-        let result2 : B = value;
+        const result1 : A = value;
+        const result2 : B = value;
 
     } else {
 
         // @ts-expect-error
-        let result1 : A = value;
+        const result1 : A = value;
         // @ts-expect-error
-        let result2 : B = value;
+        const result2 : B = value;
     }
 
 });
 
 describe('all valid', function() {
 
-    let ab : A & B = {a:1, b:'b'};
+    const ab : A & B = {a:1, b:'b'};
 
     it(`one`, () => {
 
@@ -87,7 +87,7 @@ describe('all valid', function() {
 
 describe('mixed invalid', function() {
 
-    let ab : A  = {a:1};
+    const ab : A  = {a:1};
 
     it(`multi`, () => {
         expect(And(ab, [TypeA, TypeB])).toBeFalse();

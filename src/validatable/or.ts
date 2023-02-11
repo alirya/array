@@ -1,11 +1,11 @@
-import Validatable from '@alirya/validatable/validatable';
-import IterableOr from '@alirya/iterable/validatable/boolean/or';
-import Callback from './callback';
-import ValidatableContainer from './validatables/validatables';
+import Validatable from '@alirya/validatable/validatable.js';
+import IterableOr from '@alirya/iterable/validatable/boolean/or.js';
+import Callback from './callback.js';
+import ValidatableContainer from './validatables/validatables.js';
 
 export function OrParameters<Validatables extends Validatable[]>(
     validatables : Validatables,
-    defaults : boolean = true
+    defaults  = true
 ) : Callback.Type<Validatables> {
 
     return new Callback.Parameters(validatables, (v)=>IterableOr.Parameters(v, defaults));

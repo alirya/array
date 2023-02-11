@@ -1,6 +1,6 @@
-import Message from '@alirya/message/message';
+import Message from '@alirya/message/message.js';
 import {List} from 'ts-toolbelt';
-import ListStrict from './infer';
+import ListStrict from './infer.js';
 
 type PartialUnion<Schema extends Message[]> =
     ListStrict<Schema> |

@@ -1,14 +1,14 @@
-import Validator from '@alirya/validator/validator';
-import Validatable from '@alirya/validatable/validatable';
-import ValidatableMap from '../validatable/map-callback';
-import BaseList from './subject/list/allow';
-import TypeList from './subject/list/expectation';
-import Construct from '@alirya/validator/validatable/simple';
-import Instance from '@alirya/validator/validatable/validatable';
-import Replace from '@alirya/validatable/boolean/replace';
-import ValidatorsContainer from './validators/validators';
-import Message from '@alirya/message/message';
-import SimpleValidator from '@alirya/validator/simple';
+import Validator from '@alirya/validator/validator.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import ValidatableMap from '../validatable/map-callback.js';
+import BaseList from './subject/list/allow.js';
+import TypeList from './subject/list/expectation.js';
+import Construct from '@alirya/validator/validatable/simple.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
+import Replace from '@alirya/validatable/boolean/replace.js';
+import ValidatorsContainer from './validators/validators.js';
+import Message from '@alirya/message/message.js';
+import SimpleValidator from '@alirya/validator/simple.js';
 
 /**
  * Base {@link Validator} for validating list of value with list of  {@link Validator}

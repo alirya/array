@@ -1,15 +1,15 @@
-import Validator from '@alirya/validator/validator';
-import Validatable from '@alirya/validatable/validatable';
-import ValidatorValidatable from '@alirya/validator/validatable/validatable';
-import Instance from '@alirya/validator/validatable/validatable';
-import MemoizeAccessor from '@alirya/object/function/memoize-accessor';
-import ValueInterface from '@alirya/value/value';
-import Message from '@alirya/message/message';
-import ValidatorContainer from '@alirya/validator/validator/validator';
-import Value from '@alirya/value/value';
-import Messages from '../message/messages/messages';
-import Validatables from './validatables/validatables';
-import ValidatableContainer from '@alirya/validatable/validatable/validatable';
+import Validator from '@alirya/validator/validator.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import ValidatorValidatable from '@alirya/validator/validatable/validatable.js';
+import Instance from '@alirya/validator/validatable/validatable.js';
+import MemoizeAccessor from '@alirya/object/function/memoize-accessor.js';
+import ValueInterface from '@alirya/value/value.js';
+import Message from '@alirya/message/message.js';
+import ValidatorContainer from '@alirya/validator/validator/validator.js';
+import Value from '@alirya/value/value.js';
+import Messages from '../message/messages/messages.js';
+import Validatables from './validatables/validatables.js';
+import ValidatableContainer from '@alirya/validatable/validatable/validatable.js';
 
 export interface ListCallbackContext<
     ValidatorType extends Validator = Validator,

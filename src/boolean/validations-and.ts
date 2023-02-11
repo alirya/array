@@ -1,3 +1,3 @@
-import ValidationsAnd from '../function/list/boolean/and';
+import ValidationsAnd from '../function/list/boolean/and.js';
 
 export default ValidationsAnd;

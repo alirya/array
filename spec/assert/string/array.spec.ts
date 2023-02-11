@@ -1,4 +1,4 @@
-import {ArrayParameters} from '../../../dist/assert/string/array';
+import {ArrayParameters} from '../../../dist/assert/string/array.js';
 
 it('enable console log', () => {spyOn(console, 'log').and.callThrough();});
 

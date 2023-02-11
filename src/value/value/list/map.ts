@@ -1,6 +1,6 @@
-import Value from '@alirya/value/value';
-import RecordInfer from './infer';
-import ValueValue from '@alirya/value/value/value';
+import Value from '@alirya/value/value.js';
+import RecordInfer from './infer.js';
+import ValueValue from '@alirya/value/value/value.js';
 
 export default function Map<
     Instance extends Value[]

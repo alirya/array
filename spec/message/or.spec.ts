@@ -1,9 +1,9 @@
-import Or from '../../dist/message/or';
+import Or from '../../dist/message/or.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
-let messages = [
+const messages = [
     {message:'a'},
     {message:'b'},
     {message:'c'},
@@ -11,7 +11,7 @@ let messages = [
     {message:'e'},
 ];
 
-let join = Or(messages);
+const join = Or(messages);
 it('check data', ()=>{
 
    expect(join.messages[0].message).toBe('a');

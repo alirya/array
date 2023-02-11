@@ -1,9 +1,9 @@
-import DifferenceLeft from './difference';
-import {EqualParameter, EqualParameters} from '@alirya/boolean/equal';
-import Validation from '@alirya/boolean/validation/validation';
-import Tuple from './array/tuple';
-import Value from '@alirya/value/value';
-import Compare from '@alirya/boolean/compare/compare';
+import DifferenceLeft from './difference.js';
+import {EqualParameter, EqualParameters} from '@alirya/boolean/equal.js';
+import Validation from '@alirya/boolean/validation/validation.js';
+import Tuple from './array/tuple.js';
+import Value from '@alirya/value/value.js';
+import Compare from '@alirya/boolean/compare/compare.js';
 
 /**
  * return values which does not exist in both list
@@ -22,8 +22,8 @@ export function DifferenceBothParameters<Value>(
     validation : (value1 : Value, value2 : Value) => boolean = EqualParameters
 ) : Value[] {
 
-    let left = DifferenceLeft.Parameters(list1, list2, validation);
-    let right = DifferenceLeft.Parameters(list2, list1, validation);
+    const left = DifferenceLeft.Parameters(list1, list2, validation);
+    const right = DifferenceLeft.Parameters(list2, list1, validation);
 
     return [... new Set<Value>([...left, ...right])];
 }

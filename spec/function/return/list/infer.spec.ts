@@ -1,6 +1,6 @@
-import ReturnInfer from '../../../../dist/function/return/list/infer';
-import Reset from '../../../../dist/reset';
-import Boolean from '@alirya/boolean/boolean';
+import ReturnInfer from '../../../../dist/function/return/list/infer.js';
+import Reset from '../../../../dist/reset.js';
+import Boolean from '@alirya/boolean/boolean.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -10,26 +10,26 @@ describe('compiler compatible', function() {
 
     it('guard', function() {
 
-        let equal : ReturnInfer<[typeof Boolean, typeof Boolean]> = [true, false];
+        const equal : ReturnInfer<[typeof Boolean, typeof Boolean]> = [true, false];
 
         // @ts-expect-error
-        let more : ReturnInfer<[typeof Boolean, typeof Boolean]> = [true, false, true];
+        const more : ReturnInfer<[typeof Boolean, typeof Boolean]> = [true, false, true];
 
         // @ts-expect-error
-        let less : ReturnInfer<[typeof Boolean, typeof Boolean]> = [true];
+        const less : ReturnInfer<[typeof Boolean, typeof Boolean]> = [true];
 
     });
 
 
     it('return', function() {
 
-        let equal : ReturnInfer<[typeof Reset, typeof Reset]> = [[], []];
+        const equal : ReturnInfer<[typeof Reset, typeof Reset]> = [[], []];
 
         // @ts-expect-error
-        let more : ReturnInfer<[typeof Reset, typeof Reset]> = [[], [], []];
+        const more : ReturnInfer<[typeof Reset, typeof Reset]> = [[], [], []];
 
         // @ts-expect-error
-        let less : ReturnInfer<[typeof Reset, typeof Reset]> = [[]];
+        const less : ReturnInfer<[typeof Reset, typeof Reset]> = [[]];
 
     });
 

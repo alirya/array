@@ -1,5 +1,5 @@
-import Validatable from '@alirya/validatable/validatable';
-import Validatables from './validatables/validatables';
+import Validatable from '@alirya/validatable/validatable.js';
+import Validatables from './validatables/validatables.js';
 import {List} from 'ts-toolbelt';
 
 export interface CallbackType<

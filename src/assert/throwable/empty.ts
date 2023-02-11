@@ -1,4 +1,4 @@
-import EmptyType from '../../assert/string/empty';
+import EmptyType from '../../assert/string/empty.js';
 
 export default function Empty(string : unknown[]) : Error {
 

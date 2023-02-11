@@ -1,8 +1,8 @@
-import Readonly from '../array/readonly';
+import Readonly from '../array/readonly.js';
 
 export function OrParameters(
     list : ReadonlyArray<boolean>,
-    defaults : boolean = true
+    defaults  = true
 ) : boolean {
 
     if(!list.length) {
@@ -10,9 +10,9 @@ export function OrParameters(
         return defaults;
     }
 
-    let result : boolean = false;
+    let result  = false;
 
-    for(let boolean of list) {
+    for(const boolean of list) {
 
         result = result || boolean;
 

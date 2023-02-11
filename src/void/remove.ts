@@ -1,13 +1,13 @@
-import Validation from '@alirya/boolean/function/validation';
-import {ExtractParameter, ExtractArgument as RemoveArgument, ExtractParameters} from '../extract';
+import Validation from '@alirya/boolean/function/validation.js';
+import {ExtractParameter, ExtractArgument as RemoveArgument, ExtractParameters} from '../extract.js';
 
 
 export function RemoveParameters<Value>(
     list : Value[],
     validation : Validation<[Value]>,
-    start : number = 0,
-    end : number = Infinity,
-    limit : number = Infinity
+    start  = 0,
+    end  = Infinity,
+    limit  = Infinity
 ) : void {
 
     ExtractParameters(list, validation, start, end, limit);

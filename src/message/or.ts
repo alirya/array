@@ -1,6 +1,6 @@
-import Message from '@alirya/message/message';
-import Join from './join';
-import Messages from './messages/messages';
+import Message from '@alirya/message/message.js';
+import Join from './join.js';
+import Messages from './messages/messages.js';
 
 export default function Or<MessageType extends Message<string>[]>(
     messages : MessageType,

@@ -1,10 +1,10 @@
-import Invalid from '../../../dist/validatable/list/invalid';
-import Validatable from '@alirya/validatable/validatable';
+import Invalid from '../../../dist/validatable/list/invalid.js';
+import Validatable from '@alirya/validatable/validatable.js';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-let record : [
+const record : [
     Validatable,
     Validatable,
     Validatable,
@@ -18,7 +18,7 @@ let record : [
 
 describe('check property', function() {
 
-    let result = Invalid(record);
+    const result = Invalid(record);
 
     it('invalid', () => {
 

@@ -1,13 +1,13 @@
-import Validatable from '@alirya/validatable/validatable';
-import Value from '@alirya/value/value';
-import ReadonlyList from '../../array/readonly';
+import Validatable from '@alirya/validatable/validatable.js';
+import Value from '@alirya/value/value.js';
+import ReadonlyList from '../../array/readonly.js';
 
 
 export function InParameters(
     value : unknown,
     valid : boolean,
     arrays : ReadonlyArray<unknown>,
-    subject : string = 'value',
+    subject  = 'value',
 ) : string {
 
     const predicate = valid ? 'is' : 'is not';

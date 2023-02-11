@@ -1,4 +1,4 @@
-import {IncludesParameters} from '../../../dist/assert/string/includes';
+import {IncludesParameters} from '../../../dist/assert/string/includes.js';
 
 it('enable console log', () => {spyOn(console, 'log').and.callThrough();});
 

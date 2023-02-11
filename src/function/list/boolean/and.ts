@@ -34,7 +34,7 @@ export default function And<Result extends unknown[]>(
     validations : Validation<Result>
 ) : boolean {
 
-    for(let validator of validations) {
+    for(const validator of validations) {
 
         if(!validator(value)) {
 

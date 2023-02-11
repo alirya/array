@@ -1,8 +1,8 @@
-import Message from '@alirya/message/message';
-import Messages from './messages/messages';
-import Reset from '../reset';
-import Separator from '@alirya/string/separator/separator';
-import ToString from '@alirya/string/to-string';
+import Message from '@alirya/message/message.js';
+import Messages from './messages/messages.js';
+import Reset from '../reset.js';
+import Separator from '@alirya/string/separator/separator.js';
+import ToString from '@alirya/string/to-string.js';
 
 export class JoinParameters<MessageType extends Message<string>[]> implements Messages<MessageType>, Message<string>, Separator, ToString {
 
@@ -14,7 +14,7 @@ export class JoinParameters<MessageType extends Message<string>[]> implements Me
 
     get message() : string {
 
-        let messages = Reset(this.messages);
+        const messages = Reset(this.messages);
         return messages.map(message=>message.message).join(this.separator);
     }
 

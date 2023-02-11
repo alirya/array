@@ -1,8 +1,8 @@
-import List from './array/list';
-import Value from '@alirya/value/value';
-import Validation from '@alirya/boolean/validation/validation';
-import Compare from '@alirya/boolean/compare/compare';
-import {EqualParameter, EqualParameters} from '@alirya/boolean/equal';
+import List from './array/list.js';
+import Value from '@alirya/value/value.js';
+import Validation from '@alirya/boolean/validation/validation.js';
+import Compare from '@alirya/boolean/compare/compare.js';
+import {EqualParameter, EqualParameters} from '@alirya/boolean/equal.js';
 
 
 /**
@@ -17,11 +17,11 @@ export function DifferenceParameters<Type>(
     value : ReadonlyArray<Type>,
     validation : (target : Type, comparison : Type) => boolean = EqualParameters
 ) : Type[] {
-    let results : Type[] = [];
+    const results : Type[] = [];
 
-    TARGET : for(let target of list) {
+    TARGET : for(const target of list) {
 
-        for(let comparison of value) {
+        for(const comparison of value) {
 
             if(validation(target, comparison)) {
 

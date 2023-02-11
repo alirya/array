@@ -1,22 +1,22 @@
-import Empty from '../../dist/validator/empty';
-import EmptyMessage from '../../dist/validatable/string/empty';
+import Empty from '../../dist/validator/empty.js';
+import EmptyMessage from '../../dist/validatable/string/empty.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
-let map = new Map<unknown[], [boolean, string]>();
+const map = new Map<unknown[], [boolean, string]>();
 map.set([], [true, 'empty array']);
 map.set([1], [false, 'not empty array']);
 map.set([1,2], [false, 'not empty array']);
 
 
-for(let [value, [valid, message]] of map) {
+for(const [value, [valid, message]] of map) {
 
     describe('empty', () => {
 
         it(message, ()=>{
 
-            let validator = Empty.Parameters(EmptyMessage.Parameters);
-            let validatable = validator(value);
+            const validator = Empty.Parameters(EmptyMessage.Parameters);
+            const validatable = validator(value);
             expect(validatable.valid).toBe(valid);
             expect(validatable.value).toBe(value);
 

@@ -1,8 +1,8 @@
-import Or from '../../../dist/message/string/or';
+import Or from '../../../dist/message/string/or.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-let messages = [
+const messages = [
     {message:'a'},
     {message:'b'},
     {message:'c'},

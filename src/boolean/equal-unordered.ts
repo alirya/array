@@ -1,4 +1,4 @@
-import EqualBoolean from '@alirya/boolean/equal';
+import EqualBoolean from '@alirya/boolean/equal.js';
 
 export function EqualUnorderedParameters<Value>(
     array1 : ReadonlyArray<Value>,
@@ -11,7 +11,7 @@ export function EqualUnorderedParameters<Value>(
         return false;
     }
 
-    let valids : (number|string)[] = [];
+    const valids : (number|string)[] = [];
 
     PARENT : for(const i in array1) {
 
