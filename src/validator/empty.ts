@@ -4,7 +4,7 @@ import EmptyMessage from '../validatable/string/empty.js';
 import Validatable from '@alirya/validator/validatable/validatable.js';
 import EmptyMessageParameter from '../validatable/string/empty.js';
 import {ValidatableParameter, ValidatableParameters} from '@alirya/validator/message/function/validatable.js';
-import Chain from '../../../validator/dist/chain.js';
+import Chain from '@alirya/validator/chain.js';
 import {ArrayParameters} from './array.js';
 import ArrayMessage from '../validatable/string/array.js';
 

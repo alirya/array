@@ -49,3 +49,10 @@ namespace Random {
     export const Parameter = RandomParameter;
 }
 export default Random;
+
+export {Random as RandomValues};
+export {Random as RandomPicks};
+export {RandomParameters as RandomPicksParameters};
+export {RandomParameter as RandomPicksParameter};
+export {RandomParameters as RandomValuesParameters};
+export {RandomParameter as RandomValuesParameter};

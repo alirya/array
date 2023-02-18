@@ -5,7 +5,7 @@ import InMessage from '../assert/string/in.js';
 import Callable from '@alirya/function/callable.js';
 import {Optional} from 'utility-types';
 import {ArrayParameters} from './array.js';
-import Chain from '../../../validator/dist/chain.js';
+import Chain from '@alirya/validator/chain.js';
 
 export {
     InArgumentsMessage,

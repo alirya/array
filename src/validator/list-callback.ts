@@ -11,7 +11,7 @@ import SimpleValidator from '@alirya/validator/simple.js';
 import TypeInfer from '@alirya/validator/subject/expectation.js';
 import ValidatableListInterface from '../validatable/list-callback.js';
 import {ArrayParameters} from './array.js';
-import Chain from '../../../validator/dist/chain.js';
+import Chain from '@alirya/validator/chain.js';
 
 
 /**

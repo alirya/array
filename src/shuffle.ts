@@ -12,7 +12,7 @@ import Random from '@alirya/boolean/random.js';
  */
 
 export function ShuffleParameters<Value>(
-    value : Value[],
+    value : ReadonlyArray<Value>,
     random : ()=>boolean = Random
 ) : Value[] {
 
@@ -32,7 +32,6 @@ export function ShuffleParameters<Value>(
 
     return result;
 }
-
 
 /**
  *
