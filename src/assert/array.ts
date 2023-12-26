@@ -1,5 +1,5 @@
 import Guard from '../boolean/array.js';
-import {CallbackParameters} from '@alirya/function/assert/callback.js';
+import {CallbackParameters} from '@axiona/function/assert/callback.js';
 import ArrayError from './throwable/array.js';
 
 export default function Array(

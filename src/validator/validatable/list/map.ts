@@ -1,11 +1,11 @@
 import ListArgument from '../../subject/list/allow.js';
 import ListReturn from './infer.js';
-import Validator from '@alirya/validator/validator.js';
+import Validator from '@axiona/validator/validator.js';
 import {List} from 'ts-toolbelt';
 import ListStrict from './infer.js';
 import Unions from '../../../unions.js';
 import ValidatorsContainer from '../../validators/validators.js';
-import ValueInterface from '@alirya/value/value.js';
+import ValueInterface from '@axiona/value/value.js';
 
 
 export function MapParameters<

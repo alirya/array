@@ -1,8 +1,8 @@
-import Message from '@alirya/message/message.js';
+import Message from '@axiona/message/message.js';
 import Messages from './messages/messages.js';
 import Reset from '../reset.js';
-import Separator from '@alirya/string/separator/separator.js';
-import ToString from '@alirya/string/to-string.js';
+import Separator from '@axiona/string/separator/separator.js';
+import ToString from '@axiona/string/to-string.js';
 
 export class JoinParameters<MessageType extends Message<string>[]> implements Messages<MessageType>, Message<string>, Separator, ToString {
 

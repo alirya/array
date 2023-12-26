@@ -1,5 +1,5 @@
-import ValueInterface from '@alirya/value/value.js';
-import RandomBoolean from '@alirya/boolean/random.js';
+import ValueInterface from '@axiona/value/value.js';
+import RandomBoolean from '@axiona/boolean/random.js';
 
 /**
  * pick a random values

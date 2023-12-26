@@ -1,5 +1,5 @@
 import List from '../../dist/boolean/list.js';
-import GuardBoolean from '@alirya/boolean/boolean.js';
+import GuardBoolean from '@axiona/boolean/boolean.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 

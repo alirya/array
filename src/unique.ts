@@ -1,7 +1,7 @@
-import {EqualParameters} from '@alirya/boolean/equal.js';
-import Callable from '@alirya/function/callable.js';
-import Value from '@alirya/value/value.js';
-import Validation from '@alirya/boolean/validation/validation.js';
+import {EqualParameters} from '@axiona/boolean/equal.js';
+import Callable from '@axiona/function/callable.js';
+import Value from '@axiona/value/value.js';
+import Validation from '@axiona/boolean/validation/validation.js';
 
 /**
  * pick a unique value from {@param value}

@@ -1,5 +1,5 @@
-import Value from '@alirya/value/value.js';
-import Validatable from '@alirya/validatable/validatable.js';
+import Value from '@axiona/value/value.js';
+import Validatable from '@axiona/validatable/validatable.js';
 
 export function ListParameters(
     value : unknown,

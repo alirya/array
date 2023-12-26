@@ -1,5 +1,5 @@
 import Valid from '../../../dist/validatable/list/valid.js';
-import Validatable from '@alirya/validatable/validatable.js';
+import Validatable from '@axiona/validatable/validatable.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

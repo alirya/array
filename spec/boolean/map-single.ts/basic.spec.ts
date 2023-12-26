@@ -1,5 +1,5 @@
 import {MapSingleParameters} from '../../../dist/boolean/map-single.js';
-import {TypeParameters} from '@alirya/type/boolean/type.js';
+import {TypeParameters} from '@axiona/type/boolean/type.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

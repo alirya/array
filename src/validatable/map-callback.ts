@@ -1,17 +1,17 @@
-import Validator from '@alirya/validator/validator.js';
-import Validatable from '@alirya/validatable/validatable.js';
+import Validator from '@axiona/validator/validator.js';
+import Validatable from '@axiona/validatable/validatable.js';
 import ListParameter from '../validator/subject/list/allow.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
-import MemoizeAccessor from '@alirya/object/function/memoize-accessor.js';
-import ValueInterface from '@alirya/value/value.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
+import MemoizeAccessor from '@axiona/object/function/memoize-accessor.js';
+import ValueInterface from '@axiona/value/value.js';
 import ValidatorsContainer from '../validator/validators/validators.js';
-import Message from '@alirya/message/message.js';
+import Message from '@axiona/message/message.js';
 import Validators from '../validator/validators/validators.js';
-import Value from '@alirya/value/value.js';
+import Value from '@axiona/value/value.js';
 import Validatables from './validatables/validatables.js';
-import ValidatableContainer from '@alirya/validatable/validatable/validatable.js';
+import ValidatableContainer from '@axiona/validatable/validatable/validatable.js';
 import Messages from '../message/messages/messages.js';
-import ValidatorValidatable from '@alirya/validator/validatable/validatable.js';
+import ValidatorValidatable from '@axiona/validator/validatable/validatable.js';
 
 export interface MapCallbackContext<
     ValidatorsType extends Validator[],

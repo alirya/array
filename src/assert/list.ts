@@ -1,8 +1,8 @@
-import {CallbackParameters} from '@alirya/function/assert/callback.js';
+import {CallbackParameters} from '@axiona/function/assert/callback.js';
 import Guard from '../boolean/list.js';
 import ReadonlyList from '../array/readonly.js';
-import GuardValidation from '@alirya/boolean/validation/guard.js';
-import StrictOmit from '@alirya/object/strict-omit.js';
+import GuardValidation from '@axiona/boolean/validation/guard.js';
+import StrictOmit from '@axiona/object/strict-omit.js';
 
 /**
  * assert if {@param list} is list of {@template Value}

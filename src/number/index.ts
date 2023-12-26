@@ -1,5 +1,5 @@
-import Validation from '@alirya/boolean/function/validation.js';
-import ValidationContainer from '@alirya/boolean/validation/validation.js';
+import Validation from '@axiona/boolean/function/validation.js';
+import ValidationContainer from '@axiona/boolean/validation/validation.js';
 import Readonly from '../array/readonly.js';
 
 /**

@@ -1,4 +1,4 @@
-import Message from '@alirya/message/message.js';
+import Message from '@axiona/message/message.js';
 import ListInfer from './infer.js';
 import MapUnion from '../../../unions.js';
 import Messages from '../../../message/messages/messages.js';

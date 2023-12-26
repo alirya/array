@@ -1,6 +1,6 @@
-import Validatable from '@alirya/validatable/validatable.js';
-import {ValidatableParameters} from '@alirya/validatable/ensure/validatable.js';
-import ValidatableValid from '@alirya/validatable/boolean/value.js';
+import Validatable from '@axiona/validatable/validatable.js';
+import {ValidatableParameters} from '@axiona/validatable/ensure/validatable.js';
+import ValidatableValid from '@axiona/validatable/boolean/value.js';
 import MapUnion from '../../unions.js';
 
 /**

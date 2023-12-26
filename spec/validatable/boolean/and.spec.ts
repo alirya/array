@@ -1,5 +1,5 @@
 import {AndParameters} from '../../../dist/validatable/boolean/and.js';
-import Validatable from '@alirya/validatable/validatable.js';
+import Validatable from '@axiona/validatable/validatable.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 

@@ -1,7 +1,7 @@
 import Guard from '../boolean/not-empty.js';
 import EmptyError from './throwable/not-empty.js';
-import {CallbackParameters} from '@alirya/function/assert/callback.js';
-import Callback from '@alirya/function/assert/callback.js';
+import {CallbackParameters} from '@axiona/function/assert/callback.js';
+import Callback from '@axiona/function/assert/callback.js';
 
 export function NotEmptyParameters(
     value : unknown[],

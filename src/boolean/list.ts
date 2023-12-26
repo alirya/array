@@ -34,3 +34,5 @@ export default function List(
 
     return true;
 }
+
+export {List as IsList};

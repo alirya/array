@@ -1,4 +1,4 @@
-import Validatable from '@alirya/validatable/validatable.js';
+import Validatable from '@axiona/validatable/validatable.js';
 import Validatables from './validatables/validatables.js';
 import {List} from 'ts-toolbelt';
 

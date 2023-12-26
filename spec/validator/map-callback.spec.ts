@@ -3,13 +3,13 @@ import Standard from '../../dist/validator/validatable/list/map.js';
 import MapPartial from '../../dist/validator/validatable/list/map-partial.js';
 import And from '../../dist/validatable/and.js';
 import Or from '../../dist/validatable/or.js';
-import Validatable from '@alirya/validatable/validatable.js';
-import SimpleValidator from '@alirya/validator/simple.js';
-import Message from '@alirya/message/message.js';
+import Validatable from '@axiona/validatable/validatable.js';
+import SimpleValidator from '@axiona/validator/simple.js';
+import Message from '@axiona/message/message.js';
 import MessageMap from '../../dist/message/message/list/map.js';
-import {TypeParameters} from '@alirya/type/validator/type.js';
-import Value from '@alirya/value/value.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
+import {TypeParameters} from '@axiona/type/validator/type.js';
+import Value from '@axiona/value/value.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

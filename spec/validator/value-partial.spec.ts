@@ -2,11 +2,11 @@ import Value from '../../dist/validator/value-partial.js';
 import And from '../../dist/validatable/and.js';
 import ValidatablesInterface from '../../dist/validatable/validatables/validatables.js';
 import Validatables from '../../dist/validatable/validatables/validatables.js';
-import Validatable from '@alirya/validatable/validatable.js';
-import SimpleValidator from '@alirya/validator/simple.js';
+import Validatable from '@axiona/validatable/validatable.js';
+import SimpleValidator from '@axiona/validator/simple.js';
 import MessageMap from '../../dist/message/message/list/map.js';
-import {TypeParameters} from '@alirya/type/validator/type.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
+import {TypeParameters} from '@axiona/type/validator/type.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

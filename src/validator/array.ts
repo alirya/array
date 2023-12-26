@@ -1,9 +1,9 @@
-import Validator from '@alirya/validator/simple.js';
-import Value from '@alirya/value/value.js';
+import Validator from '@axiona/validator/simple.js';
+import Value from '@axiona/value/value.js';
 import ArrayValidatable from '../validatable/array.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
 import ArrayMessage from '../validatable/string/array.js';
-import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable.js';
+import {ValidatableParameters, ValidatableParameter} from '@axiona/validator/message/function/validatable.js';
 import ArrayMessageParameter from '../validatable/string/array.js';
 
 /**

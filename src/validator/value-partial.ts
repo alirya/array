@@ -1,5 +1,5 @@
-import Validator from '@alirya/validator/validator.js';
-import Validatable from '@alirya/validatable/validatable.js';
+import Validator from '@axiona/validator/validator.js';
+import Validatable from '@axiona/validatable/validatable.js';
 import ValidateValuePartial from './validatable/list/value-partial.js';
 import ListReturn from './validatable/list/infer.js';
 import ValueCallback, {ValueCallbackValidator as ValuePartialReturn} from './value-callback.js';
@@ -7,10 +7,10 @@ import Unions from '../unions.js';
 import InferMessage from '../message/message/list/infer.js';
 import Map from '../message/message/list/map.js';
 import ValidatorsContainer from '../validator/validators/validators.js';
-import Message from '@alirya/message/message.js';
+import Message from '@axiona/message/message.js';
 import {Required} from 'utility-types';
-import StrictOmit from '@alirya/object/strict-omit.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
+import StrictOmit from '@axiona/object/strict-omit.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
 
 
 /**

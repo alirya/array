@@ -1,9 +1,9 @@
 import DifferenceLeft from './difference.js';
-import {EqualParameter, EqualParameters} from '@alirya/boolean/equal.js';
-import Validation from '@alirya/boolean/validation/validation.js';
+import {EqualParameter, EqualParameters} from '@axiona/boolean/equal.js';
+import Validation from '@axiona/boolean/validation/validation.js';
 import Tuple from './array/tuple.js';
-import Value from '@alirya/value/value.js';
-import Compare from '@alirya/boolean/compare/compare.js';
+import Value from '@axiona/value/value.js';
+import Compare from '@axiona/boolean/compare/compare.js';
 
 /**
  * return values which does not exist in both list

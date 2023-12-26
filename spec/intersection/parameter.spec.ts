@@ -1,6 +1,6 @@
 import {IntersectionParameters, IntersectionParameter} from '../../dist/intersection.js';
-import {EqualParameter} from '@alirya/boolean/equal.js';
-import {EqualParameters} from '@alirya/boolean/equal.js';
+import {EqualParameter} from '@axiona/boolean/equal.js';
+import {EqualParameters} from '@axiona/boolean/equal.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

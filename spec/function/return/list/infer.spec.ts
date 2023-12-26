@@ -1,6 +1,6 @@
 import ReturnInfer from '../../../../dist/function/return/list/infer.js';
 import Reset from '../../../../dist/reset.js';
-import Boolean from '@alirya/boolean/boolean.js';
+import Boolean from '@axiona/boolean/boolean.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

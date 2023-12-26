@@ -1,14 +1,14 @@
-import Validator from '@alirya/validator/validator.js';
-import Validatable from '@alirya/validatable/validatable.js';
+import Validator from '@axiona/validator/validator.js';
+import Validatable from '@axiona/validatable/validatable.js';
 import ValidatableMap from '../validatable/map-callback.js';
 import BaseList from './subject/list/allow.js';
 import TypeList from './subject/list/expectation.js';
-import Construct from '@alirya/validator/validatable/simple.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
-import Replace from '@alirya/validatable/boolean/replace.js';
+import Construct from '@axiona/validator/validatable/simple.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
+import Replace from '@axiona/validatable/boolean/replace.js';
 import ValidatorsContainer from './validators/validators.js';
-import Message from '@alirya/message/message.js';
-import SimpleValidator from '@alirya/validator/simple.js';
+import Message from '@axiona/message/message.js';
+import SimpleValidator from '@axiona/validator/simple.js';
 
 /**
  * Base {@link Validator} for validating list of value with list of  {@link Validator}

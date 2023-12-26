@@ -1,5 +1,5 @@
 import Standard from '../../../../dist/message/message/list/map.js';
-import Message from '@alirya/message/message.js';
+import Message from '@axiona/message/message.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 

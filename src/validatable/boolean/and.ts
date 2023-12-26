@@ -1,5 +1,5 @@
-import Validatable from '@alirya/validatable/validatable.js';
-import IterableAnd from '@alirya/iterable/validatable/boolean/and.js';
+import Validatable from '@axiona/validatable/validatable.js';
+import IterableAnd from '@axiona/iterable/validatable/boolean/and.js';
 import Validatables from '../validatables/validatables.js';
 
 export function AndParameters<

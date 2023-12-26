@@ -1,4 +1,4 @@
-import ValueInterface from '@alirya/value/value.js';
+import ValueInterface from '@axiona/value/value.js';
 import List from './array/list.js';
 
 

@@ -1,11 +1,11 @@
-import Validator from '@alirya/validator/simple.js';
+import Validator from '@axiona/validator/simple.js';
 import In, {InArgumentsMessage, InArgumentMessage} from '../validatable/in.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
 import InMessage from '../assert/string/in.js';
-import Callable from '@alirya/function/callable.js';
+import Callable from '@axiona/function/callable.js';
 import {Optional} from 'utility-types';
 import {ArrayParameters} from './array.js';
-import Chain from '@alirya/validator/chain.js';
+import Chain from '@axiona/validator/chain.js';
 
 export {
     InArgumentsMessage,

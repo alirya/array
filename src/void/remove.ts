@@ -1,4 +1,4 @@
-import Validation from '@alirya/boolean/function/validation.js';
+import Validation from '@axiona/boolean/function/validation.js';
 import {ExtractParameter, ExtractArgument as RemoveArgument, ExtractParameters} from '../extract.js';
 
 

@@ -1,7 +1,7 @@
-import Validator from '@alirya/validator/validator.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
-import Validatable from '@alirya/validatable/validatable/validatable.js';
-import InstanceInfer from '@alirya/validator/validatable/infer-static.js';
+import Validator from '@axiona/validator/validator.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
+import Validatable from '@axiona/validatable/validatable/validatable.js';
+import InstanceInfer from '@axiona/validator/validatable/infer-static.js';
 
 /**
  *  validate array length

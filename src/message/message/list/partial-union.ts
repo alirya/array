@@ -1,4 +1,4 @@
-import Message from '@alirya/message/message.js';
+import Message from '@axiona/message/message.js';
 import {List} from 'ts-toolbelt';
 import ListStrict from './infer.js';
 

@@ -1,8 +1,8 @@
 import List from './array/list.js';
-import Value from '@alirya/value/value.js';
-import Validation from '@alirya/boolean/validation/validation.js';
-import Compare from '@alirya/boolean/compare/compare.js';
-import {EqualParameter, EqualParameters} from '@alirya/boolean/equal.js';
+import Value from '@axiona/value/value.js';
+import Validation from '@axiona/boolean/validation/validation.js';
+import Compare from '@axiona/boolean/compare/compare.js';
+import {EqualParameter, EqualParameters} from '@axiona/boolean/equal.js';
 
 
 /**

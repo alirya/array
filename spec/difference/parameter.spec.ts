@@ -1,5 +1,5 @@
-import {EqualParameter} from '@alirya/boolean/equal.js';
-import {EqualParameters} from '@alirya/boolean/equal.js';
+import {EqualParameter} from '@axiona/boolean/equal.js';
+import {EqualParameters} from '@axiona/boolean/equal.js';
 import {DifferenceParameters, DifferenceParameter} from '../../dist/difference.js';
 
 

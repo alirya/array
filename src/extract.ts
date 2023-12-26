@@ -1,7 +1,7 @@
 import Index from './number/index.js';
-import Validation from '@alirya/boolean/function/validation.js';
+import Validation from '@axiona/boolean/function/validation.js';
 import Reset from './void/reset.js';
-import ValidationContainer from '@alirya/boolean/validation/validation.js';
+import ValidationContainer from '@axiona/boolean/validation/validation.js';
 import List from './array/list.js';
 
 export function ExtractParameters<Value>(

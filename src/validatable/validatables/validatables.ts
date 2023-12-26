@@ -1,4 +1,4 @@
-import Validatable from '@alirya/validatable/validatable.js';
+import Validatable from '@axiona/validatable/validatable.js';
 
 export default interface Validatables<
     ValidatableList extends ReadonlyArray<Validatable> = ReadonlyArray<Validatable>

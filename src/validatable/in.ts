@@ -1,10 +1,10 @@
-import Validatable from '@alirya/validatable/validatable.js';
-import MemoizeAccessor from '@alirya/object/function/memoize-accessor.js';
-import ValueInterface from '@alirya/value/value.js';
-import Message from '@alirya/message/message.js';
-import Value from '@alirya/value/value.js';
+import Validatable from '@axiona/validatable/validatable.js';
+import MemoizeAccessor from '@axiona/object/function/memoize-accessor.js';
+import ValueInterface from '@axiona/value/value.js';
+import Message from '@axiona/message/message.js';
+import Value from '@axiona/value/value.js';
 import ReadonlyList from '../array/readonly.js';
-import Callable from '@alirya/function/callable.js';
+import Callable from '@axiona/function/callable.js';
 
 export interface InType<
     ValueType extends unknown,

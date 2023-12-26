@@ -1,9 +1,9 @@
 import NotEmptyArgument from '../boolean/not-empty.js';
 import {List} from 'ts-toolbelt';
-import Instance from '@alirya/validator/validatable/validatable.js';
-import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable.js';
-import Message from '@alirya/message/message.js';
-import ValueInterface from '@alirya/value/value.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
+import {ValidatableParameters, ValidatableParameter} from '@axiona/validator/message/function/validatable.js';
+import Message from '@axiona/message/message.js';
+import ValueInterface from '@axiona/value/value.js';
 
 export type NotEmptyType<
     Values extends unknown[],

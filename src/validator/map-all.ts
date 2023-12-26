@@ -1,5 +1,5 @@
-import Validator from '@alirya/validator/validator.js';
-import Validatable from '@alirya/validatable/validatable.js';
+import Validator from '@axiona/validator/validator.js';
+import Validatable from '@axiona/validatable/validatable.js';
 import ValidateMap from './validatable/list/map.js';
 import ListReturn from './validatable/list/infer.js';
 import MapCallback from './map-callback.js';
@@ -7,13 +7,13 @@ import InferMessage from '../message/message/list/infer.js';
 import InferList from './validatable/list/infer.js';
 import Map from '../message/message/list/map.js';
 import ValidatorsContainer from './validators/validators.js';
-import Message from '@alirya/message/message.js';
+import Message from '@axiona/message/message.js';
 import Unions from '../unions.js';
 import ListStrict from './validatable/list/infer.js';
-import StrictOmit from '@alirya/object/strict-omit.js';
+import StrictOmit from '@axiona/object/strict-omit.js';
 import {Required} from 'utility-types';
 import {MapCallbackReturn as MapAllReturn} from './map-callback.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
 
 /**
  * more specific implementation of {@link MapCallback}

@@ -1,15 +1,15 @@
-import Validator from '@alirya/validator/validator.js';
-import Validatable from '@alirya/validatable/validatable.js';
-import InferReturn from '@alirya/validator/validatable/infer-static.js';
+import Validator from '@axiona/validator/validator.js';
+import Validatable from '@axiona/validatable/validatable.js';
+import InferReturn from '@axiona/validator/validatable/infer-static.js';
 import ListCallback from './list-callback.js';
 import ValidateMap from './validatable/list/list.js';
 import InferMessage from '../message/message/list/infer.js';
 import Map from '../message/message/list/map.js';
-import ValidatorContainer from '@alirya/validator/validator/validator.js';
-import Message from '@alirya/message/message.js';
-import StrictOmit from '@alirya/object/strict-omit.js';
+import ValidatorContainer from '@axiona/validator/validator/validator.js';
+import Message from '@axiona/message/message.js';
+import StrictOmit from '@axiona/object/strict-omit.js';
 import {ListCallbackReturn as ListAllReturn} from './list-callback.js';
-import ValidatorValidatable from '@alirya/validator/validatable/validatable.js';
+import ValidatorValidatable from '@axiona/validator/validatable/validatable.js';
 
 /**
  * more specific implementation of {@link ListCallback}

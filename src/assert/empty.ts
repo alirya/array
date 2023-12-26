@@ -1,5 +1,5 @@
 import Guard from '../boolean/empty.js';
-import {CallbackParameters} from '@alirya/function/assert/callback.js';
+import {CallbackParameters} from '@axiona/function/assert/callback.js';
 import EmptyError from './throwable/empty.js';
 
 export default function Empty(

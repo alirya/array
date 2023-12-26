@@ -1,4 +1,4 @@
-import Message from '@alirya/message/message.js';
+import Message from '@axiona/message/message.js';
 import Join from './join.js';
 import Messages from './messages/messages.js';
 

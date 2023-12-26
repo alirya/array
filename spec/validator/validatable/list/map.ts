@@ -1,5 +1,5 @@
 import {MapParameters} from '../../../../dist/validator/validatable/list/map.js';
-import {TypeParameters} from '@alirya/type/validator/type.js';
+import {TypeParameters} from '@axiona/type/validator/type.js';
 
 
 it('force console log', () => spyOn(console, 'log').and.callThrough());

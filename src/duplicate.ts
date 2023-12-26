@@ -1,9 +1,9 @@
-import Callable from '@alirya/function/callable.js';
+import Callable from '@axiona/function/callable.js';
 import Readonly from './array/readonly.js';
-import Validation from '@alirya/boolean/validation/validation.js';
-import Value from '@alirya/value/value.js';
-import Compare from '@alirya/boolean/compare/compare.js';
-import {EqualParameter, EqualParameters} from '@alirya/boolean/equal.js';
+import Validation from '@axiona/boolean/validation/validation.js';
+import Value from '@axiona/value/value.js';
+import Compare from '@axiona/boolean/compare/compare.js';
+import {EqualParameter, EqualParameters} from '@axiona/boolean/equal.js';
 
 /**
  * pick a duplicate value from {@param list}

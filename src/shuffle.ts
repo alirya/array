@@ -1,5 +1,5 @@
-import Value from '@alirya/value/value.js';
-import Random from '@alirya/boolean/random.js';
+import Value from '@axiona/value/value.js';
+import Random from '@axiona/boolean/random.js';
 /**
  * randomize {@param value} array position
  *

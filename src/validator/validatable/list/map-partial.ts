@@ -1,10 +1,10 @@
 import ListArgument from '../../subject/list/allow.js';
 import ListReturn from './infer.js';
-import Validator from '@alirya/validator/validator.js';
+import Validator from '@axiona/validator/validator.js';
 import {List} from 'ts-toolbelt';
 import ListStrict from './infer.js';
 import Unions from '../../../unions.js';
-import Value from '@alirya/value/value.js';
+import Value from '@axiona/value/value.js';
 import ValidatorsContainer from '../../validators/validators.js';
 
 export function MapPartialParameters<

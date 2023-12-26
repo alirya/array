@@ -1,5 +1,5 @@
 import {ListPartialParameters} from '../../../../dist/validator/validatable/list/list-partial.js';
-import {StringParameter} from '@alirya/string/validator/string.js';
+import {StringParameter} from '@axiona/string/validator/string.js';
 
 
 describe('check property', function() {

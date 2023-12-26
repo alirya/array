@@ -1,10 +1,10 @@
-import {CallbackClassParameters} from '@alirya/validator/validatable/callback.js';
+import {CallbackClassParameters} from '@axiona/validator/validatable/callback.js';
 import ArrayGuard from '../boolean/array.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
-import {ValidatableParameters, ValidatableParameter} from '@alirya/validator/message/function/validatable.js';
-import Value from '@alirya/value/value.js';
-import Simple from '@alirya/validator/validatable/simple.js';
-import Message from '@alirya/message/message.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
+import {ValidatableParameters, ValidatableParameter} from '@axiona/validator/message/function/validatable.js';
+import Value from '@axiona/value/value.js';
+import Simple from '@axiona/validator/validatable/simple.js';
+import Message from '@axiona/message/message.js';
 
 
 export function ArrayParameters<Argument, MessageType>(

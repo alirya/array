@@ -1,4 +1,4 @@
-import EqualBoolean from '@alirya/boolean/equal.js';
+import EqualBoolean from '@axiona/boolean/equal.js';
 
 export function EqualUnorderedParameters<Value>(
     array1 : ReadonlyArray<Value>,

@@ -1,8 +1,8 @@
-import {EqualStrictParameters, EqualStrictParameter} from '@alirya/boolean/equal-strict.js';
-import Validation from '@alirya/boolean/validation/validation.js';
+import {EqualStrictParameters, EqualStrictParameter} from '@axiona/boolean/equal-strict.js';
+import Validation from '@axiona/boolean/validation/validation.js';
 import Readonly from './array/readonly.js';
-import Value from '@alirya/value/value.js';
-import Compare from '@alirya/boolean/compare/compare.js';
+import Value from '@axiona/value/value.js';
+import Compare from '@axiona/boolean/compare/compare.js';
 
 
 /**

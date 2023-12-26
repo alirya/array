@@ -1,7 +1,7 @@
 import InsertFunction from './function/insert.js';
 import {Omit} from 'utility-types';
 import {InsertArgument as InsertFunctionArgument} from './function/insert.js';
-import Value from '@alirya/value/value.js';
+import Value from '@axiona/value/value.js';
 /**
  * Insert {@param array} in the specified {@param index}, for reusable and more
  * performant instead use {@see InsertFunction}

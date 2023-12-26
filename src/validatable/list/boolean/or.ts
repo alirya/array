@@ -1,5 +1,5 @@
-import Validatable from '@alirya/validatable/validatable.js';
-import IterableOr from '@alirya/iterable/validatable/boolean/or.js';
+import Validatable from '@axiona/validatable/validatable.js';
+import IterableOr from '@axiona/iterable/validatable/boolean/or.js';
 import Validatables from '../../validatables/validatables.js';
 
 

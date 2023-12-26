@@ -1,6 +1,6 @@
-import Message from '@alirya/message/message.js';
-import Validatable from '@alirya/validatable/validatable.js';
-import InferMessage from '@alirya/message/message/infer.js';
+import Message from '@axiona/message/message.js';
+import Validatable from '@axiona/validatable/validatable.js';
+import InferMessage from '@axiona/message/message/infer.js';
 
 export default function InvalidFirstValidLast<
     Messages extends (Message & Validatable)

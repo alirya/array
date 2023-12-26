@@ -1,5 +1,5 @@
-import Validator from '@alirya/validator/validator.js';
-import Validatable from '@alirya/validatable/validatable.js';
+import Validator from '@axiona/validator/validator.js';
+import Validatable from '@axiona/validatable/validatable.js';
 import ValidateValue from './validatable/list/value.js';
 import ListReturn from './validatable/list/infer.js';
 import ValueCallback from './value-callback.js';
@@ -9,11 +9,11 @@ import {List} from 'ts-toolbelt';
 import Allow from './subject/list/allow.js';
 import Expectation from './subject/list/expectation.js';
 import ValidatorsContainer from './validators/validators.js';
-import Message from '@alirya/message/message.js';
+import Message from '@axiona/message/message.js';
 import Unions from '../unions.js';
-import StrictOmit from '@alirya/object/strict-omit.js';
+import StrictOmit from '@axiona/object/strict-omit.js';
 import {Required} from 'utility-types';
-import Instance from '@alirya/validator/validatable/validatable.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
 import {ValueCallbackValidator as ValueAllReturn} from './value-callback.js';
 
 /**

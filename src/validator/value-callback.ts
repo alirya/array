@@ -1,10 +1,10 @@
-import ValidatorT from '@alirya/validator/validator.js';
-import Validatable from '@alirya/validatable/validatable.js';
+import ValidatorT from '@axiona/validator/validator.js';
+import Validatable from '@axiona/validatable/validatable.js';
 import ValidatableValue from '../validatable/value-callback.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
 import ValidatorsContainer from './validators/validators.js';
-import Message from '@alirya/message/message.js';
-import SimpleValidator from '@alirya/validator/simple.js';
+import Message from '@axiona/message/message.js';
+import SimpleValidator from '@axiona/validator/simple.js';
 import ValidatableValueInterface from '../validatable/value-callback.js';
 
 /**

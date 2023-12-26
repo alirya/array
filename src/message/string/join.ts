@@ -1,4 +1,4 @@
-import Message from '@alirya/message/message.js';
+import Message from '@axiona/message/message.js';
 import JoinObject from '../join.js';
 import {JoinArgument} from '../join.js';
 

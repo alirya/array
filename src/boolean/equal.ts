@@ -1,6 +1,6 @@
-import EqualBoolean from '@alirya/boolean/equal.js';
-import ValidationContainer from '@alirya/boolean/validation/validation.js';
-import Validation from '@alirya/boolean/function/validation.js';
+import EqualBoolean from '@axiona/boolean/equal.js';
+import ValidationContainer from '@axiona/boolean/validation/validation.js';
+import Validation from '@axiona/boolean/function/validation.js';
 import {List} from 'ts-toolbelt';
 
 export function EqualParameters<Value extends ReadonlyArray<unknown>>(

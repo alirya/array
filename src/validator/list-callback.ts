@@ -1,17 +1,17 @@
-import Validator from '@alirya/validator/validator.js';
-import Validatable from '@alirya/validatable/validatable.js';
+import Validator from '@axiona/validator/validator.js';
+import Validatable from '@axiona/validatable/validatable.js';
 import ValidatableListCallback from '../validatable/list-callback.js';
-import Instance from '@alirya/validator/validatable/validatable.js';
-import BaseInfer from '@alirya/validator/subject/allow.js';
-import SubjectInfer from '@alirya/validator/subject/subject.js';
-import Message from '@alirya/message/message.js';
-import ValidatorContainer from '@alirya/validator/validator/validator.js';
-import ValidatorValidatable from '@alirya/validator/validatable/validatable.js';
-import SimpleValidator from '@alirya/validator/simple.js';
-import TypeInfer from '@alirya/validator/subject/expectation.js';
+import Instance from '@axiona/validator/validatable/validatable.js';
+import BaseInfer from '@axiona/validator/subject/allow.js';
+import SubjectInfer from '@axiona/validator/subject/subject.js';
+import Message from '@axiona/message/message.js';
+import ValidatorContainer from '@axiona/validator/validator/validator.js';
+import ValidatorValidatable from '@axiona/validator/validatable/validatable.js';
+import SimpleValidator from '@axiona/validator/simple.js';
+import TypeInfer from '@axiona/validator/subject/expectation.js';
 import ValidatableListInterface from '../validatable/list-callback.js';
 import {ArrayParameters} from './array.js';
-import Chain from '@alirya/validator/chain.js';
+import Chain from '@axiona/validator/chain.js';
 
 
 /**

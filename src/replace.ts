@@ -1,4 +1,4 @@
-import Value from '@alirya/value/value.js';
+import Value from '@axiona/value/value.js';
 import Tuple from './array/tuple.js';
 
 export function ReplaceParameters<Array extends any[], Index extends keyof Array>(

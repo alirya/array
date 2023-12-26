@@ -1,5 +1,5 @@
 import {ListParameters as AssertListParameters} from '../assert/list.js';
-import Guard from '@alirya/boolean/validation/guard.js';
+import Guard from '@axiona/boolean/validation/guard.js';
 
 /**
  * Check if {@param list} is list of {@template Value}
